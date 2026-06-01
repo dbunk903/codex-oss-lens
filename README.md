@@ -1,5 +1,10 @@
 # Codex OSS Lens
 
+[![release](https://img.shields.io/github/v/release/dbunk903/codex-oss-lens?label=release)](https://github.com/dbunk903/codex-oss-lens/releases)
+[![license](https://img.shields.io/github/license/dbunk903/codex-oss-lens)](LICENSE)
+[![node](https://img.shields.io/badge/node-%3E%3D20-167d68)](package.json)
+[![privacy](https://img.shields.io/badge/privacy-local--first-2563a8)](docs/api-credit-workflow.md)
+
 Codex OSS Lens is a local-first usage and workflow dashboard for OpenAI Codex maintainers.
 It reads Codex rollout JSONL files from `~/.codex/sessions/` and turns them into a small
 browser UI for quota windows, workspace load, model mix, recent sessions, and observed token
@@ -26,6 +31,18 @@ Codex OSS Lens keeps that analysis local. It does not upload prompts, code, logs
 paths to a hosted service.
 
 ![Dashboard preview](examples/dashboard-preview.png)
+
+## Current status
+
+| Area | Status |
+| --- | --- |
+| Local JSONL scan | Available |
+| Dashboard preview | Available |
+| Weekly Markdown export | Available |
+| Path redaction | Basename, hash, or private full path |
+| Git branch/commit context | Codex payload and local `.git` fallback |
+| Workflow classification | Metadata-only heuristics |
+| API-backed summaries | Planned as opt-in aggregate-only dry run first |
 
 ## Quick start
 
@@ -99,6 +116,15 @@ session, workspace, model, turn, tool, and quota-window data.
 Full workspace paths are redacted unless `--show-paths` is passed. Use `--redaction hash`
 when a report needs stable workspace identities without exposing names.
 
+See [report schema](docs/report-schema.md) for the generated JSON shape.
+
+## Privacy posture
+
+- Raw rollout JSONL stays on the local machine.
+- Shareable exports redact workspace paths by default.
+- Workflow labels are derived from metadata such as branch names, event categories, and counts.
+- Future API-backed features should start with a dry-run payload and explicit opt-in.
+
 ## Roadmap
 
 - Redaction controls for workspace path display
@@ -108,6 +134,11 @@ when a report needs stable workspace identities without exposing names.
 - Optional OpenAI API summarization of local-only aggregate metrics
 
 See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API plan.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports and integration requests are welcome,
+especially examples from maintainers using Codex across multiple repositories.
 
 ## License
 

@@ -101,6 +101,23 @@
         padding: 24px 0 40px;
       }
 
+      .meta-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .meta-item {
+        min-height: 54px;
+        border: 1px solid var(--line);
+        background: #eaf0ef;
+        padding: 10px 12px;
+        display: grid;
+        align-content: center;
+        gap: 3px;
+      }
+
       .kpis {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -237,6 +254,37 @@
         overflow-x: auto;
       }
 
+      .badge {
+        display: inline-flex;
+        min-height: 24px;
+        align-items: center;
+        border: 1px solid #c8d2d8;
+        background: #eef4f2;
+        padding: 0 8px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .badge.implementation {
+        border-color: #9fc6bb;
+        color: var(--green);
+      }
+
+      .badge.review {
+        border-color: #aac2df;
+        color: var(--blue);
+      }
+
+      .badge.triage {
+        border-color: #d9c391;
+        color: var(--amber);
+      }
+
+      .badge.security {
+        border-color: #d99aaa;
+        color: var(--rose);
+      }
+
       @media (max-width: 860px) {
         .header-inner {
           grid-template-columns: 1fr;
@@ -244,6 +292,7 @@
         }
 
         .kpis,
+        .meta-row,
         .grid {
           grid-template-columns: 1fr;
         }
@@ -276,6 +325,7 @@
         </div>
       </header>
       <main>
+        <section class="meta-row" id="metaRow"></section>
         <section class="kpis" id="kpis"></section>
         <section class="grid">
           <article class="panel">
@@ -375,6 +425,7 @@
 
       function render(report) {
         activeReport = report;
+        renderMeta(report);
         renderKpis(report);
         renderBars("dailyBars", report.byDay, (key, row) => [key, row.sessions, row.tokens?.total || 0], "blue");
         renderRateLimits(report.totals.latestRateLimits);
@@ -382,6 +433,21 @@
         renderBars("modelBars", report.byModel, (key, row) => [key, row.sessions, row.tokens?.total || 0], "");
         renderBars("workflowBars", report.byWorkflow, (key, row) => [key, row.sessions, row.tokens?.total || 0], "blue");
         renderSessions(report.sessions || []);
+      }
+
+      function renderMeta(report) {
+        const generated = new Date(report.generatedAt);
+        const plan = report.totals.planType || "unknown";
+        const workflows = Object.keys(report.byWorkflow || {}).length;
+        const latest = report.sessions?.[0]?.git?.branch || "no branch";
+        const rows = [
+          ["Generated", Number.isNaN(generated.valueOf()) ? "unknown" : formatDate.format(generated)],
+          ["Plan", plan],
+          ["Workflow labels", `${workflows} active, latest ${latest}`],
+        ];
+        document.getElementById("metaRow").innerHTML = rows
+          .map(([label, value]) => `<article class="meta-item"><div class="label">${label}</div><strong>${escapeHtml(value)}</strong></article>`)
+          .join("");
       }
 
       function exportWeeklyReport() {
@@ -513,7 +579,7 @@
                 .map((session) => `<tr>
                   <td>${formatDate.format(new Date(session.startedAt))}</td>
                   <td>${escapeHtml(session.workspace)}</td>
-                  <td>${escapeHtml(session.workflow || "unknown")}</td>
+                  <td><span class="badge ${escapeHtml(session.workflow || "unknown")}">${escapeHtml(session.workflow || "unknown")}</span></td>
                   <td>${escapeHtml(session.git?.branch || "-")}</td>
                   <td>${escapeHtml(session.git?.commit || "-")}</td>
                   <td>${escapeHtml((session.models || []).join(", ") || "unknown")}</td>
