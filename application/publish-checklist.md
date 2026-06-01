@@ -11,3 +11,8 @@
    - Connect GitHub PR/issue outcomes to Codex sessions
 7. Fill the OpenAI form with the answers in `application/form-answers.md`.
 8. Stop before pressing Submit unless the account owner has reviewed the terms and personal fields.
+
+## Deferred
+
+- GitHub Actions workflow requires a GitHub token with `workflow` scope. Add the Node test workflow
+  after reauthenticating `gh` with that scope.
