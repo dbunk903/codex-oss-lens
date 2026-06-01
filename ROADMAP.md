@@ -10,8 +10,8 @@
 ## v0.3 - Maintenance Outcome Signals
 
 - Connect local sessions to Git branch names and commit metadata
-- Optional GitHub issue/PR import
 - Label sessions by workflow: triage, review, implementation, release, security
+- Optional GitHub issue/PR import
 - Export before/after metrics for maintainer reports
 
 ## v0.4 - API Credit Workflows

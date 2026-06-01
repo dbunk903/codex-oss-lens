@@ -12,6 +12,8 @@ release, or triage sprint:
 - Are 5-hour or weekly quota windows close to saturation?
 - Which models are used across maintenance work?
 - How many turns and tool calls are common in recent sessions?
+- Which branch/commit was active during a Codex session?
+- Is the recent workload implementation, review, triage, release, or security-oriented?
 - Which Codex workflows deserve API-credit automation next?
 
 ## Why this exists
@@ -86,6 +88,8 @@ It extracts:
 
 - session metadata: id, start/end timestamps, workspace, model
 - workflow metrics: turn count, tool-call count, duration
+- Git metadata: branch and short commit when Codex logs or local `.git` metadata provide it
+- workflow classification: implementation, review, triage, release, security, or unknown
 - token signals when available in `token_count` or `usage` payloads
 - quota windows from `rate_limits.primary` and `rate_limits.secondary`
 

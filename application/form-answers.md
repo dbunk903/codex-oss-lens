@@ -15,11 +15,11 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 ## Public evidence links
 
 - Repository: https://github.com/dbunk903/codex-oss-lens
-- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v0.2.0
+- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v0.3.0
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
-- Closed issues: #1, #2, #5
-- Open development issues: #3, #4
+- Closed issues: #1, #2, #3, #4, #5
+- Open development issues: next GitHub import and API dry-run issues after v0.3.0
 
 ## Repository fit answer - max 500 Korean characters
 
@@ -36,7 +36,7 @@ API 크레딧은 로컬 집계 결과를 기반으로 주간 메인테이너 리
 
 ## Additional information - max 500 Korean characters
 
-현재 v0.2.0 공개 릴리스가 있습니다. 의존성 없는 Node CLI와 정적 UI로 구성되어 있고, 경로 기본 비식별화/hash 모드, rollout JSONL quota/token 분석, 주간 maintainer 리포트 export를 제공합니다. 공개 issues #1/#2/#5를 처리했으며, 다음은 PR/issue 결과 연결과 workflow 분류입니다.
+현재 v0.3.0 공개 릴리스가 있습니다. 의존성 없는 Node CLI와 정적 UI로 구성되어 있고, 경로 비식별화/hash 모드, rollout JSONL quota/token 분석, 주간 리포트 export, Git branch/commit 연결, workflow 분류를 제공합니다. 공개 issues #1-#5를 처리해 유지관리 활동도 남겼습니다.
 
 ## Final manual submission steps
 

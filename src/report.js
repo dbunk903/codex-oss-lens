@@ -2,6 +2,7 @@ export function renderWeeklyReport(report) {
   const generatedAt = new Date(report.generatedAt).toISOString().slice(0, 10);
   const topWorkspaces = topEntries(report.byWorkspace, 5);
   const topModels = topEntries(report.byModel, 5);
+  const topWorkflows = topEntries(report.byWorkflow, 5);
   const rate = report.totals.latestRateLimits;
 
   return [
@@ -32,6 +33,12 @@ export function renderWeeklyReport(report) {
     "",
     ...renderBullets(topModels, ([name, row]) => {
       return `${name}: ${row.sessions} sessions, ${formatNumber(row.tokens.total)} tokens`;
+    }),
+    "",
+    "## Workflow Mix",
+    "",
+    ...renderBullets(topWorkflows, ([name, row]) => {
+      return `${name}: ${row.sessions} sessions, ${row.turns} turns, ${formatNumber(row.tokens.total)} tokens`;
     }),
     "",
     "## Maintainer Notes",

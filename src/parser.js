@@ -82,6 +82,7 @@ export async function summarizeRollout(file, codexHome = defaultCodexHome(), opt
     tokens: emptyTokens(),
     latestRateLimits: null,
     planType: null,
+    git: null,
   };
 
   for (const line of raw.split(/\r?\n/)) {
@@ -108,13 +109,14 @@ export async function summarizeRollout(file, codexHome = defaultCodexHome(), opt
     const payload = item.payload || {};
     if (payload.id && item.type === "session_meta") session.id = payload.id;
     if (payload.cwd) session.cwd = payload.cwd;
+    if (payload.git) session.git = normalizeGitMetadata(payload.git);
     if (payload.model) session.models.add(payload.model);
     if (payload.collaboration_mode?.settings?.model) {
       session.models.add(payload.collaboration_mode.settings.model);
     }
 
     if (payload.type === "token_count") {
-      mergeTokens(session.tokens, extractTokens(payload.info || payload));
+      setTokens(session.tokens, extractTokens(payload.info || payload));
       if (payload.rate_limits) {
         session.latestRateLimits = normalizeRateLimits(payload.rate_limits);
         session.planType = payload.rate_limits.plan_type || session.planType;
@@ -126,11 +128,16 @@ export async function summarizeRollout(file, codexHome = defaultCodexHome(), opt
 
   if (!session.startedAt) return null;
 
+  const git = session.git || (await readGitMetadata(session.cwd));
+  const workflow = classifyWorkflow({ ...session, git });
+
   return {
     ...session,
     cwd: redactPath(session.cwd, redaction),
     workspace: workspaceName(session.cwd),
     models: [...session.models],
+    git,
+    workflow,
     durationMinutes: diffMinutes(session.startedAt, session.endedAt),
   };
 }
@@ -150,6 +157,7 @@ export function buildReport(sessions) {
   const byDay = {};
   const byWorkspace = {};
   const byModel = {};
+  const byWorkflow = {};
 
   for (const session of sessions) {
     totals.workspaces.add(session.workspace);
@@ -177,6 +185,17 @@ export function buildReport(sessions) {
     byWorkspace[session.workspace].toolCalls += session.toolCalls;
     mergeTokens(byWorkspace[session.workspace].tokens, session.tokens);
 
+    byWorkflow[session.workflow] = byWorkflow[session.workflow] || {
+      sessions: 0,
+      turns: 0,
+      toolCalls: 0,
+      tokens: emptyTokens(),
+    };
+    byWorkflow[session.workflow].sessions += 1;
+    byWorkflow[session.workflow].turns += session.turns;
+    byWorkflow[session.workflow].toolCalls += session.toolCalls;
+    mergeTokens(byWorkflow[session.workflow].tokens, session.tokens);
+
     for (const model of session.models) {
       totals.models.add(model);
       byModel[model] = byModel[model] || { sessions: 0, tokens: emptyTokens() };
@@ -195,6 +214,7 @@ export function buildReport(sessions) {
     byDay,
     byWorkspace,
     byModel,
+    byWorkflow,
     sessions,
   };
 }
@@ -217,6 +237,12 @@ function demoSession(id, startedAt, workspace, model, turns, toolCalls, totalTok
     startedAt,
     endedAt: new Date(new Date(startedAt).getTime() + turns * 6 * 60_000).toISOString(),
     models: [model],
+    git: {
+      branch: workspace === "codex" ? "main" : "feature/codex-maintenance",
+      commit: crypto.createHash("sha256").update(id).digest("hex").slice(0, 12),
+      repository: workspace,
+    },
+    workflow: id === "demo-c" ? "review" : id === "demo-d" ? "triage" : "implementation",
     eventCounts: { turn_context: turns, token_count: turns },
     turns,
     toolCalls,
@@ -278,6 +304,120 @@ function normalizeWindow(window) {
   };
 }
 
+function normalizeGitMetadata(git) {
+  if (!git || typeof git !== "object") return null;
+  const commit = git.commit_hash || git.commit || git.sha || null;
+  const repository = git.repository || repositoryName(git.repository_url);
+  return {
+    branch: git.branch || null,
+    commit: commit ? String(commit).slice(0, 12) : null,
+    repository: repository || null,
+  };
+}
+
+async function readGitMetadata(cwd) {
+  if (!cwd) return null;
+
+  const gitDir = await findGitDir(cwd);
+  if (!gitDir) return null;
+
+  let head;
+  try {
+    head = (await fs.readFile(path.join(gitDir, "HEAD"), "utf8")).trim();
+  } catch {
+    return null;
+  }
+
+  if (head.startsWith("ref: ")) {
+    const ref = head.slice(5);
+    const branch = ref.replace(/^refs\/heads\//, "");
+    const commit = await readRef(gitDir, ref);
+    return { branch, commit: commit?.slice(0, 12) || null, repository: null };
+  }
+
+  return { branch: null, commit: head.slice(0, 12), repository: null };
+}
+
+async function findGitDir(cwd) {
+  let current = cwd;
+  while (current && current !== path.dirname(current)) {
+    const candidate = path.join(current, ".git");
+    try {
+      const stat = await fs.stat(candidate);
+      if (stat.isDirectory()) return candidate;
+      if (stat.isFile()) return await readGitdirFile(candidate);
+    } catch {
+      // Keep walking up to support nested workspaces.
+    }
+    current = path.dirname(current);
+  }
+  return null;
+}
+
+async function readGitdirFile(file) {
+  try {
+    const content = (await fs.readFile(file, "utf8")).trim();
+    const match = content.match(/^gitdir:\s*(.+)$/);
+    if (!match) return null;
+    return path.resolve(path.dirname(file), match[1]);
+  } catch {
+    return null;
+  }
+}
+
+async function readRef(gitDir, ref) {
+  try {
+    return (await fs.readFile(path.join(gitDir, ref), "utf8")).trim();
+  } catch {
+    return readPackedRef(gitDir, ref);
+  }
+}
+
+async function readPackedRef(gitDir, ref) {
+  try {
+    const packed = await fs.readFile(path.join(gitDir, "packed-refs"), "utf8");
+    for (const line of packed.split(/\r?\n/)) {
+      if (line.startsWith("#") || !line.trim()) continue;
+      const [commit, packedRef] = line.split(" ");
+      if (packedRef === ref) return commit;
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function repositoryName(url) {
+  if (!url) return null;
+  const withoutSuffix = String(url).replace(/\.git$/, "");
+  const parts = withoutSuffix.split(/[/:]/).filter(Boolean);
+  return parts.at(-1) || null;
+}
+
+function classifyWorkflow(session) {
+  const haystack = [
+    session.id,
+    session.file,
+    session.workspace,
+    session.git?.branch,
+    session.git?.repository,
+    ...Object.keys(session.eventCounts || {}),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  if (/\b(security|cve|vuln|vulnerability|secret|auth)\b/.test(haystack)) return "security";
+  if (/\b(release|publish|version|changelog|tag)\b/.test(haystack)) return "release";
+  if (/\b(review|pr|pull-request|pull_request|code-review)\b/.test(haystack)) return "review";
+  if (/\b(issue|triage|bug|support|question)\b/.test(haystack)) return "triage";
+  if (session.turns >= 8 || session.toolCalls >= 3 || /\b(feature|fix|impl|implement)\b/.test(haystack)) {
+    return "implementation";
+  }
+  if (session.turns <= 3 && session.toolCalls === 0) return "triage";
+  return "unknown";
+}
+
 function emptyTokens() {
   return { input: 0, cachedInput: 0, output: 0, reasoningOutput: 0, total: 0 };
 }
@@ -288,6 +428,14 @@ function mergeTokens(target, source) {
   target.output += source.output || 0;
   target.reasoningOutput += source.reasoningOutput || 0;
   target.total += source.total || 0;
+}
+
+function setTokens(target, source) {
+  target.input = source.input || 0;
+  target.cachedInput = source.cachedInput || 0;
+  target.output = source.output || 0;
+  target.reasoningOutput = source.reasoningOutput || 0;
+  target.total = source.total || 0;
 }
 
 function minDate(current, next) {

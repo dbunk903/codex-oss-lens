@@ -55,11 +55,13 @@ test("summarizes Codex rollout files", async () => {
   assert.equal(session.turns, 1);
   assert.equal(session.tokens.total, 160);
   assert.equal(session.latestRateLimits.primary.usedPercent, 8);
+  assert.equal(session.workflow, "triage");
 
   const report = await scanCodexHome({ codexHome: dir });
   assert.equal(report.totals.sessions, 1);
   assert.equal(report.totals.workspaces, 1);
   assert.equal(report.byWorkspace.codex.tokens.total, 160);
+  assert.equal(report.byWorkflow.triage.sessions, 1);
 });
 
 test("can keep full paths for private reports", async () => {
@@ -99,4 +101,96 @@ test("can hash workspace paths for shareable reports", async () => {
   const report = await scanCodexHome({ codexHome: dir, redaction: "hash" });
   assert.match(report.sessions[0].cwd, /^\[workspace:[a-f0-9]{10}\]$/);
   assert.equal(report.sessions[0].workspace, "tooling");
+});
+
+test("uses Codex git metadata when present", async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "codex-oss-lens-git-payload-"));
+  const sessionsDir = path.join(dir, "sessions", "2026", "06", "02");
+  await fs.mkdir(sessionsDir, { recursive: true });
+  const file = path.join(sessionsDir, "rollout-2026-06-02T09-00-00-review.jsonl");
+  await fs.writeFile(
+    file,
+    JSON.stringify({
+      timestamp: "2026-06-02T09:00:00.000Z",
+      type: "session_meta",
+      payload: {
+        id: "review-session",
+        cwd: "/private/repo/design-system",
+        model: "gpt-5.5",
+        git: {
+          branch: "review/pr-12",
+          commit_hash: "1234567890abcdef1234567890abcdef12345678",
+          repository_url: "git@github.com:example/design-system.git",
+        },
+      },
+    }),
+    "utf8",
+  );
+
+  const session = await summarizeRollout(file, dir);
+  assert.deepEqual(session.git, {
+    branch: "review/pr-12",
+    commit: "1234567890ab",
+    repository: "design-system",
+  });
+  assert.equal(session.workflow, "review");
+});
+
+test("uses the latest token_count event instead of summing snapshots", async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "codex-oss-lens-token-snapshots-"));
+  const sessionsDir = path.join(dir, "sessions", "2026", "06", "02");
+  await fs.mkdir(sessionsDir, { recursive: true });
+  const file = path.join(sessionsDir, "rollout-2026-06-02T09-30-00-demo.jsonl");
+  await fs.writeFile(
+    file,
+    [
+      JSON.stringify({
+        timestamp: "2026-06-02T09:30:00.000Z",
+        type: "session_meta",
+        payload: { cwd: "/private/repo/codex", model: "gpt-5.5" },
+      }),
+      JSON.stringify({
+        timestamp: "2026-06-02T09:31:00.000Z",
+        type: "event_msg",
+        payload: { type: "token_count", info: { total_tokens: 100 } },
+      }),
+      JSON.stringify({
+        timestamp: "2026-06-02T09:32:00.000Z",
+        type: "event_msg",
+        payload: { type: "token_count", info: { total_tokens: 150 } },
+      }),
+    ].join("\n"),
+    "utf8",
+  );
+
+  const session = await summarizeRollout(file, dir);
+  assert.equal(session.tokens.total, 150);
+});
+
+test("falls back to local git metadata without reading source files", async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "codex-oss-lens-git-fallback-"));
+  const workspace = path.join(dir, "workspace");
+  const sessionsDir = path.join(dir, "sessions", "2026", "06", "02");
+  const commit = "abcdef1234567890abcdef1234567890abcdef12";
+  await fs.mkdir(path.join(workspace, ".git", "refs", "heads", "feature"), { recursive: true });
+  await fs.mkdir(sessionsDir, { recursive: true });
+  await fs.writeFile(path.join(workspace, ".git", "HEAD"), "ref: refs/heads/feature/session-link\n", "utf8");
+  await fs.writeFile(path.join(workspace, ".git", "refs", "heads", "feature/session-link"), `${commit}\n`, "utf8");
+  const file = path.join(sessionsDir, "rollout-2026-06-02T10-00-00-demo.jsonl");
+  await fs.writeFile(
+    file,
+    JSON.stringify({
+      timestamp: "2026-06-02T10:00:00.000Z",
+      type: "session_meta",
+      payload: { cwd: workspace, model: "gpt-5.5" },
+    }),
+    "utf8",
+  );
+
+  const session = await summarizeRollout(file, dir);
+  assert.deepEqual(session.git, {
+    branch: "feature/session-link",
+    commit: commit.slice(0, 12),
+    repository: null,
+  });
 });

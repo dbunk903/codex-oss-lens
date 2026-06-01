@@ -27,6 +27,12 @@ Generated: 2026-06-01
 - gpt-5.3-codex: 1 sessions, 68,000 tokens
 - gpt-5.4: 1 sessions, 37,000 tokens
 
+## Workflow Mix
+
+- implementation: 2 sessions, 27 turns, 192,000 tokens
+- review: 1 sessions, 13 turns, 92,000 tokens
+- triage: 1 sessions, 6 turns, 37,000 tokens
+
 ## Maintainer Notes
 
 - Review high-turn sessions for missing project instructions or flaky verification loops.
