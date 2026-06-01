@@ -12,6 +12,15 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 - Role: Primary maintainer
 - OpenAI organization ID: TODO - from https://platform.openai.com/settings/organization/general
 
+## Public evidence links
+
+- Repository: https://github.com/dbunk903/codex-oss-lens
+- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v0.2.0
+- Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
+- Closed issues: #1, #2, #5
+- Open development issues: #3, #4
+
 ## Repository fit answer - max 500 Korean characters
 
 Codex OSS Lens는 OpenAI Codex CLI 세션 로그를 로컬에서 분석해 OSS 메인테이너가 사용량, 5시간/주간 quota, 워크스페이스별 작업량, 모델 사용 비중을 한 화면에서 볼 수 있게 하는 공개 도구입니다. Codex를 실제 유지관리 워크플로에 쓰는 프로젝트가 늘수록 “어디에 Codex 시간이 쓰였는가”를 투명하게 파악해야 하므로 생태계 보조 도구로 가치가 있습니다.
@@ -27,7 +36,15 @@ API 크레딧은 로컬 집계 결과를 기반으로 주간 메인테이너 리
 
 ## Additional information - max 500 Korean characters
 
-현재 MVP는 의존성 없는 Node CLI와 정적 UI로 구성되어 바로 실행 가능합니다. 경로는 기본 비식별화하고 hash 모드도 지원하며, rollout JSONL에서 quota/token 신호를 읽습니다. 주간 maintainer 리포트 export도 제공하며, 향후 PR/issue 결과와 연결해 Codex가 유지관리 처리량에 미치는 영향을 보여주겠습니다.
+현재 v0.2.0 공개 릴리스가 있습니다. 의존성 없는 Node CLI와 정적 UI로 구성되어 있고, 경로 기본 비식별화/hash 모드, rollout JSONL quota/token 분석, 주간 maintainer 리포트 export를 제공합니다. 공개 issues #1/#2/#5를 처리했으며, 다음은 PR/issue 결과 연결과 workflow 분류입니다.
+
+## Final manual submission steps
+
+1. Open https://openai.com/ko-KR/form/codex-for-oss/
+2. Fill the personal fields above.
+3. Paste the three Korean answers from this file.
+4. Use repository URL `https://github.com/dbunk903/codex-oss-lens`.
+5. Review the terms and submit from the account owner's browser session.
 
 ## Stronger submission note
 
