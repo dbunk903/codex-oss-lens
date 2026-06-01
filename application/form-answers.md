@@ -8,7 +8,7 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 - First name: TODO
 - Email: TODO - use the email registered to the ChatGPT account
 - GitHub username: TODO - profile must be public
-- GitHub repository URL: TODO - publish this repo first, for example `https://github.com/<user>/codex-oss-lens`
+- GitHub repository URL: https://github.com/dbunk903/codex-oss-lens
 - Role: Primary maintainer
 - OpenAI organization ID: TODO - from https://platform.openai.com/settings/organization/general
 
