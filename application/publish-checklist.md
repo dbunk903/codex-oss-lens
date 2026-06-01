@@ -1,0 +1,13 @@
+# Publish Checklist
+
+1. Create a public GitHub repository named `codex-oss-lens`.
+2. Push this workspace to the repository.
+3. Add a short repository description: `Local-first usage dashboard for OpenAI Codex session logs.`
+4. Add topics: `openai`, `codex`, `usage-dashboard`, `oss-maintenance`, `jsonl`.
+5. Create an initial release `v0.1.0`.
+6. Open 3 starter issues:
+   - Add redaction controls for workspace paths
+   - Add weekly maintainer report export
+   - Connect GitHub PR/issue outcomes to Codex sessions
+7. Fill the OpenAI form with the answers in `application/form-answers.md`.
+8. Stop before pressing Submit unless the account owner has reviewed the terms and personal fields.

@@ -1,0 +1,25 @@
+{
+  "name": "codex-oss-lens",
+  "version": "0.1.0",
+  "description": "Local-first usage and workflow dashboard for OpenAI Codex session logs.",
+  "type": "module",
+  "bin": {
+    "codex-oss-lens": "./src/cli.js"
+  },
+  "scripts": {
+    "scan": "node src/cli.js scan",
+    "serve": "node src/cli.js serve",
+    "test": "node --test"
+  },
+  "keywords": [
+    "codex",
+    "openai",
+    "usage",
+    "dashboard",
+    "oss"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex OSS Lens</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1f2933;
+        --muted: #5d6b78;
+        --line: #d8dee4;
+        --panel: #ffffff;
+        --band: #f4f7f9;
+        --green: #167d68;
+        --blue: #2563a8;
+        --rose: #a43f55;
+        --amber: #9c6b1c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--band);
+        color: var(--ink);
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .app {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+
+      header {
+        background: #132320;
+        color: #f7fbf9;
+        border-bottom: 1px solid #0d1917;
+      }
+
+      .header-inner,
+      main {
+        width: min(1180px, calc(100vw - 32px));
+        margin: 0 auto;
+      }
+
+      .header-inner {
+        min-height: 112px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(28px, 4vw, 48px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        margin: 0;
+        max-width: 760px;
+        color: #bfd3cc;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .file-button,
+      .ghost-button {
+        border: 1px solid #6c817a;
+        background: transparent;
+        color: #f7fbf9;
+        min-height: 40px;
+        padding: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .file-button input {
+        display: none;
+      }
+
+      main {
+        padding: 24px 0 40px;
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .kpi,
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+
+      .kpi {
+        padding: 16px;
+        min-height: 112px;
+        display: grid;
+        align-content: space-between;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .value {
+        font-size: 32px;
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 18px;
+      }
+
+      .panel {
+        padding: 18px;
+        min-width: 0;
+      }
+
+      .panel h2 {
+        margin: 0 0 14px;
+        font-size: 17px;
+      }
+
+      .bar-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 150px 1fr 74px;
+        gap: 12px;
+        align-items: center;
+        min-height: 30px;
+      }
+
+      .bar-track {
+        height: 10px;
+        background: #e8edf0;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 100%;
+        background: var(--green);
+      }
+
+      .bar-fill.blue {
+        background: var(--blue);
+      }
+
+      .bar-fill.amber {
+        background: var(--amber);
+      }
+
+      .bar-fill.rose {
+        background: var(--rose);
+      }
+
+      .rate-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .rate {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rate-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
+
+      th,
+      td {
+        padding: 10px 8px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      th {
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .full {
+        grid-column: 1 / -1;
+      }
+
+      .empty {
+        color: var(--muted);
+        padding: 24px;
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .header-inner {
+          grid-template-columns: 1fr;
+          padding: 22px 0;
+        }
+
+        .kpis,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bar-row {
+          grid-template-columns: 92px 1fr 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div class="header-inner">
+          <div>
+            <h1>Codex OSS Lens</h1>
+            <p class="subtitle">
+              Local-first Codex usage visibility for OSS maintainers: quota windows, workspace load,
+              model mix, and session throughput from rollout JSONL files.
+            </p>
+          </div>
+          <div class="actions">
+            <label class="file-button">
+              Open report
+              <input id="fileInput" type="file" accept="application/json,.json" />
+            </label>
+            <button class="ghost-button" id="demoButton" type="button">Demo data</button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="kpis" id="kpis"></section>
+        <section class="grid">
+          <article class="panel">
+            <h2>Daily Session Load</h2>
+            <div class="bar-list" id="dailyBars"></div>
+          </article>
+          <article class="panel">
+            <h2>Quota Windows</h2>
+            <div class="rate-grid" id="rateLimits"></div>
+          </article>
+          <article class="panel">
+            <h2>Workspace Hotspots</h2>
+            <div class="bar-list" id="workspaceBars"></div>
+          </article>
+          <article class="panel">
+            <h2>Model Mix</h2>
+            <div class="bar-list" id="modelBars"></div>
+          </article>
+          <article class="panel full">
+            <h2>Recent Sessions</h2>
+            <div id="sessionTable"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const demoData = {
+        "generatedAt": "2026-06-01T00:00:00.000Z",
+        "totals": {
+          "sessions": 4,
+          "workspaces": 3,
+          "models": ["gpt-5.5", "gpt-5.3-codex", "gpt-5.4"],
+          "tokens": { "input": 186180, "cachedInput": 67410, "output": 54570, "reasoningOutput": 12840, "total": 321000 },
+          "toolCalls": 14,
+          "turns": 46,
+          "latestRateLimits": {
+            "primary": { "usedPercent": 6, "windowMinutes": 300, "resetsAt": null },
+            "secondary": { "usedPercent": 4, "windowMinutes": 10080, "resetsAt": null }
+          },
+          "planType": "pro"
+        },
+        "byDay": {
+          "2026-06-01": { "sessions": 2, "tokens": { "total": 192000 } },
+          "2026-05-31": { "sessions": 1, "tokens": { "total": 92000 } },
+          "2026-05-30": { "sessions": 1, "tokens": { "total": 37000 } }
+        },
+        "byWorkspace": {
+          "codex": { "sessions": 2, "turns": 24, "toolCalls": 8, "tokens": { "total": 161000 } },
+          "api-gateway": { "sessions": 1, "turns": 9, "toolCalls": 2, "tokens": { "total": 68000 } },
+          "design-system": { "sessions": 1, "turns": 13, "toolCalls": 4, "tokens": { "total": 92000 } }
+        },
+        "byModel": {
+          "gpt-5.5": { "sessions": 2, "tokens": { "total": 216000 } },
+          "gpt-5.3-codex": { "sessions": 1, "tokens": { "total": 68000 } },
+          "gpt-5.4": { "sessions": 1, "tokens": { "total": 37000 } }
+        },
+        "sessions": [
+          { "id": "demo-a", "workspace": "codex", "startedAt": "2026-06-01T09:15:00.000Z", "models": ["gpt-5.5"], "turns": 18, "toolCalls": 7, "durationMinutes": 108, "tokens": { "total": 124000 } },
+          { "id": "demo-b", "workspace": "api-gateway", "startedAt": "2026-06-01T12:45:00.000Z", "models": ["gpt-5.3-codex"], "turns": 9, "toolCalls": 2, "durationMinutes": 54, "tokens": { "total": 68000 } },
+          { "id": "demo-c", "workspace": "design-system", "startedAt": "2026-05-31T18:20:00.000Z", "models": ["gpt-5.5"], "turns": 13, "toolCalls": 4, "durationMinutes": 78, "tokens": { "total": 92000 } },
+          { "id": "demo-d", "workspace": "codex", "startedAt": "2026-05-30T08:05:00.000Z", "models": ["gpt-5.4"], "turns": 6, "toolCalls": 1, "durationMinutes": 36, "tokens": { "total": 37000 } }
+        ]
+      };
+
+      const formatNumber = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
+      const formatDate = new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+
+      document.getElementById("demoButton").addEventListener("click", () => render(demoData));
+      document.getElementById("fileInput").addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        render(JSON.parse(await file.text()));
+      });
+
+      async function boot() {
+        try {
+          const response = await fetch("/codex-lens-report.json", { cache: "no-store" });
+          if (!response.ok) throw new Error("No generated report");
+          render(await response.json());
+        } catch {
+          render(demoData);
+        }
+      }
+
+      function render(report) {
+        renderKpis(report);
+        renderBars("dailyBars", report.byDay, (key, row) => [key, row.sessions, row.tokens?.total || 0], "blue");
+        renderRateLimits(report.totals.latestRateLimits);
+        renderBars("workspaceBars", report.byWorkspace, (key, row) => [key, row.sessions, row.tokens?.total || 0], "amber");
+        renderBars("modelBars", report.byModel, (key, row) => [key, row.sessions, row.tokens?.total || 0], "");
+        renderSessions(report.sessions || []);
+      }
+
+      function renderKpis(report) {
+        const kpis = [
+          ["Sessions", report.totals.sessions],
+          ["Workspaces", report.totals.workspaces],
+          ["Turns", report.totals.turns],
+          ["Observed tokens", report.totals.tokens?.total || 0],
+        ];
+        document.getElementById("kpis").innerHTML = kpis
+          .map(([label, value]) => `<article class="kpi"><div class="label">${label}</div><div class="value">${formatNumber.format(value)}</div></article>`)
+          .join("");
+      }
+
+      function renderBars(id, source, mapper, colorClass) {
+        const rows = Object.entries(source || {}).map(([key, row]) => mapper(key, row));
+        rows.sort((a, b) => b[2] - a[2] || b[1] - a[1]);
+        const max = Math.max(1, ...rows.map((row) => row[2] || row[1]));
+        document.getElementById(id).innerHTML = rows.length
+          ? rows
+              .slice(0, 8)
+              .map(([label, sessions, tokens]) => {
+                const width = Math.max(4, Math.round(((tokens || sessions) / max) * 100));
+                return `<div class="bar-row" title="${escapeHtml(label)}">
+                  <div class="label">${escapeHtml(label)}</div>
+                  <div class="bar-track"><div class="bar-fill ${colorClass}" style="width:${width}%"></div></div>
+                  <div class="label">${sessions} runs</div>
+                </div>`;
+              })
+              .join("")
+          : `<div class="empty">No data yet</div>`;
+      }
+
+      function renderRateLimits(rateLimits) {
+        const rows = [
+          ["5h window", rateLimits?.primary],
+          ["Weekly window", rateLimits?.secondary],
+        ];
+        document.getElementById("rateLimits").innerHTML = rows
+          .map(([label, window]) => {
+            const used = Math.round(window?.usedPercent || 0);
+            return `<div class="rate">
+              <div class="rate-top"><span>${label}</span><strong>${used}%</strong></div>
+              <div class="bar-track"><div class="bar-fill ${used > 80 ? "rose" : ""}" style="width:${Math.min(100, used)}%"></div></div>
+              <div class="label">${window?.windowMinutes ? `${window.windowMinutes} minute window` : "No live quota event found"}</div>
+            </div>`;
+          })
+          .join("");
+      }
+
+      function renderSessions(sessions) {
+        document.getElementById("sessionTable").innerHTML = sessions.length
+          ? `<table>
+              <thead><tr><th>Started</th><th>Workspace</th><th>Model</th><th>Turns</th><th>Tools</th><th>Tokens</th><th>Minutes</th></tr></thead>
+              <tbody>${sessions
+                .slice(0, 20)
+                .map((session) => `<tr>
+                  <td>${formatDate.format(new Date(session.startedAt))}</td>
+                  <td>${escapeHtml(session.workspace)}</td>
+                  <td>${escapeHtml((session.models || []).join(", ") || "unknown")}</td>
+                  <td>${session.turns || 0}</td>
+                  <td>${session.toolCalls || 0}</td>
+                  <td>${formatNumber.format(session.tokens?.total || 0)}</td>
+                  <td>${session.durationMinutes || 0}</td>
+                </tr>`)
+                .join("")}</tbody>
+            </table>`
+          : `<div class="empty">No sessions found</div>`;
+      }
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;",
+        })[char]);
+      }
+
+      boot();
+    </script>
+  </body>
+</html>
