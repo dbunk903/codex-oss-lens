@@ -49,6 +49,7 @@ function parseArgs(args) {
     else if (arg === "--port") options.port = Number(args[++i]);
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
+    else if (arg === "--redaction") options.redaction = args[++i];
     else if (arg === "--help" || arg === "-h") options.help = true;
   }
   if (options.help) printHelp();
@@ -121,7 +122,9 @@ Usage:
   codex-oss-lens demo [--out report.json]
 
 Privacy:
-  Workspace paths are redacted by default. Use --show-paths for private local reports.
+  Workspace paths use --redaction basename by default.
+  Use --redaction hash for stable anonymous workspace ids.
+  Use --show-paths for private local reports.
 `);
 }
 

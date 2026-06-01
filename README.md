@@ -41,7 +41,13 @@ To write a report that can be opened in the static UI:
 node src/cli.js scan --out examples/codex-lens-report.json
 ```
 
-Workspace paths are redacted by default. For a private local report with full paths:
+Workspace paths are redacted by default. For stable anonymous workspace ids:
+
+```bash
+node src/cli.js scan --redaction hash --out shareable-report.json
+```
+
+For a private local report with full paths:
 
 ```bash
 node src/cli.js scan --show-paths --out private-report.json
@@ -86,7 +92,8 @@ It extracts:
 Older Codex logs may not contain token usage details. In that case the dashboard still shows
 session, workspace, model, turn, tool, and quota-window data.
 
-Full workspace paths are redacted unless `--show-paths` is passed.
+Full workspace paths are redacted unless `--show-paths` is passed. Use `--redaction hash`
+when a report needs stable workspace identities without exposing names.
 
 ## Roadmap
 

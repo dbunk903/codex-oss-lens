@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import os from "node:os";
+import crypto from "node:crypto";
 
 const TOKEN_KEYS = new Set([
   "input_tokens",
@@ -17,12 +18,12 @@ export function defaultCodexHome() {
 export async function scanCodexHome(options = {}) {
   const codexHome = options.codexHome || defaultCodexHome();
   const limit = Number.isFinite(options.limit) ? options.limit : 250;
-  const redactPaths = options.redactPaths !== false;
+  const redaction = normalizeRedaction(options);
   const files = await findRolloutFiles(path.join(codexHome, "sessions"), limit);
   const sessions = [];
 
   for (const file of files) {
-    const session = await summarizeRollout(file, codexHome, { redactPaths });
+    const session = await summarizeRollout(file, codexHome, { redaction });
     if (session) sessions.push(session);
   }
 
@@ -60,7 +61,7 @@ export async function findRolloutFiles(root, limit = 250) {
 }
 
 export async function summarizeRollout(file, codexHome = defaultCodexHome(), options = {}) {
-  const redactPaths = options.redactPaths !== false;
+  const redaction = normalizeRedaction(options);
   let raw;
   try {
     raw = await fs.readFile(file, "utf8");
@@ -127,7 +128,7 @@ export async function summarizeRollout(file, codexHome = defaultCodexHome(), opt
 
   return {
     ...session,
-    cwd: redactPaths ? redactPath(session.cwd) : session.cwd || "(unknown workspace)",
+    cwd: redactPath(session.cwd, redaction),
     workspace: workspaceName(session.cwd),
     models: [...session.models],
     durationMinutes: diffMinutes(session.startedAt, session.endedAt),
@@ -309,7 +310,18 @@ function workspaceName(cwd) {
   return path.basename(cwd) || cwd;
 }
 
-function redactPath(cwd) {
+function normalizeRedaction(options) {
+  if (options.redactPaths === false) return "none";
+  if (options.redaction) return options.redaction;
+  return "basename";
+}
+
+function redactPath(cwd, redaction) {
   if (!cwd) return "(unknown workspace)";
+  if (redaction === "none") return cwd;
+  if (redaction === "hash") {
+    const hash = crypto.createHash("sha256").update(cwd).digest("hex").slice(0, 10);
+    return `[workspace:${hash}]`;
+  }
   return path.join("[redacted]", workspaceName(cwd));
 }

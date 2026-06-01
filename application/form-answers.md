@@ -27,7 +27,7 @@ API 크레딧은 로컬 집계 결과를 기반으로 주간 메인테이너 리
 
 ## Additional information - max 500 Korean characters
 
-현재 MVP는 의존성 없는 Node CLI와 정적 UI로 구성되어 바로 실행 가능합니다. 경로는 기본 비식별화하고, `~/.codex/sessions/**/rollout-*.jsonl`에서 quota/token 신호를 읽습니다. 주간 maintainer 리포트 export도 제공하며, 향후 PR/issue 결과와 연결해 Codex가 유지관리 처리량에 미치는 영향을 보여주겠습니다.
+현재 MVP는 의존성 없는 Node CLI와 정적 UI로 구성되어 바로 실행 가능합니다. 경로는 기본 비식별화하고 hash 모드도 지원하며, rollout JSONL에서 quota/token 신호를 읽습니다. 주간 maintainer 리포트 export도 제공하며, 향후 PR/issue 결과와 연결해 Codex가 유지관리 처리량에 미치는 영향을 보여주겠습니다.
 
 ## Stronger submission note
 
