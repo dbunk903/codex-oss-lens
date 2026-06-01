@@ -265,6 +265,7 @@
               Open report
               <input id="fileInput" type="file" accept="application/json,.json" />
             </label>
+            <button class="ghost-button" id="exportButton" type="button">Export weekly</button>
             <button class="ghost-button" id="demoButton" type="button">Demo data</button>
           </div>
         </div>
@@ -339,11 +340,14 @@
       const formatDate = new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
 
       document.getElementById("demoButton").addEventListener("click", () => render(demoData));
+      document.getElementById("exportButton").addEventListener("click", exportWeeklyReport);
       document.getElementById("fileInput").addEventListener("change", async (event) => {
         const file = event.target.files[0];
         if (!file) return;
         render(JSON.parse(await file.text()));
       });
+
+      let activeReport = demoData;
 
       async function boot() {
         try {
@@ -356,12 +360,80 @@
       }
 
       function render(report) {
+        activeReport = report;
         renderKpis(report);
         renderBars("dailyBars", report.byDay, (key, row) => [key, row.sessions, row.tokens?.total || 0], "blue");
         renderRateLimits(report.totals.latestRateLimits);
         renderBars("workspaceBars", report.byWorkspace, (key, row) => [key, row.sessions, row.tokens?.total || 0], "amber");
         renderBars("modelBars", report.byModel, (key, row) => [key, row.sessions, row.tokens?.total || 0], "");
         renderSessions(report.sessions || []);
+      }
+
+      function exportWeeklyReport() {
+        const markdown = renderWeeklyMarkdown(activeReport);
+        const blob = new Blob([markdown], { type: "text/markdown;charset=utf-8" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `codex-weekly-report-${new Date().toISOString().slice(0, 10)}.md`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(link.href);
+      }
+
+      function renderWeeklyMarkdown(report) {
+        const rate = report.totals.latestRateLimits;
+        const workspaces = topEntries(report.byWorkspace, 5);
+        const models = topEntries(report.byModel, 5);
+        return [
+          "# Codex OSS Lens Weekly Report",
+          "",
+          `Generated: ${new Date(report.generatedAt).toISOString().slice(0, 10)}`,
+          "",
+          "## Summary",
+          "",
+          `- Sessions scanned: ${report.totals.sessions}`,
+          `- Workspaces touched: ${report.totals.workspaces}`,
+          `- Turns observed: ${report.totals.turns}`,
+          `- Tool calls observed: ${report.totals.toolCalls}`,
+          `- Observed tokens: ${number(report.totals.tokens?.total || 0)}`,
+          "",
+          "## Quota Windows",
+          "",
+          `- 5-hour window: ${percent(rate?.primary?.usedPercent)}`,
+          `- Weekly window: ${percent(rate?.secondary?.usedPercent)}`,
+          "",
+          "## Workspace Hotspots",
+          "",
+          ...workspaces.map(([name, row]) => `- ${name}: ${row.sessions} sessions, ${row.turns} turns, ${number(row.tokens?.total || 0)} tokens`),
+          ...(workspaces.length ? [] : ["- No data found."]),
+          "",
+          "## Model Mix",
+          "",
+          ...models.map(([name, row]) => `- ${name}: ${row.sessions} sessions, ${number(row.tokens?.total || 0)} tokens`),
+          ...(models.length ? [] : ["- No data found."]),
+          "",
+          "## Maintainer Notes",
+          "",
+          "- Review high-turn sessions for missing project instructions or flaky verification loops.",
+          "- Use workspace hotspots to prioritize automation candidates for API-credit backed workflows.",
+          "- Keep raw rollout JSONL local; share only this aggregate report when public evidence is needed.",
+          "",
+        ].join("\\n");
+      }
+
+      function topEntries(source, limit) {
+        return Object.entries(source || {})
+          .sort((a, b) => (b[1].tokens?.total || 0) - (a[1].tokens?.total || 0))
+          .slice(0, limit);
+      }
+
+      function number(value) {
+        return new Intl.NumberFormat("en").format(value || 0);
+      }
+
+      function percent(value) {
+        return Number.isFinite(value) ? `${Math.round(value)}%` : "not observed";
       }
 
       function renderKpis(report) {

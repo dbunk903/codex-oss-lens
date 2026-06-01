@@ -96,6 +96,8 @@ Full workspace paths are redacted unless `--show-paths` is passed.
 - GitHub issue/PR labels to connect Codex usage with maintenance outcomes
 - Optional OpenAI API summarization of local-only aggregate metrics
 
+See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API plan.
+
 ## License
 
 MIT
