@@ -17,11 +17,12 @@ export function defaultCodexHome() {
 export async function scanCodexHome(options = {}) {
   const codexHome = options.codexHome || defaultCodexHome();
   const limit = Number.isFinite(options.limit) ? options.limit : 250;
+  const redactPaths = options.redactPaths !== false;
   const files = await findRolloutFiles(path.join(codexHome, "sessions"), limit);
   const sessions = [];
 
   for (const file of files) {
-    const session = await summarizeRollout(file, codexHome);
+    const session = await summarizeRollout(file, codexHome, { redactPaths });
     if (session) sessions.push(session);
   }
 
@@ -58,7 +59,8 @@ export async function findRolloutFiles(root, limit = 250) {
     .map((item) => item.path);
 }
 
-export async function summarizeRollout(file, codexHome = defaultCodexHome()) {
+export async function summarizeRollout(file, codexHome = defaultCodexHome(), options = {}) {
+  const redactPaths = options.redactPaths !== false;
   let raw;
   try {
     raw = await fs.readFile(file, "utf8");
@@ -125,7 +127,7 @@ export async function summarizeRollout(file, codexHome = defaultCodexHome()) {
 
   return {
     ...session,
-    cwd: session.cwd || "(unknown workspace)",
+    cwd: redactPaths ? redactPath(session.cwd) : session.cwd || "(unknown workspace)",
     workspace: workspaceName(session.cwd),
     models: [...session.models],
     durationMinutes: diffMinutes(session.startedAt, session.endedAt),
@@ -305,4 +307,9 @@ function diffMinutes(startedAt, endedAt) {
 function workspaceName(cwd) {
   if (!cwd) return "(unknown)";
   return path.basename(cwd) || cwd;
+}
+
+function redactPath(cwd) {
+  if (!cwd) return "(unknown workspace)";
+  return path.join("[redacted]", workspaceName(cwd));
 }

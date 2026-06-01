@@ -4,6 +4,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { demoReport, scanCodexHome } from "./parser.js";
+import { renderWeeklyReport } from "./report.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -15,6 +16,12 @@ async function main() {
   if (command === "scan") {
     const report = options.demo ? demoReport() : await scanCodexHome(options);
     await writeReport(report, options.out);
+    return;
+  }
+
+  if (command === "weekly") {
+    const report = options.demo ? demoReport() : await scanCodexHome(options);
+    await writeText(renderWeeklyReport(report), options.out);
     return;
   }
 
@@ -41,6 +48,7 @@ function parseArgs(args) {
     else if (arg === "--limit") options.limit = Number(args[++i]);
     else if (arg === "--port") options.port = Number(args[++i]);
     else if (arg === "--demo") options.demo = true;
+    else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--help" || arg === "-h") options.help = true;
   }
   if (options.help) printHelp();
@@ -55,6 +63,15 @@ async function writeReport(report, outPath) {
   }
   await fs.mkdir(path.dirname(path.resolve(outPath)), { recursive: true });
   await fs.writeFile(outPath, json, "utf8");
+}
+
+async function writeText(text, outPath) {
+  if (!outPath) {
+    process.stdout.write(text);
+    return;
+  }
+  await fs.mkdir(path.dirname(path.resolve(outPath)), { recursive: true });
+  await fs.writeFile(outPath, text, "utf8");
 }
 
 async function serve(options) {
@@ -99,8 +116,12 @@ function printHelp() {
 
 Usage:
   codex-oss-lens scan [--codex-home ~/.codex] [--limit 250] [--out report.json]
+  codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
+
+Privacy:
+  Workspace paths are redacted by default. Use --show-paths for private local reports.
 `);
 }
 

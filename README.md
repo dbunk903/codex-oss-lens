@@ -41,6 +41,18 @@ To write a report that can be opened in the static UI:
 node src/cli.js scan --out examples/codex-lens-report.json
 ```
 
+Workspace paths are redacted by default. For a private local report with full paths:
+
+```bash
+node src/cli.js scan --show-paths --out private-report.json
+```
+
+To export a shareable weekly maintainer summary:
+
+```bash
+node src/cli.js weekly --out weekly-codex-report.md
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -51,6 +63,7 @@ node src/cli.js serve --demo
 
 ```bash
 codex-oss-lens scan [--codex-home ~/.codex] [--limit 250] [--out report.json]
+codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -72,6 +85,8 @@ It extracts:
 
 Older Codex logs may not contain token usage details. In that case the dashboard still shows
 session, workspace, model, turn, tool, and quota-window data.
+
+Full workspace paths are redacted unless `--show-paths` is passed.
 
 ## Roadmap
 

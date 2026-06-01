@@ -27,7 +27,7 @@ API 크레딧은 로컬 집계 결과를 기반으로 주간 메인테이너 리
 
 ## Additional information - max 500 Korean characters
 
-현재 MVP는 의존성 없는 Node CLI와 정적 UI로 구성되어 바로 실행 가능합니다. `~/.codex/sessions/**/rollout-*.jsonl`을 읽고, token_count/rate_limits 이벤트가 있을 때 quota와 token 신호를 표시합니다. 향후 GitHub PR/issue 결과와 연결해 Codex 사용이 유지관리 처리량과 품질에 미치는 영향을 보여주는 OSS maintainer dashboard로 확장할 계획입니다.
+현재 MVP는 의존성 없는 Node CLI와 정적 UI로 구성되어 바로 실행 가능합니다. 경로는 기본 비식별화하고, `~/.codex/sessions/**/rollout-*.jsonl`에서 quota/token 신호를 읽습니다. 주간 maintainer 리포트 export도 제공하며, 향후 PR/issue 결과와 연결해 Codex가 유지관리 처리량에 미치는 영향을 보여주겠습니다.
 
 ## Stronger submission note
 

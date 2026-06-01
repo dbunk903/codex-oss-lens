@@ -49,6 +49,7 @@ test("summarizes Codex rollout files", async () => {
 
   const session = await summarizeRollout(file, dir);
   assert.equal(session.id, "session-1");
+  assert.equal(session.cwd, "[redacted]/codex");
   assert.equal(session.workspace, "codex");
   assert.deepEqual(session.models, ["gpt-5.5"]);
   assert.equal(session.turns, 1);
@@ -59,4 +60,23 @@ test("summarizes Codex rollout files", async () => {
   assert.equal(report.totals.sessions, 1);
   assert.equal(report.totals.workspaces, 1);
   assert.equal(report.byWorkspace.codex.tokens.total, 160);
+});
+
+test("can keep full paths for private reports", async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "codex-oss-lens-paths-"));
+  const sessionsDir = path.join(dir, "sessions", "2026", "06", "01");
+  await fs.mkdir(sessionsDir, { recursive: true });
+  const file = path.join(sessionsDir, "rollout-2026-06-01T11-00-00-demo.jsonl");
+  await fs.writeFile(
+    file,
+    JSON.stringify({
+      timestamp: "2026-06-01T11:00:00.000Z",
+      type: "session_meta",
+      payload: { cwd: "/private/repo/tooling", model: "gpt-5.5" },
+    }),
+    "utf8",
+  );
+
+  const report = await scanCodexHome({ codexHome: dir, redactPaths: false });
+  assert.equal(report.sessions[0].cwd, "/private/repo/tooling");
 });
