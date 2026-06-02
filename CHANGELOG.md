@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.0 - Application Readiness
+
+- Added aggregate-only API summary dry-run payload generation.
+- Added optional GitHub issue and pull request metadata import through `gh`.
+- Added sample API payload and GitHub outcomes artifacts.
+- Expanded schema documentation for API dry-run and GitHub outcome imports.
+
 ## v0.3.1 - Repository Polish
 
 - Added README badges, current status table, and privacy posture summary.

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-02T06:55:53.503Z",
+  "purpose": "codex-maintainer-summary-dry-run",
+  "privacy": {
+    "rawLogsIncluded": false,
+    "promptsIncluded": false,
+    "sourceCodeIncluded": false,
+    "terminalOutputIncluded": false,
+    "fullPathsIncluded": false,
+    "inputFullPathsObserved": true
+  },
+  "totals": {
+    "sessions": 4,
+    "workspaces": 3,
+    "turns": 46,
+    "toolCalls": 14,
+    "tokens": {
+      "input": 186180,
+      "cachedInput": 67410,
+      "output": 54570,
+      "reasoningOutput": 12840,
+      "total": 321000
+    },
+    "planType": "pro"
+  },
+  "quotaWindows": {
+    "primaryUsedPercent": 6,
+    "secondaryUsedPercent": 4
+  },
+  "modelCounts": {
+    "gpt-5.5": 2,
+    "gpt-5.3-codex": 1,
+    "gpt-5.4": 1
+  },
+  "workflowCounts": {
+    "implementation": 2,
+    "review": 1,
+    "triage": 1
+  },
+  "dailySessionCounts": {
+    "2026-06-01": 2,
+    "2026-05-31": 1,
+    "2026-05-30": 1
+  },
+  "workspaceBuckets": [
+    {
+      "workspace": "[workspace:b1f5c537f9]",
+      "sessions": 2,
+      "turns": 24,
+      "toolCalls": 8,
+      "tokens": 161000,
+      "workflows": {
+        "implementation": 1,
+        "triage": 1
+      }
+    },
+    {
+      "workspace": "[workspace:59510ad2c9]",
+      "sessions": 1,
+      "turns": 13,
+      "toolCalls": 4,
+      "tokens": 92000,
+      "workflows": {
+        "review": 1
+      }
+    },
+    {
+      "workspace": "[workspace:10042cf50c]",
+      "sessions": 1,
+      "turns": 9,
+      "toolCalls": 2,
+      "tokens": 68000,
+      "workflows": {
+        "implementation": 1
+      }
+    }
+  ],
+  "frictionCandidates": [
+    {
+      "workflow": "implementation",
+      "turns": 18,
+      "toolCalls": 7,
+      "durationMinutes": 108,
+      "tokens": 124000,
+      "hasGitMetadata": true
+    }
+  ]
+}

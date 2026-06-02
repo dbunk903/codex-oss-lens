@@ -4,8 +4,8 @@
 2. Push this workspace to the repository. Done.
 3. Add a short repository description: `Local-first usage dashboard for OpenAI Codex session logs.` Done.
 4. Add topics: `openai`, `codex`, `usage-dashboard`, `oss-maintenance`, `jsonl`. Done.
-5. Create an initial release `v0.1.0`. Done. Follow-up releases `v0.2.0` and `v0.3.0` also published.
-6. Open 3 starter issues. Done. Issues #1 through #5 were implemented and closed.
+5. Create an initial release `v0.1.0`. Done. Follow-up releases through `v0.4.0` also published.
+6. Open 3 starter issues. Done. Issues #1 through #7 were implemented and closed.
    - Add redaction controls for workspace paths
    - Add weekly maintainer report export
    - Connect GitHub PR/issue outcomes to Codex sessions

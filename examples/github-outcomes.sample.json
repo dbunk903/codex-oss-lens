@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-02T06:58:39.536Z",
+  "repository": "dbunk903/codex-oss-lens",
+  "source": "github-cli",
+  "privacy": {
+    "rawCodexLogsIncluded": false,
+    "promptsIncluded": false,
+    "sourceCodeIncluded": false
+  },
+  "totals": {
+    "issues": 7,
+    "pullRequests": 0,
+    "closedIssues": 5,
+    "mergedPullRequests": 0,
+    "openPullRequests": 0
+  },
+  "issues": [
+    {
+      "number": 7,
+      "title": "Add API summary dry-run payload",
+      "state": "OPEN",
+      "labels": [
+        "enhancement",
+        "privacy",
+        "reporting"
+      ],
+      "createdAt": "2026-06-01T23:41:33Z",
+      "updatedAt": "2026-06-01T23:41:33Z",
+      "closedAt": null
+    },
+    {
+      "number": 6,
+      "title": "Add optional GitHub PR and issue import",
+      "state": "OPEN",
+      "labels": [
+        "enhancement",
+        "integration"
+      ],
+      "createdAt": "2026-06-01T23:41:32Z",
+      "updatedAt": "2026-06-01T23:41:32Z",
+      "closedAt": null
+    },
+    {
+      "number": 5,
+      "title": "Document API-credit backed aggregate summary workflow",
+      "state": "CLOSED",
+      "labels": [
+        "documentation",
+        "reporting"
+      ],
+      "createdAt": "2026-06-01T13:57:30Z",
+      "updatedAt": "2026-06-01T13:58:33Z",
+      "closedAt": "2026-06-01T13:58:33Z"
+    },
+    {
+      "number": 4,
+      "title": "Classify session workflow type",
+      "state": "CLOSED",
+      "labels": [
+        "enhancement",
+        "reporting"
+      ],
+      "createdAt": "2026-06-01T13:57:28Z",
+      "updatedAt": "2026-06-01T23:41:22Z",
+      "closedAt": "2026-06-01T23:41:22Z"
+    },
+    {
+      "number": 3,
+      "title": "Connect sessions to Git branch and commit metadata",
+      "state": "CLOSED",
+      "labels": [
+        "enhancement",
+        "integration"
+      ],
+      "createdAt": "2026-06-01T13:57:26Z",
+      "updatedAt": "2026-06-01T23:41:19Z",
+      "closedAt": "2026-06-01T23:41:19Z"
+    },
+    {
+      "number": 2,
+      "title": "Export weekly maintainer report from live dashboard",
+      "state": "CLOSED",
+      "labels": [
+        "enhancement",
+        "reporting"
+      ],
+      "createdAt": "2026-06-01T13:57:24Z",
+      "updatedAt": "2026-06-01T13:58:30Z",
+      "closedAt": "2026-06-01T13:58:30Z"
+    },
+    {
+      "number": 1,
+      "title": "Add configurable workspace path redaction",
+      "state": "CLOSED",
+      "labels": [
+        "enhancement",
+        "privacy"
+      ],
+      "createdAt": "2026-06-01T13:57:22Z",
+      "updatedAt": "2026-06-01T13:59:18Z",
+      "closedAt": "2026-06-01T13:59:18Z"
+    }
+  ],
+  "pullRequests": []
+}

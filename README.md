@@ -42,7 +42,8 @@ paths to a hosted service.
 | Path redaction | Basename, hash, or private full path |
 | Git branch/commit context | Codex payload and local `.git` fallback |
 | Workflow classification | Metadata-only heuristics |
-| API-backed summaries | Planned as opt-in aggregate-only dry run first |
+| API summary payload | Aggregate-only dry run available |
+| GitHub outcomes | Optional issue/PR metadata import through `gh` |
 
 ## Quick start
 
@@ -78,6 +79,18 @@ To export a shareable weekly maintainer summary:
 node src/cli.js weekly --out weekly-codex-report.md
 ```
 
+To inspect the aggregate-only payload that a future API summary would send:
+
+```bash
+node src/cli.js api-payload --out api-payload.dry-run.json
+```
+
+To import public GitHub issue and pull request metadata for local comparison:
+
+```bash
+node src/cli.js github-import --repo dbunk903/codex-oss-lens --out github-outcomes.json
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -89,6 +102,8 @@ node src/cli.js serve --demo
 ```bash
 codex-oss-lens scan [--codex-home ~/.codex] [--limit 250] [--out report.json]
 codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
+codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.json]
+codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```

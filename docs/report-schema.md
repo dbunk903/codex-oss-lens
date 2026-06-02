@@ -77,3 +77,24 @@ Stable hash redaction returns an anonymous workspace id:
 ```
 
 Full paths are only emitted when `--show-paths` is passed.
+
+## API dry-run payload
+
+`codex-oss-lens api-payload` emits an aggregate-only candidate payload for future OpenAI-backed
+summaries. It excludes raw rollout lines, prompts, source code, terminal output, session file names,
+and full paths by default.
+
+The payload contains:
+
+- total session, workspace, turn, tool-call, token, and quota metrics
+- model and workflow counts
+- daily session counts
+- redacted workspace buckets
+- long-session friction candidates represented only by counts and booleans
+
+## GitHub outcome import
+
+`codex-oss-lens github-import --repo owner/name` emits public GitHub issue and pull request
+metadata through the GitHub CLI. It does not read local Codex logs, prompts, source code, or
+terminal output. This is intended as a local input for comparing Codex session activity with
+maintenance outcomes.

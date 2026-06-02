@@ -5,6 +5,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { demoReport, scanCodexHome } from "./parser.js";
 import { renderWeeklyReport } from "./report.js";
+import { buildApiSummaryPayload } from "./api-payload.js";
+import { importGitHubOutcomes } from "./github-import.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -22,6 +24,17 @@ async function main() {
   if (command === "weekly") {
     const report = options.demo ? demoReport() : await scanCodexHome(options);
     await writeText(renderWeeklyReport(report), options.out);
+    return;
+  }
+
+  if (command === "api-payload") {
+    const report = options.demo ? demoReport() : await scanCodexHome({ ...options, redaction: options.redaction || "hash" });
+    await writeReport(buildApiSummaryPayload(report), options.out);
+    return;
+  }
+
+  if (command === "github-import") {
+    await writeReport(await importGitHubOutcomes(options), options.out);
     return;
   }
 
@@ -47,6 +60,7 @@ function parseArgs(args) {
     else if (arg === "--out") options.out = args[++i];
     else if (arg === "--limit") options.limit = Number(args[++i]);
     else if (arg === "--port") options.port = Number(args[++i]);
+    else if (arg === "--repo") options.repo = args[++i];
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -118,6 +132,8 @@ function printHelp() {
 Usage:
   codex-oss-lens scan [--codex-home ~/.codex] [--limit 250] [--out report.json]
   codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
+  codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.json]
+  codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

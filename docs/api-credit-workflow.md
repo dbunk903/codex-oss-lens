@@ -84,3 +84,15 @@ Before any API-backed feature is enabled, the UI and CLI should show:
 - where the response will be stored
 
 The first implementation should be dry-run first: print the payload locally without sending it.
+
+## Dry-run command
+
+Codex OSS Lens provides the dry-run payload now:
+
+```bash
+node src/cli.js api-payload --out api-payload.dry-run.json
+```
+
+The command defaults to stable hash redaction for workspace buckets and does not call any API.
+If a private full-path report is intentionally generated with `--show-paths`, the payload marks
+`privacy.fullPathsIncluded` as `true` instead of claiming the output is shareable.
