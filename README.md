@@ -44,6 +44,7 @@ paths to a hosted service.
 | Workflow classification | Metadata-only heuristics |
 | API summary payload | Aggregate-only dry run available |
 | GitHub outcomes | Optional issue/PR metadata import through `gh` |
+| Outcome links | Local branch-to-PR matching |
 
 ## Quick start
 
@@ -91,6 +92,12 @@ To import public GitHub issue and pull request metadata for local comparison:
 node src/cli.js github-import --repo dbunk903/codex-oss-lens --out github-outcomes.json
 ```
 
+To link a scan report with imported GitHub outcomes:
+
+```bash
+node src/cli.js link-outcomes --report report.json --github github-outcomes.json --out linked-outcomes.json
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -104,6 +111,7 @@ codex-oss-lens scan [--codex-home ~/.codex] [--limit 250] [--out report.json]
 codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
 codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.json]
 codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
+codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```

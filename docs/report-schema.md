@@ -98,3 +98,12 @@ The payload contains:
 metadata through the GitHub CLI. It does not read local Codex logs, prompts, source code, or
 terminal output. This is intended as a local input for comparing Codex session activity with
 maintenance outcomes.
+
+## Outcome links
+
+`codex-oss-lens link-outcomes --report report.json --github github-outcomes.json` joins a local
+Codex scan report with GitHub outcome metadata by matching session `git.branch` values to pull
+request `headRefName` values.
+
+The output keeps unmatched sessions and unmatched pull requests visible so maintainers can see both
+where Codex activity led to a branch-linked outcome and where additional manual review is needed.

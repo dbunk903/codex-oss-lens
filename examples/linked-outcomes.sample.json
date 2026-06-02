@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-02T13:29:36.048Z",
+  "repository": "dbunk903/codex-oss-lens",
+  "privacy": {
+    "rawCodexLogsIncluded": false,
+    "promptsIncluded": false,
+    "sourceCodeIncluded": false,
+    "fullPathsIncluded": false,
+    "inputFullPathsObserved": true
+  },
+  "totals": {
+    "sessions": 4,
+    "pullRequests": 0,
+    "linkedSessions": 0,
+    "unmatchedSessions": 4,
+    "unmatchedPullRequests": 0
+  },
+  "sessions": [
+    {
+      "workspace": "[workspace:b1f5c537f9]",
+      "workflow": "implementation",
+      "branch": "main",
+      "commit": "7300d2df8b84",
+      "startedAt": "2026-06-01T09:15:00.000Z",
+      "turns": 18,
+      "toolCalls": 7,
+      "tokens": 124000,
+      "matchedPullRequests": []
+    },
+    {
+      "workspace": "[workspace:10042cf50c]",
+      "workflow": "implementation",
+      "branch": "feature/codex-maintenance",
+      "commit": "84ee2c2a2ae5",
+      "startedAt": "2026-06-01T12:45:00.000Z",
+      "turns": 9,
+      "toolCalls": 2,
+      "tokens": 68000,
+      "matchedPullRequests": []
+    },
+    {
+      "workspace": "[workspace:59510ad2c9]",
+      "workflow": "review",
+      "branch": "feature/codex-maintenance",
+      "commit": "3b3e97049f38",
+      "startedAt": "2026-05-31T18:20:00.000Z",
+      "turns": 13,
+      "toolCalls": 4,
+      "tokens": 92000,
+      "matchedPullRequests": []
+    },
+    {
+      "workspace": "[workspace:b1f5c537f9]",
+      "workflow": "triage",
+      "branch": "main",
+      "commit": "40d9c4cdd473",
+      "startedAt": "2026-05-30T08:05:00.000Z",
+      "turns": 6,
+      "toolCalls": 1,
+      "tokens": 37000,
+      "matchedPullRequests": []
+    }
+  ],
+  "unmatchedPullRequests": []
+}

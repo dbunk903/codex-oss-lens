@@ -103,7 +103,7 @@
 
       .meta-row {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
         margin-bottom: 18px;
       }
@@ -320,6 +320,7 @@
               <input id="fileInput" type="file" accept="application/json,.json" />
             </label>
             <button class="ghost-button" id="exportButton" type="button">Export weekly</button>
+            <button class="ghost-button" id="apiPayloadButton" type="button">API payload</button>
             <button class="ghost-button" id="demoButton" type="button">Demo data</button>
           </div>
         </div>
@@ -405,6 +406,7 @@
 
       document.getElementById("demoButton").addEventListener("click", () => render(demoData));
       document.getElementById("exportButton").addEventListener("click", exportWeeklyReport);
+      document.getElementById("apiPayloadButton").addEventListener("click", exportApiPayload);
       document.getElementById("fileInput").addEventListener("change", async (event) => {
         const file = event.target.files[0];
         if (!file) return;
@@ -444,6 +446,7 @@
           ["Generated", Number.isNaN(generated.valueOf()) ? "unknown" : formatDate.format(generated)],
           ["Plan", plan],
           ["Workflow labels", `${workflows} active, latest ${latest}`],
+          ["API payload", "local dry-run"],
         ];
         document.getElementById("metaRow").innerHTML = rows
           .map(([label, value]) => `<article class="meta-item"><div class="label">${label}</div><strong>${escapeHtml(value)}</strong></article>`)
@@ -453,13 +456,117 @@
       function exportWeeklyReport() {
         const markdown = renderWeeklyMarkdown(activeReport);
         const blob = new Blob([markdown], { type: "text/markdown;charset=utf-8" });
+        downloadBlob(blob, `codex-weekly-report-${new Date().toISOString().slice(0, 10)}.md`);
+      }
+
+      function exportApiPayload() {
+        const payload = buildApiPayload(activeReport);
+        const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: "application/json;charset=utf-8" });
+        downloadBlob(blob, `codex-api-payload-${new Date().toISOString().slice(0, 10)}.json`);
+      }
+
+      function downloadBlob(blob, filename) {
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = `codex-weekly-report-${new Date().toISOString().slice(0, 10)}.md`;
+        link.download = filename;
         document.body.appendChild(link);
         link.click();
         link.remove();
         URL.revokeObjectURL(link.href);
+      }
+
+      function buildApiPayload(report) {
+        return {
+          schemaVersion: 1,
+          generatedAt: report.generatedAt,
+          purpose: "codex-maintainer-summary-dry-run",
+          privacy: {
+            rawLogsIncluded: false,
+            promptsIncluded: false,
+            sourceCodeIncluded: false,
+            terminalOutputIncluded: false,
+            fullPathsIncluded: false,
+            inputFullPathsObserved: (report.sessions || []).some((session) => isFullPathLike(session.cwd || "")),
+          },
+          totals: {
+            sessions: report.totals.sessions,
+            workspaces: report.totals.workspaces,
+            turns: report.totals.turns,
+            toolCalls: report.totals.toolCalls,
+            tokens: report.totals.tokens || {},
+            planType: report.totals.planType || null,
+          },
+          quotaWindows: {
+            primaryUsedPercent: report.totals.latestRateLimits?.primary?.usedPercent ?? null,
+            secondaryUsedPercent: report.totals.latestRateLimits?.secondary?.usedPercent ?? null,
+          },
+          modelCounts: countRows(report.byModel),
+          workflowCounts: countRows(report.byWorkflow),
+          dailySessionCounts: Object.fromEntries(
+            Object.entries(report.byDay || {}).map(([day, row]) => [day, row.sessions || 0]),
+          ),
+          workspaceBuckets: buildWorkspaceBuckets(report),
+          frictionCandidates: buildFrictionCandidates(report),
+        };
+      }
+
+      function countRows(source) {
+        return Object.fromEntries(Object.entries(source || {}).map(([key, row]) => [key, row.sessions || 0]));
+      }
+
+      function buildWorkspaceBuckets(report) {
+        const buckets = new Map();
+        for (const session of report.sessions || []) {
+          const key = safeWorkspaceBucket(session.cwd || session.workspace || "[unknown]");
+          const current = buckets.get(key) || {
+            workspace: key,
+            sessions: 0,
+            turns: 0,
+            toolCalls: 0,
+            tokens: 0,
+            workflows: {},
+          };
+          current.sessions += 1;
+          current.turns += session.turns || 0;
+          current.toolCalls += session.toolCalls || 0;
+          current.tokens += session.tokens?.total || 0;
+          current.workflows[session.workflow || "unknown"] = (current.workflows[session.workflow || "unknown"] || 0) + 1;
+          buckets.set(key, current);
+        }
+        return [...buckets.values()].sort((a, b) => b.tokens - a.tokens).slice(0, 10);
+      }
+
+      function buildFrictionCandidates(report) {
+        return (report.sessions || [])
+          .map((session) => ({
+            workflow: session.workflow || "unknown",
+            turns: session.turns || 0,
+            toolCalls: session.toolCalls || 0,
+            durationMinutes: session.durationMinutes || 0,
+            tokens: session.tokens?.total || 0,
+            hasGitMetadata: Boolean(session.git),
+          }))
+          .filter((session) => session.turns >= 15 || session.toolCalls >= 8 || session.durationMinutes >= 120)
+          .sort((a, b) => b.turns - a.turns || b.toolCalls - a.toolCalls)
+          .slice(0, 10);
+      }
+
+      function safeWorkspaceBucket(value) {
+        if (!isFullPathLike(value)) return value;
+        return `[workspace:${stableHash(value)}]`;
+      }
+
+      function stableHash(value) {
+        let hash = 0x811c9dc5;
+        for (let i = 0; i < value.length; i += 1) {
+          hash ^= value.charCodeAt(i);
+          hash = Math.imul(hash, 0x01000193);
+        }
+        return (hash >>> 0).toString(16).padStart(8, "0");
+      }
+
+      function isFullPathLike(value) {
+        return String(value || "").startsWith("/") || /^[A-Za-z]:[\\/]/.test(String(value || ""));
       }
 
       function renderWeeklyMarkdown(report) {

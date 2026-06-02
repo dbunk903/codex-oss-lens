@@ -96,3 +96,6 @@ node src/cli.js api-payload --out api-payload.dry-run.json
 The command defaults to stable hash redaction for workspace buckets and does not call any API.
 If a private full-path report is intentionally generated with `--show-paths`, the payload marks
 `privacy.fullPathsIncluded` as `true` instead of claiming the output is shareable.
+
+The dashboard also provides an `API payload` export button. It uses the same aggregate-only shape
+and downloads JSON locally from the currently loaded report.

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.5.0 - Outcome Linking
+
+- Added local outcome linking between scan reports and GitHub import reports.
+- Added dashboard API payload export for inspecting aggregate dry-run data in the browser.
+- Added tests for branch-to-PR linking.
+- Documented outcome linking and dashboard API payload export.
+
 ## v0.4.0 - Application Readiness
 
 - Added aggregate-only API summary dry-run payload generation.

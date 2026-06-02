@@ -7,6 +7,7 @@ import { demoReport, scanCodexHome } from "./parser.js";
 import { renderWeeklyReport } from "./report.js";
 import { buildApiSummaryPayload } from "./api-payload.js";
 import { importGitHubOutcomes } from "./github-import.js";
+import { linkGitHubOutcomes } from "./outcome-linker.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -38,6 +39,13 @@ async function main() {
     return;
   }
 
+  if (command === "link-outcomes") {
+    const report = await readJsonOption(options.report, "--report");
+    const github = await readJsonOption(options.github, "--github");
+    await writeReport(linkGitHubOutcomes(report, github), options.out);
+    return;
+  }
+
   if (command === "serve") {
     await serve(options);
     return;
@@ -61,6 +69,8 @@ function parseArgs(args) {
     else if (arg === "--limit") options.limit = Number(args[++i]);
     else if (arg === "--port") options.port = Number(args[++i]);
     else if (arg === "--repo") options.repo = args[++i];
+    else if (arg === "--report") options.report = args[++i];
+    else if (arg === "--github") options.github = args[++i];
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -87,6 +97,11 @@ async function writeText(text, outPath) {
   }
   await fs.mkdir(path.dirname(path.resolve(outPath)), { recursive: true });
   await fs.writeFile(outPath, text, "utf8");
+}
+
+async function readJsonOption(filePath, flagName) {
+  if (!filePath) throw new Error(`Missing ${flagName} path`);
+  return JSON.parse(await fs.readFile(path.resolve(filePath), "utf8"));
 }
 
 async function serve(options) {
@@ -134,6 +149,7 @@ Usage:
   codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
   codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.json]
   codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
+  codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 
