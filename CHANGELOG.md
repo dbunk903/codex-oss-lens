@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.0 - Local Readiness Checks
+
+- Added `doctor` command for local readiness diagnostics.
+- Added doctor tests to confirm rollout filenames and raw logs are not exposed.
+- Documented doctor output in README and report schema.
+
 ## v0.6.0 - Package Readiness
 
 - Added npm package metadata, repository links, and package file allowlist.

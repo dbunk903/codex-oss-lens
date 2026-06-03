@@ -104,6 +104,12 @@ To link a scan report with imported GitHub outcomes:
 node src/cli.js link-outcomes --report report.json --github github-outcomes.json --out linked-outcomes.json
 ```
 
+To check local readiness without exposing rollout filenames or prompt content:
+
+```bash
+node src/cli.js doctor
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -118,6 +124,7 @@ codex-oss-lens weekly [--codex-home ~/.codex] [--limit 250] [--out weekly.md]
 codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.json]
 codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
 codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
+codex-oss-lens doctor [--codex-home ~/.codex] [--out doctor.json]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```

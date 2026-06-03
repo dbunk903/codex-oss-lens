@@ -107,3 +107,9 @@ request `headRefName` values.
 
 The output keeps unmatched sessions and unmatched pull requests visible so maintainers can see both
 where Codex activity led to a branch-linked outcome and where additional manual review is needed.
+
+## Doctor report
+
+`codex-oss-lens doctor` emits local readiness checks for Node.js, Codex home, the sessions
+directory, rollout file availability, and GitHub CLI availability. It reports counts and tool
+versions only; it does not include rollout filenames, raw logs, prompts, or source code.

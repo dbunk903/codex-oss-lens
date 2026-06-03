@@ -8,6 +8,7 @@ import { renderWeeklyReport } from "./report.js";
 import { buildApiSummaryPayload } from "./api-payload.js";
 import { importGitHubOutcomes } from "./github-import.js";
 import { linkGitHubOutcomes } from "./outcome-linker.js";
+import { runDoctor } from "./doctor.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -43,6 +44,11 @@ async function main() {
     const report = await readJsonOption(options.report, "--report");
     const github = await readJsonOption(options.github, "--github");
     await writeReport(linkGitHubOutcomes(report, github), options.out);
+    return;
+  }
+
+  if (command === "doctor") {
+    await writeReport(await runDoctor(options), options.out);
     return;
   }
 
@@ -150,6 +156,7 @@ Usage:
   codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.json]
   codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
   codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
+  codex-oss-lens doctor [--codex-home ~/.codex] [--out doctor.json]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 
