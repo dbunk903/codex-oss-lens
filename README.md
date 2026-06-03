@@ -56,6 +56,12 @@ npm run serve
 
 Then open `http://127.0.0.1:5057`.
 
+After the package is published, the same UI can run with `npx`:
+
+```bash
+npx codex-oss-lens serve --demo
+```
+
 To write a report that can be opened in the static UI:
 
 ```bash
@@ -157,6 +163,7 @@ See [report schema](docs/report-schema.md) for the generated JSON shape.
 - Optional OpenAI API summarization of local-only aggregate metrics
 
 See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API plan.
+See [npm publishing](docs/npm-publishing.md) for package verification steps.
 
 ## Contributing
 

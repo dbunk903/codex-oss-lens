@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.6.0 - Package Readiness
+
+- Added npm package metadata, repository links, and package file allowlist.
+- Added package dry-run and tarball smoke-test scripts.
+- Added npm publishing documentation.
+
 ## v0.5.0 - Outcome Linking
 
 - Added local outcome linking between scan reports and GitHub import reports.

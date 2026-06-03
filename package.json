@@ -1,12 +1,23 @@
 {
   "name": "codex-oss-lens",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Local-first usage and workflow dashboard for OpenAI Codex session logs.",
   "type": "module",
   "bin": {
     "codex-oss-lens": "./src/cli.js"
   },
+  "files": [
+    "src/",
+    "public/",
+    "docs/",
+    "examples/*.json",
+    "examples/*.md",
+    "examples/dashboard-preview.png",
+    "CHANGELOG.md"
+  ],
   "scripts": {
+    "pack:check": "npm pack --dry-run",
+    "pack:smoke": "node scripts/smoke-pack.js",
     "scan": "node src/cli.js scan",
     "serve": "node src/cli.js serve",
     "test": "node --test"
@@ -16,8 +27,18 @@
     "openai",
     "usage",
     "dashboard",
-    "oss"
+    "oss",
+    "jsonl",
+    "maintainer-tools"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbunk903/codex-oss-lens.git"
+  },
+  "homepage": "https://github.com/dbunk903/codex-oss-lens#readme",
+  "bugs": {
+    "url": "https://github.com/dbunk903/codex-oss-lens/issues"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=20"

@@ -1,6 +1,7 @@
 node_modules/
 .omx/
 *.log
+*.tgz
 .DS_Store
 examples/local-*.json
 examples/codex-lens-report.json
