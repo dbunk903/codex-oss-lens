@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0 - Maintainer Evidence Brief
+
+- Added `brief` command that generates a local maintainer evidence pack.
+- Brief output includes Markdown, HTML, scan report, weekly report, API dry-run payload, doctor
+  report, and optional GitHub outcome artifacts.
+- Added tests for brief generation without network access.
+- Updated documentation to make the brief the recommended shareable application artifact.
+
 ## v0.7.0 - Local Readiness Checks
 
 - Added `doctor` command for local readiness diagnostics.

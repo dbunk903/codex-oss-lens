@@ -12,7 +12,8 @@ npm run pack:smoke
 ```
 
 `pack:smoke` creates a tarball, installs it in a temporary directory, runs the packaged
-`codex-oss-lens` binary, and verifies that demo output is valid JSON.
+`codex-oss-lens` binary, verifies that demo output is valid JSON, and checks that packaged
+`brief --demo` can generate a maintainer evidence pack.
 
 ## Expected package contents
 

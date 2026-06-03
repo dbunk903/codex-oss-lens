@@ -18,10 +18,16 @@ try {
   const bin = path.join(temp, "node_modules", ".bin", process.platform === "win32" ? "codex-oss-lens.cmd" : "codex-oss-lens");
   const outputPath = path.join(temp, "demo-report.json");
   await execFileAsync(bin, ["demo", "--out", outputPath], { cwd: temp });
+  const briefDir = path.join(temp, "brief");
+  await execFileAsync(bin, ["brief", "--demo", "--out-dir", briefDir], { cwd: temp });
 
   const report = JSON.parse(await readFile(outputPath, "utf8"));
   if (report.totals?.sessions !== 4) {
     throw new Error(`Unexpected demo session count: ${report.totals?.sessions}`);
+  }
+  const manifest = JSON.parse(await readFile(path.join(briefDir, "manifest.json"), "utf8"));
+  if (manifest.summary?.sessions !== 4) {
+    throw new Error(`Unexpected brief session count: ${manifest.summary?.sessions}`);
   }
 
   await rm(tarball, { force: true });

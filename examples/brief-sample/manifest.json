@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-03T07:57:10.418Z",
+  "artifactRoot": "brief-sample",
+  "summary": {
+    "sessions": 4,
+    "workspaces": 3,
+    "turns": 46,
+    "toolCalls": 14,
+    "observedTokens": 321000,
+    "workflows": {
+      "implementation": 2,
+      "review": 1,
+      "triage": 1
+    },
+    "models": {
+      "gpt-5.5": 2,
+      "gpt-5.3-codex": 1,
+      "gpt-5.4": 1
+    },
+    "quotaWindows": {
+      "primaryUsedPercent": 6,
+      "secondaryUsedPercent": 4
+    },
+    "github": null,
+    "doctorStatus": "ok"
+  },
+  "privacy": {
+    "rawLogsIncluded": false,
+    "promptsIncluded": false,
+    "sourceCodeIncluded": false,
+    "fullPathsIncluded": false,
+    "inputFullPathsObserved": false
+  },
+  "artifacts": [
+    {
+      "file": "scan-report.json",
+      "description": "Codex session scan report"
+    },
+    {
+      "file": "weekly-report.md",
+      "description": "Weekly maintainer report"
+    },
+    {
+      "file": "api-payload.dry-run.json",
+      "description": "Aggregate-only API dry-run payload"
+    },
+    {
+      "file": "doctor.json",
+      "description": "Local readiness diagnostics"
+    },
+    {
+      "file": "brief.md",
+      "description": "Human-readable maintainer evidence brief"
+    },
+    {
+      "file": "brief.html",
+      "description": "Standalone HTML maintainer evidence brief"
+    }
+  ]
+}

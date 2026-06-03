@@ -113,3 +113,19 @@ where Codex activity led to a branch-linked outcome and where additional manual 
 `codex-oss-lens doctor` emits local readiness checks for Node.js, Codex home, the sessions
 directory, rollout file availability, and GitHub CLI availability. It reports counts and tool
 versions only; it does not include rollout filenames, raw logs, prompts, or source code.
+
+## Maintainer brief
+
+`codex-oss-lens brief --out-dir codex-brief` creates a directory with a shareable maintainer
+evidence pack:
+
+- `brief.md` and `brief.html`
+- `manifest.json`
+- `scan-report.json`
+- `weekly-report.md`
+- `api-payload.dry-run.json`
+- `doctor.json`
+- optional GitHub outcome artifacts when `--repo owner/name` is passed
+
+The brief defaults to hash redaction and keeps raw logs, prompts, source code, and full paths out
+of the generated shareable artifacts.

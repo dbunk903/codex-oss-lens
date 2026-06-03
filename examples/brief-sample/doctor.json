@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-03T07:57:10.415Z",
+  "status": "ok",
+  "checks": {
+    "node": {
+      "ok": true,
+      "version": "v25.6.1",
+      "required": ">=20"
+    },
+    "codexHome": {
+      "ok": true,
+      "path": "[redacted]/.codex"
+    },
+    "sessionsDir": {
+      "ok": true,
+      "path": "[redacted]/sessions"
+    },
+    "rolloutFiles": {
+      "ok": true,
+      "count": 308
+    },
+    "githubCli": {
+      "ok": true,
+      "version": "gh version 2.86.0 (2026-01-21)",
+      "requiredFor": [
+        "github-import"
+      ]
+    }
+  },
+  "privacy": {
+    "rawLogsIncluded": false,
+    "promptsIncluded": false,
+    "sourceCodeIncluded": false,
+    "rolloutFileNamesIncluded": false
+  }
+}

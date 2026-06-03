@@ -45,6 +45,7 @@ paths to a hosted service.
 | API summary payload | Aggregate-only dry run available |
 | GitHub outcomes | Optional issue/PR metadata import through `gh` |
 | Outcome links | Local branch-to-PR matching |
+| Maintainer brief | Shareable evidence pack generation |
 
 ## Quick start
 
@@ -110,6 +111,12 @@ To check local readiness without exposing rollout filenames or prompt content:
 node src/cli.js doctor
 ```
 
+To generate a full local evidence pack for review or OSS support applications:
+
+```bash
+node src/cli.js brief --repo dbunk903/codex-oss-lens --out-dir codex-brief
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -125,6 +132,7 @@ codex-oss-lens api-payload [--codex-home ~/.codex] [--limit 250] [--out payload.
 codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
 codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
 codex-oss-lens doctor [--codex-home ~/.codex] [--out doctor.json]
+codex-oss-lens brief [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-brief]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -171,6 +179,20 @@ See [report schema](docs/report-schema.md) for the generated JSON shape.
 
 See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API plan.
 See [npm publishing](docs/npm-publishing.md) for package verification steps.
+
+## Maintainer Brief
+
+`codex-oss-lens brief` creates a local folder containing:
+
+- `brief.md` and `brief.html`
+- `scan-report.json`
+- `weekly-report.md`
+- `api-payload.dry-run.json`
+- `doctor.json`
+- optional `github-outcomes.json` and `linked-outcomes.json` when `--repo` is supplied
+
+This is the recommended artifact for sharing a privacy-preserving snapshot of Codex maintainer
+activity.
 
 ## Contributing
 

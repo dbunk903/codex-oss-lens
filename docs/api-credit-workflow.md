@@ -99,3 +99,6 @@ If a private full-path report is intentionally generated with `--show-paths`, th
 
 The dashboard also provides an `API payload` export button. It uses the same aggregate-only shape
 and downloads JSON locally from the currently loaded report.
+
+`codex-oss-lens brief` includes `api-payload.dry-run.json` in the generated evidence pack so the
+payload can be reviewed before any future live API integration is enabled.

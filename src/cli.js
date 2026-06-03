@@ -9,6 +9,7 @@ import { buildApiSummaryPayload } from "./api-payload.js";
 import { importGitHubOutcomes } from "./github-import.js";
 import { linkGitHubOutcomes } from "./outcome-linker.js";
 import { runDoctor } from "./doctor.js";
+import { generateBrief } from "./brief.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -52,6 +53,11 @@ async function main() {
     return;
   }
 
+  if (command === "brief") {
+    await writeReport(await generateBrief(options), options.out ? path.join(options.out, "manifest.stdout.json") : null);
+    return;
+  }
+
   if (command === "serve") {
     await serve(options);
     return;
@@ -72,6 +78,7 @@ function parseArgs(args) {
     const arg = args[i];
     if (arg === "--codex-home") options.codexHome = args[++i];
     else if (arg === "--out") options.out = args[++i];
+    else if (arg === "--out-dir") options.outDir = args[++i];
     else if (arg === "--limit") options.limit = Number(args[++i]);
     else if (arg === "--port") options.port = Number(args[++i]);
     else if (arg === "--repo") options.repo = args[++i];
@@ -157,6 +164,7 @@ Usage:
   codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcomes.json]
   codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
   codex-oss-lens doctor [--codex-home ~/.codex] [--out doctor.json]
+  codex-oss-lens brief [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-brief]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

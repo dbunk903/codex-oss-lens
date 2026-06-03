@@ -9,6 +9,7 @@ const execFileAsync = promisify(execFile);
 export async function runDoctor(options = {}) {
   const codexHome = options.codexHome || defaultCodexHome();
   const sessionsDir = path.join(codexHome, "sessions");
+  const redactPaths = options.redactPaths !== false;
   const rolloutFiles = await findRolloutFiles(sessionsDir, Number.isFinite(options.limit) ? options.limit : 500);
   const gh = await commandVersion("gh", ["--version"]);
 
@@ -24,11 +25,11 @@ export async function runDoctor(options = {}) {
       },
       codexHome: {
         ok: await exists(codexHome),
-        path: codexHome,
+        path: redactPath(codexHome, redactPaths),
       },
       sessionsDir: {
         ok: await exists(sessionsDir),
-        path: sessionsDir,
+        path: redactPath(sessionsDir, redactPaths),
       },
       rolloutFiles: {
         ok: rolloutFiles.length > 0,
@@ -47,6 +48,11 @@ export async function runDoctor(options = {}) {
       rolloutFileNamesIncluded: false,
     },
   };
+}
+
+function redactPath(filePath, redactPaths) {
+  if (!redactPaths) return filePath;
+  return path.join("[redacted]", path.basename(filePath));
 }
 
 function doctorStatus({ rolloutFiles, gh }) {

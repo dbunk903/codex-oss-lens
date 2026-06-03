@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex OSS Lens Maintainer Brief</title>
+    <style>
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1f2933; background: #f4f7f9; }
+      main { width: min(1040px, calc(100vw - 32px)); margin: 0 auto; padding: 32px 0 48px; }
+      header { background: #132320; color: #f7fbf9; padding: 28px 0; }
+      header div { width: min(1040px, calc(100vw - 32px)); margin: 0 auto; }
+      h1 { margin: 0; font-size: 40px; line-height: 1; }
+      .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+      .card { background: #fff; border: 1px solid #d8dee4; padding: 16px; }
+      .label { color: #5d6b78; font-size: 13px; }
+      .value { font-size: 28px; font-weight: 700; margin-top: 8px; }
+      pre { background: #fff; border: 1px solid #d8dee4; padding: 18px; overflow-x: auto; white-space: pre-wrap; }
+      a { color: #2563a8; }
+      @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 30px; } }
+    </style>
+  </head>
+  <body>
+    <header><div><h1>Codex OSS Lens Maintainer Brief</h1></div></header>
+    <main>
+      <section class="grid">
+        <article class="card"><div class="label">Sessions</div><div class="value">4</div></article>
+        <article class="card"><div class="label">Workspaces</div><div class="value">3</div></article>
+        <article class="card"><div class="label">Turns</div><div class="value">46</div></article>
+        <article class="card"><div class="label">Doctor</div><div class="value">ok</div></article>
+      </section>
+      <pre># Codex OSS Lens Maintainer Brief
+
+Generated: 2026-06-03T07:57:10.418Z
+
+## Summary
+
+- Sessions: 4
+- Workspaces: 3
+- Turns: 46
+- Tool calls: 14
+- Observed tokens: 321000
+- Doctor status: ok
+- GitHub repository: not imported
+
+## Workflow Mix
+
+- implementation: 2
+- review: 1
+- triage: 1
+
+## Model Mix
+
+- gpt-5.5: 2
+- gpt-5.3-codex: 1
+- gpt-5.4: 1
+
+## Privacy
+
+- Raw logs included: false
+- Prompts included: false
+- Source code included: false
+- Full paths included: false
+- Full paths observed in input: false
+
+## Artifacts
+
+- [scan-report.json](scan-report.json) - Codex session scan report
+- [weekly-report.md](weekly-report.md) - Weekly maintainer report
+- [api-payload.dry-run.json](api-payload.dry-run.json) - Aggregate-only API dry-run payload
+- [doctor.json](doctor.json) - Local readiness diagnostics
+
+## Next Steps
+
+- Review `api-payload.dry-run.json` before enabling any live API-backed summary.
+- Use `linked-outcomes.json` to inspect branch-to-PR matches when GitHub data is imported.
+- Attach `brief.md` or `brief.html` when a shareable maintainer evidence snapshot is useful.
+</pre>
+    </main>
+  </body>
+</html>
