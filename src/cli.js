@@ -15,6 +15,8 @@ import { redactCheck } from "./redact-check.js";
 import { compareBriefs } from "./compare-briefs.js";
 import { buildReadinessReport } from "./readiness.js";
 import { buildApiCreditPlan } from "./api-plan.js";
+import { buildActivityTimeline } from "./timeline.js";
+import { buildEvidenceIndex } from "./evidence-index.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -105,6 +107,36 @@ async function main() {
     return;
   }
 
+  if (command === "timeline") {
+    const report = await readJsonOption(options.report, "--report");
+    const timeline = buildActivityTimeline(report);
+    if (options.markdown) await writeText(timeline.markdown, options.markdown);
+    await writeReport(timeline, options.out);
+    return;
+  }
+
+  if (command === "evidence-index") {
+    const manifest = await readJsonOption(options.manifest, "--manifest");
+    const readiness = options.readiness ? await readJsonOption(options.readiness, "--readiness") : null;
+    const apiPlan = options.apiPlan ? await readJsonOption(options.apiPlan, "--api-plan") : null;
+    const timeline = options.timeline ? await readJsonOption(options.timeline, "--timeline") : null;
+    const index = buildEvidenceIndex({
+      manifest,
+      readiness,
+      apiPlan,
+      timeline,
+      artifactPaths: {
+        readiness: options.readiness,
+        apiPlan: options.apiPlan,
+        timeline: options.timeline,
+      },
+    });
+    if (options.markdown) await writeText(index.markdown, options.markdown);
+    if (options.html) await writeText(index.html, options.html);
+    await writeReport(index, options.out);
+    return;
+  }
+
   if (command === "serve") {
     await serve(options);
     return;
@@ -136,6 +168,10 @@ function parseArgs(args) {
     else if (arg === "--head") options.head = args[++i];
     else if (arg === "--path") options.path = args[++i];
     else if (arg === "--markdown") options.markdown = args[++i];
+    else if (arg === "--html") options.html = args[++i];
+    else if (arg === "--readiness") options.readiness = args[++i];
+    else if (arg === "--api-plan") options.apiPlan = args[++i];
+    else if (arg === "--timeline") options.timeline = args[++i];
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -222,6 +258,8 @@ Usage:
   codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json [--out compare.json] [--markdown compare.md]
   codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brief] [--base old/manifest.json] [--out readiness.json] [--markdown readiness.md]
   codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
+  codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markdown timeline.md]
+  codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

@@ -51,6 +51,8 @@ paths to a hosted service.
 | Brief comparison | Day-over-day maintainer evidence deltas |
 | Submission readiness | One-command go/no-go report |
 | API credit plan | Prioritized privacy-first API automation plan |
+| Activity timeline | Chronological maintainer activity evidence |
+| Evidence index | Reviewer-friendly artifact index in JSON, Markdown, and HTML |
 
 ## Quick start
 
@@ -153,6 +155,18 @@ To turn a scan report into a prioritized API-credit implementation plan:
 node src/cli.js api-plan --report codex-brief/scan-report.json --markdown api-plan.md
 ```
 
+To generate a chronological activity timeline from a scan report:
+
+```bash
+node src/cli.js timeline --report codex-brief/scan-report.json --markdown timeline.md
+```
+
+To compose a reviewer-facing evidence index:
+
+```bash
+node src/cli.js evidence-index --manifest codex-brief/manifest.json --readiness readiness.json --api-plan api-plan.json --timeline timeline.json --html evidence-index.html
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -174,6 +188,8 @@ codex-oss-lens redact-check <file-or-dir> [--out redact-check.json]
 codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json [--out compare.json] [--markdown compare.md]
 codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brief] [--base old/manifest.json] [--out readiness.json] [--markdown readiness.md]
 codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
+codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markdown timeline.md]
+codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -241,6 +257,8 @@ leaving them as manual review notes.
 
 For application workflows, `readiness` combines those checks into a single go/no-go report, and
 `api-plan` converts aggregate scan data into a privacy-first API credit implementation sequence.
+Use `timeline` to show chronological maintenance activity and `evidence-index` to package the
+generated files into a reviewer-facing starting point.
 
 ## Contributing
 

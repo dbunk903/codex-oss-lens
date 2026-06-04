@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex OSS Lens Evidence Index</title>
+    <style>
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1f2933; background: #f7f9fb; }
+      main { width: min(980px, calc(100vw - 32px)); margin: 0 auto; padding: 32px 0 48px; }
+      header { background: #14332d; color: #f7fbf9; padding: 28px 0; }
+      header div { width: min(980px, calc(100vw - 32px)); margin: 0 auto; }
+      h1 { margin: 0; font-size: 34px; line-height: 1.1; }
+      h2 { margin-top: 28px; }
+      .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+      .metric { background: #fff; border: 1px solid #d8dee4; padding: 14px; }
+      .label { color: #52616d; font-size: 13px; }
+      .value { font-size: 24px; font-weight: 700; margin-top: 6px; }
+      li { margin: 6px 0; }
+      a { color: #2563a8; }
+      @media (max-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } h1 { font-size: 28px; } }
+    </style>
+  </head>
+  <body>
+    <header><div><h1>Codex OSS Lens Evidence Index</h1></div></header>
+    <main>
+      <section class="grid">
+        <article class="metric"><div class="label">Status</div><div class="value">pass</div></article>
+        <article class="metric"><div class="label">Sessions</div><div class="value">4</div></article>
+        <article class="metric"><div class="label">Audit</div><div class="value">100</div></article>
+        <article class="metric"><div class="label">Redaction</div><div class="value">pass</div></article>
+      </section>
+      <h2>Artifacts</h2>
+      <ul><li><a href="scan-report.json">scan-report.json</a> - Codex session scan report</li><li><a href="weekly-report.md">weekly-report.md</a> - Weekly maintainer report</li><li><a href="api-payload.dry-run.json">api-payload.dry-run.json</a> - Aggregate-only API dry-run payload</li><li><a href="doctor.json">doctor.json</a> - Local readiness diagnostics</li><li><a href="brief.md">brief.md</a> - Human-readable maintainer evidence brief</li><li><a href="brief.html">brief.html</a> - Standalone HTML maintainer evidence brief</li><li><a href="readiness.sample.json">readiness.sample.json</a> - Submission readiness report</li><li><a href="api-plan.sample.json">api-plan.sample.json</a> - API credit implementation plan</li><li><a href="timeline.sample.json">timeline.sample.json</a> - Maintainer activity timeline</li></ul>
+      <h2>Reviewer Notes</h2>
+      <ul><li>Submission readiness status is pass.</li><li>Top API credit candidate is implementation (implementation-session-summary).</li><li>Busiest observed day is 2026-06-01.</li></ul>
+    </main>
+  </body>
+</html>

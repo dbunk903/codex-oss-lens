@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3.0 - Reviewer Evidence Index
+
+- Added `timeline` command for chronological maintainer activity evidence.
+- Added `evidence-index` command for reviewer-friendly JSON, Markdown, and HTML artifact indexes.
+- Added tests and sample outputs for timeline and evidence index reports.
+- Updated application draft links and public documentation for reviewer-facing evidence.
+
 ## v1.2.0 - Submission Planning Reports
 
 - Added `readiness` command that combines audit, redaction, and optional baseline comparison.

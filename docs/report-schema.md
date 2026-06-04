@@ -188,3 +188,30 @@ The output includes:
 - `milestones`: short implementation sequence for the top candidates
 - `guardrails`: privacy requirements for future API-backed features
 - optional Markdown when `--markdown` is supplied
+
+## Activity timeline
+
+`codex-oss-lens timeline --report scan-report.json` turns scan sessions into chronological
+maintainer activity evidence. It groups sessions by day and keeps per-session entries limited to
+metadata already present in the redacted scan report.
+
+The output includes:
+
+- `summary`: sessions, day count, workspace count, workflow counts, and observed tokens
+- `days`: daily rollups with entries sorted by start time
+- `highlights`: busiest day, longest session, and heaviest-token session
+- optional Markdown when `--markdown` is supplied
+
+## Evidence index
+
+`codex-oss-lens evidence-index --manifest manifest.json` composes generated artifacts into a
+reviewer-facing index. Supplying `--readiness`, `--api-plan`, and `--timeline` enriches the index
+with status, planning, and activity evidence.
+
+The output includes:
+
+- `summary`: core brief metrics plus readiness, audit, redaction, API-plan, and timeline counts
+- `artifacts`: files listed by the maintainer brief manifest
+- `evidence`: compact nested summaries from readiness, API plan, and timeline reports
+- `reviewerNotes`: short human-readable review cues
+- optional Markdown and HTML when `--markdown` or `--html` is supplied

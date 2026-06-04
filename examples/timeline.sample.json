@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-04T11:55:27.112Z",
+  "summary": {
+    "sessions": 4,
+    "days": 3,
+    "workspaces": 3,
+    "workflows": {
+      "triage": 1,
+      "review": 1,
+      "implementation": 2
+    },
+    "observedTokens": 321000
+  },
+  "days": [
+    {
+      "day": "2026-05-30",
+      "sessions": 1,
+      "workspaces": {
+        "codex": 1
+      },
+      "workflows": {
+        "triage": 1
+      },
+      "turns": 6,
+      "toolCalls": 1,
+      "observedTokens": 37000,
+      "entries": [
+        {
+          "id": "demo-d",
+          "startedAt": "2026-05-30T08:05:00.000Z",
+          "endedAt": "2026-05-30T08:41:00.000Z",
+          "day": "2026-05-30",
+          "workspace": "codex",
+          "workflow": "triage",
+          "models": [
+            "gpt-5.4"
+          ],
+          "turns": 6,
+          "toolCalls": 1,
+          "durationMinutes": 36,
+          "observedTokens": 37000,
+          "git": {
+            "branch": "main",
+            "commit": "40d9c4cdd473",
+            "repository": "codex"
+          }
+        }
+      ]
+    },
+    {
+      "day": "2026-05-31",
+      "sessions": 1,
+      "workspaces": {
+        "design-system": 1
+      },
+      "workflows": {
+        "review": 1
+      },
+      "turns": 13,
+      "toolCalls": 4,
+      "observedTokens": 92000,
+      "entries": [
+        {
+          "id": "demo-c",
+          "startedAt": "2026-05-31T18:20:00.000Z",
+          "endedAt": "2026-05-31T19:38:00.000Z",
+          "day": "2026-05-31",
+          "workspace": "design-system",
+          "workflow": "review",
+          "models": [
+            "gpt-5.5"
+          ],
+          "turns": 13,
+          "toolCalls": 4,
+          "durationMinutes": 78,
+          "observedTokens": 92000,
+          "git": {
+            "branch": "feature/codex-maintenance",
+            "commit": "3b3e97049f38",
+            "repository": "design-system"
+          }
+        }
+      ]
+    },
+    {
+      "day": "2026-06-01",
+      "sessions": 2,
+      "workspaces": {
+        "codex": 1,
+        "api-gateway": 1
+      },
+      "workflows": {
+        "implementation": 2
+      },
+      "turns": 27,
+      "toolCalls": 9,
+      "observedTokens": 192000,
+      "entries": [
+        {
+          "id": "demo-a",
+          "startedAt": "2026-06-01T09:15:00.000Z",
+          "endedAt": "2026-06-01T11:03:00.000Z",
+          "day": "2026-06-01",
+          "workspace": "codex",
+          "workflow": "implementation",
+          "models": [
+            "gpt-5.5"
+          ],
+          "turns": 18,
+          "toolCalls": 7,
+          "durationMinutes": 108,
+          "observedTokens": 124000,
+          "git": {
+            "branch": "main",
+            "commit": "7300d2df8b84",
+            "repository": "codex"
+          }
+        },
+        {
+          "id": "demo-b",
+          "startedAt": "2026-06-01T12:45:00.000Z",
+          "endedAt": "2026-06-01T13:39:00.000Z",
+          "day": "2026-06-01",
+          "workspace": "api-gateway",
+          "workflow": "implementation",
+          "models": [
+            "gpt-5.3-codex"
+          ],
+          "turns": 9,
+          "toolCalls": 2,
+          "durationMinutes": 54,
+          "observedTokens": 68000,
+          "git": {
+            "branch": "feature/codex-maintenance",
+            "commit": "84ee2c2a2ae5",
+            "repository": "api-gateway"
+          }
+        }
+      ]
+    }
+  ],
+  "highlights": {
+    "busiestDay": {
+      "day": "2026-06-01",
+      "sessions": 2,
+      "observedTokens": 192000,
+      "topWorkflow": "implementation"
+    },
+    "longestSession": {
+      "id": "demo-a",
+      "day": "2026-06-01",
+      "workspace": "codex",
+      "workflow": "implementation",
+      "durationMinutes": 108,
+      "observedTokens": 124000
+    },
+    "heaviestTokenSession": {
+      "id": "demo-a",
+      "day": "2026-06-01",
+      "workspace": "codex",
+      "workflow": "implementation",
+      "durationMinutes": 108,
+      "observedTokens": 124000
+    }
+  },
+  "markdown": "# Codex OSS Lens Activity Timeline\n\nGenerated: 2026-06-04T11:55:27.112Z\n\n## Summary\n\n- Sessions: 4\n- Days: 3\n- Workspaces: 3\n- Observed tokens: 321000\n\n## Daily Activity\n\n### 2026-05-30\n\n- Sessions: 1\n- Turns: 6\n- Tool calls: 1\n- Observed tokens: 37000\n- 08:05 codex / triage: 6 turns, 1 tools, 37000 tokens\n\n### 2026-05-31\n\n- Sessions: 1\n- Turns: 13\n- Tool calls: 4\n- Observed tokens: 92000\n- 18:20 design-system / review: 13 turns, 4 tools, 92000 tokens\n\n### 2026-06-01\n\n- Sessions: 2\n- Turns: 27\n- Tool calls: 9\n- Observed tokens: 192000\n- 09:15 codex / implementation: 18 turns, 7 tools, 124000 tokens\n- 12:45 api-gateway / implementation: 9 turns, 2 tools, 68000 tokens\n"
+}
