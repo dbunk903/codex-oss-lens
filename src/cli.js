@@ -17,6 +17,8 @@ import { buildReadinessReport } from "./readiness.js";
 import { buildApiCreditPlan } from "./api-plan.js";
 import { buildActivityTimeline } from "./timeline.js";
 import { buildEvidenceIndex } from "./evidence-index.js";
+import { buildMaintainerScorecard } from "./scorecard.js";
+import { generateSubmissionPack } from "./submission-pack.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -120,20 +122,39 @@ async function main() {
     const readiness = options.readiness ? await readJsonOption(options.readiness, "--readiness") : null;
     const apiPlan = options.apiPlan ? await readJsonOption(options.apiPlan, "--api-plan") : null;
     const timeline = options.timeline ? await readJsonOption(options.timeline, "--timeline") : null;
+    const scorecard = options.scorecard ? await readJsonOption(options.scorecard, "--scorecard") : null;
     const index = buildEvidenceIndex({
       manifest,
       readiness,
       apiPlan,
       timeline,
+      scorecard,
       artifactPaths: {
         readiness: options.readiness,
         apiPlan: options.apiPlan,
         timeline: options.timeline,
+        scorecard: options.scorecard,
       },
     });
     if (options.markdown) await writeText(index.markdown, options.markdown);
     if (options.html) await writeText(index.html, options.html);
     await writeReport(index, options.out);
+    return;
+  }
+
+  if (command === "scorecard") {
+    const manifest = await readJsonOption(options.manifest, "--manifest");
+    const readiness = options.readiness ? await readJsonOption(options.readiness, "--readiness") : null;
+    const apiPlan = options.apiPlan ? await readJsonOption(options.apiPlan, "--api-plan") : null;
+    const timeline = options.timeline ? await readJsonOption(options.timeline, "--timeline") : null;
+    const scorecard = buildMaintainerScorecard({ manifest, readiness, apiPlan, timeline });
+    if (options.markdown) await writeText(scorecard.markdown, options.markdown);
+    await writeReport(scorecard, options.out);
+    return;
+  }
+
+  if (command === "submission-pack") {
+    await writeReport(await generateSubmissionPack(options), options.out);
     return;
   }
 
@@ -172,6 +193,7 @@ function parseArgs(args) {
     else if (arg === "--readiness") options.readiness = args[++i];
     else if (arg === "--api-plan") options.apiPlan = args[++i];
     else if (arg === "--timeline") options.timeline = args[++i];
+    else if (arg === "--scorecard") options.scorecard = args[++i];
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -259,7 +281,9 @@ Usage:
   codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brief] [--base old/manifest.json] [--out readiness.json] [--markdown readiness.md]
   codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
   codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markdown timeline.md]
-  codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
+  codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
+  codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
+  codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

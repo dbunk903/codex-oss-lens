@@ -53,6 +53,8 @@ paths to a hosted service.
 | API credit plan | Prioritized privacy-first API automation plan |
 | Activity timeline | Chronological maintainer activity evidence |
 | Evidence index | Reviewer-friendly artifact index in JSON, Markdown, and HTML |
+| Maintainer scorecard | Weighted application readiness score with next actions |
+| Submission pack | One-command application evidence folder generation |
 
 ## Quick start
 
@@ -167,6 +169,18 @@ To compose a reviewer-facing evidence index:
 node src/cli.js evidence-index --manifest codex-brief/manifest.json --readiness readiness.json --api-plan api-plan.json --timeline timeline.json --html evidence-index.html
 ```
 
+To produce a weighted maintainer application scorecard:
+
+```bash
+node src/cli.js scorecard --manifest codex-brief/manifest.json --readiness readiness.json --api-plan api-plan.json --timeline timeline.json --markdown scorecard.md
+```
+
+To generate the full application evidence folder in one command:
+
+```bash
+node src/cli.js submission-pack --repo dbunk903/codex-oss-lens --out-dir codex-submission-pack
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -189,7 +203,9 @@ codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json 
 codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brief] [--base old/manifest.json] [--out readiness.json] [--markdown readiness.md]
 codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
 codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markdown timeline.md]
-codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
+codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
+codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
+codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -259,6 +275,8 @@ For application workflows, `readiness` combines those checks into a single go/no
 `api-plan` converts aggregate scan data into a privacy-first API credit implementation sequence.
 Use `timeline` to show chronological maintenance activity and `evidence-index` to package the
 generated files into a reviewer-facing starting point.
+Use `scorecard` for a weighted readiness score and `submission-pack` when you want the whole
+application evidence folder generated in one pass.
 
 ## Contributing
 

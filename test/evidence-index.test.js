@@ -32,18 +32,26 @@ test("builds reviewer-facing evidence index from generated artifacts", () => {
       days: [{ day: "2026-06-04" }],
       highlights: { busiestDay: { day: "2026-06-04" } },
     },
+    scorecard: {
+      score: 100,
+      rating: "strong",
+      nextActions: [],
+    },
     artifactPaths: {
       readiness: "/tmp/readiness.json",
       apiPlan: "/tmp/api-plan.json",
       timeline: "/tmp/timeline.json",
+      scorecard: "/tmp/scorecard.json",
     },
   });
 
   assert.equal(index.status, "pass");
   assert.equal(index.summary.auditScore, 100);
+  assert.equal(index.summary.scorecardRating, "strong");
   assert.equal(index.summary.timelineDays, 1);
   assert.ok(index.reviewerNotes.some((note) => note.includes("Top API credit candidate")));
   assert.match(index.markdown, /Evidence Index/);
   assert.match(index.markdown, /readiness\.json/);
+  assert.match(index.markdown, /scorecard\.json/);
   assert.match(index.html, /brief\.md/);
 });

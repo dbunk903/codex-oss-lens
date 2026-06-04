@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-04T13:53:34.322Z",
+  "score": 98,
+  "rating": "strong",
+  "categories": [
+    {
+      "id": "activity",
+      "points": 25,
+      "awarded": 23,
+      "message": "Evidence shows sustained Codex-backed maintenance activity."
+    },
+    {
+      "id": "privacy",
+      "points": 25,
+      "awarded": 25,
+      "message": "Evidence is share-safe and redaction checks pass."
+    },
+    {
+      "id": "planning",
+      "points": 20,
+      "awarded": 20,
+      "message": "API credit use has a concrete privacy-first implementation plan."
+    },
+    {
+      "id": "reviewability",
+      "points": 20,
+      "awarded": 20,
+      "message": "Reviewer-facing artifacts are complete and easy to inspect."
+    },
+    {
+      "id": "readiness",
+      "points": 10,
+      "awarded": 10,
+      "message": "Local diagnostics and submission readiness checks are healthy."
+    }
+  ],
+  "nextActions": [
+    "Generate evidence from a larger or more recent Codex maintenance window."
+  ],
+  "markdown": "# Codex OSS Lens Maintainer Scorecard\n\nGenerated: 2026-06-04T13:53:34.322Z\nScore: 98\nRating: strong\n\n## Categories\n\n- activity: 23/25 - Evidence shows sustained Codex-backed maintenance activity.\n- privacy: 25/25 - Evidence is share-safe and redaction checks pass.\n- planning: 20/20 - API credit use has a concrete privacy-first implementation plan.\n- reviewability: 20/20 - Reviewer-facing artifacts are complete and easy to inspect.\n- readiness: 10/10 - Local diagnostics and submission readiness checks are healthy.\n\n## Next Actions\n\n- Generate evidence from a larger or more recent Codex maintenance window.\n"
+}

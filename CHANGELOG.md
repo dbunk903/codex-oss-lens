@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.4.0 - Complete Submission Pack
+
+- Added `scorecard` command for weighted maintainer application readiness scoring.
+- Added `submission-pack` command for one-command evidence folder generation.
+- Added tests and sample outputs for scorecard and submission pack reports.
+- Updated application draft links and public documentation for the complete pack workflow.
+
 ## v1.3.0 - Reviewer Evidence Index
 
 - Added `timeline` command for chronological maintainer activity evidence.

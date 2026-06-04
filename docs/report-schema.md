@@ -215,3 +215,30 @@ The output includes:
 - `evidence`: compact nested summaries from readiness, API plan, and timeline reports
 - `reviewerNotes`: short human-readable review cues
 - optional Markdown and HTML when `--markdown` or `--html` is supplied
+
+## Maintainer scorecard
+
+`codex-oss-lens scorecard --manifest manifest.json` emits a weighted application readiness
+scorecard. Supplying `--readiness`, `--api-plan`, and `--timeline` lets it score privacy,
+planning, reviewability, and activity evidence from generated reports.
+
+The output includes:
+
+- `score`: 0 to 100
+- `rating`: `strong`, `ready`, `needs-review`, or `not-ready`
+- `categories`: weighted category scores for activity, privacy, planning, reviewability, and readiness
+- `nextActions`: repair steps for categories that did not receive full points
+- optional Markdown when `--markdown` is supplied
+
+## Submission pack
+
+`codex-oss-lens submission-pack --out-dir codex-submission-pack` generates the complete application
+evidence folder in one command. It creates the maintainer brief, readiness report, API plan,
+activity timeline, scorecard, evidence index, and top-level README.
+
+The command returns a compact pack manifest with:
+
+- `status`: readiness status
+- `score` and `rating`: scorecard result
+- `summary`: maintainer brief summary
+- `artifacts`: files generated into the pack folder

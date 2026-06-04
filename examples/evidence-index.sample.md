@@ -1,6 +1,6 @@
 # Codex OSS Lens Evidence Index
 
-Generated: 2026-06-04T11:56:03.626Z
+Generated: 2026-06-04T13:53:34.396Z
 Status: pass
 
 ## Summary
@@ -14,6 +14,7 @@ Status: pass
 - Redaction status: pass
 - API plan candidates: 3
 - Timeline days: 3
+- Scorecard: 98 (strong)
 
 ## Artifacts
 
@@ -26,9 +27,11 @@ Status: pass
 - [readiness.sample.json](readiness.sample.json) - Submission readiness report
 - [api-plan.sample.json](api-plan.sample.json) - API credit implementation plan
 - [timeline.sample.json](timeline.sample.json) - Maintainer activity timeline
+- [scorecard.sample.json](scorecard.sample.json) - Maintainer application scorecard
 
 ## Reviewer Notes
 
 - Submission readiness status is pass.
+- Maintainer scorecard is 98 (strong).
 - Top API credit candidate is implementation (implementation-session-summary).
 - Busiest observed day is 2026-06-01.

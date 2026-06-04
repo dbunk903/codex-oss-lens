@@ -1,6 +1,6 @@
 import path from "node:path";
 
-export function buildEvidenceIndex({ manifest, readiness, apiPlan, timeline, artifactPaths = {} } = {}) {
+export function buildEvidenceIndex({ manifest, readiness, apiPlan, timeline, scorecard, artifactPaths = {} } = {}) {
   if (!manifest) throw new Error("Missing manifest for evidence index");
   const index = {
     schemaVersion: 1,
@@ -17,10 +17,12 @@ export function buildEvidenceIndex({ manifest, readiness, apiPlan, timeline, art
       redactionStatus: readiness?.redaction?.status || null,
       apiPlanCandidates: apiPlan?.candidates?.length || 0,
       timelineDays: timeline?.days?.length || 0,
+      scorecardScore: scorecard?.score ?? null,
+      scorecardRating: scorecard?.rating || null,
     },
     artifacts: buildArtifacts(manifest, artifactPaths),
-    evidence: buildEvidence({ readiness, apiPlan, timeline }),
-    reviewerNotes: buildReviewerNotes({ readiness, apiPlan, timeline }),
+    evidence: buildEvidence({ readiness, apiPlan, timeline, scorecard }),
+    reviewerNotes: buildReviewerNotes({ readiness, apiPlan, timeline, scorecard }),
   };
   return {
     ...index,
@@ -38,6 +40,7 @@ function buildArtifacts(manifest, artifactPaths) {
     ["readiness", "Submission readiness report"],
     ["apiPlan", "API credit implementation plan"],
     ["timeline", "Maintainer activity timeline"],
+    ["scorecard", "Maintainer application scorecard"],
   ]
     .filter(([key]) => artifactPaths[key])
     .map(([key, description]) => ({
@@ -52,7 +55,7 @@ function buildArtifacts(manifest, artifactPaths) {
   });
 }
 
-function buildEvidence({ readiness, apiPlan, timeline }) {
+function buildEvidence({ readiness, apiPlan, timeline, scorecard }) {
   return {
     readiness: readiness
       ? {
@@ -75,12 +78,20 @@ function buildEvidence({ readiness, apiPlan, timeline }) {
           busiestDay: timeline.highlights?.busiestDay || null,
         }
       : null,
+    scorecard: scorecard
+      ? {
+          score: scorecard.score,
+          rating: scorecard.rating,
+          nextActions: scorecard.nextActions || [],
+        }
+      : null,
   };
 }
 
-function buildReviewerNotes({ readiness, apiPlan, timeline }) {
+function buildReviewerNotes({ readiness, apiPlan, timeline, scorecard }) {
   const notes = [];
   if (readiness) notes.push(`Submission readiness status is ${readiness.status}.`);
+  if (scorecard) notes.push(`Maintainer scorecard is ${scorecard.score} (${scorecard.rating}).`);
   if (apiPlan?.candidates?.[0]) {
     notes.push(`Top API credit candidate is ${apiPlan.candidates[0].workflow} (${apiPlan.candidates[0].apiUseCase}).`);
   }
@@ -109,6 +120,7 @@ function renderEvidenceMarkdown(index) {
     `- Redaction status: ${index.summary.redactionStatus || "not supplied"}`,
     `- API plan candidates: ${index.summary.apiPlanCandidates}`,
     `- Timeline days: ${index.summary.timelineDays}`,
+    `- Scorecard: ${index.summary.scorecardScore ?? "not supplied"}${index.summary.scorecardRating ? ` (${index.summary.scorecardRating})` : ""}`,
     "",
     "## Artifacts",
     "",

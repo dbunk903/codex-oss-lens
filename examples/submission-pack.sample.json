@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-04T13:53:50.422Z",
+  "artifactRoot": "codex-oss-lens-submission-pack-sample",
+  "status": "review",
+  "score": 96,
+  "rating": "strong",
+  "summary": {
+    "sessions": 4,
+    "workspaces": 3,
+    "turns": 46,
+    "toolCalls": 14,
+    "observedTokens": 321000,
+    "workflows": {
+      "implementation": 2,
+      "review": 1,
+      "triage": 1
+    },
+    "models": {
+      "gpt-5.5": 2,
+      "gpt-5.3-codex": 1,
+      "gpt-5.4": 1
+    },
+    "quotaWindows": {
+      "primaryUsedPercent": 6,
+      "secondaryUsedPercent": 4
+    },
+    "github": null,
+    "doctorStatus": "ok"
+  },
+  "artifacts": [
+    "README.md",
+    "brief.md",
+    "brief.html",
+    "manifest.json",
+    "scan-report.json",
+    "weekly-report.md",
+    "api-payload.dry-run.json",
+    "doctor.json",
+    "readiness.json",
+    "readiness.md",
+    "api-plan.json",
+    "api-plan.md",
+    "timeline.json",
+    "timeline.md",
+    "scorecard.json",
+    "scorecard.md",
+    "evidence-index.json",
+    "evidence-index.md",
+    "evidence-index.html"
+  ]
+}
