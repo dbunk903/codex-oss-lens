@@ -160,3 +160,31 @@ The output includes:
 `codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json` compares two
 maintainer brief manifests. It reports metric, workflow, and model deltas, plus an optional
 Markdown summary when `--markdown` is supplied.
+
+## Submission readiness
+
+`codex-oss-lens readiness --manifest codex-brief/manifest.json` combines brief audit, redaction
+scan, and optional baseline comparison into one application-oriented report.
+
+The output includes:
+
+- `status`: `pass`, `review`, or `fail`
+- `audit`: embedded `audit` output
+- `redaction`: embedded `redact-check` output
+- `comparison`: embedded `compare-briefs` output when `--base` is supplied
+- `blockers`, `warnings`, and `evidence`
+- optional Markdown when `--markdown` is supplied
+
+## API credit plan
+
+`codex-oss-lens api-plan --report scan-report.json` turns aggregate Codex usage into a prioritized
+API-credit implementation plan. It scores workflow candidates by sessions, turns, tool calls, and
+observed tokens, then maps each workflow to a privacy-first API use case.
+
+The output includes:
+
+- `summary`: aggregate scan totals and quota-window observations
+- `candidates`: workflow scores, suggested API use cases, benefits, and first prompt shapes
+- `milestones`: short implementation sequence for the top candidates
+- `guardrails`: privacy requirements for future API-backed features
+- optional Markdown when `--markdown` is supplied

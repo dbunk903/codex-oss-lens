@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.0 - Submission Planning Reports
+
+- Added `readiness` command that combines audit, redaction, and optional baseline comparison.
+- Added `api-plan` command that prioritizes privacy-first API credit automation candidates.
+- Added tests and sample outputs for readiness and API plan reports.
+- Updated application draft links and public documentation for the new planning reports.
+
 ## v1.1.0 - Brief Quality Gates
 
 - Added `audit` command for maintainer brief readiness scoring.

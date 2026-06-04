@@ -13,6 +13,8 @@ import { generateBrief } from "./brief.js";
 import { auditBrief } from "./audit.js";
 import { redactCheck } from "./redact-check.js";
 import { compareBriefs } from "./compare-briefs.js";
+import { buildReadinessReport } from "./readiness.js";
+import { buildApiCreditPlan } from "./api-plan.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -78,6 +80,28 @@ async function main() {
     const comparison = compareBriefs(base, head);
     if (options.markdown) await writeText(comparison.markdown, options.markdown);
     await writeReport(comparison, options.out);
+    return;
+  }
+
+  if (command === "readiness") {
+    const manifest = await readJsonOption(options.manifest, "--manifest");
+    const baseManifest = options.base ? await readJsonOption(options.base, "--base") : null;
+    const readiness = await buildReadinessReport({
+      manifest,
+      manifestPath: options.manifest,
+      artifactsDir: options.path,
+      baseManifest,
+    });
+    if (options.markdown) await writeText(readiness.markdown, options.markdown);
+    await writeReport(readiness, options.out);
+    return;
+  }
+
+  if (command === "api-plan") {
+    const report = await readJsonOption(options.report, "--report");
+    const plan = buildApiCreditPlan(report);
+    if (options.markdown) await writeText(plan.markdown, options.markdown);
+    await writeReport(plan, options.out);
     return;
   }
 
@@ -196,6 +220,8 @@ Usage:
   codex-oss-lens audit --manifest codex-brief/manifest.json [--out audit.json]
   codex-oss-lens redact-check <file-or-dir> [--out redact-check.json]
   codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json [--out compare.json] [--markdown compare.md]
+  codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brief] [--base old/manifest.json] [--out readiness.json] [--markdown readiness.md]
+  codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

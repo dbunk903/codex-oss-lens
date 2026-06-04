@@ -49,6 +49,8 @@ paths to a hosted service.
 | Brief audit | Share-readiness score and next actions |
 | Redaction check | Leak scan for shareable artifacts |
 | Brief comparison | Day-over-day maintainer evidence deltas |
+| Submission readiness | One-command go/no-go report |
+| API credit plan | Prioritized privacy-first API automation plan |
 
 ## Quick start
 
@@ -139,6 +141,18 @@ To compare two maintainer briefs across days:
 node src/cli.js compare-briefs --base old-brief/manifest.json --head codex-brief/manifest.json --markdown brief-delta.md
 ```
 
+To combine audit, redaction, and optional baseline comparison into one submission report:
+
+```bash
+node src/cli.js readiness --manifest codex-brief/manifest.json --base old-brief/manifest.json --markdown readiness.md
+```
+
+To turn a scan report into a prioritized API-credit implementation plan:
+
+```bash
+node src/cli.js api-plan --report codex-brief/scan-report.json --markdown api-plan.md
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -158,6 +172,8 @@ codex-oss-lens brief [--codex-home ~/.codex] [--repo owner/name] [--out-dir code
 codex-oss-lens audit --manifest codex-brief/manifest.json [--out audit.json]
 codex-oss-lens redact-check <file-or-dir> [--out redact-check.json]
 codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json [--out compare.json] [--markdown compare.md]
+codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brief] [--base old/manifest.json] [--out readiness.json] [--markdown readiness.md]
+codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -222,6 +238,9 @@ activity.
 Run `audit`, `redact-check`, and `compare-briefs` before sharing repeated evidence packs. These
 commands make the share-readiness score, privacy scan, and day-over-day deltas explicit instead of
 leaving them as manual review notes.
+
+For application workflows, `readiness` combines those checks into a single go/no-go report, and
+`api-plan` converts aggregate scan data into a privacy-first API credit implementation sequence.
 
 ## Contributing
 
