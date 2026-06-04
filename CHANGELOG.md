@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.0 - Brief Quality Gates
+
+- Added `audit` command for maintainer brief readiness scoring.
+- Added `redact-check` command for path, rollout filename, raw-log marker, and likely-secret scans.
+- Added `compare-briefs` command for day-over-day maintainer evidence deltas.
+- Added tests and sample outputs for the new quality gate commands.
+
 ## v1.0.0 - Maintainer Evidence Brief
 
 - Added `brief` command that generates a local maintainer evidence pack.

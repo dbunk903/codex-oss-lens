@@ -10,6 +10,9 @@ import { importGitHubOutcomes } from "./github-import.js";
 import { linkGitHubOutcomes } from "./outcome-linker.js";
 import { runDoctor } from "./doctor.js";
 import { generateBrief } from "./brief.js";
+import { auditBrief } from "./audit.js";
+import { redactCheck } from "./redact-check.js";
+import { compareBriefs } from "./compare-briefs.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -58,6 +61,26 @@ async function main() {
     return;
   }
 
+  if (command === "audit") {
+    const manifest = await readJsonOption(options.manifest, "--manifest");
+    await writeReport(auditBrief(manifest), options.out);
+    return;
+  }
+
+  if (command === "redact-check") {
+    await writeReport(await redactCheck(options.path || args[0]), options.out);
+    return;
+  }
+
+  if (command === "compare-briefs") {
+    const base = await readJsonOption(options.base, "--base");
+    const head = await readJsonOption(options.head, "--head");
+    const comparison = compareBriefs(base, head);
+    if (options.markdown) await writeText(comparison.markdown, options.markdown);
+    await writeReport(comparison, options.out);
+    return;
+  }
+
   if (command === "serve") {
     await serve(options);
     return;
@@ -84,6 +107,11 @@ function parseArgs(args) {
     else if (arg === "--repo") options.repo = args[++i];
     else if (arg === "--report") options.report = args[++i];
     else if (arg === "--github") options.github = args[++i];
+    else if (arg === "--manifest") options.manifest = args[++i];
+    else if (arg === "--base") options.base = args[++i];
+    else if (arg === "--head") options.head = args[++i];
+    else if (arg === "--path") options.path = args[++i];
+    else if (arg === "--markdown") options.markdown = args[++i];
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -165,6 +193,9 @@ Usage:
   codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
   codex-oss-lens doctor [--codex-home ~/.codex] [--out doctor.json]
   codex-oss-lens brief [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-brief]
+  codex-oss-lens audit --manifest codex-brief/manifest.json [--out audit.json]
+  codex-oss-lens redact-check <file-or-dir> [--out redact-check.json]
+  codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json [--out compare.json] [--markdown compare.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

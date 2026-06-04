@@ -129,3 +129,34 @@ evidence pack:
 
 The brief defaults to hash redaction and keeps raw logs, prompts, source code, and full paths out
 of the generated shareable artifacts.
+
+## Brief audit
+
+`codex-oss-lens audit --manifest codex-brief/manifest.json` emits a share-readiness score for a
+maintainer evidence pack. It checks session coverage, workspace coverage, workflow mix, API dry-run
+payload presence, doctor status, privacy flags, and the Markdown/HTML brief artifacts.
+
+The output includes:
+
+- `score`: 0 to 100
+- `rating`: `ready`, `needs-review`, or `not-ready`
+- `checks`: individual boolean checks with point values
+- `nextActions`: concrete repair steps for failed checks
+
+## Redaction check
+
+`codex-oss-lens redact-check <file-or-dir>` scans generated artifacts for accidental leakage before
+sharing them. It flags full local paths, rollout JSONL filenames, raw Codex log markers, and likely
+API or GitHub secrets.
+
+The output includes:
+
+- `status`: `pass` or `fail`
+- `filesScanned`
+- `findings`: rule id, relative file, line number, and a redacted sample
+
+## Brief comparison
+
+`codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json` compares two
+maintainer brief manifests. It reports metric, workflow, and model deltas, plus an optional
+Markdown summary when `--markdown` is supplied.

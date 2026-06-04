@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-04T00:53:47.733Z",
+  "baseGeneratedAt": "2026-06-03T07:57:10.418Z",
+  "headGeneratedAt": "2026-06-04T00:00:00.000Z",
+  "metricDeltas": {
+    "sessions": {
+      "before": 4,
+      "after": 7,
+      "delta": 3
+    },
+    "workspaces": {
+      "before": 3,
+      "after": 4,
+      "delta": 1
+    },
+    "turns": {
+      "before": 46,
+      "after": 64,
+      "delta": 18
+    },
+    "toolCalls": {
+      "before": 14,
+      "after": 20,
+      "delta": 6
+    },
+    "observedTokens": {
+      "before": 321000,
+      "after": 363000,
+      "delta": 42000
+    }
+  },
+  "workflowDeltas": {
+    "implementation": {
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    "release": {
+      "before": 0,
+      "after": 1,
+      "delta": 1
+    },
+    "review": {
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    "triage": {
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    }
+  },
+  "modelDeltas": {
+    "gpt-5.3-codex": {
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    "gpt-5.4": {
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    "gpt-5.4-mini": {
+      "before": 0,
+      "after": 1,
+      "delta": 1
+    },
+    "gpt-5.5": {
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    }
+  },
+  "markdown": "# Codex OSS Lens Brief Comparison\n\n## Metric Deltas\n\n- sessions: 4 -> 7 (+3)\n- workspaces: 3 -> 4 (+1)\n- turns: 46 -> 64 (+18)\n- toolCalls: 14 -> 20 (+6)\n- observedTokens: 321000 -> 363000 (+42000)\n\n## Workflow Deltas\n\n- implementation: 2 -> 2 (0)\n- release: 0 -> 1 (+1)\n- review: 1 -> 1 (0)\n- triage: 1 -> 1 (0)\n\n## Model Deltas\n\n- gpt-5.3-codex: 1 -> 1 (0)\n- gpt-5.4: 1 -> 1 (0)\n- gpt-5.4-mini: 0 -> 1 (+1)\n- gpt-5.5: 2 -> 2 (0)\n"
+}

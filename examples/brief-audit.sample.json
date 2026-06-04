@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-04T00:53:20.237Z",
+  "score": 100,
+  "rating": "ready",
+  "checks": [
+    {
+      "id": "sessions",
+      "ok": true,
+      "points": 20,
+      "message": "Brief contains session activity."
+    },
+    {
+      "id": "workspaces",
+      "ok": true,
+      "points": 10,
+      "message": "Brief contains workspace coverage."
+    },
+    {
+      "id": "workflows",
+      "ok": true,
+      "points": 15,
+      "message": "Brief contains workflow mix."
+    },
+    {
+      "id": "apiPayload",
+      "ok": true,
+      "points": 15,
+      "message": "Brief includes aggregate API dry-run payload."
+    },
+    {
+      "id": "doctor",
+      "ok": true,
+      "points": 10,
+      "message": "Doctor status is ok."
+    },
+    {
+      "id": "privacy",
+      "ok": true,
+      "points": 20,
+      "message": "Brief privacy flags are share-safe."
+    },
+    {
+      "id": "html",
+      "ok": true,
+      "points": 5,
+      "message": "Brief includes standalone HTML."
+    },
+    {
+      "id": "markdown",
+      "ok": true,
+      "points": 5,
+      "message": "Brief includes Markdown summary."
+    }
+  ],
+  "nextActions": []
+}

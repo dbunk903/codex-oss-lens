@@ -46,6 +46,9 @@ paths to a hosted service.
 | GitHub outcomes | Optional issue/PR metadata import through `gh` |
 | Outcome links | Local branch-to-PR matching |
 | Maintainer brief | Shareable evidence pack generation |
+| Brief audit | Share-readiness score and next actions |
+| Redaction check | Leak scan for shareable artifacts |
+| Brief comparison | Day-over-day maintainer evidence deltas |
 
 ## Quick start
 
@@ -117,6 +120,25 @@ To generate a full local evidence pack for review or OSS support applications:
 node src/cli.js brief --repo dbunk903/codex-oss-lens --out-dir codex-brief
 ```
 
+To audit whether that evidence pack is ready to share:
+
+```bash
+node src/cli.js audit --manifest codex-brief/manifest.json --out codex-brief/audit.json
+```
+
+To scan the generated artifacts for accidental paths, rollout filenames, raw-log markers, or
+likely secrets:
+
+```bash
+node src/cli.js redact-check codex-brief --out codex-brief/redact-check.json
+```
+
+To compare two maintainer briefs across days:
+
+```bash
+node src/cli.js compare-briefs --base old-brief/manifest.json --head codex-brief/manifest.json --markdown brief-delta.md
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -133,6 +155,9 @@ codex-oss-lens github-import --repo owner/name [--limit 50] [--out github-outcom
 codex-oss-lens link-outcomes --report report.json --github github-outcomes.json [--out linked.json]
 codex-oss-lens doctor [--codex-home ~/.codex] [--out doctor.json]
 codex-oss-lens brief [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-brief]
+codex-oss-lens audit --manifest codex-brief/manifest.json [--out audit.json]
+codex-oss-lens redact-check <file-or-dir> [--out redact-check.json]
+codex-oss-lens compare-briefs --base old/manifest.json --head new/manifest.json [--out compare.json] [--markdown compare.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -193,6 +218,10 @@ See [npm publishing](docs/npm-publishing.md) for package verification steps.
 
 This is the recommended artifact for sharing a privacy-preserving snapshot of Codex maintainer
 activity.
+
+Run `audit`, `redact-check`, and `compare-briefs` before sharing repeated evidence packs. These
+commands make the share-readiness score, privacy scan, and day-over-day deltas explicit instead of
+leaving them as manual review notes.
 
 ## Contributing
 
