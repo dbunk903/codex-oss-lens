@@ -205,8 +205,9 @@ The output includes:
 ## Evidence index
 
 `codex-oss-lens evidence-index --manifest manifest.json` composes generated artifacts into a
-reviewer-facing index. Supplying `--readiness`, `--api-plan`, and `--timeline` enriches the index
-with status, planning, and activity evidence.
+reviewer-facing index. Supplying `--readiness`, `--api-plan`, `--timeline`, `--scorecard`, and
+`--form-draft` enriches the index with status, planning, activity, scoring, and copy-ready form
+evidence.
 
 The output includes:
 
@@ -234,7 +235,7 @@ The output includes:
 
 `codex-oss-lens submission-pack --out-dir codex-submission-pack` generates the complete application
 evidence folder in one command. It creates the maintainer brief, readiness report, API plan,
-activity timeline, scorecard, evidence index, and top-level README.
+activity timeline, scorecard, form draft, evidence index, and top-level README.
 
 The command returns a compact pack manifest with:
 
@@ -242,3 +243,31 @@ The command returns a compact pack manifest with:
 - `score` and `rating`: scorecard result
 - `summary`: maintainer brief summary
 - `artifacts`: files generated into the pack folder
+
+## Form draft
+
+`codex-oss-lens form-draft --manifest manifest.json` creates copy-ready Korean OpenAI OSS support
+form answers from generated evidence. Supplying readiness, API plan, scorecard, repository, and
+release links enriches the draft.
+
+The output includes:
+
+- `publicLinks`: repository, release, roadmap, and API-credit workflow URLs when supplied
+- `requiredManualFields`: personal fields that must still be filled by the account owner
+- `fields`: repository fit, API credit plan, and additional information answers
+- character counts and 500-character limit checks for each answer
+- optional Markdown when `--markdown` is supplied
+
+## Pack validation
+
+`codex-oss-lens pack-validate <submission-pack-dir>` validates a generated submission pack before
+sharing it. It checks required files, redaction status, readiness status, scorecard threshold,
+evidence index availability, and HTML index availability.
+
+The output includes:
+
+- `status`: `pass`, `review`, or `fail`
+- `checks`: individual validation checks
+- `blockers` and `warnings`
+- `redaction`: embedded redaction scan result
+- optional Markdown when `--markdown` is supplied

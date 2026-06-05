@@ -18,10 +18,12 @@ test("generates a complete local submission pack from demo data", async () => {
   assert.ok(files.includes("api-plan.md"));
   assert.ok(files.includes("timeline.md"));
   assert.ok(files.includes("scorecard.md"));
+  assert.ok(files.includes("form-draft.md"));
   assert.ok(files.includes("evidence-index.html"));
 
   const readme = await fs.readFile(path.join(outDir, "README.md"), "utf8");
   const evidence = await fs.readFile(path.join(outDir, "evidence-index.md"), "utf8");
   assert.match(readme, /Submission Pack/);
+  assert.match(readme, /form-draft\.md/);
   assert.match(evidence, /scorecard\.json/);
 });

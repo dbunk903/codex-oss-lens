@@ -41,6 +41,7 @@ function buildArtifacts(manifest, artifactPaths) {
     ["apiPlan", "API credit implementation plan"],
     ["timeline", "Maintainer activity timeline"],
     ["scorecard", "Maintainer application scorecard"],
+    ["formDraft", "Copy-ready OSS support form draft"],
   ]
     .filter(([key]) => artifactPaths[key])
     .map(([key, description]) => ({

@@ -3,6 +3,7 @@ import path from "node:path";
 import { buildApiCreditPlan } from "./api-plan.js";
 import { generateBrief } from "./brief.js";
 import { buildEvidenceIndex } from "./evidence-index.js";
+import { buildFormDraft } from "./form-draft.js";
 import { buildReadinessReport } from "./readiness.js";
 import { buildMaintainerScorecard } from "./scorecard.js";
 import { buildActivityTimeline } from "./timeline.js";
@@ -22,6 +23,18 @@ export async function generateSubmissionPack(options = {}) {
   const apiPlan = buildApiCreditPlan(scanReport);
   const timeline = buildActivityTimeline(scanReport);
   const scorecard = buildMaintainerScorecard({ manifest, readiness, apiPlan, timeline });
+  const formDraft = buildFormDraft({
+    manifest,
+    readiness,
+    apiPlan,
+    scorecard,
+    links: {
+      repo: normalizeRepoLink(options.repo),
+      releaseUrl: options.releaseUrl,
+      roadmapUrl: options.roadmapUrl,
+      apiWorkflowUrl: options.apiWorkflowUrl,
+    },
+  });
   const evidenceIndex = buildEvidenceIndex({
     manifest,
     readiness,
@@ -33,6 +46,7 @@ export async function generateSubmissionPack(options = {}) {
       apiPlan: "api-plan.json",
       timeline: "timeline.json",
       scorecard: "scorecard.json",
+      formDraft: "form-draft.json",
     },
   });
 
@@ -44,6 +58,8 @@ export async function generateSubmissionPack(options = {}) {
   await writeText(outDir, "timeline.md", timeline.markdown);
   await writeJson(outDir, "scorecard.json", scorecard);
   await writeText(outDir, "scorecard.md", scorecard.markdown);
+  await writeJson(outDir, "form-draft.json", formDraft);
+  await writeText(outDir, "form-draft.md", formDraft.markdown);
   await writeJson(outDir, "evidence-index.json", evidenceIndex);
   await writeText(outDir, "evidence-index.md", evidenceIndex.markdown);
   await writeText(outDir, "evidence-index.html", evidenceIndex.html);
@@ -91,6 +107,8 @@ function buildPackManifest({ outDir, manifest, readiness, scorecard }) {
       "timeline.md",
       "scorecard.json",
       "scorecard.md",
+      "form-draft.json",
+      "form-draft.md",
       "evidence-index.json",
       "evidence-index.md",
       "evidence-index.html",
@@ -111,6 +129,7 @@ function renderPackReadme({ manifest, readiness, scorecard }) {
     "- Open `evidence-index.html` for a reviewer-friendly index.",
     "- Read `brief.md` for the maintainer evidence brief.",
     "- Read `readiness.md` and `scorecard.md` before sharing externally.",
+    "- Use `form-draft.md` for copy-ready Korean application answers.",
     "- Use `api-plan.md` to explain API credit usage.",
     "- Use `timeline.md` to show chronological maintenance activity.",
     "",
@@ -121,4 +140,11 @@ function renderPackReadme({ manifest, readiness, scorecard }) {
     "- Run `redact-check` again before sharing modified artifacts.",
     "",
   ].join("\n");
+}
+
+function normalizeRepoLink(repo) {
+  if (!repo) return "";
+  if (repo.startsWith("http://") || repo.startsWith("https://")) return repo;
+  if (/^[^/\s]+\/[^/\s]+$/.test(repo)) return `https://github.com/${repo}`;
+  return repo;
 }

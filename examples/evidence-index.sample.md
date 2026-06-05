@@ -1,6 +1,6 @@
 # Codex OSS Lens Evidence Index
 
-Generated: 2026-06-04T13:53:34.396Z
+Generated: 2026-06-05T04:17:57.738Z
 Status: pass
 
 ## Summary
@@ -28,6 +28,7 @@ Status: pass
 - [api-plan.sample.json](api-plan.sample.json) - API credit implementation plan
 - [timeline.sample.json](timeline.sample.json) - Maintainer activity timeline
 - [scorecard.sample.json](scorecard.sample.json) - Maintainer application scorecard
+- [form-draft.sample.json](form-draft.sample.json) - Copy-ready OSS support form draft
 
 ## Reviewer Notes
 

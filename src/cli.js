@@ -19,6 +19,8 @@ import { buildActivityTimeline } from "./timeline.js";
 import { buildEvidenceIndex } from "./evidence-index.js";
 import { buildMaintainerScorecard } from "./scorecard.js";
 import { generateSubmissionPack } from "./submission-pack.js";
+import { buildFormDraft } from "./form-draft.js";
+import { validateSubmissionPack } from "./pack-validate.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -134,6 +136,7 @@ async function main() {
         apiPlan: options.apiPlan,
         timeline: options.timeline,
         scorecard: options.scorecard,
+        formDraft: options.formDraft,
       },
     });
     if (options.markdown) await writeText(index.markdown, options.markdown);
@@ -155,6 +158,35 @@ async function main() {
 
   if (command === "submission-pack") {
     await writeReport(await generateSubmissionPack(options), options.out);
+    return;
+  }
+
+  if (command === "form-draft") {
+    const manifest = await readJsonOption(options.manifest, "--manifest");
+    const readiness = options.readiness ? await readJsonOption(options.readiness, "--readiness") : null;
+    const apiPlan = options.apiPlan ? await readJsonOption(options.apiPlan, "--api-plan") : null;
+    const scorecard = options.scorecard ? await readJsonOption(options.scorecard, "--scorecard") : null;
+    const draft = buildFormDraft({
+      manifest,
+      readiness,
+      apiPlan,
+      scorecard,
+      links: {
+        repo: options.repo,
+        releaseUrl: options.releaseUrl,
+        roadmapUrl: options.roadmapUrl,
+        apiWorkflowUrl: options.apiWorkflowUrl,
+      },
+    });
+    if (options.markdown) await writeText(draft.markdown, options.markdown);
+    await writeReport(draft, options.out);
+    return;
+  }
+
+  if (command === "pack-validate") {
+    const validation = await validateSubmissionPack(options.path || args[0], options);
+    if (options.markdown) await writeText(validation.markdown, options.markdown);
+    await writeReport(validation, options.out);
     return;
   }
 
@@ -194,6 +226,11 @@ function parseArgs(args) {
     else if (arg === "--api-plan") options.apiPlan = args[++i];
     else if (arg === "--timeline") options.timeline = args[++i];
     else if (arg === "--scorecard") options.scorecard = args[++i];
+    else if (arg === "--form-draft") options.formDraft = args[++i];
+    else if (arg === "--release-url") options.releaseUrl = args[++i];
+    else if (arg === "--roadmap-url") options.roadmapUrl = args[++i];
+    else if (arg === "--api-workflow-url") options.apiWorkflowUrl = args[++i];
+    else if (arg === "--min-score") options.minScore = Number(args[++i]);
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -282,8 +319,10 @@ Usage:
   codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
   codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markdown timeline.md]
   codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
-  codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
+  codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--form-draft form-draft.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
   codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
+  codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--out form-draft.json] [--markdown form-draft.md]
+  codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

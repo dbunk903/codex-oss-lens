@@ -55,6 +55,8 @@ paths to a hosted service.
 | Evidence index | Reviewer-friendly artifact index in JSON, Markdown, and HTML |
 | Maintainer scorecard | Weighted application readiness score with next actions |
 | Submission pack | One-command application evidence folder generation |
+| Form draft | Copy-ready Korean OSS support application answers |
+| Pack validation | Required-file, score, readiness, and privacy validation |
 
 ## Quick start
 
@@ -181,6 +183,18 @@ To generate the full application evidence folder in one command:
 node src/cli.js submission-pack --repo dbunk903/codex-oss-lens --out-dir codex-submission-pack
 ```
 
+To generate copy-ready Korean form answers from the same evidence:
+
+```bash
+node src/cli.js form-draft --manifest codex-submission-pack/manifest.json --readiness codex-submission-pack/readiness.json --api-plan codex-submission-pack/api-plan.json --scorecard codex-submission-pack/scorecard.json --repo https://github.com/dbunk903/codex-oss-lens --markdown form-draft.md
+```
+
+To validate a generated submission pack before sharing it:
+
+```bash
+node src/cli.js pack-validate codex-submission-pack --markdown pack-validation.md
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -204,8 +218,10 @@ codex-oss-lens readiness --manifest codex-brief/manifest.json [--path codex-brie
 codex-oss-lens api-plan --report scan-report.json [--out api-plan.json] [--markdown api-plan.md]
 codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markdown timeline.md]
 codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
-codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
+codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--form-draft form-draft.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
 codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
+codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--out form-draft.json] [--markdown form-draft.md]
+codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -277,6 +293,8 @@ Use `timeline` to show chronological maintenance activity and `evidence-index` t
 generated files into a reviewer-facing starting point.
 Use `scorecard` for a weighted readiness score and `submission-pack` when you want the whole
 application evidence folder generated in one pass.
+Use `form-draft` to keep Korean application answers within character limits, then run
+`pack-validate` as the final local sharing gate.
 
 ## Contributing
 

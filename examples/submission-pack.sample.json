@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-04T13:53:50.422Z",
+  "generatedAt": "2026-06-05T04:17:22.956Z",
   "artifactRoot": "codex-oss-lens-submission-pack-sample",
   "status": "review",
   "score": 96,
@@ -25,7 +25,12 @@
       "primaryUsedPercent": 6,
       "secondaryUsedPercent": 4
     },
-    "github": null,
+    "github": {
+      "repository": "dbunk903/codex-oss-lens",
+      "issues": 25,
+      "pullRequests": 0,
+      "linkedSessions": 0
+    },
     "doctorStatus": "ok"
   },
   "artifacts": [
@@ -45,6 +50,8 @@
     "timeline.md",
     "scorecard.json",
     "scorecard.md",
+    "form-draft.json",
+    "form-draft.md",
     "evidence-index.json",
     "evidence-index.md",
     "evidence-index.html"

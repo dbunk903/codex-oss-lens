@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-05T04:17:23.133Z",
+  "status": "review",
+  "packDir": "codex-oss-lens-submission-pack-sample",
+  "minScore": 75,
+  "checks": [
+    {
+      "id": "requiredFiles",
+      "ok": true,
+      "message": "Missing files: none"
+    },
+    {
+      "id": "redaction",
+      "ok": true,
+      "message": "0 redaction findings"
+    },
+    {
+      "id": "readiness",
+      "ok": true,
+      "message": "readiness=review"
+    },
+    {
+      "id": "scorecard",
+      "ok": true,
+      "message": "score=96, min=75"
+    },
+    {
+      "id": "evidenceIndex",
+      "ok": true,
+      "message": "Evidence index has artifact links."
+    },
+    {
+      "id": "htmlIndex",
+      "ok": true,
+      "message": "HTML evidence index exists."
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "Readiness is review because no baseline comparison was supplied or review warnings remain."
+  ],
+  "files": [
+    "README.md",
+    "api-payload.dry-run.json",
+    "api-plan.json",
+    "api-plan.md",
+    "brief.html",
+    "brief.md",
+    "doctor.json",
+    "evidence-index.html",
+    "evidence-index.json",
+    "evidence-index.md",
+    "form-draft.json",
+    "form-draft.md",
+    "github-outcomes.json",
+    "linked-outcomes.json",
+    "manifest.json",
+    "readiness.json",
+    "readiness.md",
+    "scan-report.json",
+    "scorecard.json",
+    "scorecard.md",
+    "timeline.json",
+    "timeline.md",
+    "weekly-report.md"
+  ],
+  "redaction": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-06-05T04:17:23.133Z",
+    "status": "pass",
+    "filesScanned": 23,
+    "findings": []
+  },
+  "markdown": "# Codex OSS Lens Pack Validation\n\nGenerated: 2026-06-05T04:17:23.133Z\nStatus: review\nPack: codex-oss-lens-submission-pack-sample\n\n## Checks\n\n- requiredFiles: pass - Missing files: none\n- redaction: pass - 0 redaction findings\n- readiness: pass - readiness=review\n- scorecard: pass - score=96, min=75\n- evidenceIndex: pass - Evidence index has artifact links.\n- htmlIndex: pass - HTML evidence index exists.\n\n## Blockers\n\n- None.\n\n## Warnings\n\n- Readiness is review because no baseline comparison was supplied or review warnings remain.\n"
+}

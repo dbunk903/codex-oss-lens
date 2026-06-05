@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.5.0 - Application Form Gate
+
+- Added `form-draft` command for copy-ready Korean OSS support application answers.
+- Added `pack-validate` command for required-file, readiness, scorecard, and privacy validation.
+- Included form drafts in generated submission packs.
+- Added tests and sample outputs for form draft and pack validation.
+
 ## v1.4.0 - Complete Submission Pack
 
 - Added `scorecard` command for weighted maintainer application readiness scoring.
