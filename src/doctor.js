@@ -7,6 +7,7 @@ import { defaultCodexHome, findRolloutFiles } from "./parser.js";
 const execFileAsync = promisify(execFile);
 
 export async function runDoctor(options = {}) {
+  if (options.demo) return demoDoctorReport();
   const codexHome = options.codexHome || defaultCodexHome();
   const sessionsDir = path.join(codexHome, "sessions");
   const redactPaths = options.redactPaths !== false;
@@ -38,6 +39,44 @@ export async function runDoctor(options = {}) {
       githubCli: {
         ok: gh.ok,
         version: gh.version,
+        requiredFor: ["github-import"],
+      },
+    },
+    privacy: {
+      rawLogsIncluded: false,
+      promptsIncluded: false,
+      sourceCodeIncluded: false,
+      rolloutFileNamesIncluded: false,
+    },
+  };
+}
+
+export function demoDoctorReport() {
+  return {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    status: "ok",
+    checks: {
+      node: {
+        ok: true,
+        version: process.version,
+        required: ">=20",
+      },
+      codexHome: {
+        ok: true,
+        path: "[redacted]/.codex",
+      },
+      sessionsDir: {
+        ok: true,
+        path: "[redacted]/sessions",
+      },
+      rolloutFiles: {
+        ok: true,
+        count: 4,
+      },
+      githubCli: {
+        ok: true,
+        version: "gh demo",
         requiredFor: ["github-import"],
       },
     },

@@ -25,3 +25,13 @@ test("doctor reports local Codex readiness without exposing rollout filenames", 
   assert.equal(report.privacy.rawLogsIncluded, false);
   assert.equal(serialized.includes("rollout-2026"), false);
 });
+
+test("doctor demo report is host independent", async () => {
+  const report = await runDoctor({ demo: true });
+  const serialized = JSON.stringify(report);
+
+  assert.equal(report.status, "ok");
+  assert.equal(report.checks.rolloutFiles.count, 4);
+  assert.equal(serialized.includes("/home/"), false);
+  assert.equal(serialized.includes("/Users/"), false);
+});

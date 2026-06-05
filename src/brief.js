@@ -2,7 +2,7 @@ import { promises as fs } from "node:fs";
 import crypto from "node:crypto";
 import path from "node:path";
 import { buildApiSummaryPayload } from "./api-payload.js";
-import { runDoctor } from "./doctor.js";
+import { demoDoctorReport, runDoctor } from "./doctor.js";
 import { importGitHubOutcomes } from "./github-import.js";
 import { linkGitHubOutcomes } from "./outcome-linker.js";
 import { demoReport, scanCodexHome } from "./parser.js";
@@ -14,7 +14,7 @@ export async function generateBrief(options = {}) {
   const report = sanitizeReport(options.demo ? demoReport() : await scanCodexHome(scanOptions));
   const weekly = renderWeeklyReport(report);
   const apiPayload = buildApiSummaryPayload(report);
-  const doctor = await runDoctor({ ...options, redactPaths: options.redactPaths ?? true });
+  const doctor = options.demo ? demoDoctorReport() : await runDoctor({ ...options, redactPaths: options.redactPaths ?? true });
 
   await fs.mkdir(outDir, { recursive: true });
 
