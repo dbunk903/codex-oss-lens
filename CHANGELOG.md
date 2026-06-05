@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.5.1 - CI Restoration
+
+- Restored GitHub Actions Node test workflow for push and pull request verification.
+- Made demo maintainer evidence independent of host Codex state so GitHub-hosted runners pass.
+- Verified Node 20 and Node 22 CI jobs run tests, package dry-run, and packaged CLI smoke checks.
+
 ## v1.5.0 - Application Form Gate
 
 - Added `form-draft` command for copy-ready Korean OSS support application answers.
