@@ -28,6 +28,7 @@
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: var(--band);
         color: var(--ink);
+        overflow-x: hidden;
       }
 
       button,
@@ -72,6 +73,7 @@
         margin: 0;
         max-width: 760px;
         color: #bfd3cc;
+        overflow-wrap: anywhere;
       }
 
       .actions {
@@ -79,6 +81,7 @@
         gap: 10px;
         align-items: center;
         flex-wrap: wrap;
+        max-width: 100%;
       }
 
       .file-button,
@@ -155,6 +158,13 @@
         gap: 18px;
       }
 
+      .evidence-band {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
       .panel {
         padding: 18px;
         min-width: 0;
@@ -163,6 +173,53 @@
       .panel h2 {
         margin: 0 0 14px;
         font-size: 17px;
+      }
+
+      .evidence-copy {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .evidence-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .link-button {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bdc9d1;
+        color: var(--ink);
+        background: #f8fbfa;
+        padding: 0 12px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .evidence-list {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+        list-style: none;
+      }
+
+      .evidence-list li {
+        display: grid;
+        grid-template-columns: minmax(120px, 0.45fr) 1fr;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .evidence-list li:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
       }
 
       .bar-list {
@@ -291,8 +348,22 @@
           padding: 22px 0;
         }
 
+        .actions {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          width: 100%;
+        }
+
+        .file-button,
+        .ghost-button {
+          justify-content: center;
+          width: 100%;
+          min-width: 0;
+        }
+
         .kpis,
         .meta-row,
+        .evidence-band,
         .grid {
           grid-template-columns: 1fr;
         }
@@ -328,6 +399,30 @@
       <main>
         <section class="meta-row" id="metaRow"></section>
         <section class="kpis" id="kpis"></section>
+        <section class="evidence-band">
+          <article class="panel">
+            <h2>Application Evidence</h2>
+            <p class="evidence-copy">
+              The same local scan can produce a reviewer-ready submission pack, Korean form draft,
+              readiness gate, privacy check, timeline, and API-credit plan without uploading raw
+              rollout logs or source code.
+            </p>
+            <div class="evidence-actions">
+              <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/releases/latest">Latest release</a>
+              <a class="link-button" href="https://www.npmjs.com/package/codex-oss-lens">npm package</a>
+              <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md">Use cases</a>
+            </div>
+          </article>
+          <article class="panel">
+            <h2>Submission Gates</h2>
+            <ul class="evidence-list">
+              <li><span class="label">Pack</span><strong>submission-pack</strong></li>
+              <li><span class="label">Privacy</span><strong>redact-check + readiness</strong></li>
+              <li><span class="label">Score</span><strong>scorecard + evidence-index</strong></li>
+              <li><span class="label">Distribution</span><strong>published install smoke</strong></li>
+            </ul>
+          </article>
+        </section>
         <section class="grid">
           <article class="panel">
             <h2>Daily Session Load</h2>

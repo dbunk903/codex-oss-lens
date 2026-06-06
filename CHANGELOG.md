@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased - Pre-submission Polish
+
+- Added top-level README npm usage, npm badge, and published package smoke command.
+- Added scheduled/manual GitHub Actions verification for the npm `latest` package.
+- Added an application evidence and submission-gates section to the dashboard UI.
+- Added maintainer use-case documentation for weekly review, application evidence, API-credit
+  planning, privacy review, and published package confidence.
+- Updated application materials with npm package and maintainer use-case links.
+
 ## v1.6.1 - Published Install Smoke Fix
 
 - Ran published-package install smoke checks from a temporary directory so local repository state

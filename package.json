@@ -14,6 +14,7 @@
     "examples/*.md",
     "examples/*.html",
     "examples/dashboard-preview.png",
+    "examples/dashboard-mobile-preview.png",
     "examples/brief-sample/",
     "CHANGELOG.md"
   ],

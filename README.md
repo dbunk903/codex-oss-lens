@@ -1,6 +1,7 @@
 # Codex OSS Lens
 
 [![release](https://img.shields.io/github/v/release/dbunk903/codex-oss-lens?label=release)](https://github.com/dbunk903/codex-oss-lens/releases)
+[![npm](https://img.shields.io/npm/v/codex-oss-lens?label=npm)](https://www.npmjs.com/package/codex-oss-lens)
 [![license](https://img.shields.io/github/license/dbunk903/codex-oss-lens)](LICENSE)
 [![node](https://img.shields.io/badge/node-%3E%3D20-167d68)](package.json)
 [![privacy](https://img.shields.io/badge/privacy-local--first-2563a8)](docs/api-credit-workflow.md)
@@ -32,6 +33,28 @@ paths to a hosted service.
 
 ![Dashboard preview](examples/dashboard-preview.png)
 
+![Mobile dashboard preview](examples/dashboard-mobile-preview.png)
+
+## Try the published package
+
+```bash
+npx -y codex-oss-lens@latest serve --demo
+```
+
+The CLI is published on npm as
+[`codex-oss-lens`](https://www.npmjs.com/package/codex-oss-lens). For a global install:
+
+```bash
+npm install -g codex-oss-lens
+codex-oss-lens serve --demo
+```
+
+For a registry smoke check without opening the UI:
+
+```bash
+npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
+```
+
 ## Current status
 
 | Area | Status |
@@ -59,6 +82,8 @@ paths to a hosted service.
 | Pack validation | Required-file, score, readiness, and privacy validation |
 | NPM publish check | Login, registry, package metadata, and OTP guidance |
 | Published install smoke | `npm exec` verification for the published CLI |
+| Published package | Available on npm as `codex-oss-lens` |
+| Published smoke CI | Scheduled and manual GitHub Actions verification |
 
 ## Quick start
 
@@ -70,10 +95,10 @@ npm run serve
 
 Then open `http://127.0.0.1:5057`.
 
-After the package is published, the same UI can run with `npx`:
+The same UI can run from the published npm package:
 
 ```bash
-npx codex-oss-lens serve --demo
+npx -y codex-oss-lens@latest serve --demo
 ```
 
 To write a report that can be opened in the static UI:
@@ -285,6 +310,8 @@ See [report schema](docs/report-schema.md) for the generated JSON shape.
 
 See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API plan.
 See [npm publishing](docs/npm-publishing.md) for package verification steps.
+See [maintainer use cases](docs/maintainer-use-cases.md) for practical OSS workflows this tool
+supports.
 
 ## Maintainer Brief
 

@@ -1,0 +1,24 @@
+name: Published package smoke
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  published-smoke:
+    name: npm latest demo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run published CLI demo
+        run: |
+          npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo > report.json
+          node -e 'const fs=require("node:fs"); const report=JSON.parse(fs.readFileSync("report.json", "utf8")); if (!report.totals || report.totals.sessions < 1) throw new Error("demo report missing sessions"); console.log(`sessions=${report.totals.sessions}`);'
