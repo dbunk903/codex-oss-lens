@@ -9,6 +9,7 @@ package owner after reviewing the tarball.
 npm test
 npm run pack:check
 npm run pack:smoke
+node src/cli.js publish-check --markdown publish-check.md
 ```
 
 `pack:smoke` creates a tarball, installs it in a temporary directory, runs the packaged
@@ -31,11 +32,15 @@ Generated local reports are excluded by `.gitignore` and not included in the pac
 ## Publish command
 
 ```bash
-npm publish --access public
+npm publish --access public --otp <6-digit-code>
 ```
 
-After publishing, update README examples to use:
+If npm write 2FA is enabled, the publish step requires either the current one-time code or a
+granular automation token with 2FA bypass enabled by the package owner.
+
+After publishing, verify the public package:
 
 ```bash
+node src/cli.js install-smoke --package codex-oss-lens --version latest --markdown install-smoke.md
 npx codex-oss-lens serve --demo
 ```

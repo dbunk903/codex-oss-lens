@@ -15,11 +15,11 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 ## Public evidence links
 
 - Repository: https://github.com/dbunk903/codex-oss-lens
-- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.5.1
+- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.0
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
-- Closed issues: #1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #14, #15, #16, #17, #18, #19, #20, #21, #22, #23, #24, #25
-- Open development issues: npm package publishing after owner login
+- Closed issues: #1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #14, #15, #16, #17, #18, #19, #20, #21, #22, #23, #24, #25, #26, #27
+- Open development issues: npm package publishing after account-owner OTP or granular token
 
 ## Repository fit answer - max 500 Korean characters
 
@@ -36,7 +36,7 @@ API 크레딧은 로컬 집계 결과를 기반으로 주간 메인테이너 리
 
 ## Additional information - max 500 Korean characters
 
-현재 v1.5.1 공개 릴리스가 있습니다. 의존성 없는 Node CLI와 정적 UI로 구성되어 있고 quota/token 분석, Git/workflow/outcome linking, API dry-run, doctor, npm smoke test와 GitHub Actions CI를 제공합니다. `submission-pack`이 신청 evidence를 만들고 `form-draft`와 `pack-validate`가 제출 직전 상태를 검증합니다.
+현재 v1.6.0 공개 릴리스가 있습니다. 의존성 없는 Node CLI와 정적 UI로 quota/token 분석, Git/workflow/outcome linking, API dry-run, doctor, CI, npm pack smoke test를 제공합니다. `submission-pack`, `form-draft`, `pack-validate`, `publish-check`가 신청 evidence와 배포 준비 상태를 검증합니다.
 
 ## Final manual submission steps
 

@@ -21,6 +21,8 @@ import { buildMaintainerScorecard } from "./scorecard.js";
 import { generateSubmissionPack } from "./submission-pack.js";
 import { buildFormDraft } from "./form-draft.js";
 import { validateSubmissionPack } from "./pack-validate.js";
+import { runPublishedInstallSmoke } from "./install-smoke.js";
+import { runPublishCheck } from "./publish-check.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -190,6 +192,20 @@ async function main() {
     return;
   }
 
+  if (command === "publish-check") {
+    const report = await runPublishCheck(options);
+    if (options.markdown) await writeText(report.markdown, options.markdown);
+    await writeReport(report, options.out);
+    return;
+  }
+
+  if (command === "install-smoke") {
+    const report = await runPublishedInstallSmoke(options);
+    if (options.markdown) await writeText(report.markdown, options.markdown);
+    await writeReport(report, options.out);
+    return;
+  }
+
   if (command === "serve") {
     await serve(options);
     return;
@@ -231,6 +247,10 @@ function parseArgs(args) {
     else if (arg === "--roadmap-url") options.roadmapUrl = args[++i];
     else if (arg === "--api-workflow-url") options.apiWorkflowUrl = args[++i];
     else if (arg === "--min-score") options.minScore = Number(args[++i]);
+    else if (arg === "--package-json") options.packageJson = args[++i];
+    else if (arg === "--package" || arg === "--package-name") options.packageName = args[++i];
+    else if (arg === "--version") options.version = args[++i];
+    else if (arg === "--bin") options.bin = args[++i];
     else if (arg === "--demo") options.demo = true;
     else if (arg === "--show-paths") options.redactPaths = false;
     else if (arg === "--redaction") options.redaction = args[++i];
@@ -323,6 +343,8 @@ Usage:
   codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
   codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--out form-draft.json] [--markdown form-draft.md]
   codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
+  codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
+  codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

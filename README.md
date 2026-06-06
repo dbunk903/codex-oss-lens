@@ -57,6 +57,8 @@ paths to a hosted service.
 | Submission pack | One-command application evidence folder generation |
 | Form draft | Copy-ready Korean OSS support application answers |
 | Pack validation | Required-file, score, readiness, and privacy validation |
+| NPM publish check | Login, registry, package metadata, and OTP guidance |
+| Published install smoke | `npm exec` verification for the published CLI |
 
 ## Quick start
 
@@ -195,6 +197,19 @@ To validate a generated submission pack before sharing it:
 node src/cli.js pack-validate codex-submission-pack --markdown pack-validation.md
 ```
 
+To check npm publish readiness, including login, package metadata, registry status, and OTP command
+guidance:
+
+```bash
+node src/cli.js publish-check --markdown publish-check.md
+```
+
+After publishing, verify the public package can install and run through `npm exec`:
+
+```bash
+node src/cli.js install-smoke --package codex-oss-lens --version latest --markdown install-smoke.md
+```
+
 To preview without local Codex logs:
 
 ```bash
@@ -222,6 +237,8 @@ codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.js
 codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
 codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--out form-draft.json] [--markdown form-draft.md]
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
+codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
+codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -294,7 +311,8 @@ generated files into a reviewer-facing starting point.
 Use `scorecard` for a weighted readiness score and `submission-pack` when you want the whole
 application evidence folder generated in one pass.
 Use `form-draft` to keep Korean application answers within character limits, then run
-`pack-validate` as the final local sharing gate.
+`pack-validate` as the final local sharing gate. Use `publish-check` before npm release attempts
+and `install-smoke` after release to prove the public package installs and runs.
 
 ## Contributing
 

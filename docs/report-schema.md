@@ -271,3 +271,32 @@ The output includes:
 - `blockers` and `warnings`
 - `redaction`: embedded redaction scan result
 - optional Markdown when `--markdown` is supplied
+
+## Publish check
+
+`codex-oss-lens publish-check` validates local npm publish readiness before a maintainer attempts a
+public release.
+
+The output includes:
+
+- `status`: `ready` or `blocked`
+- `package`: package name, local version, latest published version, and npm user
+- `checks`: package metadata, bin path, npm login, and registry-version checks
+- `blockers`: failed checks that must be fixed before publishing
+- `publishCommands`: the exact local test, package, publish, and npx smoke commands to run
+- `warnings`: npm 2FA and granular-token guidance
+- optional Markdown when `--markdown` is supplied
+
+## Published install smoke
+
+`codex-oss-lens install-smoke` verifies that an already-published package can install and run through
+`npm exec`.
+
+The output includes:
+
+- `status`: `pass` or `fail`
+- `package`: package name, requested version, and binary name
+- `command`: the `npm exec` command that was run
+- `checks`: command exit, JSON output, and demo-session checks
+- `stdoutPreview` and `stderrPreview`: short diagnostic previews for failed installs
+- optional Markdown when `--markdown` is supplied

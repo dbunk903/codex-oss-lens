@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-06T06:16:48.091Z",
+  "status": "ready",
+  "package": {
+    "name": "codex-oss-lens",
+    "version": "1.6.0",
+    "latestPublishedVersion": null,
+    "npmUser": "dansan0303"
+  },
+  "checks": [
+    {
+      "id": "name",
+      "ok": true,
+      "message": "name=codex-oss-lens"
+    },
+    {
+      "id": "version",
+      "ok": true,
+      "message": "version=1.6.0"
+    },
+    {
+      "id": "license",
+      "ok": true,
+      "message": "license=MIT"
+    },
+    {
+      "id": "repository",
+      "ok": true,
+      "message": "repository=git+https://github.com/dbunk903/codex-oss-lens.git"
+    },
+    {
+      "id": "bin",
+      "ok": true,
+      "message": "CLI bin path exists."
+    },
+    {
+      "id": "npmLogin",
+      "ok": true,
+      "message": "npm user=dansan0303"
+    },
+    {
+      "id": "versionAvailable",
+      "ok": true,
+      "message": "not published"
+    }
+  ],
+  "blockers": [],
+  "publishCommands": [
+    "npm test",
+    "npm run pack:check",
+    "npm run pack:smoke",
+    "npm publish --access public --otp <6-digit-code>",
+    "npx -y codex-oss-lens@1.6.0 demo"
+  ],
+  "warnings": [
+    "If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass."
+  ],
+  "markdown": "# Codex OSS Lens Publish Check\n\nGenerated: 2026-06-06T06:16:48.091Z\nStatus: ready\nPackage: codex-oss-lens@1.6.0\nnpm user: dansan0303\n\n## Checks\n\n- name: pass - name=codex-oss-lens\n- version: pass - version=1.6.0\n- license: pass - license=MIT\n- repository: pass - repository=git+https://github.com/dbunk903/codex-oss-lens.git\n- bin: pass - CLI bin path exists.\n- npmLogin: pass - npm user=dansan0303\n- versionAvailable: pass - not published\n\n## Publish Commands\n\n- `npm test`\n- `npm run pack:check`\n- `npm run pack:smoke`\n- `npm publish --access public --otp <6-digit-code>`\n- `npx -y codex-oss-lens@1.6.0 demo`\n\n## Warnings\n\n- If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass.\n"
+}

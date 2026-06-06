@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.6.0 - NPM Publish Diagnostics
+
+- Added `publish-check` command for npm login, package metadata, registry, and OTP readiness.
+- Added `install-smoke` command for published-package `npm exec` verification after release.
+- Normalized the CLI bin path for npm publish compatibility.
+- Added tests and sample outputs for publish readiness and published install smoke reports.
+
 ## v1.5.1 - CI Restoration
 
 - Restored GitHub Actions Node test workflow for push and pull request verification.

@@ -1,10 +1,10 @@
 {
   "name": "codex-oss-lens",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Local-first usage and workflow dashboard for OpenAI Codex session logs.",
   "type": "module",
   "bin": {
-    "codex-oss-lens": "./src/cli.js"
+    "codex-oss-lens": "src/cli.js"
   },
   "files": [
     "src/",
