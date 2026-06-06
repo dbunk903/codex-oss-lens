@@ -1,4 +1,7 @@
 import { execFile } from "node:child_process";
+import { promises as fs } from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
@@ -25,8 +28,9 @@ export async function runPublishedInstallSmoke(options = {}) {
     });
   }
 
+  const cwd = await fs.mkdtemp(path.join(os.tmpdir(), "codex-oss-lens-install-smoke-"));
   try {
-    const { stdout, stderr } = await execFileAsync("npm", command, { maxBuffer: 1024 * 1024 * 5 });
+    const { stdout, stderr } = await execFileAsync("npm", command, { cwd, maxBuffer: 1024 * 1024 * 5 });
     const parsed = safeJson(stdout);
     return buildInstallSmokeResult({
       packageName,

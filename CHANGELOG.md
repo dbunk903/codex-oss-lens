@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.6.1 - Published Install Smoke Fix
+
+- Ran published-package install smoke checks from a temporary directory so local repository state
+  does not shadow the registry package binary.
+- Published `codex-oss-lens` to npm and verified registry availability.
+
 ## v1.6.0 - NPM Publish Diagnostics
 
 - Added `publish-check` command for npm login, package metadata, registry, and OTP readiness.

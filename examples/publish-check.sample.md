@@ -1,19 +1,19 @@
 # Codex OSS Lens Publish Check
 
-Generated: 2026-06-06T06:16:48.091Z
+Generated: 2026-06-06T08:08:08.759Z
 Status: ready
-Package: codex-oss-lens@1.6.0
+Package: codex-oss-lens@1.6.1
 npm user: dansan0303
 
 ## Checks
 
 - name: pass - name=codex-oss-lens
-- version: pass - version=1.6.0
+- version: pass - version=1.6.1
 - license: pass - license=MIT
 - repository: pass - repository=git+https://github.com/dbunk903/codex-oss-lens.git
 - bin: pass - CLI bin path exists.
 - npmLogin: pass - npm user=dansan0303
-- versionAvailable: pass - not published
+- versionAvailable: pass - latest=1.6.0
 
 ## Publish Commands
 
@@ -21,7 +21,7 @@ npm user: dansan0303
 - `npm run pack:check`
 - `npm run pack:smoke`
 - `npm publish --access public --otp <6-digit-code>`
-- `npx -y codex-oss-lens@1.6.0 demo`
+- `npx -y codex-oss-lens@1.6.1 demo`
 
 ## Warnings
 
