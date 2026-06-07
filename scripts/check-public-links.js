@@ -6,9 +6,11 @@ const links = Object.entries(evidence.publicLinks);
 const results = [];
 
 for (const [label, url] of links) {
-  const result = await checkUrl(url);
+  const checkTarget = checkUrlFor(url);
+  const result = await checkUrl(checkTarget);
   results.push({ label, url, ...result });
-  console.log(`${result.ok ? "pass" : "fail"} ${label} ${result.status || "n/a"} ${url}`);
+  const targetNote = checkTarget === url ? "" : ` via ${checkTarget}`;
+  console.log(`${result.ok ? "pass" : "fail"} ${label} ${result.status || "n/a"} ${url}${targetNote}`);
 }
 
 const failures = results.filter((result) => !result.ok);
@@ -25,6 +27,13 @@ async function checkUrl(url) {
   } catch (error) {
     return { ok: false, status: null, error: error.message };
   }
+}
+
+function checkUrlFor(url) {
+  const parsed = new URL(url);
+  const packageMatch = parsed.hostname === "www.npmjs.com" && parsed.pathname.match(/^\/package\/([^/]+)$/);
+  if (!packageMatch) return url;
+  return `https://registry.npmjs.org/${encodeURIComponent(packageMatch[1])}`;
 }
 
 async function request(url, method, redirects = 0) {
