@@ -47,14 +47,14 @@
   ],
   "blockers": [],
   "publishCommands": [
-    "npm test",
-    "npm run pack:check",
-    "npm run pack:smoke",
+    "npm run submission:check",
     "npm publish --access public --otp <6-digit-code>",
-    "npx -y codex-oss-lens@1.6.1 demo"
+    "node src/cli.js install-smoke --package codex-oss-lens --version 1.6.1 --markdown install-smoke.md"
   ],
   "warnings": [
-    "If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass."
+    "If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass.",
+    "If versionAvailable fails, bump package.json before publishing; npm does not allow overwriting an existing version.",
+    "Run the publish command only from the package owner's browser-authenticated npm session or a freshly scoped publish token."
   ],
-  "markdown": "# Codex OSS Lens Publish Check\n\nGenerated: 2026-06-06T08:08:08.759Z\nStatus: ready\nPackage: codex-oss-lens@1.6.1\nnpm user: dansan0303\n\n## Checks\n\n- name: pass - name=codex-oss-lens\n- version: pass - version=1.6.1\n- license: pass - license=MIT\n- repository: pass - repository=git+https://github.com/dbunk903/codex-oss-lens.git\n- bin: pass - CLI bin path exists.\n- npmLogin: pass - npm user=dansan0303\n- versionAvailable: pass - latest=1.6.0\n\n## Publish Commands\n\n- `npm test`\n- `npm run pack:check`\n- `npm run pack:smoke`\n- `npm publish --access public --otp <6-digit-code>`\n- `npx -y codex-oss-lens@1.6.1 demo`\n\n## Warnings\n\n- If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass.\n"
+  "markdown": "# Codex OSS Lens Publish Check\n\nGenerated: 2026-06-06T08:08:08.759Z\nStatus: ready\nPackage: codex-oss-lens@1.6.1\nnpm user: dansan0303\n\n## Checks\n\n- name: pass - name=codex-oss-lens\n- version: pass - version=1.6.1\n- license: pass - license=MIT\n- repository: pass - repository=git+https://github.com/dbunk903/codex-oss-lens.git\n- bin: pass - CLI bin path exists.\n- npmLogin: pass - npm user=dansan0303\n- versionAvailable: pass - latest=1.6.0\n\n## Publish Commands\n\n- `npm run submission:check`\n- `npm publish --access public --otp <6-digit-code>`\n- `node src/cli.js install-smoke --package codex-oss-lens --version 1.6.1 --markdown install-smoke.md`\n\n## Warnings\n\n- If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass.\n- If versionAvailable fails, bump package.json before publishing; npm does not allow overwriting an existing version.\n- Run the publish command only from the package owner's browser-authenticated npm session or a freshly scoped publish token.\n"
 }

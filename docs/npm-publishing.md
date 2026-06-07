@@ -6,15 +6,15 @@ package owner after reviewing the tarball.
 ## Package checks
 
 ```bash
-npm test
-npm run pack:check
-npm run pack:smoke
+npm run submission:check
 node src/cli.js publish-check --markdown publish-check.md
 ```
 
-`pack:smoke` creates a tarball, installs it in a temporary directory, runs the packaged
-`codex-oss-lens` binary, verifies that demo output is valid JSON, and checks that packaged
-`brief --demo` can generate a maintainer evidence pack.
+`submission:check` runs the form-copy, version-alignment, public-redaction, public-link, badge,
+unit-test, tarball dry-run, and packaged CLI smoke gates. `pack:smoke` creates a tarball, installs
+it in a temporary directory, runs the packaged `codex-oss-lens` binary, verifies that demo output is
+valid JSON and share-safe, and checks that packaged `brief --demo` can generate a maintainer
+evidence pack.
 
 ## Expected package contents
 
@@ -22,10 +22,12 @@ The package allowlist includes:
 
 - `src/`
 - `public/`
+- `application/`
 - `docs/`
 - sample JSON/Markdown artifacts from `examples/`
 - `examples/dashboard-preview.png`
-- `README.md`, `LICENSE`, `CHANGELOG.md`, and `package.json`
+- `README.md`, `LICENSE`, `CHANGELOG.md`, `CONTRIBUTING.md`, `ROADMAP.md`, `SECURITY.md`, and
+  `package.json`
 
 Generated local reports are excluded by `.gitignore` and not included in the package allowlist.
 
@@ -37,6 +39,8 @@ npm publish --access public --otp <6-digit-code>
 
 If npm write 2FA is enabled, the publish step requires either the current one-time code or a
 granular automation token with 2FA bypass enabled by the package owner.
+If `publish-check` reports `versionAvailable: fail`, bump `package.json` first; npm does not allow
+overwriting an already-published version.
 
 After publishing, verify the public package:
 

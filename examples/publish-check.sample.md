@@ -17,12 +17,12 @@ npm user: dansan0303
 
 ## Publish Commands
 
-- `npm test`
-- `npm run pack:check`
-- `npm run pack:smoke`
+- `npm run submission:check`
 - `npm publish --access public --otp <6-digit-code>`
-- `npx -y codex-oss-lens@1.6.1 demo`
+- `node src/cli.js install-smoke --package codex-oss-lens --version 1.6.1 --markdown install-smoke.md`
 
 ## Warnings
 
 - If npm 2FA is enabled for writes, publish requires --otp <6-digit-code> or a granular automation token with 2FA bypass.
+- If versionAvailable fails, bump package.json before publishing; npm does not allow overwriting an existing version.
+- Run the publish command only from the package owner's browser-authenticated npm session or a freshly scoped publish token.

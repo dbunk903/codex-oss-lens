@@ -19,7 +19,9 @@ test("marks package ready when metadata, login, and version availability pass", 
 
   assert.equal(report.status, "ready");
   assert.equal(report.blockers.length, 0);
+  assert.ok(report.publishCommands.includes("npm run submission:check"));
   assert.ok(report.publishCommands.some((command) => command.includes("--otp")));
+  assert.ok(report.publishCommands.some((command) => command.includes("install-smoke")));
 });
 
 test("blocks publish readiness when npm login or bin metadata is missing", () => {
