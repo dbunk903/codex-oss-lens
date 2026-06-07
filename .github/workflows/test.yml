@@ -40,7 +40,9 @@ jobs:
           node -e 'const fs=require("node:fs"); const evidence=JSON.parse(fs.readFileSync("public-evidence.json", "utf8")); if (evidence.status !== "ready") throw new Error("public evidence is not ready"); if (!evidence.publicLinks.npmPackage) throw new Error("npm link missing"); console.log(`proofPoints=${evidence.proofPoints.length}`);'
 
       - name: Check final form copy
-        run: npm run final-copy:check
+        run: |
+          npm run final-copy:check
+          npm run submission:versions
 
       - name: Check public evidence links
         if: matrix.node-version == 22

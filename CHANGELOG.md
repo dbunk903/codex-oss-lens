@@ -6,6 +6,7 @@
   paste checklist output.
 - Added `final-copy:check` for validating paste-ready Korean application answers.
 - Extended `final-copy:check` to catch drift between `final-copy.md` and `form-answers.md`.
+- Added `submission:versions` for checking final application release links against `package.json`.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added public evidence tests and sample JSON/Markdown artifacts.
 - Added final submission checklist and form-ready final copy documents.
