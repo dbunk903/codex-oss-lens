@@ -84,6 +84,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 | Published install smoke | `npm exec` verification for the published CLI |
 | Published package | Available on npm as `codex-oss-lens` |
 | Published smoke CI | Scheduled and manual GitHub Actions verification |
+| Public evidence | Application links and proof points in JSON and Markdown |
 
 ## Quick start
 
@@ -222,6 +223,12 @@ To validate a generated submission pack before sharing it:
 node src/cli.js pack-validate codex-submission-pack --markdown pack-validation.md
 ```
 
+To collect final public links and proof points for an OSS support application:
+
+```bash
+node src/cli.js public-evidence --markdown public-evidence.md
+```
+
 To check npm publish readiness, including login, package metadata, registry status, and OTP command
 guidance:
 
@@ -264,6 +271,7 @@ codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] 
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
 codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
+codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--out public-evidence.json] [--markdown public-evidence.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -312,6 +320,8 @@ See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API
 See [npm publishing](docs/npm-publishing.md) for package verification steps.
 See [maintainer use cases](docs/maintainer-use-cases.md) for practical OSS workflows this tool
 supports.
+See [final submission checklist](docs/final-submission-checklist.md) and
+[final copy](application/final-copy.md) for form-ready application material.
 
 ## Maintainer Brief
 

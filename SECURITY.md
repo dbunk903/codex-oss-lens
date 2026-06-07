@@ -22,6 +22,16 @@ Do not include:
 - API keys, tokens, or credentials
 - full local filesystem paths
 
+Before sharing generated artifacts publicly, run:
+
+```bash
+node src/cli.js redact-check <artifact-dir>
+node src/cli.js public-evidence --markdown public-evidence.md
+```
+
+`redact-check` looks for accidental local-path, rollout filename, raw-log, and likely-secret
+leakage. `public-evidence` only emits public URLs and application proof points.
+
 ## Project guarantees
 
 - No hosted service is contacted by default.

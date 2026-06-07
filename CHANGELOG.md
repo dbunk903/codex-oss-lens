@@ -2,6 +2,14 @@
 
 ## Unreleased - Pre-submission Polish
 
+- Added `public-evidence` command for final application links, proof points, manual fields, and
+  paste checklist output.
+- Added public evidence tests and sample JSON/Markdown artifacts.
+- Added final submission checklist and form-ready final copy documents.
+- Added CI validation for public evidence output.
+- Added dashboard evidence link to the public evidence sample.
+- Updated security and contribution docs with public evidence and redaction verification steps.
+- Expanded roadmap with public evidence, adoption, and API-credit follow-up work.
 - Added top-level README npm usage, npm badge, and published package smoke command.
 - Added scheduled/manual GitHub Actions verification for the npm `latest` package.
 - Added an application evidence and submission-gates section to the dashboard UI.

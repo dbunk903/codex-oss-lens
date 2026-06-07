@@ -300,3 +300,17 @@ The output includes:
 - `checks`: command exit, JSON output, and demo-session checks
 - `stdoutPreview` and `stderrPreview`: short diagnostic previews for failed installs
 - optional Markdown when `--markdown` is supplied
+
+## Public evidence
+
+`codex-oss-lens public-evidence` emits the public links and proof points needed for a final OSS
+support application review.
+
+The output includes:
+
+- `status`: current application evidence status
+- `manualFields`: account-owner fields that cannot be filled by the CLI
+- `publicLinks`: repository, release, npm, roadmap, API workflow, use cases, and CI links
+- `proofPoints`: reviewer-facing evidence labels and URLs
+- `copyChecklist`: final paste-and-submit checklist
+- optional Markdown when `--markdown` is supplied

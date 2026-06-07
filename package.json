@@ -21,6 +21,7 @@
   "scripts": {
     "pack:check": "npm pack --dry-run",
     "pack:smoke": "node scripts/smoke-pack.js",
+    "evidence": "node src/cli.js public-evidence --out examples/public-evidence.sample.json --markdown examples/public-evidence.sample.md",
     "scan": "node src/cli.js scan",
     "serve": "node src/cli.js serve",
     "test": "node --test"

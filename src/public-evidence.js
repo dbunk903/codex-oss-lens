@@ -1,0 +1,89 @@
+const DEFAULTS = {
+  repo: "https://github.com/dbunk903/codex-oss-lens",
+  releaseUrl: "https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1",
+  npmPackage: "https://www.npmjs.com/package/codex-oss-lens",
+  roadmapUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md",
+  apiWorkflowUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md",
+  useCasesUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md",
+  nodeCiUrl: "https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml",
+  publishedSmokeUrl: "https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml",
+};
+
+export function buildPublicEvidence(options = {}) {
+  const links = { ...DEFAULTS, ...compactLinks(options) };
+  const evidence = {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    status: "ready",
+    manualFields: [
+      "Last name",
+      "First name",
+      "Email registered to the ChatGPT account",
+      "GitHub username",
+      "OpenAI organization ID",
+      "Terms review and final submit",
+    ],
+    publicLinks: links,
+    proofPoints: [
+      proof("publicRepository", "Public GitHub repository is available.", links.repo),
+      proof("latestRelease", "Latest GitHub release is available.", links.releaseUrl),
+      proof("npmPackage", "Package is published on npm.", links.npmPackage),
+      proof("nodeCi", "Source tests and packaged CLI smoke run in GitHub Actions.", links.nodeCiUrl),
+      proof("publishedSmoke", "npm latest install smoke runs in GitHub Actions.", links.publishedSmokeUrl),
+      proof("roadmap", "Roadmap documents future maintainer workflow work.", links.roadmapUrl),
+      proof("apiCreditWorkflow", "API-credit workflow keeps raw logs local and sends aggregate opt-in payloads.", links.apiWorkflowUrl),
+      proof("maintainerUseCases", "Maintainer use cases document weekly review, evidence, privacy, and package confidence.", links.useCasesUrl),
+    ],
+    copyChecklist: [
+      "Paste repository URL and GitHub username.",
+      "Select Project API credits.",
+      "Paste the three 500-character Korean answers from application/final-copy.md.",
+      "Fill OpenAI organization ID from platform settings.",
+      "Review terms in the account owner's browser before final submit.",
+    ],
+  };
+  return { ...evidence, markdown: renderPublicEvidenceMarkdown(evidence) };
+}
+
+function compactLinks(options) {
+  return {
+    ...(options.repo ? { repo: options.repo } : {}),
+    ...(options.releaseUrl ? { releaseUrl: options.releaseUrl } : {}),
+    ...(options.npmPackage ? { npmPackage: options.npmPackage } : {}),
+    ...(options.roadmapUrl ? { roadmapUrl: options.roadmapUrl } : {}),
+    ...(options.apiWorkflowUrl ? { apiWorkflowUrl: options.apiWorkflowUrl } : {}),
+    ...(options.useCasesUrl ? { useCasesUrl: options.useCasesUrl } : {}),
+    ...(options.nodeCiUrl ? { nodeCiUrl: options.nodeCiUrl } : {}),
+    ...(options.publishedSmokeUrl ? { publishedSmokeUrl: options.publishedSmokeUrl } : {}),
+  };
+}
+
+function proof(id, label, url) {
+  return { id, label, url };
+}
+
+function renderPublicEvidenceMarkdown(evidence) {
+  return [
+    "# Codex OSS Lens Public Evidence",
+    "",
+    `Generated: ${evidence.generatedAt}`,
+    `Status: ${evidence.status}`,
+    "",
+    "## Public Links",
+    "",
+    ...Object.entries(evidence.publicLinks).map(([label, url]) => `- ${label}: ${url}`),
+    "",
+    "## Proof Points",
+    "",
+    ...evidence.proofPoints.map((item) => `- ${item.id}: ${item.label} ${item.url}`),
+    "",
+    "## Copy Checklist",
+    "",
+    ...evidence.copyChecklist.map((item) => `- ${item}`),
+    "",
+    "## Manual Fields",
+    "",
+    ...evidence.manualFields.map((item) => `- ${item}`),
+    "",
+  ].join("\n");
+}

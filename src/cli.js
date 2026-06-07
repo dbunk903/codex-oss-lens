@@ -23,6 +23,7 @@ import { buildFormDraft } from "./form-draft.js";
 import { validateSubmissionPack } from "./pack-validate.js";
 import { runPublishedInstallSmoke } from "./install-smoke.js";
 import { runPublishCheck } from "./publish-check.js";
+import { buildPublicEvidence } from "./public-evidence.js";
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(rootDir, "public");
@@ -206,6 +207,13 @@ async function main() {
     return;
   }
 
+  if (command === "public-evidence") {
+    const evidence = buildPublicEvidence(options);
+    if (options.markdown) await writeText(evidence.markdown, options.markdown);
+    await writeReport(evidence, options.out);
+    return;
+  }
+
   if (command === "serve") {
     await serve(options);
     return;
@@ -246,6 +254,10 @@ function parseArgs(args) {
     else if (arg === "--release-url") options.releaseUrl = args[++i];
     else if (arg === "--roadmap-url") options.roadmapUrl = args[++i];
     else if (arg === "--api-workflow-url") options.apiWorkflowUrl = args[++i];
+    else if (arg === "--npm-package") options.npmPackage = args[++i];
+    else if (arg === "--use-cases-url") options.useCasesUrl = args[++i];
+    else if (arg === "--node-ci-url") options.nodeCiUrl = args[++i];
+    else if (arg === "--published-smoke-url") options.publishedSmokeUrl = args[++i];
     else if (arg === "--min-score") options.minScore = Number(args[++i]);
     else if (arg === "--package-json") options.packageJson = args[++i];
     else if (arg === "--package" || arg === "--package-name") options.packageName = args[++i];
@@ -345,6 +357,7 @@ Usage:
   codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
   codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
   codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
+  codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--out public-evidence.json] [--markdown public-evidence.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

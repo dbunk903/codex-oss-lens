@@ -24,6 +24,13 @@ node src/cli.js scan --out report.json
 node src/cli.js weekly --out weekly-report.md
 ```
 
+To verify application-facing public evidence:
+
+```bash
+node src/cli.js public-evidence --markdown public-evidence.md
+npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
+```
+
 ## Privacy rules
 
 - Do not commit raw Codex rollout logs.
@@ -38,6 +45,7 @@ node src/cli.js weekly --out weekly-report.md
 - Add tests for parser/report behavior.
 - Update README or docs when behavior changes.
 - Run `npm test` before opening a PR.
+- For application evidence changes, run `node src/cli.js public-evidence --markdown public-evidence.md`.
 
 ## Good first areas
 

@@ -1,0 +1,42 @@
+# Final Submission Checklist
+
+Use this checklist immediately before submitting the OpenAI Codex open-source support form.
+
+## Public evidence
+
+- Repository: https://github.com/dbunk903/codex-oss-lens
+- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
+- npm package: https://www.npmjs.com/package/codex-oss-lens
+- Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
+- Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
+- Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
+- Published smoke CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
+
+## Local verification
+
+```bash
+npm test
+npm run pack:check
+npm run pack:smoke
+node src/cli.js public-evidence --markdown public-evidence.md
+npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
+```
+
+## Form fields
+
+- Last name: account owner fills manually.
+- First name: account owner fills manually.
+- Email: ChatGPT account email.
+- GitHub username: `dbunk903`
+- GitHub repository URL: `https://github.com/dbunk903/codex-oss-lens`
+- Role: Primary maintainer.
+- Interest: Project API credits.
+- OpenAI organization ID: account owner fills from platform settings.
+
+## Submit gate
+
+- All public links open in a signed-out browser.
+- The npm package is still `codex-oss-lens@1.6.1` or newer.
+- The latest Node CI and published smoke CI runs are green.
+- The account owner has reviewed the form terms before pressing Submit.

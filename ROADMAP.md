@@ -21,6 +21,14 @@
 - Project-instruction drift suggestions
 - Release triage briefing from aggregate metrics
 
+## v1.x - Public Evidence and Adoption
+
+- Keep npm `latest` install smoke green on a scheduled workflow
+- Publish final application evidence links through `public-evidence`
+- Add maintainer examples from real weekly review and release workflows
+- Turn API-credit plan candidates into opt-in aggregate summary commands
+- Add signed release notes once package usage grows
+
 ## Principles
 
 - Raw Codex logs stay local by default.
