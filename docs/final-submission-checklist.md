@@ -30,6 +30,7 @@ node src/cli.js public-evidence --markdown public-evidence.md
 npm run final-copy:check
 npm run submission:versions
 npm run evidence:links
+npm run readme:badges
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
@@ -50,6 +51,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run evidence:links` passes without broken public evidence URLs.
+- `npm run readme:badges` confirms README status badges render.
 - `npm run submission:check` runs the submit-time local gates as one command.
 - The reviewer quickstart opens and matches the current public release.
 - The npm package is still `codex-oss-lens@1.6.1` or newer.

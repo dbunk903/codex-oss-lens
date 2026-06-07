@@ -2,6 +2,8 @@
 
 [![release](https://img.shields.io/github/v/release/dbunk903/codex-oss-lens?label=release)](https://github.com/dbunk903/codex-oss-lens/releases)
 [![npm](https://img.shields.io/npm/v/codex-oss-lens?label=npm)](https://www.npmjs.com/package/codex-oss-lens)
+[![Node tests](https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml/badge.svg)](https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml)
+[![Published smoke](https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml/badge.svg)](https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml)
 [![license](https://img.shields.io/github/license/dbunk903/codex-oss-lens)](LICENSE)
 [![node](https://img.shields.io/badge/node-%3E%3D20-167d68)](package.json)
 [![privacy](https://img.shields.io/badge/privacy-local--first-2563a8)](docs/api-credit-workflow.md)
@@ -240,6 +242,7 @@ For narrower copy or link checks while editing:
 npm run final-copy:check
 npm run submission:versions
 npm run evidence:links
+npm run readme:badges
 ```
 
 To check npm publish readiness, including login, package metadata, registry status, and OTP command

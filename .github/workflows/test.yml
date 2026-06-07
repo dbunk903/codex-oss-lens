@@ -46,4 +46,6 @@ jobs:
 
       - name: Check public evidence links
         if: matrix.node-version == 22
-        run: npm run evidence:links
+        run: |
+          npm run evidence:links
+          npm run readme:badges
