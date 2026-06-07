@@ -12,6 +12,7 @@
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.
 - Added `public:redaction` to scan public docs and samples before submission.
+- Extended packaged CLI smoke tests to reject demo output privacy leaks.
 - Included application, roadmap, contribution, and security docs in the npm package tarball.
 - Added public evidence tests and sample JSON/Markdown artifacts.
 - Added final submission checklist and form-ready final copy documents.
