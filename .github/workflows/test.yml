@@ -39,6 +39,9 @@ jobs:
           node src/cli.js public-evidence --out public-evidence.json --markdown public-evidence.md
           node -e 'const fs=require("node:fs"); const evidence=JSON.parse(fs.readFileSync("public-evidence.json", "utf8")); if (evidence.status !== "ready") throw new Error("public evidence is not ready"); if (!evidence.publicLinks.npmPackage) throw new Error("npm link missing"); console.log(`proofPoints=${evidence.proofPoints.length}`);'
 
+      - name: Check final form copy
+        run: npm run final-copy:check
+
       - name: Check public evidence links
         if: matrix.node-version == 22
         run: npm run evidence:links

@@ -20,6 +20,7 @@ npm test
 npm run pack:check
 npm run pack:smoke
 node src/cli.js public-evidence --markdown public-evidence.md
+npm run final-copy:check
 npm run evidence:links
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
@@ -38,6 +39,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ## Submit gate
 
 - All public links open in a signed-out browser.
+- `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits.
 - `npm run evidence:links` passes without broken public evidence URLs.
 - The npm package is still `codex-oss-lens@1.6.1` or newer.
 - The latest Node CI and published smoke CI runs are green.

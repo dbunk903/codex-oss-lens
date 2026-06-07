@@ -227,6 +227,7 @@ To collect final public links and proof points for an OSS support application:
 
 ```bash
 node src/cli.js public-evidence --markdown public-evidence.md
+npm run final-copy:check
 npm run evidence:links
 ```
 

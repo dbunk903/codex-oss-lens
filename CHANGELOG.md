@@ -4,6 +4,7 @@
 
 - Added `public-evidence` command for final application links, proof points, manual fields, and
   paste checklist output.
+- Added `final-copy:check` for validating paste-ready Korean application answers.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added public evidence tests and sample JSON/Markdown artifacts.
 - Added final submission checklist and form-ready final copy documents.
