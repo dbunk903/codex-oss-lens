@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-03T07:46:31.312Z",
+  "generatedAt": "2026-06-07T20:47:06.487Z",
   "status": "ok",
   "checks": {
     "node": {
@@ -10,19 +10,19 @@
     },
     "codexHome": {
       "ok": true,
-      "path": "/Users/paco/.codex"
+      "path": "[redacted]/.codex"
     },
     "sessionsDir": {
       "ok": true,
-      "path": "/Users/paco/.codex/sessions"
+      "path": "[redacted]/sessions"
     },
     "rolloutFiles": {
       "ok": true,
-      "count": 308
+      "count": 4
     },
     "githubCli": {
       "ok": true,
-      "version": "gh version 2.86.0 (2026-01-21)",
+      "version": "gh demo",
       "requiredFor": [
         "github-import"
       ]

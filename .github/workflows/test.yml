@@ -43,6 +43,7 @@ jobs:
         run: |
           npm run final-copy:check
           npm run submission:versions
+          npm run public:redaction
 
       - name: Check public evidence links
         if: matrix.node-version == 22

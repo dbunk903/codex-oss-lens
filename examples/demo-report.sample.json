@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T13:29:00.111Z",
+  "generatedAt": "2026-06-07T20:47:06.586Z",
   "totals": {
     "sessions": 4,
     "workspaces": 3,
@@ -175,7 +175,7 @@
     {
       "id": "demo-a",
       "file": "sessions/demo/demo-a.jsonl",
-      "cwd": "/work/codex",
+      "cwd": "[redacted]/codex",
       "workspace": "codex",
       "startedAt": "2026-06-01T09:15:00.000Z",
       "endedAt": "2026-06-01T11:03:00.000Z",
@@ -219,7 +219,7 @@
     {
       "id": "demo-b",
       "file": "sessions/demo/demo-b.jsonl",
-      "cwd": "/work/api-gateway",
+      "cwd": "[redacted]/api-gateway",
       "workspace": "api-gateway",
       "startedAt": "2026-06-01T12:45:00.000Z",
       "endedAt": "2026-06-01T13:39:00.000Z",
@@ -263,7 +263,7 @@
     {
       "id": "demo-c",
       "file": "sessions/demo/demo-c.jsonl",
-      "cwd": "/work/design-system",
+      "cwd": "[redacted]/design-system",
       "workspace": "design-system",
       "startedAt": "2026-05-31T18:20:00.000Z",
       "endedAt": "2026-05-31T19:38:00.000Z",
@@ -307,7 +307,7 @@
     {
       "id": "demo-d",
       "file": "sessions/demo/demo-d.jsonl",
-      "cwd": "/work/codex",
+      "cwd": "[redacted]/codex",
       "workspace": "codex",
       "startedAt": "2026-05-30T08:05:00.000Z",
       "endedAt": "2026-05-30T08:41:00.000Z",

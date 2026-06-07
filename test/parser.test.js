@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { scanCodexHome, summarizeRollout } from "../src/parser.js";
+import { demoReport, scanCodexHome, summarizeRollout } from "../src/parser.js";
 
 test("summarizes Codex rollout files", async () => {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), "codex-oss-lens-"));
@@ -81,6 +81,14 @@ test("can keep full paths for private reports", async () => {
 
   const report = await scanCodexHome({ codexHome: dir, redactPaths: false });
   assert.equal(report.sessions[0].cwd, "/private/repo/tooling");
+});
+
+test("demo report uses shareable redacted workspace paths", () => {
+  const report = demoReport();
+  const serialized = JSON.stringify(report);
+
+  assert.equal(serialized.includes("/work/"), false);
+  assert.ok(report.sessions.every((session) => session.cwd.startsWith("[redacted]/")));
 });
 
 test("can hash workspace paths for shareable reports", async () => {

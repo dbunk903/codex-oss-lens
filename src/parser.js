@@ -232,7 +232,7 @@ function demoSession(id, startedAt, workspace, model, turns, toolCalls, totalTok
   return {
     id,
     file: `sessions/demo/${id}.jsonl`,
-    cwd: `/work/${workspace}`,
+    cwd: `[redacted]/${workspace}`,
     workspace,
     startedAt,
     endedAt: new Date(new Date(startedAt).getTime() + turns * 6 * 60_000).toISOString(),

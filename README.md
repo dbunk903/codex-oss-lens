@@ -241,6 +241,7 @@ For narrower copy or link checks while editing:
 ```bash
 npm run final-copy:check
 npm run submission:versions
+npm run public:redaction
 npm run evidence:links
 npm run readme:badges
 ```
