@@ -9,6 +9,7 @@ const DEFAULTS = {
   useCasesUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md",
   finalChecklistUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md",
   finalCopyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md",
+  installSmokeSampleUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md",
   nodeCiUrl: "https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml",
   publishedSmokeUrl: "https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml",
 };
@@ -41,6 +42,7 @@ export function buildPublicEvidence(options = {}) {
       proof("maintainerUseCases", "Maintainer use cases document weekly review, evidence, privacy, and package confidence.", links.useCasesUrl),
       proof("finalChecklist", "Final checklist captures submit-time public links, verification, and account-owner gates.", links.finalChecklistUrl),
       proof("finalCopy", "Final copy keeps Korean application answers within form limits.", links.finalCopyUrl),
+      proof("installSmokeSample", "Install smoke sample records the current npm latest result and source-vs-published gap.", links.installSmokeSampleUrl),
     ],
     copyChecklist: [
       "Paste repository URL and GitHub username.",
@@ -65,6 +67,7 @@ function compactLinks(options) {
     ...(options.useCasesUrl ? { useCasesUrl: options.useCasesUrl } : {}),
     ...(options.finalChecklistUrl ? { finalChecklistUrl: options.finalChecklistUrl } : {}),
     ...(options.finalCopyUrl ? { finalCopyUrl: options.finalCopyUrl } : {}),
+    ...(options.installSmokeSampleUrl ? { installSmokeSampleUrl: options.installSmokeSampleUrl } : {}),
     ...(options.nodeCiUrl ? { nodeCiUrl: options.nodeCiUrl } : {}),
     ...(options.publishedSmokeUrl ? { publishedSmokeUrl: options.publishedSmokeUrl } : {}),
   };

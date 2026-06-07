@@ -1,13 +1,13 @@
 # Codex OSS Lens Published Install Smoke
 
-Generated: 2026-06-06T08:08:09.070Z
-Status: pass
-Command: `npm exec --yes --package codex-oss-lens@1.6.0 -- codex-oss-lens demo`
+Generated: 2026-06-07T23:46:44.293Z
+Status: fail
+Command: `npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo`
 
 ## Checks
 
-- registryVersion: pass - published=1.6.0
+- registryVersion: pass - published=1.6.1
 - commandExit: pass - npm exec completed.
 - jsonOutput: pass - CLI emitted JSON.
 - demoSessions: pass - sessions=4
-- demoPrivacy: pass - No public demo leaks detected.
+- demoPrivacy: fail - leak rules=unix-full-path
