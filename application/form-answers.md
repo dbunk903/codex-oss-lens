@@ -18,6 +18,7 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 - Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
 - npm package: https://www.npmjs.com/package/codex-oss-lens
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final submission checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md

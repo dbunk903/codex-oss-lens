@@ -8,8 +8,10 @@ test("builds public evidence with required links and manual fields", () => {
   assert.equal(evidence.status, "ready");
   assert.equal(evidence.publicLinks.repo, "https://github.com/dbunk903/codex-oss-lens");
   assert.equal(evidence.publicLinks.npmPackage, "https://www.npmjs.com/package/codex-oss-lens");
+  assert.match(evidence.publicLinks.applicationStatusUrl, /docs\/application-status\.md$/);
   assert.match(evidence.publicLinks.reviewerQuickstartUrl, /docs\/reviewer-quickstart\.md$/);
   assert.ok(evidence.proofPoints.some((item) => item.id === "publishedSmoke"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "applicationStatus"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "reviewerQuickstart"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "finalChecklist"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "finalCopy"));

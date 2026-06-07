@@ -53,5 +53,6 @@ Characters: 288/500
 - Repository: https://github.com/dbunk903/codex-oss-lens
 - Release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
 - npm: https://www.npmjs.com/package/codex-oss-lens
+- Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md

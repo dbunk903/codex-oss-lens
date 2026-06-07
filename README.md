@@ -236,6 +236,10 @@ node src/cli.js public-evidence --markdown public-evidence.md
 npm run submission:check
 ```
 
+The public application status snapshot is maintained at
+`docs/application-status.md` so reviewers can distinguish published evidence from account-owner
+manual submit gates.
+
 For narrower copy or link checks while editing:
 
 ```bash

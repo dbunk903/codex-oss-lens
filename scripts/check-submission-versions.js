@@ -9,6 +9,7 @@ const releaseUrl = `https://github.com/dbunk903/codex-oss-lens/releases/tag/${ta
 const files = [
   "application/final-copy.md",
   "application/form-answers.md",
+  "docs/application-status.md",
   "docs/final-submission-checklist.md",
   "docs/reviewer-quickstart.md",
   "examples/public-evidence.sample.md",

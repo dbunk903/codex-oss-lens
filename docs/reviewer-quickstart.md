@@ -8,13 +8,15 @@ submission pack.
 1. Open the repository: https://github.com/dbunk903/codex-oss-lens
 2. Confirm the current release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
 3. Confirm the npm package: https://www.npmjs.com/package/codex-oss-lens
-4. Run the published CLI demo:
+4. Check the application status snapshot:
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+5. Run the published CLI demo:
 
 ```bash
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
-5. Inspect the privacy and API-credit plan:
+6. Inspect the privacy and API-credit plan:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 
 ## What To Look For
@@ -29,6 +31,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ## Submit-Time Evidence
 
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Final Korean form copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
