@@ -6,6 +6,14 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 
+const PUBLIC_LEAK_PATTERNS = [
+  { id: "unix-full-path", pattern: /\/Users\/|\/work\/|\/home\// },
+  { id: "windows-full-path", pattern: /[A-Za-z]:\\/ },
+  { id: "rollout-filename", pattern: /rollout-\d{4}-\d{2}-\d{2}T/ },
+  { id: "raw-log-marker", pattern: /"type"\s*:\s*"session_meta"|"payload"\s*:\s*\{/ },
+  { id: "likely-secret", pattern: /sk-[A-Za-z0-9_-]{20,}|gh[opsu]_[A-Za-z0-9_]{20,}/ },
+];
+
 export async function runPublishedInstallSmoke(options = {}) {
   const packageName = options.packageName || "codex-oss-lens";
   const version = options.version || "latest";
@@ -61,11 +69,12 @@ export async function runPublishedInstallSmoke(options = {}) {
 }
 
 export function buildInstallSmokeResult({ packageName, version, bin, command, startedAt, ok, stdout, stderr, parsed, registryVersion = version }) {
+  const privacy = demoPrivacy(parsed);
   const report = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
     startedAt,
-    status: ok && parsed ? "pass" : "fail",
+    status: ok && parsed && privacy.ok ? "pass" : "fail",
     package: { name: packageName, version, bin, resolvedVersion: registryVersion },
     command: ["npm", ...command].join(" "),
     checks: [
@@ -73,11 +82,21 @@ export function buildInstallSmokeResult({ packageName, version, bin, command, st
       { id: "commandExit", ok: Boolean(ok), message: ok ? "npm exec completed." : "npm exec failed." },
       { id: "jsonOutput", ok: Boolean(parsed), message: parsed ? "CLI emitted JSON." : "CLI output was not parseable JSON." },
       { id: "demoSessions", ok: (parsed?.totals?.sessions || 0) > 0, message: `sessions=${parsed?.totals?.sessions ?? "unknown"}` },
+      { id: "demoPrivacy", ok: privacy.ok, message: privacy.ok ? "No public demo leaks detected." : `leak rules=${privacy.failedRules.join(",")}` },
     ],
     stdoutPreview: preview(stdout),
     stderrPreview: preview(stderr),
   };
   return { ...report, markdown: renderInstallSmokeMarkdown(report) };
+}
+
+function demoPrivacy(parsed) {
+  if (!parsed) return { ok: false, failedRules: ["jsonOutput"] };
+  const serialized = JSON.stringify(parsed);
+  const failedRules = PUBLIC_LEAK_PATTERNS
+    .filter((rule) => rule.pattern.test(serialized))
+    .map((rule) => rule.id);
+  return { ok: failedRules.length === 0, failedRules };
 }
 
 async function npmViewPackageVersion(packageName, version) {

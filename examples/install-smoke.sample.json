@@ -30,9 +30,14 @@
       "id": "demoSessions",
       "ok": true,
       "message": "sessions=4"
+    },
+    {
+      "id": "demoPrivacy",
+      "ok": true,
+      "message": "No public demo leaks detected."
     }
   ],
   "stdoutPreview": "{\n  \"generatedAt\": \"2026-06-06T08:08:09.061Z\",\n  \"totals\": {\n    \"sessions\": 4,\n    \"workspaces\": 3,\n    \"models\": [\n      \"gpt-5.5\",\n      \"gpt-5.3-codex\",\n      \"gpt-5.4\"\n    ],\n    \"tokens\": {\n      \"input\": 186180,\n      \"cachedInput\": 67410,\n      \"output\": 54570,\n      \"reasoningOutput\": 12840,\n      \"total\": 321000\n    },\n    \"toolCalls\": 14,\n    \"turns\": 46,\n    \"latestRateLimits\": {\n      \"primary\": {\n        \"usedPercent\": 6,\n        \"windowMinutes\": 300,\n        \"resetsAt\": null\n     ",
   "stderrPreview": "",
-  "markdown": "# Codex OSS Lens Published Install Smoke\n\nGenerated: 2026-06-06T08:08:09.070Z\nStatus: pass\nCommand: `npm exec --yes --package codex-oss-lens@1.6.0 -- codex-oss-lens demo`\n\n## Checks\n\n- registryVersion: pass - published=1.6.0\n- commandExit: pass - npm exec completed.\n- jsonOutput: pass - CLI emitted JSON.\n- demoSessions: pass - sessions=4\n"
+  "markdown": "# Codex OSS Lens Published Install Smoke\n\nGenerated: 2026-06-06T08:08:09.070Z\nStatus: pass\nCommand: `npm exec --yes --package codex-oss-lens@1.6.0 -- codex-oss-lens demo`\n\n## Checks\n\n- registryVersion: pass - published=1.6.0\n- commandExit: pass - npm exec completed.\n- jsonOutput: pass - CLI emitted JSON.\n- demoSessions: pass - sessions=4\n- demoPrivacy: pass - No public demo leaks detected.\n"
 }

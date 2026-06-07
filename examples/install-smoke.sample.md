@@ -10,3 +10,4 @@ Command: `npm exec --yes --package codex-oss-lens@1.6.0 -- codex-oss-lens demo`
 - commandExit: pass - npm exec completed.
 - jsonOutput: pass - CLI emitted JSON.
 - demoSessions: pass - sessions=4
+- demoPrivacy: pass - No public demo leaks detected.

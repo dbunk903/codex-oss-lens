@@ -18,6 +18,25 @@ test("passes install smoke result when CLI emits demo JSON", () => {
   assert.equal(report.status, "pass");
   assert.ok(report.checks.every((check) => check.ok));
   assert.match(report.markdown, /Published Install Smoke/);
+  assert.ok(report.checks.some((check) => check.id === "demoPrivacy" && check.ok));
+});
+
+test("fails install smoke result when demo JSON leaks public-private details", () => {
+  const report = buildInstallSmokeResult({
+    packageName: "codex-oss-lens",
+    version: "latest",
+    bin: "codex-oss-lens",
+    command: ["exec", "--yes", "--package", "codex-oss-lens@latest", "--", "codex-oss-lens", "demo"],
+    startedAt: "2026-06-06T00:00:00.000Z",
+    ok: true,
+    stdout: "{\"totals\":{\"sessions\":4},\"sessions\":[{\"cwd\":\"/Users/example/private\"}]}",
+    stderr: "",
+    parsed: { totals: { sessions: 4 }, sessions: [{ cwd: "/Users/example/private" }] },
+    registryVersion: "1.6.1",
+  });
+
+  assert.equal(report.status, "fail");
+  assert.ok(report.checks.some((check) => check.id === "demoPrivacy" && !check.ok));
 });
 
 test("fails install smoke result when npm exec fails", () => {
