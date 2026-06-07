@@ -24,6 +24,7 @@
     "evidence": "node src/cli.js public-evidence --out examples/public-evidence.sample.json --markdown examples/public-evidence.sample.md",
     "evidence:links": "node scripts/check-public-links.js",
     "final-copy:check": "node scripts/check-final-copy.js",
+    "submission:check": "npm run final-copy:check && npm run submission:versions && npm run evidence:links && npm test && npm run pack:check && npm run pack:smoke",
     "submission:versions": "node scripts/check-submission-versions.js",
     "scan": "node src/cli.js scan",
     "serve": "node src/cli.js serve",

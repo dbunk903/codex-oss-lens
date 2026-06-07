@@ -227,6 +227,12 @@ To collect final public links and proof points for an OSS support application:
 
 ```bash
 node src/cli.js public-evidence --markdown public-evidence.md
+npm run submission:check
+```
+
+For narrower copy or link checks while editing:
+
+```bash
 npm run final-copy:check
 npm run submission:versions
 npm run evidence:links
@@ -351,8 +357,9 @@ generated files into a reviewer-facing starting point.
 Use `scorecard` for a weighted readiness score and `submission-pack` when you want the whole
 application evidence folder generated in one pass.
 Use `form-draft` to keep Korean application answers within character limits, then run
-`pack-validate` as the final local sharing gate. Use `publish-check` before npm release attempts
-and `install-smoke` after release to prove the public package installs and runs.
+`pack-validate` as the final local sharing gate. Use `npm run submission:check` before opening the
+application form, `publish-check` before npm release attempts, and `install-smoke` after release to
+prove the public package installs and runs.
 
 ## Contributing
 

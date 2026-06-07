@@ -16,6 +16,12 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 ## Local verification
 
 ```bash
+npm run submission:check
+```
+
+Equivalent expanded gates:
+
+```bash
 npm test
 npm run pack:check
 npm run pack:smoke
@@ -43,6 +49,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run evidence:links` passes without broken public evidence URLs.
+- `npm run submission:check` runs the submit-time local gates as one command.
 - The npm package is still `codex-oss-lens@1.6.1` or newer.
 - The latest Node CI and published smoke CI runs are green.
 - The account owner has reviewed the form terms before pressing Submit.
