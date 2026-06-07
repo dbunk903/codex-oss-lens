@@ -5,6 +5,8 @@ const DEFAULTS = {
   roadmapUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md",
   apiWorkflowUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md",
   useCasesUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md",
+  finalChecklistUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md",
+  finalCopyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md",
   nodeCiUrl: "https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml",
   publishedSmokeUrl: "https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml",
 };
@@ -33,6 +35,8 @@ export function buildPublicEvidence(options = {}) {
       proof("roadmap", "Roadmap documents future maintainer workflow work.", links.roadmapUrl),
       proof("apiCreditWorkflow", "API-credit workflow keeps raw logs local and sends aggregate opt-in payloads.", links.apiWorkflowUrl),
       proof("maintainerUseCases", "Maintainer use cases document weekly review, evidence, privacy, and package confidence.", links.useCasesUrl),
+      proof("finalChecklist", "Final checklist captures submit-time public links, verification, and account-owner gates.", links.finalChecklistUrl),
+      proof("finalCopy", "Final copy keeps Korean application answers within form limits.", links.finalCopyUrl),
     ],
     copyChecklist: [
       "Paste repository URL and GitHub username.",
@@ -53,6 +57,8 @@ function compactLinks(options) {
     ...(options.roadmapUrl ? { roadmapUrl: options.roadmapUrl } : {}),
     ...(options.apiWorkflowUrl ? { apiWorkflowUrl: options.apiWorkflowUrl } : {}),
     ...(options.useCasesUrl ? { useCasesUrl: options.useCasesUrl } : {}),
+    ...(options.finalChecklistUrl ? { finalChecklistUrl: options.finalChecklistUrl } : {}),
+    ...(options.finalCopyUrl ? { finalCopyUrl: options.finalCopyUrl } : {}),
     ...(options.nodeCiUrl ? { nodeCiUrl: options.nodeCiUrl } : {}),
     ...(options.publishedSmokeUrl ? { publishedSmokeUrl: options.publishedSmokeUrl } : {}),
   };

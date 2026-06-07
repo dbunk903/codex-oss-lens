@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-07T15:41:43.068Z",
+  "generatedAt": "2026-06-07T16:16:00.124Z",
   "status": "ready",
   "manualFields": [
     "Last name",
@@ -17,6 +17,8 @@
     "roadmapUrl": "https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md",
     "apiWorkflowUrl": "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md",
     "useCasesUrl": "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md",
+    "finalChecklistUrl": "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md",
+    "finalCopyUrl": "https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md",
     "nodeCiUrl": "https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml",
     "publishedSmokeUrl": "https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml"
   },
@@ -60,6 +62,16 @@
       "id": "maintainerUseCases",
       "label": "Maintainer use cases document weekly review, evidence, privacy, and package confidence.",
       "url": "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md"
+    },
+    {
+      "id": "finalChecklist",
+      "label": "Final checklist captures submit-time public links, verification, and account-owner gates.",
+      "url": "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md"
+    },
+    {
+      "id": "finalCopy",
+      "label": "Final copy keeps Korean application answers within form limits.",
+      "url": "https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md"
     }
   ],
   "copyChecklist": [
@@ -69,5 +81,5 @@
     "Fill OpenAI organization ID from platform settings.",
     "Review terms in the account owner's browser before final submit."
   ],
-  "markdown": "# Codex OSS Lens Public Evidence\n\nGenerated: 2026-06-07T15:41:43.068Z\nStatus: ready\n\n## Public Links\n\n- repo: https://github.com/dbunk903/codex-oss-lens\n- releaseUrl: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1\n- npmPackage: https://www.npmjs.com/package/codex-oss-lens\n- roadmapUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md\n- apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md\n- useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md\n- nodeCiUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml\n- publishedSmokeUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml\n\n## Proof Points\n\n- publicRepository: Public GitHub repository is available. https://github.com/dbunk903/codex-oss-lens\n- latestRelease: Latest GitHub release is available. https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1\n- npmPackage: Package is published on npm. https://www.npmjs.com/package/codex-oss-lens\n- nodeCi: Source tests and packaged CLI smoke run in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml\n- publishedSmoke: npm latest install smoke runs in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml\n- roadmap: Roadmap documents future maintainer workflow work. https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md\n- apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md\n- maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md\n\n## Copy Checklist\n\n- Paste repository URL and GitHub username.\n- Select Project API credits.\n- Paste the three 500-character Korean answers from application/final-copy.md.\n- Fill OpenAI organization ID from platform settings.\n- Review terms in the account owner's browser before final submit.\n\n## Manual Fields\n\n- Last name\n- First name\n- Email registered to the ChatGPT account\n- GitHub username\n- OpenAI organization ID\n- Terms review and final submit\n"
+  "markdown": "# Codex OSS Lens Public Evidence\n\nGenerated: 2026-06-07T16:16:00.124Z\nStatus: ready\n\n## Public Links\n\n- repo: https://github.com/dbunk903/codex-oss-lens\n- releaseUrl: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1\n- npmPackage: https://www.npmjs.com/package/codex-oss-lens\n- roadmapUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md\n- apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md\n- useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md\n- finalChecklistUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md\n- finalCopyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md\n- nodeCiUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml\n- publishedSmokeUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml\n\n## Proof Points\n\n- publicRepository: Public GitHub repository is available. https://github.com/dbunk903/codex-oss-lens\n- latestRelease: Latest GitHub release is available. https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1\n- npmPackage: Package is published on npm. https://www.npmjs.com/package/codex-oss-lens\n- nodeCi: Source tests and packaged CLI smoke run in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml\n- publishedSmoke: npm latest install smoke runs in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml\n- roadmap: Roadmap documents future maintainer workflow work. https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md\n- apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md\n- maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md\n- finalChecklist: Final checklist captures submit-time public links, verification, and account-owner gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md\n- finalCopy: Final copy keeps Korean application answers within form limits. https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md\n\n## Copy Checklist\n\n- Paste repository URL and GitHub username.\n- Select Project API credits.\n- Paste the three 500-character Korean answers from application/final-copy.md.\n- Fill OpenAI organization ID from platform settings.\n- Review terms in the account owner's browser before final submit.\n\n## Manual Fields\n\n- Last name\n- First name\n- Email registered to the ChatGPT account\n- GitHub username\n- OpenAI organization ID\n- Terms review and final submit\n"
 }

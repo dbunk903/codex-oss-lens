@@ -310,7 +310,8 @@ The output includes:
 
 - `status`: current application evidence status
 - `manualFields`: account-owner fields that cannot be filled by the CLI
-- `publicLinks`: repository, release, npm, roadmap, API workflow, use cases, and CI links
+- `publicLinks`: repository, release, npm, roadmap, API workflow, use cases, final checklist,
+  final copy, and CI links
 - `proofPoints`: reviewer-facing evidence labels and URLs
 - `copyChecklist`: final paste-and-submit checklist
 - optional Markdown when `--markdown` is supplied
