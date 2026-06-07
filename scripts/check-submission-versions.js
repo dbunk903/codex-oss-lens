@@ -10,6 +10,7 @@ const files = [
   "application/final-copy.md",
   "application/form-answers.md",
   "docs/final-submission-checklist.md",
+  "docs/reviewer-quickstart.md",
   "examples/public-evidence.sample.md",
   "examples/public-evidence.sample.json",
 ];

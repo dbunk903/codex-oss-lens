@@ -9,6 +9,7 @@
 - Added `submission:versions` for checking final application release links against `package.json`.
 - Added `submission:check` as a one-command final local gate for application readiness.
 - Added `evidence:links` check for validating public evidence URLs before submission.
+- Added reviewer quickstart documentation and linked it from public evidence.
 - Included application, roadmap, contribution, and security docs in the npm package tarball.
 - Added public evidence tests and sample JSON/Markdown artifacts.
 - Added final submission checklist and form-ready final copy documents.

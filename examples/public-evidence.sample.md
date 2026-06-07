@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-07T16:16:00.124Z
+Generated: 2026-06-07T19:47:28.968Z
 Status: ready
 
 ## Public Links
@@ -9,6 +9,7 @@ Status: ready
 - releaseUrl: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
 - npmPackage: https://www.npmjs.com/package/codex-oss-lens
 - roadmapUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- reviewerQuickstartUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklistUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -24,6 +25,7 @@ Status: ready
 - nodeCi: Source tests and packaged CLI smoke run in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
 - publishedSmoke: npm latest install smoke runs in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 - roadmap: Roadmap documents future maintainer workflow work. https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- reviewerQuickstart: Reviewer quickstart gives public-only verification steps. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklist: Final checklist captures submit-time public links, verification, and account-owner gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md

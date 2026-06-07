@@ -333,6 +333,7 @@ See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API
 See [npm publishing](docs/npm-publishing.md) for package verification steps.
 See [maintainer use cases](docs/maintainer-use-cases.md) for practical OSS workflows this tool
 supports.
+See [reviewer quickstart](docs/reviewer-quickstart.md) for the fastest public-only validation path.
 See [final submission checklist](docs/final-submission-checklist.md) and
 [final copy](application/final-copy.md) for form-ready application material.
 

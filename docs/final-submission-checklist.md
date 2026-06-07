@@ -8,6 +8,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
 - npm package: https://www.npmjs.com/package/codex-oss-lens
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
@@ -50,6 +51,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run evidence:links` passes without broken public evidence URLs.
 - `npm run submission:check` runs the submit-time local gates as one command.
+- The reviewer quickstart opens and matches the current public release.
 - The npm package is still `codex-oss-lens@1.6.1` or newer.
 - The latest Node CI and published smoke CI runs are green.
 - The account owner has reviewed the form terms before pressing Submit.
