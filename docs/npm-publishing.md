@@ -10,11 +10,11 @@ npm run submission:check
 node src/cli.js publish-check --markdown publish-check.md
 ```
 
-`submission:check` runs the form-copy, version-alignment, public-redaction, public-link, badge,
-unit-test, tarball dry-run, and packaged CLI smoke gates. `pack:smoke` creates a tarball, installs
-it in a temporary directory, runs the packaged `codex-oss-lens` binary, verifies that demo output is
-valid JSON and share-safe, and checks that packaged `brief --demo` can generate a maintainer
-evidence pack.
+`submission:check` runs the form-copy, version-alignment, application-status, public-redaction,
+public-link, badge, unit-test, tarball dry-run, and packaged CLI smoke gates. `pack:smoke` creates a
+tarball, installs it in a temporary directory, runs the packaged `codex-oss-lens` binary, verifies
+that demo output is valid JSON and share-safe, and checks that packaged `brief --demo` can generate
+a maintainer evidence pack.
 
 ## Expected package contents
 

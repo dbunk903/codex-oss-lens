@@ -14,7 +14,22 @@ open-source support form.
 | Published-package smoke | Ready | https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml |
 | Privacy posture | Ready | `npm run public:redaction` scans public docs and samples for local paths, raw-log markers, and likely secrets. |
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
-| Account-owner fields | Manual | Name, ChatGPT email, OpenAI organization ID, terms review, and final submit stay with the account owner. |
+| Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
+
+## Reviewer links
+
+- Repository: https://github.com/dbunk903/codex-oss-lens
+- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
+- npm package: https://www.npmjs.com/package/codex-oss-lens
+- Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
+- Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
+- Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- Final copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
+- Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
+- Published smoke CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
 ## Submit-time gates
 
@@ -26,6 +41,12 @@ npm run submission:check
 
 That gate validates final copy, release-version drift, public redaction, public links, README badges,
 unit tests, package dry-run, and packaged CLI smoke.
+
+The status page itself is checked by:
+
+```bash
+npm run application:status
+```
 
 ## Version note
 

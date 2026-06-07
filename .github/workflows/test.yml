@@ -43,6 +43,7 @@ jobs:
         run: |
           npm run final-copy:check
           npm run submission:versions
+          npm run application:status
           npm run public:redaction
 
       - name: Check public evidence links

@@ -9,6 +9,7 @@
 - Added `submission:versions` for checking final application release links against `package.json`.
 - Added `submission:check` as a one-command final local gate for application readiness.
 - Added a public application status snapshot and linked it from reviewer evidence.
+- Added `application:status` to keep the status snapshot aligned with public evidence links.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.
