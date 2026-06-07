@@ -4,9 +4,10 @@
 
 - Added `public-evidence` command for final application links, proof points, manual fields, and
   paste checklist output.
+- Added `evidence:links` check for validating public evidence URLs before submission.
 - Added public evidence tests and sample JSON/Markdown artifacts.
 - Added final submission checklist and form-ready final copy documents.
-- Added CI validation for public evidence output.
+- Added CI validation for public evidence output and public evidence link health.
 - Added dashboard evidence link to the public evidence sample.
 - Updated security and contribution docs with public evidence and redaction verification steps.
 - Expanded roadmap with public evidence, adoption, and API-credit follow-up work.
