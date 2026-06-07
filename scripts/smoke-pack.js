@@ -1,5 +1,5 @@
 import { execFile } from "node:child_process";
-import { mkdtemp, readFile, rm } from "node:fs/promises";
+import { access, mkdtemp, readFile, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { promisify } from "node:util";
@@ -29,6 +29,13 @@ try {
   if (manifest.summary?.sessions !== 4) {
     throw new Error(`Unexpected brief session count: ${manifest.summary?.sessions}`);
   }
+  const packageRoot = path.join(temp, "node_modules", "codex-oss-lens");
+  await Promise.all([
+    access(path.join(packageRoot, "application", "final-copy.md")),
+    access(path.join(packageRoot, "application", "form-answers.md")),
+    access(path.join(packageRoot, "ROADMAP.md")),
+    access(path.join(packageRoot, "SECURITY.md")),
+  ]);
 
   await rm(tarball, { force: true });
   console.log(`Packed CLI smoke test passed in ${temp}`);

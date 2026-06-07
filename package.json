@@ -9,6 +9,7 @@
   "files": [
     "src/",
     "public/",
+    "application/",
     "docs/",
     "examples/*.json",
     "examples/*.md",
@@ -16,7 +17,10 @@
     "examples/dashboard-preview.png",
     "examples/dashboard-mobile-preview.png",
     "examples/brief-sample/",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "ROADMAP.md",
+    "SECURITY.md"
   ],
   "scripts": {
     "pack:check": "npm pack --dry-run",

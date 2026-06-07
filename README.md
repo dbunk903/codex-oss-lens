@@ -42,7 +42,11 @@ npx -y codex-oss-lens@latest serve --demo
 ```
 
 The CLI is published on npm as
-[`codex-oss-lens`](https://www.npmjs.com/package/codex-oss-lens). For a global install:
+[`codex-oss-lens`](https://www.npmjs.com/package/codex-oss-lens). The package also includes the
+public application docs, roadmap, and security policy so reviewers can inspect the same evidence
+from the registry tarball.
+
+For a global install:
 
 ```bash
 npm install -g codex-oss-lens
