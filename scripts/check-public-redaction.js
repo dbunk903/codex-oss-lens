@@ -5,6 +5,7 @@ const targets = [
   "README.md",
   "SECURITY.md",
   "CONTRIBUTING.md",
+  "CODE_OF_CONDUCT.md",
   "SUPPORT.md",
   "package.json",
   ".github",

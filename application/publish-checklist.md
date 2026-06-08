@@ -23,7 +23,8 @@
 - Dashboard shows application evidence and submission gates in the first viewport after the KPIs.
 - Maintainer use cases document weekly review, application evidence, API-credit planning, privacy review, and published package confidence.
 - SUPPORT.md documents public support routing and sensitive-data boundaries.
+- CODE_OF_CONDUCT.md documents respectful participation and conduct escalation boundaries.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
-- `submission:check`, `publish:samples`, `support:readiness`, and `readme:readiness` keep the public
-  application, publish, support, and README guidance aligned before the account owner submits the
-  form.
+- `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`, and
+  `readme:readiness` keep the public application, publish, support, conduct, and README guidance
+  aligned before the account owner submits the form.

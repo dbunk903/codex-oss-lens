@@ -48,6 +48,7 @@ npm run ci:readiness
 npm run contrib:readiness
 npm run security:readiness
 npm run support:readiness
+npm run conduct:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -82,8 +83,9 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run contrib:readiness` confirms CONTRIBUTING, the bug report template, and the PR template include validation and privacy guidance.
 - `npm run security:readiness` confirms SECURITY.md and issue templates include vulnerability reporting and sensitive-data guidance.
 - `npm run support:readiness` confirms SUPPORT.md, issue templates, README, and package contents include public support guidance.
+- `npm run conduct:readiness` confirms CODE_OF_CONDUCT.md, SUPPORT.md, CONTRIBUTING.md, README, and package contents include community guidance.
 - The dashboard preview PNGs remain `1440x1200` desktop and `500x1100` mobile artifacts.
-- `npm run public:redaction` confirms public docs, samples, package metadata, support docs, and GitHub templates/workflows do not expose local paths, raw-log markers, or likely secrets.
+- `npm run public:redaction` confirms public docs, samples, package metadata, support/conduct docs, and GitHub templates/workflows do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.
 - `npm run evidence:links` passes without broken public evidence URLs and confirms the public
   preview PNG dimensions.

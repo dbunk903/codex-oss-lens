@@ -56,6 +56,7 @@ npm run public:redaction
 ## Pull request checklist
 
 - Keep changes scoped and dependency-free unless a dependency is clearly justified.
+- Follow `CODE_OF_CONDUCT.md` in issues, reviews, and pull requests.
 - Add tests for parser/report behavior.
 - Update README or docs when behavior changes.
 - Run `npm test` before opening a PR, or `npm run submission:check` when the change affects

@@ -12,6 +12,8 @@ for support when the report can be written without sensitive Codex session detai
   workflow connections.
 - Security reports: follow `SECURITY.md` when a report requires vulnerability or sensitive-data
   handling.
+- Code of Conduct concerns: follow `CODE_OF_CONDUCT.md`; use `SECURITY.md` first if the concern
+  includes sensitive privacy or security details.
 
 ## What to include
 
