@@ -5,6 +5,7 @@ import { buildPublicEvidence } from "../src/public-evidence.js";
 const STATUS_DOC = "docs/application-status.md";
 const text = await fs.readFile(STATUS_DOC, "utf8");
 const packageJson = JSON.parse(await fs.readFile("package.json", "utf8"));
+const formDraftSample = JSON.parse(await fs.readFile("examples/form-draft.sample.json", "utf8"));
 const installSmokeSample = JSON.parse(await fs.readFile("examples/install-smoke.sample.json", "utf8"));
 const publishCheckSample = JSON.parse(await fs.readFile("examples/publish-check.sample.json", "utf8"));
 const evidence = buildPublicEvidence();
@@ -14,6 +15,10 @@ requireText("# Application Status", "title");
 requireText(`codex-oss-lens@${packageJson.version}`, "current package version");
 requireText("npm run submission:check", "submit-time gate command");
 requireText("Account-owner fields", "manual account-owner row");
+requireValue(formDraftSample.publicLinks?.latestRelease, `https://github.com/dbunk903/codex-oss-lens/releases/tag/v${packageJson.version}`, "form draft release link");
+requireValue(formDraftSample.publicLinks?.roadmap, "https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md", "form draft roadmap link");
+requireValue(formDraftSample.publicLinks?.apiCreditWorkflow, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md", "form draft API workflow link");
+requireNoText(JSON.stringify(formDraftSample), "TODO", "form draft sample placeholders");
 requireValue(installSmokeSample.package?.resolvedVersion, packageJson.version, "install smoke resolved version");
 requireValue(installSmokeSample.package?.version, "latest", "install smoke package selector");
 requireValue(publishCheckSample.package?.version, packageJson.version, "publish check package version");
@@ -50,5 +55,14 @@ function requireValue(actual, expected, label) {
     return;
   }
   console.error(`fail ${label}: expected ${expected}, got ${actual}`);
+  failures += 1;
+}
+
+function requireNoText(source, needle, label) {
+  if (!source.includes(needle)) {
+    console.log(`pass ${label}`);
+    return;
+  }
+  console.error(`fail ${label}: found ${needle}`);
   failures += 1;
 }

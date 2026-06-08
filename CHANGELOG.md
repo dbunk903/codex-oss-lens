@@ -14,6 +14,7 @@
 - Regenerated the published install smoke sample from npm latest and documented the source-vs-published gap.
 - Regenerated the form-draft sample with the current v1.6.1 release and added it to version drift checks.
 - Documented complete `form-draft` link options so public samples avoid placeholder reviewer links.
+- Linked the form-draft sample from public evidence and checked it for complete reviewer links.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.
