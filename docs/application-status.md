@@ -19,6 +19,7 @@ open-source support form.
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
+| Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
 | README readiness | Ready | `npm run readme:readiness` checks that README submission guidance stays aligned with public reviewer evidence. |
@@ -70,6 +71,12 @@ Publish and install smoke samples are checked by:
 
 ```bash
 npm run publish:samples
+```
+
+Publishing docs are checked by:
+
+```bash
+npm run publish:docs
 ```
 
 README submission guidance is checked by:

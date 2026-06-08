@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+import { promises as fs } from "node:fs";
+
+const packageJson = JSON.parse(await fs.readFile("package.json", "utf8"));
+const publishing = await fs.readFile("docs/npm-publishing.md", "utf8");
+const checklist = await fs.readFile("application/publish-checklist.md", "utf8");
+let failures = 0;
+
+requirePublishingText("npm run submission:check", "submission gate");
+requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate");
+requirePublishingText("npm run publish:samples", "publish samples gate");
+requirePublishingText("npm run readme:readiness", "README readiness gate");
+requirePublishingText("node src/cli.js publish-check --markdown publish-check.md", "publish check command");
+requirePublishingText("npm publish --access public --otp <6-digit-code>", "OTP publish command");
+requirePublishingText(
+  `node src/cli.js install-smoke --package ${packageJson.name} --version latest --markdown install-smoke.md`,
+  "latest install smoke command",
+);
+requirePublishingText("package owner", "package owner authority");
+requirePublishingText("versionAvailable: fail", "republish blocker guidance");
+requirePublishingText("examples/dashboard-preview.png", "dashboard preview package content");
+requirePublishingText("ROADMAP.md", "roadmap package content");
+requirePublishingText("SECURITY.md", "security package content");
+
+requireChecklistText(`v${packageJson.version}`, "current release tag");
+requireChecklistText(`${packageJson.name}@${packageJson.version}`, "current npm package");
+requireChecklistText("application/form-answers.md", "form answers pointer");
+requireChecklistText("account owner has reviewed the terms", "account-owner terms gate");
+requireChecklistText("Published npm usage", "README npm usage evidence");
+requireChecklistText("Scheduled/manual GitHub Actions", "published smoke CI evidence");
+requireChecklistText("submission:check", "submission gate evidence");
+requireChecklistText("publish:samples", "publish samples evidence");
+requireChecklistText("readme:readiness", "README readiness evidence");
+
+if (failures) {
+  console.error(`Publishing docs check failed for ${failures} requirement(s).`);
+  process.exit(1);
+}
+
+console.log(`pass publishingDocs package=${packageJson.name}@${packageJson.version}`);
+
+function requirePublishingText(needle, label) {
+  requireText(publishing, needle, `npm publishing ${label}`);
+}
+
+function requireChecklistText(needle, label) {
+  requireText(checklist, needle, `publish checklist ${label}`);
+}
+
+function requireText(source, needle, label) {
+  if (source.includes(needle)) {
+    console.log(`pass ${label}`);
+    return;
+  }
+  console.error(`fail missing ${label}: ${needle}`);
+  failures += 1;
+}
