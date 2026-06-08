@@ -293,6 +293,9 @@ Reviewer-facing entry points:
 - Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 
+The dashboard preview images are kept as `1440x1200` desktop and `500x1100` mobile artifacts by
+`npm run dashboard:readiness`.
+
 To check npm publish readiness, including login, package metadata, registry status, and OTP command
 guidance:
 

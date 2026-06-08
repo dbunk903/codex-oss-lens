@@ -36,6 +36,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   than the published package, the application status page calls out that release gap.
 - The publish check sample shows whether a later package release is currently blocked by npm login
   or version availability.
+- The dashboard preview images show the reviewer-facing UI at `1440x1200` desktop and `500x1100`
+  mobile viewports; `npm run dashboard:readiness` checks those dimensions.
 - The Node CI workflow runs tests, package dry-run checks, packaged CLI smoke, public evidence
   generation, final-copy validation, version alignment, public evidence sample freshness, and
   public link checks.

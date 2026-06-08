@@ -23,6 +23,8 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "publicEvidenceSample"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "dashboardPreview"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "mobileDashboardPreview"));
+  assert.ok(evidence.proofPoints.some((item) => item.label.includes("1440x1200")));
+  assert.ok(evidence.proofPoints.some((item) => item.label.includes("500x1100")));
   assert.ok(evidence.proofPoints.some((item) => item.id === "publishCheckSample"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "installSmokeSample"));
   assert.ok(evidence.manualFields.includes("OpenAI organization ID"));
