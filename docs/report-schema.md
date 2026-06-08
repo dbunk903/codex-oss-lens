@@ -247,8 +247,9 @@ The command returns a compact pack manifest with:
 ## Form draft
 
 `codex-oss-lens form-draft --manifest manifest.json` creates copy-ready Korean OpenAI OSS support
-form answers from generated evidence. Supplying readiness, API plan, scorecard, repository, and
-release links enriches the draft.
+form answers from generated evidence. Supplying readiness, API plan, scorecard, repository,
+release, roadmap, and API-credit workflow links enriches the draft and keeps public samples free of
+placeholder reviewer links.
 
 The output includes:
 
