@@ -37,6 +37,7 @@ node src/cli.js public-evidence --markdown public-evidence.md
 npm run final-copy:check
 npm run submission:versions
 npm run application:status
+npm run reviewer:quickstart
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -61,6 +62,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits and the application drafts include reviewer evidence links.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run application:status` confirms the status page and this checklist include every public evidence link and manual field.
+- `npm run reviewer:quickstart` confirms the public quickstart includes every reviewer evidence link and signed-out review guidance.
 - `npm run public:redaction` confirms public docs and samples do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.
 - `npm run evidence:links` passes without broken public evidence URLs.

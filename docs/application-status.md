@@ -17,6 +17,7 @@ open-source support form.
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the current release, roadmap, and API-credit workflow links without placeholders. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
+| Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
 | Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
@@ -55,6 +56,12 @@ The status page itself is checked by:
 
 ```bash
 npm run application:status
+```
+
+The reviewer quickstart is checked by:
+
+```bash
+npm run reviewer:quickstart
 ```
 
 ## Version note

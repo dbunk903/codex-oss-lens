@@ -18,6 +18,12 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 
 6. Inspect the privacy and API-credit plan:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
+7. Confirm the public roadmap and reviewer evidence:
+   https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+8. Confirm the latest public CI signals:
+   https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
+   https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
 ## What To Look For
 
@@ -34,14 +40,21 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   generation, final-copy validation, version alignment, public evidence sample freshness, and
   public link checks.
 - The published smoke workflow verifies `codex-oss-lens@latest` directly from npm.
+- Public links should open in a signed-out browser; the application status page records the
+  source-only, published-package, and account-owner gates separately.
 
 ## Submit-Time Evidence
 
+- Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Final Korean form copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - Form draft sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
+- API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 - Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
+- Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
+- Published smoke CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
