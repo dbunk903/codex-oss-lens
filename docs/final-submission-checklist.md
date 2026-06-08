@@ -38,6 +38,7 @@ npm run final-copy:check
 npm run submission:versions
 npm run application:status
 npm run public:redaction
+npm run evidence:sample
 npm run evidence:links
 npm run readme:badges
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
@@ -61,6 +62,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run application:status` confirms the status page and this checklist include every public evidence link and manual field.
 - `npm run public:redaction` confirms public docs and samples do not expose local paths, raw-log markers, or likely secrets.
+- `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.
 - `npm run evidence:links` passes without broken public evidence URLs.
 - `npm run readme:badges` confirms README status badges render.
 - `npm run submission:check` runs the submit-time local gates as one command.

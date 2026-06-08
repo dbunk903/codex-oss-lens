@@ -270,6 +270,7 @@ npm run final-copy:check
 npm run submission:versions
 npm run application:status
 npm run public:redaction
+npm run evidence:sample
 npm run evidence:links
 npm run readme:badges
 ```

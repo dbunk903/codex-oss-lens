@@ -45,8 +45,8 @@ Run the one-command local gate before opening the form:
 npm run submission:check
 ```
 
-That gate validates final copy, release-version drift, public redaction, public links, README badges,
-unit tests, package dry-run, and packaged CLI smoke.
+That gate validates final copy, release-version drift, public redaction, public evidence sample
+freshness, public links, README badges, unit tests, package dry-run, and packaged CLI smoke.
 
 The status page itself is checked by:
 
