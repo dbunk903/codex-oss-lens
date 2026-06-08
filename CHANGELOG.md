@@ -21,6 +21,7 @@
 - Added full reviewer-link override options for the `public-evidence` CLI and documented them.
 - Promoted the public-evidence sample to the canonical reviewer link map and link checks.
 - Added `evidence:sample` to keep generated public-evidence samples aligned with the canonical link map.
+- Added `evidence:sample` to Node CI so sample freshness is checked on push and pull request.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.

@@ -31,7 +31,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The publish check sample shows whether a later package release is currently blocked by npm login
   or version availability.
 - The Node CI workflow runs tests, package dry-run checks, packaged CLI smoke, public evidence
-  generation, final-copy validation, version alignment, and public link checks.
+  generation, final-copy validation, version alignment, public evidence sample freshness, and
+  public link checks.
 - The published smoke workflow verifies `codex-oss-lens@latest` directly from npm.
 
 ## Submit-Time Evidence

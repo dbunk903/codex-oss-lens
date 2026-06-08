@@ -45,6 +45,7 @@ jobs:
           npm run submission:versions
           npm run application:status
           npm run public:redaction
+          npm run evidence:sample
 
       - name: Check public evidence links
         if: matrix.node-version == 22
