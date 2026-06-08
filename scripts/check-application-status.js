@@ -29,6 +29,7 @@ requireText("Reviewer quickstart | Ready", "reviewer quickstart row");
 requireText("Publish samples | Ready", "publish samples row");
 requireText("Publishing docs | Ready", "publishing docs row");
 requireText("Dashboard readiness | Ready", "dashboard readiness row");
+requireText("Visual previews | Ready", "visual previews row");
 requireText("Public link health | Ready", "public link health row");
 requireText("README badges | Ready", "README badges row");
 requireText("README readiness | Ready", "README readiness row");
