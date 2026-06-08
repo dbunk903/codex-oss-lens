@@ -13,7 +13,7 @@ open-source support form.
 | Source CI | Ready | https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml |
 | Published-package smoke | Install-ready | https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml verifies npm latest installs and runs; source privacy smoke improvements need the next publish. |
 | Next publish gate | Blocked | `examples/publish-check.sample.md` shows npm login is required and `1.6.1` cannot be republished without a version bump. |
-| Privacy posture | Ready | `npm run public:redaction` scans public docs and samples for local paths, raw-log markers, and likely secrets. |
+| Privacy posture | Ready | `npm run public:redaction` scans public docs, samples, package metadata, and GitHub templates/workflows for local paths, raw-log markers, and likely secrets. |
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the full reviewer link map without placeholders. |
 | Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |

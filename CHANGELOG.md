@@ -34,6 +34,7 @@
 - Added public-link PNG dimension checks for dashboard preview evidence.
 - Added a CI readiness gate to keep GitHub Actions aligned with submission evidence checks.
 - Added full reviewer evidence links to the public form-draft sample and a freshness gate for it.
+- Expanded public redaction checks to package metadata and GitHub templates/workflows.
 - Added `readme:readiness` to keep README submission guidance aligned with reviewer evidence.
 - Updated the dashboard submission gates to show public evidence sample and public link checks.
 - Added transient 5xx retries plus GitHub API/raw validation to public evidence link checks.

@@ -26,6 +26,7 @@ requireText("npm run ci:readiness", "CI readiness gate command");
 requireText("npm run evidence:links", "public link health gate command");
 requireText("npm run readme:badges", "README badge gate command");
 requireText("npm run readme:readiness", "README readiness gate command");
+requireText("package metadata, and GitHub templates/workflows", "public redaction scope");
 requireText("Public evidence sample | Ready", "public evidence sample row");
 requireText("Reviewer quickstart | Ready", "reviewer quickstart row");
 requireText("full reviewer link map", "form draft full link map");

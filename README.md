@@ -168,8 +168,8 @@ To audit whether that evidence pack is ready to share:
 node src/cli.js audit --manifest codex-brief/manifest.json --out codex-brief/audit.json
 ```
 
-To scan the generated artifacts for accidental paths, rollout filenames, raw-log markers, or
-likely secrets:
+To scan generated artifacts plus public repository metadata/templates for accidental paths, rollout
+filenames, raw-log markers, or likely secrets:
 
 ```bash
 node src/cli.js redact-check codex-brief --out codex-brief/redact-check.json
