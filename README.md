@@ -236,6 +236,28 @@ node src/cli.js public-evidence --markdown public-evidence.md
 npm run submission:check
 ```
 
+For a fork or a later release, override reviewer links from the same command:
+
+```bash
+node src/cli.js public-evidence \
+  --repo https://github.com/owner/project \
+  --release-url https://github.com/owner/project/releases/tag/v1.2.3 \
+  --npm-package https://www.npmjs.com/package/package-name \
+  --roadmap-url https://github.com/owner/project/blob/main/ROADMAP.md \
+  --application-status-url https://github.com/owner/project/blob/main/docs/application-status.md \
+  --reviewer-quickstart-url https://github.com/owner/project/blob/main/docs/reviewer-quickstart.md \
+  --api-workflow-url https://github.com/owner/project/blob/main/docs/api-credit-workflow.md \
+  --use-cases-url https://github.com/owner/project/blob/main/docs/maintainer-use-cases.md \
+  --final-checklist-url https://github.com/owner/project/blob/main/docs/final-submission-checklist.md \
+  --final-copy-url https://github.com/owner/project/blob/main/application/final-copy.md \
+  --form-draft-sample-url https://github.com/owner/project/blob/main/examples/form-draft.sample.md \
+  --publish-check-sample-url https://github.com/owner/project/blob/main/examples/publish-check.sample.md \
+  --install-smoke-sample-url https://github.com/owner/project/blob/main/examples/install-smoke.sample.md \
+  --node-ci-url https://github.com/owner/project/actions/workflows/test.yml \
+  --published-smoke-url https://github.com/owner/project/actions/workflows/published-smoke.yml \
+  --markdown public-evidence.md
+```
+
 The public application status snapshot is maintained at
 `docs/application-status.md` so reviewers can distinguish published evidence from account-owner
 manual submit gates.
@@ -293,7 +315,7 @@ codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] 
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
 codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
-codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--out public-evidence.json] [--markdown public-evidence.md]
+codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```

@@ -253,9 +253,16 @@ function parseArgs(args) {
     else if (arg === "--form-draft") options.formDraft = args[++i];
     else if (arg === "--release-url") options.releaseUrl = args[++i];
     else if (arg === "--roadmap-url") options.roadmapUrl = args[++i];
+    else if (arg === "--application-status-url") options.applicationStatusUrl = args[++i];
+    else if (arg === "--reviewer-quickstart-url") options.reviewerQuickstartUrl = args[++i];
     else if (arg === "--api-workflow-url") options.apiWorkflowUrl = args[++i];
     else if (arg === "--npm-package") options.npmPackage = args[++i];
     else if (arg === "--use-cases-url") options.useCasesUrl = args[++i];
+    else if (arg === "--final-checklist-url") options.finalChecklistUrl = args[++i];
+    else if (arg === "--final-copy-url") options.finalCopyUrl = args[++i];
+    else if (arg === "--form-draft-sample-url") options.formDraftSampleUrl = args[++i];
+    else if (arg === "--publish-check-sample-url") options.publishCheckSampleUrl = args[++i];
+    else if (arg === "--install-smoke-sample-url") options.installSmokeSampleUrl = args[++i];
     else if (arg === "--node-ci-url") options.nodeCiUrl = args[++i];
     else if (arg === "--published-smoke-url") options.publishedSmokeUrl = args[++i];
     else if (arg === "--min-score") options.minScore = Number(args[++i]);
@@ -357,7 +364,7 @@ Usage:
   codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
   codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
   codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
-  codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--out public-evidence.json] [--markdown public-evidence.md]
+  codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
   codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
   codex-oss-lens demo [--out report.json]
 

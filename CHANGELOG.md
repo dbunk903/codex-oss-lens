@@ -18,6 +18,7 @@
 - Expanded final-copy public evidence links and made `final-copy:check` gate the reviewer links.
 - Expanded form-answers reviewer links and checked them against the public-evidence link map.
 - Expanded final checklist reviewer links and made `application:status` gate checklist link drift.
+- Added full reviewer-link override options for the `public-evidence` CLI and documented them.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.

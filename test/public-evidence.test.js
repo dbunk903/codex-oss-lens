@@ -1,6 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { buildPublicEvidence } from "../src/public-evidence.js";
+
+const execFileAsync = promisify(execFile);
 
 test("builds public evidence with required links and manual fields", () => {
   const evidence = buildPublicEvidence();
@@ -32,4 +36,50 @@ test("allows public evidence links to be overridden", () => {
   assert.equal(evidence.publicLinks.repo, "https://github.com/example/project");
   assert.equal(evidence.publicLinks.npmPackage, "https://www.npmjs.com/package/example-project");
   assert.equal(evidence.publicLinks.finalCopyUrl, "https://github.com/example/project/blob/main/application/final-copy.md");
+});
+
+test("CLI accepts reviewer link overrides for public evidence", async () => {
+  const { stdout } = await execFileAsync(process.execPath, [
+    "src/cli.js",
+    "public-evidence",
+    "--repo",
+    "https://github.com/example/project",
+    "--release-url",
+    "https://github.com/example/project/releases/tag/v1.2.3",
+    "--npm-package",
+    "https://www.npmjs.com/package/example-project",
+    "--roadmap-url",
+    "https://github.com/example/project/blob/main/ROADMAP.md",
+    "--application-status-url",
+    "https://github.com/example/project/blob/main/docs/application-status.md",
+    "--reviewer-quickstart-url",
+    "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md",
+    "--api-workflow-url",
+    "https://github.com/example/project/blob/main/docs/api-credit-workflow.md",
+    "--use-cases-url",
+    "https://github.com/example/project/blob/main/docs/maintainer-use-cases.md",
+    "--final-checklist-url",
+    "https://github.com/example/project/blob/main/docs/final-submission-checklist.md",
+    "--final-copy-url",
+    "https://github.com/example/project/blob/main/application/final-copy.md",
+    "--form-draft-sample-url",
+    "https://github.com/example/project/blob/main/examples/form-draft.sample.md",
+    "--publish-check-sample-url",
+    "https://github.com/example/project/blob/main/examples/publish-check.sample.md",
+    "--install-smoke-sample-url",
+    "https://github.com/example/project/blob/main/examples/install-smoke.sample.md",
+    "--node-ci-url",
+    "https://github.com/example/project/actions/workflows/test.yml",
+    "--published-smoke-url",
+    "https://github.com/example/project/actions/workflows/published-smoke.yml",
+  ]);
+  const evidence = JSON.parse(stdout);
+
+  assert.equal(evidence.publicLinks.repo, "https://github.com/example/project");
+  assert.equal(evidence.publicLinks.releaseUrl, "https://github.com/example/project/releases/tag/v1.2.3");
+  assert.equal(evidence.publicLinks.applicationStatusUrl, "https://github.com/example/project/blob/main/docs/application-status.md");
+  assert.equal(evidence.publicLinks.reviewerQuickstartUrl, "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md");
+  assert.equal(evidence.publicLinks.finalChecklistUrl, "https://github.com/example/project/blob/main/docs/final-submission-checklist.md");
+  assert.equal(evidence.publicLinks.formDraftSampleUrl, "https://github.com/example/project/blob/main/examples/form-draft.sample.md");
+  assert.equal(evidence.publicLinks.publishedSmokeUrl, "https://github.com/example/project/actions/workflows/published-smoke.yml");
 });
