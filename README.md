@@ -269,11 +269,23 @@ For narrower copy or link checks while editing:
 npm run final-copy:check
 npm run submission:versions
 npm run application:status
+npm run reviewer:quickstart
+npm run publish:samples
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
 npm run readme:badges
+npm run readme:readiness
 ```
+
+Reviewer-facing entry points:
+
+- Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Final submission checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
+- Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
+- Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 
 To check npm publish readiness, including login, package metadata, registry status, and OTP command
 guidance:

@@ -21,6 +21,7 @@ open-source support form.
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
+| README readiness | Ready | `npm run readme:readiness` checks that README submission guidance stays aligned with public reviewer evidence. |
 | Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
 
 ## Reviewer links
@@ -69,6 +70,12 @@ Publish and install smoke samples are checked by:
 
 ```bash
 npm run publish:samples
+```
+
+README submission guidance is checked by:
+
+```bash
+npm run readme:readiness
 ```
 
 ## Version note

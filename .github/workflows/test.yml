@@ -54,3 +54,4 @@ jobs:
         run: |
           npm run evidence:links
           npm run readme:badges
+          npm run readme:readiness
