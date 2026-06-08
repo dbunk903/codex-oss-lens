@@ -51,7 +51,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ## Submit gate
 
 - All public links open in a signed-out browser.
-- `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits and include reviewer evidence links.
+- `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits and the application drafts include reviewer evidence links.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run application:status` confirms the status page includes every public evidence link and manual field.
 - `npm run public:redaction` confirms public docs and samples do not expose local paths, raw-log markers, or likely secrets.

@@ -16,6 +16,7 @@
 - Documented complete `form-draft` link options so public samples avoid placeholder reviewer links.
 - Linked the form-draft sample from public evidence and checked it for complete reviewer links.
 - Expanded final-copy public evidence links and made `final-copy:check` gate the reviewer links.
+- Expanded form-answers reviewer links and checked them against the public-evidence link map.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.

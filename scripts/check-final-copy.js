@@ -5,7 +5,7 @@ import { buildPublicEvidence } from "../src/public-evidence.js";
 const FINAL_COPY = "application/final-copy.md";
 const FORM_ANSWERS = "application/form-answers.md";
 const evidence = buildPublicEvidence();
-const REQUIRED_LINK_KEYS = [
+const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "repo",
   "releaseUrl",
   "npmPackage",
@@ -46,7 +46,7 @@ for (const [field, answer] of Object.entries(canonicalAnswers)) {
   console.log(`pass synced ${field}`);
 }
 
-for (const key of REQUIRED_LINK_KEYS) {
+for (const key of REQUIRED_FINAL_COPY_LINK_KEYS) {
   const link = evidence.publicLinks[key];
   if (!text.includes(link)) fail(`Missing required final-copy link: ${link}`);
   console.log(`pass link ${key}`);
@@ -55,6 +55,16 @@ for (const key of REQUIRED_LINK_KEYS) {
 for (const link of REQUIRED_EXTRA_LINKS) {
   if (!text.includes(link)) fail(`Missing required final-copy link: ${link}`);
   console.log(`pass link ${link}`);
+}
+
+for (const [key, link] of Object.entries(evidence.publicLinks)) {
+  if (!formAnswers.includes(link)) fail(`Missing required form-answers link: ${link}`);
+  console.log(`pass formAnswersLink ${key}`);
+}
+
+for (const link of REQUIRED_EXTRA_LINKS) {
+  if (!formAnswers.includes(link)) fail(`Missing required form-answers link: ${link}`);
+  console.log(`pass formAnswersLink ${link}`);
 }
 
 if (!text.includes("v1.6.1")) fail("Missing current release version v1.6.1.");
