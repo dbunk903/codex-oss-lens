@@ -223,6 +223,9 @@ To generate copy-ready Korean form answers from the same evidence:
 node src/cli.js form-draft --manifest codex-submission-pack/manifest.json --readiness codex-submission-pack/readiness.json --api-plan codex-submission-pack/api-plan.json --scorecard codex-submission-pack/scorecard.json --repo https://github.com/dbunk903/codex-oss-lens --release-url https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1 --roadmap-url https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md --api-workflow-url https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md --markdown form-draft.md
 ```
 
+Pass the same reviewer evidence URLs used by `public-evidence` when you want the form draft to
+include the full public link map; `npm run form-draft:sample` checks that sample shape.
+
 To validate a generated submission pack before sharing it:
 
 ```bash
@@ -272,6 +275,7 @@ npm run final-copy:check
 npm run submission:versions
 npm run application:status
 npm run reviewer:quickstart
+npm run form-draft:sample
 npm run publish:samples
 npm run publish:docs
 npm run dashboard:readiness
@@ -336,7 +340,7 @@ codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markd
 codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
 codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--form-draft form-draft.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
 codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
-codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--roadmap-url url] [--api-workflow-url url] [--out form-draft.json] [--markdown form-draft.md]
+codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out form-draft.json] [--markdown form-draft.md]
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
 codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]

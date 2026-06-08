@@ -15,7 +15,8 @@ open-source support form.
 | Next publish gate | Blocked | `examples/publish-check.sample.md` shows npm login is required and `1.6.1` cannot be republished without a version bump. |
 | Privacy posture | Ready | `npm run public:redaction` scans public docs and samples for local paths, raw-log markers, and likely secrets. |
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
-| Form draft sample | Ready | `examples/form-draft.sample.md` includes the current release, roadmap, and API-credit workflow links without placeholders. |
+| Form draft sample | Ready | `examples/form-draft.sample.md` includes the full reviewer link map without placeholders. |
+| Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
@@ -71,6 +72,12 @@ The reviewer quickstart is checked by:
 
 ```bash
 npm run reviewer:quickstart
+```
+
+The public form draft sample is checked by:
+
+```bash
+npm run form-draft:sample
 ```
 
 Publish and install smoke samples are checked by:

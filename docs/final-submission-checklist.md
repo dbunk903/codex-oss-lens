@@ -40,6 +40,7 @@ npm run final-copy:check
 npm run submission:versions
 npm run application:status
 npm run reviewer:quickstart
+npm run form-draft:sample
 npm run publish:samples
 npm run publish:docs
 npm run dashboard:readiness
@@ -70,6 +71,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run application:status` confirms the status page and this checklist include every public evidence link and manual field.
 - `npm run reviewer:quickstart` confirms the public quickstart includes every reviewer evidence link and signed-out review guidance.
+- `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
 - `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials and current submit gates.

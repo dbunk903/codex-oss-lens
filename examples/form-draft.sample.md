@@ -1,14 +1,28 @@
 # Codex OSS Support Form Draft
 
-Generated: 2026-06-08T01:07:58.001Z
+Generated: 2026-06-08T16:25:15.525Z
 Ready to paste: true
 
 ## Public Links
 
 - Repository: https://github.com/dbunk903/codex-oss-lens
 - Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
+- npm package: https://www.npmjs.com/package/codex-oss-lens
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+- Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - API credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
+- Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
+- Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- Final copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
+- Form draft sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
+- Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
+- Dashboard preview: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-preview.png
+- Mobile dashboard preview: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-mobile-preview.png
+- Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
+- Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
+- Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
+- Published smoke CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
 ## Repository Fit
 
@@ -27,3 +41,12 @@ Characters: 198/500
 현재 공개 릴리스는 신청용 evidence workflow를 포함합니다. submission-pack이 brief, readiness, api-plan, timeline, scorecard, evidence-index를 한 번에 만들며 readiness=pass, scorecard=98(strong)로 공유 전 상태를 검증합니다. 의존성 없는 Node CLI와 정적 UI로 npm smoke test까지 통과했습니다.
 
 Characters: 234/500
+
+## Manual Fields
+
+- Last name
+- First name
+- Email registered to the ChatGPT account
+- GitHub username
+- OpenAI organization ID
+- Terms review and final submit

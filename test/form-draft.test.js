@@ -20,11 +20,16 @@ test("builds copy-ready Korean OSS support form draft", () => {
     links: {
       repo: "https://github.com/dbunk903/codex-oss-lens",
       releaseUrl: "https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1",
+      npmPackage: "https://www.npmjs.com/package/codex-oss-lens",
+      applicationStatusUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md",
     },
   });
 
   assert.equal(draft.readyToPaste, true);
   assert.equal(draft.publicLinks.repository, "https://github.com/dbunk903/codex-oss-lens");
+  assert.equal(draft.publicLinks.npmPackage, "https://www.npmjs.com/package/codex-oss-lens");
+  assert.equal(draft.publicLinks.applicationStatus, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md");
+  assert.ok(draft.requiredManualFields.includes("Terms review and final submit"));
   assert.ok(draft.fields.repositoryFit.chars <= 500);
   assert.ok(draft.fields.apiCreditsPlan.text.includes("implementation"));
   assert.match(draft.markdown, /Repository Fit/);

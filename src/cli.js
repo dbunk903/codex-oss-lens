@@ -177,8 +177,22 @@ async function main() {
       links: {
         repo: options.repo,
         releaseUrl: options.releaseUrl,
+        npmPackage: options.npmPackage,
         roadmapUrl: options.roadmapUrl,
+        applicationStatusUrl: options.applicationStatusUrl,
+        reviewerQuickstartUrl: options.reviewerQuickstartUrl,
         apiWorkflowUrl: options.apiWorkflowUrl,
+        useCasesUrl: options.useCasesUrl,
+        finalChecklistUrl: options.finalChecklistUrl,
+        finalCopyUrl: options.finalCopyUrl,
+        formDraftSampleUrl: options.formDraftSampleUrl,
+        publicEvidenceSampleUrl: options.publicEvidenceSampleUrl,
+        dashboardPreviewUrl: options.dashboardPreviewUrl,
+        mobileDashboardPreviewUrl: options.mobileDashboardPreviewUrl,
+        publishCheckSampleUrl: options.publishCheckSampleUrl,
+        installSmokeSampleUrl: options.installSmokeSampleUrl,
+        nodeCiUrl: options.nodeCiUrl,
+        publishedSmokeUrl: options.publishedSmokeUrl,
       },
     });
     if (options.markdown) await writeText(draft.markdown, options.markdown);
@@ -363,7 +377,7 @@ Usage:
   codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
   codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--form-draft form-draft.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
   codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
-  codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--roadmap-url url] [--api-workflow-url url] [--out form-draft.json] [--markdown form-draft.md]
+  codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out form-draft.json] [--markdown form-draft.md]
   codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
   codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
   codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
