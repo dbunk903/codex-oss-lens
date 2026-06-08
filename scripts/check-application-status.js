@@ -3,7 +3,9 @@ import { promises as fs } from "node:fs";
 import { buildPublicEvidence } from "../src/public-evidence.js";
 
 const STATUS_DOC = "docs/application-status.md";
+const FINAL_CHECKLIST = "docs/final-submission-checklist.md";
 const text = await fs.readFile(STATUS_DOC, "utf8");
+const checklistText = await fs.readFile(FINAL_CHECKLIST, "utf8");
 const packageJson = JSON.parse(await fs.readFile("package.json", "utf8"));
 const formDraftSample = JSON.parse(await fs.readFile("examples/form-draft.sample.json", "utf8"));
 const installSmokeSample = JSON.parse(await fs.readFile("examples/install-smoke.sample.json", "utf8"));
@@ -27,6 +29,7 @@ requireValue(publishCheckSample.status, "blocked", "publish check blocks republi
 
 for (const [label, url] of Object.entries(evidence.publicLinks)) {
   requireText(url, `public evidence link ${label}`);
+  requireChecklistText(url, `checklist public evidence link ${label}`);
 }
 
 for (const field of evidence.manualFields) {
@@ -42,6 +45,15 @@ console.log(`pass applicationStatus links=${Object.keys(evidence.publicLinks).le
 
 function requireText(needle, label) {
   if (text.includes(needle)) {
+    console.log(`pass ${label}`);
+    return;
+  }
+  console.error(`fail missing ${label}: ${needle}`);
+  failures += 1;
+}
+
+function requireChecklistText(needle, label) {
+  if (checklistText.includes(needle)) {
     console.log(`pass ${label}`);
     return;
   }

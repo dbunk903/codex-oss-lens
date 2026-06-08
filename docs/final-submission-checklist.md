@@ -12,6 +12,11 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
+- Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- Final copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
+- Form draft sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
+- Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
+- Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 - Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
 - Published smoke CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
@@ -53,7 +58,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - All public links open in a signed-out browser.
 - `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits and the application drafts include reviewer evidence links.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
-- `npm run application:status` confirms the status page includes every public evidence link and manual field.
+- `npm run application:status` confirms the status page and this checklist include every public evidence link and manual field.
 - `npm run public:redaction` confirms public docs and samples do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:links` passes without broken public evidence URLs.
 - `npm run readme:badges` confirms README status badges render.
