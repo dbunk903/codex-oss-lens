@@ -22,6 +22,8 @@
 - Scheduled/manual GitHub Actions smoke-check the npm `latest` package.
 - Dashboard shows application evidence and submission gates in the first viewport after the KPIs.
 - Maintainer use cases document weekly review, application evidence, API-credit planning, privacy review, and published package confidence.
+- SUPPORT.md documents public support routing and sensitive-data boundaries.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
-- `submission:check`, `publish:samples`, and `readme:readiness` keep the public application, publish,
-  and README guidance aligned before the account owner submits the form.
+- `submission:check`, `publish:samples`, `support:readiness`, and `readme:readiness` keep the public
+  application, publish, support, and README guidance aligned before the account owner submits the
+  form.

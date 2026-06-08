@@ -11,15 +11,16 @@ node src/cli.js publish-check --markdown publish-check.md
 ```
 
 `submission:check` runs the form-copy, version-alignment, application-status, contribution,
-security, public-redaction, public evidence sample, public-link, badge, README readiness, unit-test,
-tarball dry-run, and packaged CLI smoke gates. It also runs the reviewer quickstart and publish
-sample checks:
+security, support, public-redaction, public evidence sample, public-link, badge, README readiness,
+unit-test, tarball dry-run, and packaged CLI smoke gates. It also runs the reviewer quickstart and
+publish sample checks:
 
 ```bash
 npm run reviewer:quickstart
 npm run publish:samples
 npm run contrib:readiness
 npm run security:readiness
+npm run support:readiness
 npm run readme:readiness
 ```
 
@@ -37,8 +38,8 @@ The package allowlist includes:
 - `docs/`
 - sample JSON/Markdown artifacts from `examples/`
 - `examples/dashboard-preview.png`
-- `README.md`, `LICENSE`, `CHANGELOG.md`, `CONTRIBUTING.md`, `ROADMAP.md`, `SECURITY.md`, and
-  `package.json`
+- `README.md`, `LICENSE`, `CHANGELOG.md`, `CONTRIBUTING.md`, `ROADMAP.md`, `SECURITY.md`,
+  `SUPPORT.md`, and `package.json`
 
 Generated local reports are excluded by `.gitignore` and not included in the package allowlist.
 

@@ -11,6 +11,7 @@ requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate")
 requirePublishingText("npm run publish:samples", "publish samples gate");
 requirePublishingText("npm run contrib:readiness", "contribution readiness gate");
 requirePublishingText("npm run security:readiness", "security readiness gate");
+requirePublishingText("npm run support:readiness", "support readiness gate");
 requirePublishingText("npm run readme:readiness", "README readiness gate");
 requirePublishingText("node src/cli.js publish-check --markdown publish-check.md", "publish check command");
 requirePublishingText("npm publish --access public --otp <6-digit-code>", "OTP publish command");
@@ -23,6 +24,7 @@ requirePublishingText("versionAvailable: fail", "republish blocker guidance");
 requirePublishingText("examples/dashboard-preview.png", "dashboard preview package content");
 requirePublishingText("ROADMAP.md", "roadmap package content");
 requirePublishingText("SECURITY.md", "security package content");
+requirePublishingText("SUPPORT.md", "support package content");
 
 requireChecklistText(`v${packageJson.version}`, "current release tag");
 requireChecklistText(`${packageJson.name}@${packageJson.version}`, "current npm package");
@@ -32,6 +34,7 @@ requireChecklistText("Published npm usage", "README npm usage evidence");
 requireChecklistText("Scheduled/manual GitHub Actions", "published smoke CI evidence");
 requireChecklistText("submission:check", "submission gate evidence");
 requireChecklistText("publish:samples", "publish samples evidence");
+requireChecklistText("support:readiness", "support readiness evidence");
 requireChecklistText("readme:readiness", "README readiness evidence");
 
 if (failures) {

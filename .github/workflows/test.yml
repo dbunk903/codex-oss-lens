@@ -51,6 +51,7 @@ jobs:
           npm run dashboard:readiness
           npm run contrib:readiness
           npm run security:readiness
+          npm run support:readiness
           npm run public:redaction
           npm run evidence:sample
 

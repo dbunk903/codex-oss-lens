@@ -38,6 +38,7 @@
 - Added `readme:readiness` to keep README submission guidance aligned with reviewer evidence.
 - Added `contrib:readiness` to keep CONTRIBUTING and GitHub templates aligned with validation and privacy gates.
 - Added `security:readiness` to keep SECURITY.md and issue templates aligned with vulnerability and sensitive-data guidance.
+- Added `SUPPORT.md` and `support:readiness` to keep public support guidance aligned with privacy and package gates.
 - Updated the dashboard submission gates to show public evidence sample and public link checks.
 - Added transient 5xx retries plus GitHub API/raw validation to public evidence link checks.
 - Added transient 5xx retries and raw workflow validation to README badge checks.
