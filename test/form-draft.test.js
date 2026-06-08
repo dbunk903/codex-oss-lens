@@ -19,7 +19,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
     scorecard: { score: 94, rating: "strong" },
     links: {
       repo: "https://github.com/dbunk903/codex-oss-lens",
-      releaseUrl: "https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.5.0",
+      releaseUrl: "https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1",
     },
   });
 

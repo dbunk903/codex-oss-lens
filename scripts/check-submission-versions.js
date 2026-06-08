@@ -12,6 +12,8 @@ const files = [
   "docs/application-status.md",
   "docs/final-submission-checklist.md",
   "docs/reviewer-quickstart.md",
+  "examples/form-draft.sample.md",
+  "examples/form-draft.sample.json",
   "examples/public-evidence.sample.md",
   "examples/public-evidence.sample.json",
 ];

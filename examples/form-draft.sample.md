@@ -1,12 +1,12 @@
 # Codex OSS Support Form Draft
 
-Generated: 2026-06-05T04:17:23.050Z
+Generated: 2026-06-08T01:07:58.001Z
 Ready to paste: true
 
 ## Public Links
 
 - Repository: https://github.com/dbunk903/codex-oss-lens
-- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.5.0
+- Latest release: https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - API credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 

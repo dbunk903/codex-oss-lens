@@ -12,6 +12,7 @@
 - Added `application:status` to keep the status snapshot aligned with public evidence links.
 - Regenerated the publish-check sample from current npm registry state and linked it from public evidence.
 - Regenerated the published install smoke sample from npm latest and documented the source-vs-published gap.
+- Regenerated the form-draft sample with the current v1.6.1 release and added it to version drift checks.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
 - Added README workflow badges and a badge health check in CI.
