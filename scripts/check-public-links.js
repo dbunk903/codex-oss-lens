@@ -4,6 +4,10 @@ import { buildPublicEvidence } from "../src/public-evidence.js";
 const evidence = buildPublicEvidence();
 const links = Object.entries(evidence.publicLinks);
 const results = [];
+const pngExpectations = {
+  dashboardPreviewUrl: { width: 1440, height: 1200, label: "desktop dashboard preview" },
+  mobileDashboardPreviewUrl: { width: 500, height: 1100, label: "mobile dashboard preview" },
+};
 
 for (const [label, url] of links) {
   const checkTarget = checkUrlFor(url);
@@ -11,6 +15,16 @@ for (const [label, url] of links) {
   results.push({ label, url, ...result });
   const targetNote = checkTarget === url ? "" : ` via ${checkTarget}`;
   console.log(`${result.ok ? "pass" : "fail"} ${label} ${result.status || "n/a"} ${url}${targetNote}`);
+  if (result.ok && pngExpectations[label]) {
+    const expected = pngExpectations[label];
+    const pngResult = await checkPngSize(checkTarget, expected);
+    results.push({ label: `${label} image`, url, ...pngResult });
+    console.log(
+      `${pngResult.ok ? "pass" : "fail"} ${expected.label} public png ${pngResult.width || "n/a"}x${
+        pngResult.height || "n/a"
+      } expected ${expected.width}x${expected.height}`
+    );
+  }
 }
 
 const failures = results.filter((result) => !result.ok);
@@ -89,6 +103,29 @@ async function request(url, method, redirects = 0) {
   }
 }
 
+async function requestBytes(url, redirects = 0) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      redirect: "manual",
+      signal: controller.signal,
+      headers: { "user-agent": "codex-oss-lens-public-link-check" },
+    });
+
+    if ([301, 302, 303, 307, 308].includes(response.status) && response.headers.get("location")) {
+      if (redirects >= 5) return { ok: false, status: response.status, error: "too many redirects" };
+      return requestBytes(new URL(response.headers.get("location"), url).toString(), redirects + 1);
+    }
+
+    if (response.status < 200 || response.status >= 400) return { ok: false, status: response.status };
+    return { ok: true, status: response.status, bytes: Buffer.from(await response.arrayBuffer()) };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 async function requestWithRetry(url, method) {
   const maxAttempts = 3;
   let latest;
@@ -98,6 +135,49 @@ async function requestWithRetry(url, method) {
     await delay(attempt * 500);
   }
   return latest;
+}
+
+async function requestBytesWithRetry(url) {
+  const maxAttempts = 3;
+  let latest;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    latest = await requestBytes(url);
+    if (!isTransientStatus(latest.status) || attempt === maxAttempts) return latest;
+    await delay(attempt * 500);
+  }
+  return latest;
+}
+
+async function checkPngSize(url, expected) {
+  try {
+    const result = await requestBytesWithRetry(url);
+    if (!result.ok) return result;
+    if (!isPng(result.bytes)) return { ok: false, status: result.status, error: "not a PNG" };
+    const width = result.bytes.readUInt32BE(16);
+    const height = result.bytes.readUInt32BE(20);
+    return {
+      ok: width === expected.width && height === expected.height,
+      status: result.status,
+      width,
+      height,
+    };
+  } catch (error) {
+    return { ok: false, status: null, error: error.message };
+  }
+}
+
+function isPng(bytes) {
+  return (
+    bytes.length >= 24 &&
+    bytes[0] === 0x89 &&
+    bytes[1] === 0x50 &&
+    bytes[2] === 0x4e &&
+    bytes[3] === 0x47 &&
+    bytes[4] === 0x0d &&
+    bytes[5] === 0x0a &&
+    bytes[6] === 0x1a &&
+    bytes[7] === 0x0a
+  );
 }
 
 function isTransientStatus(status) {

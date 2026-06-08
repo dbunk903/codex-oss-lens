@@ -31,6 +31,7 @@ requireText("Publishing docs | Ready", "publishing docs row");
 requireText("Dashboard readiness | Ready", "dashboard readiness row");
 requireText("Visual previews | Ready", "visual previews row");
 requireText("Public link health | Ready", "public link health row");
+requireText("public preview PNG dimensions", "public preview PNG dimensions");
 requireText("README badges | Ready", "README badges row");
 requireText("README readiness | Ready", "README readiness row");
 requireText("Account-owner fields", "manual account-owner row");

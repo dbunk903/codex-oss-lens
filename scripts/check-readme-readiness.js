@@ -21,6 +21,7 @@ requireText("examples/dashboard-preview.png", "dashboard preview link");
 requireText("examples/dashboard-mobile-preview.png", "mobile dashboard preview link");
 requireText("1440x1200", "desktop preview dimension");
 requireText("500x1100", "mobile preview dimension");
+requireText("public GitHub raw URLs", "public preview dimension check");
 requireText("examples/publish-check.sample.md", "publish check sample link");
 requireText("examples/install-smoke.sample.md", "install smoke sample link");
 

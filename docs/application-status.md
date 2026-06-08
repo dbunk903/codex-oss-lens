@@ -22,7 +22,7 @@ open-source support form.
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
 | Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links and submit gates. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
-| Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints. |
+| Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
 | README readiness | Ready | `npm run readme:readiness` checks that README submission guidance stays aligned with public reviewer evidence. |
 | Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
@@ -57,7 +57,8 @@ npm run submission:check
 ```
 
 That gate validates final copy, release-version drift, public redaction, public evidence sample
-freshness, public links, README badges, unit tests, package dry-run, and packaged CLI smoke.
+freshness, public links, public preview PNG dimensions, README badges, unit tests, package dry-run,
+and packaged CLI smoke.
 
 The status page itself is checked by:
 
