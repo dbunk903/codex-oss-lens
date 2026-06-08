@@ -24,6 +24,7 @@ open-source support form.
 | Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links and submit gates. |
 | CI readiness | Ready | `npm run ci:readiness` checks that GitHub Actions keeps the Node 20/22 matrix, package smoke, public evidence, and submission evidence gates wired. |
 | Contribution readiness | Ready | `npm run contrib:readiness` checks CONTRIBUTING, the bug report template, and the PR template for validation and privacy guidance. |
+| Security readiness | Ready | `npm run security:readiness` checks SECURITY.md and issue templates for vulnerability reporting and sensitive-data guidance. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -111,6 +112,12 @@ Contribution and PR template readiness is checked by:
 
 ```bash
 npm run contrib:readiness
+```
+
+Security policy and issue template readiness is checked by:
+
+```bash
+npm run security:readiness
 ```
 
 README submission guidance is checked by:

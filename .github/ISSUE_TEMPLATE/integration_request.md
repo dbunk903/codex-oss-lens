@@ -13,4 +13,6 @@ labels: integration
 
 ## Data that must remain local
 
+Do not include raw Codex logs, private prompts, or full local paths. Do not include tokens, credentials, or private source code. State exactly which aggregate data leaves the local machine.
+
 ## Success criteria

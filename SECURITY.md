@@ -10,7 +10,7 @@ The latest GitHub release is the supported version.
 ## Reporting a vulnerability
 
 Open a GitHub issue if the report can be written without exposing secrets or private prompts.
-If disclosure requires sensitive details, keep the issue minimal and ask for a private contact path.
+If disclosure requires sensitive details, do not post them publicly. Use GitHub private vulnerability reporting if it is enabled on the repository, or keep the issue minimal and ask for a private contact path.
 
 ## Sensitive data expectations
 
@@ -27,6 +27,7 @@ Before sharing generated artifacts publicly, run:
 ```bash
 node src/cli.js redact-check <artifact-dir>
 node src/cli.js public-evidence --markdown public-evidence.md
+npm run security:readiness
 ```
 
 `redact-check` looks for accidental local-path, rollout filename, raw-log, and likely-secret

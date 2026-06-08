@@ -22,6 +22,7 @@ requireText("npm run publish:samples", "publish samples check");
 requireText("npm run publish:docs", "publishing docs check");
 requireText("npm run dashboard:readiness", "dashboard readiness check");
 requireText("npm run contrib:readiness", "contribution readiness check");
+requireText("npm run security:readiness", "security readiness check");
 requireText("npm run public:redaction", "public redaction check");
 requireText("npm run evidence:sample", "public evidence sample check");
 requireText("npm run evidence:links", "public evidence link check");

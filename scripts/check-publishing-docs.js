@@ -10,6 +10,7 @@ requirePublishingText("npm run submission:check", "submission gate");
 requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requirePublishingText("npm run publish:samples", "publish samples gate");
 requirePublishingText("npm run contrib:readiness", "contribution readiness gate");
+requirePublishingText("npm run security:readiness", "security readiness gate");
 requirePublishingText("npm run readme:readiness", "README readiness gate");
 requirePublishingText("node src/cli.js publish-check --markdown publish-check.md", "publish check command");
 requirePublishingText("npm publish --access public --otp <6-digit-code>", "OTP publish command");

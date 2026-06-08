@@ -12,6 +12,7 @@ requireText("npm run form-draft:sample", "form draft sample gate");
 requireText("npm run publish:samples", "publish samples gate");
 requireText("npm run ci:readiness", "CI readiness gate");
 requireText("npm run contrib:readiness", "contribution readiness gate");
+requireText("npm run security:readiness", "security readiness gate");
 requireText("npm run public:redaction", "public redaction gate");
 requireText("npm run evidence:sample", "public evidence sample gate");
 requireText("npm run evidence:links", "public link health gate");
