@@ -43,6 +43,7 @@ npm run reviewer:quickstart
 npm run publish:samples
 npm run publish:docs
 npm run dashboard:readiness
+npm run ci:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -72,6 +73,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
 - `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials and current submit gates.
+- `npm run ci:readiness` confirms GitHub Actions still runs the Node matrix, packaged CLI smoke, public evidence, and submission evidence gates.
 - The dashboard preview PNGs remain `1440x1200` desktop and `500x1100` mobile artifacts.
 - `npm run public:redaction` confirms public docs and samples do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.

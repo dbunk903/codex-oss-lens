@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+import { promises as fs } from "node:fs";
+
+const workflow = await fs.readFile(".github/workflows/test.yml", "utf8");
+let failures = 0;
+
+requireText("permissions:", "explicit permissions");
+requireText("contents: read", "read-only contents permission");
+requireText("node-version: [20, 22]", "Node 20/22 matrix");
+requireText("fail-fast: false", "full matrix reporting");
+requireText("npm test", "unit tests");
+requireText("npm run pack:check", "package contents check");
+requireText("npm run pack:smoke", "packaged CLI smoke");
+requireText("node src/cli.js public-evidence", "public evidence generation");
+requireText("evidence.status", "public evidence readiness assertion");
+requireText("npm run final-copy:check", "final copy check");
+requireText("npm run submission:versions", "submission version check");
+requireText("npm run application:status", "application status check");
+requireText("npm run reviewer:quickstart", "reviewer quickstart check");
+requireText("npm run publish:samples", "publish samples check");
+requireText("npm run publish:docs", "publishing docs check");
+requireText("npm run dashboard:readiness", "dashboard readiness check");
+requireText("npm run public:redaction", "public redaction check");
+requireText("npm run evidence:sample", "public evidence sample check");
+requireText("npm run evidence:links", "public evidence link check");
+requireText("matrix.node-version == 22", "Node 22 network-only link checks");
+requireText("npm run readme:badges", "README badge check");
+requireText("npm run readme:readiness", "README readiness check");
+
+if (failures) {
+  console.error(`CI readiness check failed for ${failures} requirement(s).`);
+  process.exit(1);
+}
+
+console.log("pass ciReadiness");
+
+function requireText(needle, label) {
+  if (workflow.includes(needle)) {
+    console.log(`pass ${label}`);
+    return;
+  }
+  console.error(`fail missing ${label}: ${needle}`);
+  failures += 1;
+}

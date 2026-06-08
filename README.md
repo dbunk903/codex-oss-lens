@@ -275,6 +275,7 @@ npm run reviewer:quickstart
 npm run publish:samples
 npm run publish:docs
 npm run dashboard:readiness
+npm run ci:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links

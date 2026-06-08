@@ -21,6 +21,7 @@ open-source support form.
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
 | Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links and submit gates. |
+| CI readiness | Ready | `npm run ci:readiness` checks that GitHub Actions keeps the Node 20/22 matrix, package smoke, public evidence, and submission evidence gates wired. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -91,6 +92,12 @@ npm run dashboard:readiness
 ```
 
 That check also verifies the desktop and mobile dashboard preview PNG dimensions.
+
+GitHub Actions readiness is checked by:
+
+```bash
+npm run ci:readiness
+```
 
 README submission guidance is checked by:
 
