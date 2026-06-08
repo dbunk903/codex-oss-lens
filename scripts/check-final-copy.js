@@ -1,12 +1,22 @@
 #!/usr/bin/env node
 import { promises as fs } from "node:fs";
+import { buildPublicEvidence } from "../src/public-evidence.js";
 
 const FINAL_COPY = "application/final-copy.md";
 const FORM_ANSWERS = "application/form-answers.md";
-const REQUIRED_LINKS = [
-  "https://github.com/dbunk903/codex-oss-lens",
-  "https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1",
-  "https://www.npmjs.com/package/codex-oss-lens",
+const evidence = buildPublicEvidence();
+const REQUIRED_LINK_KEYS = [
+  "repo",
+  "releaseUrl",
+  "npmPackage",
+  "roadmapUrl",
+  "applicationStatusUrl",
+  "useCasesUrl",
+  "apiWorkflowUrl",
+  "finalChecklistUrl",
+  "formDraftSampleUrl",
+];
+const REQUIRED_EXTRA_LINKS = [
   "https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md",
 ];
 
@@ -36,7 +46,13 @@ for (const [field, answer] of Object.entries(canonicalAnswers)) {
   console.log(`pass synced ${field}`);
 }
 
-for (const link of REQUIRED_LINKS) {
+for (const key of REQUIRED_LINK_KEYS) {
+  const link = evidence.publicLinks[key];
+  if (!text.includes(link)) fail(`Missing required final-copy link: ${link}`);
+  console.log(`pass link ${key}`);
+}
+
+for (const link of REQUIRED_EXTRA_LINKS) {
   if (!text.includes(link)) fail(`Missing required final-copy link: ${link}`);
   console.log(`pass link ${link}`);
 }
