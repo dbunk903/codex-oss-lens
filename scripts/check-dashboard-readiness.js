@@ -26,6 +26,8 @@ for (const [label, url] of Object.entries({
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
   finalChecklistUrl: evidence.publicLinks.finalChecklistUrl,
   publicEvidenceSampleUrl: evidence.publicLinks.publicEvidenceSampleUrl,
+  dashboardPreviewUrl: evidence.publicLinks.dashboardPreviewUrl,
+  mobileDashboardPreviewUrl: evidence.publicLinks.mobileDashboardPreviewUrl,
   publishCheckSampleUrl: evidence.publicLinks.publishCheckSampleUrl,
   installSmokeSampleUrl: evidence.publicLinks.installSmokeSampleUrl,
 })) {

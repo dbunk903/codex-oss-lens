@@ -17,6 +17,8 @@ requireText("docs/application-status.md", "application status link");
 requireText("docs/reviewer-quickstart.md", "reviewer quickstart link");
 requireText("docs/final-submission-checklist.md", "final checklist link");
 requireText("examples/public-evidence.sample.md", "public evidence sample link");
+requireText("examples/dashboard-preview.png", "dashboard preview link");
+requireText("examples/dashboard-mobile-preview.png", "mobile dashboard preview link");
 requireText("examples/publish-check.sample.md", "publish check sample link");
 requireText("examples/install-smoke.sample.md", "install smoke sample link");
 
@@ -26,6 +28,8 @@ for (const url of [
   evidence.publicLinks.npmPackage,
   evidence.publicLinks.applicationStatusUrl,
   evidence.publicLinks.reviewerQuickstartUrl,
+  evidence.publicLinks.dashboardPreviewUrl,
+  evidence.publicLinks.mobileDashboardPreviewUrl,
 ]) {
   requireText(url, `public reviewer URL ${url}`);
 }

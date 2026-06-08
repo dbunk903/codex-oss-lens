@@ -28,6 +28,7 @@
 - Added `publish:samples` to keep publish-check and install-smoke samples aligned with the current package.
 - Added `publish:docs` to keep npm publishing docs and the publish checklist aligned with release gates.
 - Added `dashboard:readiness` to keep the public dashboard evidence panel aligned with reviewer gates.
+- Added dashboard preview and mobile preview links to public reviewer evidence.
 - Added `readme:readiness` to keep README submission guidance aligned with reviewer evidence.
 - Updated the dashboard submission gates to show public evidence sample and public link checks.
 - Added transient 5xx retries plus GitHub API/raw validation to public evidence link checks.

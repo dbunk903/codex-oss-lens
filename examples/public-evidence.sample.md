@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-08T04:39:52.301Z
+Generated: 2026-06-08T13:52:51.647Z
 Status: ready
 
 ## Public Links
@@ -17,6 +17,8 @@ Status: ready
 - finalCopyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - formDraftSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - publicEvidenceSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
+- dashboardPreviewUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-preview.png
+- mobileDashboardPreviewUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-mobile-preview.png
 - publishCheckSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - installSmokeSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 - nodeCiUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
@@ -38,6 +40,8 @@ Status: ready
 - finalCopy: Final copy keeps Korean application answers within form limits. https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - formDraftSample: Form draft sample shows paste-ready answers with complete reviewer links. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - publicEvidenceSample: Public evidence sample records the generated reviewer link set. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
+- dashboardPreview: Desktop dashboard preview shows the reviewer-facing UI. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-preview.png
+- mobileDashboardPreview: Mobile dashboard preview shows responsive reviewer-facing UI. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-mobile-preview.png
 - publishCheckSample: Publish check sample records npm login and version-availability gates. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - installSmokeSample: Install smoke sample records the current npm latest result and source-vs-published gap. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 
