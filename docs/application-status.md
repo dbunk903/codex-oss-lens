@@ -16,6 +16,7 @@ open-source support form.
 | Privacy posture | Ready | `npm run public:redaction` scans public docs and samples for local paths, raw-log markers, and likely secrets. |
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the current release, roadmap, and API-credit workflow links without placeholders. |
+| Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
 | Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
 
 ## Reviewer links

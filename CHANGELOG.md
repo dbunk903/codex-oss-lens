@@ -22,6 +22,7 @@
 - Promoted the public-evidence sample to the canonical reviewer link map and link checks.
 - Added `evidence:sample` to keep generated public-evidence samples aligned with the canonical link map.
 - Added `evidence:sample` to Node CI so sample freshness is checked on push and pull request.
+- Added public evidence sample freshness to the application status snapshot.
 - Updated the dashboard submission gates to show public evidence sample and public link checks.
 - Added transient 5xx retries plus GitHub API/raw validation to public evidence link checks.
 - Added transient 5xx retries and raw workflow validation to README badge checks.

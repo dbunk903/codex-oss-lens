@@ -16,6 +16,8 @@ let failures = 0;
 requireText("# Application Status", "title");
 requireText(`codex-oss-lens@${packageJson.version}`, "current package version");
 requireText("npm run submission:check", "submit-time gate command");
+requireText("npm run evidence:sample", "public evidence sample gate command");
+requireText("Public evidence sample | Ready", "public evidence sample row");
 requireText("Account-owner fields", "manual account-owner row");
 requireValue(formDraftSample.publicLinks?.latestRelease, `https://github.com/dbunk903/codex-oss-lens/releases/tag/v${packageJson.version}`, "form draft release link");
 requireValue(formDraftSample.publicLinks?.roadmap, "https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md", "form draft roadmap link");
