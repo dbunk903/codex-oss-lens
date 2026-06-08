@@ -20,6 +20,7 @@ open-source support form.
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
+| Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links and submit gates. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
 | README readiness | Ready | `npm run readme:readiness` checks that README submission guidance stays aligned with public reviewer evidence. |
@@ -77,6 +78,12 @@ Publishing docs are checked by:
 
 ```bash
 npm run publish:docs
+```
+
+Dashboard reviewer evidence is checked by:
+
+```bash
+npm run dashboard:readiness
 ```
 
 README submission guidance is checked by:

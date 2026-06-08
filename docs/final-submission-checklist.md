@@ -40,6 +40,7 @@ npm run application:status
 npm run reviewer:quickstart
 npm run publish:samples
 npm run publish:docs
+npm run dashboard:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -68,6 +69,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run reviewer:quickstart` confirms the public quickstart includes every reviewer evidence link and signed-out review guidance.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
+- `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials and current submit gates.
 - `npm run public:redaction` confirms public docs and samples do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.
 - `npm run evidence:links` passes without broken public evidence URLs.
