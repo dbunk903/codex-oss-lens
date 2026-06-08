@@ -15,6 +15,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "reviewerQuickstart"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "finalChecklist"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "finalCopy"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "publishCheckSample"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "installSmokeSample"));
   assert.ok(evidence.manualFields.includes("OpenAI organization ID"));
   assert.match(evidence.markdown, /Public Evidence/);

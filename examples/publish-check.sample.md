@@ -1,9 +1,9 @@
 # Codex OSS Lens Publish Check
 
-Generated: 2026-06-06T08:08:08.759Z
-Status: ready
+Generated: 2026-06-08T00:36:44.759Z
+Status: blocked
 Package: codex-oss-lens@1.6.1
-npm user: dansan0303
+npm user: not logged in
 
 ## Checks
 
@@ -12,8 +12,8 @@ npm user: dansan0303
 - license: pass - license=MIT
 - repository: pass - repository=git+https://github.com/dbunk903/codex-oss-lens.git
 - bin: pass - CLI bin path exists.
-- npmLogin: pass - npm user=dansan0303
-- versionAvailable: pass - latest=1.6.0
+- npmLogin: fail - npm login required.
+- versionAvailable: fail - latest=1.6.1
 
 ## Publish Commands
 

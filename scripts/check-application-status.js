@@ -6,6 +6,7 @@ const STATUS_DOC = "docs/application-status.md";
 const text = await fs.readFile(STATUS_DOC, "utf8");
 const packageJson = JSON.parse(await fs.readFile("package.json", "utf8"));
 const installSmokeSample = JSON.parse(await fs.readFile("examples/install-smoke.sample.json", "utf8"));
+const publishCheckSample = JSON.parse(await fs.readFile("examples/publish-check.sample.json", "utf8"));
 const evidence = buildPublicEvidence();
 let failures = 0;
 
@@ -15,6 +16,9 @@ requireText("npm run submission:check", "submit-time gate command");
 requireText("Account-owner fields", "manual account-owner row");
 requireValue(installSmokeSample.package?.resolvedVersion, packageJson.version, "install smoke resolved version");
 requireValue(installSmokeSample.package?.version, "latest", "install smoke package selector");
+requireValue(publishCheckSample.package?.version, packageJson.version, "publish check package version");
+requireValue(publishCheckSample.package?.latestPublishedVersion, packageJson.version, "publish check latest published version");
+requireValue(publishCheckSample.status, "blocked", "publish check blocks republish");
 
 for (const [label, url] of Object.entries(evidence.publicLinks)) {
   requireText(url, `public evidence link ${label}`);

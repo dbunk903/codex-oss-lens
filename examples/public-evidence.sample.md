@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-07T23:49:39.088Z
+Generated: 2026-06-08T00:37:39.689Z
 Status: ready
 
 ## Public Links
@@ -15,6 +15,7 @@ Status: ready
 - useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklistUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - finalCopyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
+- publishCheckSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - installSmokeSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 - nodeCiUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
 - publishedSmokeUrl: https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
@@ -33,6 +34,7 @@ Status: ready
 - maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklist: Final checklist captures submit-time public links, verification, and account-owner gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - finalCopy: Final copy keeps Korean application answers within form limits. https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
+- publishCheckSample: Publish check sample records npm login and version-availability gates. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - installSmokeSample: Install smoke sample records the current npm latest result and source-vs-published gap. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 
 ## Copy Checklist

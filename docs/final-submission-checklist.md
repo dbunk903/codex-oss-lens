@@ -61,6 +61,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The application status page still reflects the latest public release and manual account-owner gates.
 - The reviewer quickstart opens and matches the current public release.
 - The npm package is still `codex-oss-lens@1.6.1` or newer.
+- The publish check sample reflects that a later publish requires npm login plus a version bump.
 - The install smoke sample reflects the current npm latest package and any source-vs-published gap.
 - The latest Node CI and published smoke CI runs are green.
 - The account owner has reviewed the form terms before pressing Submit.

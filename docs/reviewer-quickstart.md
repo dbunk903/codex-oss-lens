@@ -26,6 +26,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   evidence docs in the tarball.
 - The install smoke sample shows the current npm latest result; if source privacy smoke is stricter
   than the published package, the application status page calls out that release gap.
+- The publish check sample shows whether a later package release is currently blocked by npm login
+  or version availability.
 - The Node CI workflow runs tests, package dry-run checks, packaged CLI smoke, public evidence
   generation, final-copy validation, version alignment, and public link checks.
 - The published smoke workflow verifies `codex-oss-lens@latest` directly from npm.
@@ -36,5 +38,6 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Final Korean form copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
+- Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 - Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md

@@ -10,6 +10,7 @@
 - Added `submission:check` as a one-command final local gate for application readiness.
 - Added a public application status snapshot and linked it from reviewer evidence.
 - Added `application:status` to keep the status snapshot aligned with public evidence links.
+- Regenerated the publish-check sample from current npm registry state and linked it from public evidence.
 - Regenerated the published install smoke sample from npm latest and documented the source-vs-published gap.
 - Added `evidence:links` check for validating public evidence URLs before submission.
 - Added reviewer quickstart documentation and linked it from public evidence.
