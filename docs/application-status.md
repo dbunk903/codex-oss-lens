@@ -18,6 +18,7 @@ open-source support form.
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the current release, roadmap, and API-credit workflow links without placeholders. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
+| Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
 | Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
@@ -62,6 +63,12 @@ The reviewer quickstart is checked by:
 
 ```bash
 npm run reviewer:quickstart
+```
+
+Publish and install smoke samples are checked by:
+
+```bash
+npm run publish:samples
 ```
 
 ## Version note

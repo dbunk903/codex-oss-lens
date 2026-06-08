@@ -45,6 +45,7 @@ jobs:
           npm run submission:versions
           npm run application:status
           npm run reviewer:quickstart
+          npm run publish:samples
           npm run public:redaction
           npm run evidence:sample
 

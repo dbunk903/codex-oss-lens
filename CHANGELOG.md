@@ -25,6 +25,7 @@
 - Added public evidence sample freshness to the application status snapshot.
 - Added public link and README badge health to the application status snapshot.
 - Added `reviewer:quickstart` to keep the public reviewer quickstart aligned with evidence links.
+- Added `publish:samples` to keep publish-check and install-smoke samples aligned with the current package.
 - Updated the dashboard submission gates to show public evidence sample and public link checks.
 - Added transient 5xx retries plus GitHub API/raw validation to public evidence link checks.
 - Added transient 5xx retries and raw workflow validation to README badge checks.
