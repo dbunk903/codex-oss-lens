@@ -31,6 +31,20 @@ node src/cli.js public-evidence --markdown public-evidence.md
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
+Before opening an application-facing PR, run the full submit gate:
+
+```bash
+npm run submission:check
+```
+
+When editing only docs, templates, or reviewer materials, the narrower gates are useful:
+
+```bash
+npm run form-draft:sample
+npm run ci:readiness
+npm run public:redaction
+```
+
 ## Privacy rules
 
 - Do not commit raw Codex rollout logs.
@@ -44,7 +58,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Keep changes scoped and dependency-free unless a dependency is clearly justified.
 - Add tests for parser/report behavior.
 - Update README or docs when behavior changes.
-- Run `npm test` before opening a PR.
+- Run `npm test` before opening a PR, or `npm run submission:check` when the change affects
+  reviewer evidence, public docs, release guidance, or GitHub templates.
 - For application evidence changes, run `node src/cli.js public-evidence --markdown public-evidence.md`.
 
 ## Good first areas
