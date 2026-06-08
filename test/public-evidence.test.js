@@ -20,6 +20,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "finalChecklist"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "finalCopy"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "formDraftSample"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "publicEvidenceSample"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "publishCheckSample"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "installSmokeSample"));
   assert.ok(evidence.manualFields.includes("OpenAI organization ID"));
@@ -64,6 +65,8 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
     "https://github.com/example/project/blob/main/application/final-copy.md",
     "--form-draft-sample-url",
     "https://github.com/example/project/blob/main/examples/form-draft.sample.md",
+    "--public-evidence-sample-url",
+    "https://github.com/example/project/blob/main/examples/public-evidence.sample.md",
     "--publish-check-sample-url",
     "https://github.com/example/project/blob/main/examples/publish-check.sample.md",
     "--install-smoke-sample-url",
@@ -81,5 +84,6 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
   assert.equal(evidence.publicLinks.reviewerQuickstartUrl, "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md");
   assert.equal(evidence.publicLinks.finalChecklistUrl, "https://github.com/example/project/blob/main/docs/final-submission-checklist.md");
   assert.equal(evidence.publicLinks.formDraftSampleUrl, "https://github.com/example/project/blob/main/examples/form-draft.sample.md");
+  assert.equal(evidence.publicLinks.publicEvidenceSampleUrl, "https://github.com/example/project/blob/main/examples/public-evidence.sample.md");
   assert.equal(evidence.publicLinks.publishedSmokeUrl, "https://github.com/example/project/actions/workflows/published-smoke.yml");
 });

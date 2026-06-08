@@ -15,9 +15,7 @@ const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "apiWorkflowUrl",
   "finalChecklistUrl",
   "formDraftSampleUrl",
-];
-const REQUIRED_EXTRA_LINKS = [
-  "https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md",
+  "publicEvidenceSampleUrl",
 ];
 
 const text = await fs.readFile(FINAL_COPY, "utf8");
@@ -52,19 +50,9 @@ for (const key of REQUIRED_FINAL_COPY_LINK_KEYS) {
   console.log(`pass link ${key}`);
 }
 
-for (const link of REQUIRED_EXTRA_LINKS) {
-  if (!text.includes(link)) fail(`Missing required final-copy link: ${link}`);
-  console.log(`pass link ${link}`);
-}
-
 for (const [key, link] of Object.entries(evidence.publicLinks)) {
   if (!formAnswers.includes(link)) fail(`Missing required form-answers link: ${link}`);
   console.log(`pass formAnswersLink ${key}`);
-}
-
-for (const link of REQUIRED_EXTRA_LINKS) {
-  if (!formAnswers.includes(link)) fail(`Missing required form-answers link: ${link}`);
-  console.log(`pass formAnswersLink ${link}`);
 }
 
 if (!text.includes("v1.6.1")) fail("Missing current release version v1.6.1.");

@@ -15,6 +15,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - Final copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - Form draft sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
+- Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
 - Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
 - Install smoke sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md
 - Node CI: https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml

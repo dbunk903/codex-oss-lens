@@ -251,6 +251,7 @@ node src/cli.js public-evidence \
   --final-checklist-url https://github.com/owner/project/blob/main/docs/final-submission-checklist.md \
   --final-copy-url https://github.com/owner/project/blob/main/application/final-copy.md \
   --form-draft-sample-url https://github.com/owner/project/blob/main/examples/form-draft.sample.md \
+  --public-evidence-sample-url https://github.com/owner/project/blob/main/examples/public-evidence.sample.md \
   --publish-check-sample-url https://github.com/owner/project/blob/main/examples/publish-check.sample.md \
   --install-smoke-sample-url https://github.com/owner/project/blob/main/examples/install-smoke.sample.md \
   --node-ci-url https://github.com/owner/project/actions/workflows/test.yml \
@@ -315,7 +316,7 @@ codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] 
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
 codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
-codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
+codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
