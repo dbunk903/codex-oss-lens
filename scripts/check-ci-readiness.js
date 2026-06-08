@@ -29,6 +29,7 @@ requireText("npm run public:redaction", "public redaction check");
 requireText("npm run evidence:sample", "public evidence sample check");
 requireText("npm run evidence:links", "public evidence link check");
 requireText("matrix.node-version == 22", "Node 22 network-only link checks");
+requireText("GITHUB_TOKEN: ${{ github.token }}", "GitHub API token for link checks");
 requireText("npm run readme:badges", "README badge check");
 requireText("npm run readme:readiness", "README readiness check");
 

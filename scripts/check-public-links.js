@@ -89,7 +89,7 @@ async function request(url, method, redirects = 0) {
       method,
       redirect: "manual",
       signal: controller.signal,
-      headers: { "user-agent": "codex-oss-lens-public-link-check" },
+      headers: requestHeaders(url),
     });
 
     if ([301, 302, 303, 307, 308].includes(response.status) && response.headers.get("location")) {
@@ -111,7 +111,7 @@ async function requestBytes(url, redirects = 0) {
       method: "GET",
       redirect: "manual",
       signal: controller.signal,
-      headers: { "user-agent": "codex-oss-lens-public-link-check" },
+      headers: requestHeaders(url),
     });
 
     if ([301, 302, 303, 307, 308].includes(response.status) && response.headers.get("location")) {
@@ -182,6 +182,18 @@ function isPng(bytes) {
 
 function isTransientStatus(status) {
   return [500, 502, 503, 504].includes(status);
+}
+
+function requestHeaders(url) {
+  const headers = { "user-agent": "codex-oss-lens-public-link-check" };
+  const parsed = new URL(url);
+  const token = process.env.GITHUB_TOKEN;
+  if (token && parsed.hostname === "api.github.com") {
+    headers.authorization = `Bearer ${token}`;
+    headers.accept = "application/vnd.github+json";
+    headers["x-github-api-version"] = "2022-11-28";
+  }
+  return headers;
 }
 
 function delay(ms) {

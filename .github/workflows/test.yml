@@ -58,6 +58,8 @@ jobs:
 
       - name: Check public evidence links
         if: matrix.node-version == 22
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           npm run evidence:links
           npm run readme:badges
