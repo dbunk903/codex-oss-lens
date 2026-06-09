@@ -24,6 +24,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 8. Confirm the latest public CI signals:
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
@@ -46,6 +47,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   boundary against telemetry or remote upload without explicit opt-in.
 - The privacy threat model names protected inputs, shareable outputs, trust boundaries, and the
   dry-run/opt-in requirements for future API-backed features.
+- The data retention policy explains generated artifact locations, deletion expectations, and the
+  boundary between private local reports and sanitized public samples.
 - The accessibility notes document keyboard navigation, labelled reviewer evidence links, viewport
   expectations, and screenshot review limits.
 - The dashboard preview images show the reviewer-facing UI at `1440x1200` desktop and `500x1100`
@@ -65,6 +68,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
+- Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md

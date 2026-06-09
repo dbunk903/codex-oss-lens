@@ -49,6 +49,7 @@ jobs:
           npm run publish:samples
           npm run publish:docs
           npm run dashboard:readiness
+          npm run ci:readiness
           npm run contrib:readiness
           npm run security:readiness
           npm run support:readiness
@@ -60,6 +61,7 @@ jobs:
           npm run maintenance:readiness
           npm run privacy:threat-model
           npm run accessibility:readiness
+          npm run data:retention
           npm run public:redaction
           npm run evidence:sample
 

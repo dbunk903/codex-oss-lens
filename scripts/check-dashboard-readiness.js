@@ -14,6 +14,9 @@ requireText("privacy threat model", "privacy threat model positioning");
 requireText("privacy:threat-model", "privacy threat model gate");
 requireText("docs/accessibility.md", "dashboard accessibility link");
 requireText("Accessibility", "dashboard accessibility label");
+requireText("docs/data-retention.md", "dashboard data retention link");
+requireText("Data retention", "dashboard data retention label");
+requireText("data:retention", "dashboard data retention gate");
 requireText("public-evidence + evidence:sample", "public evidence sample gate");
 requireText("reviewer:quickstart", "reviewer quickstart gate");
 requireText("publish:samples + publish:docs", "publish gate");
@@ -29,6 +32,7 @@ for (const [label, url] of Object.entries({
   applicationStatusUrl: evidence.publicLinks.applicationStatusUrl,
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
   privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
+  dataRetentionUrl: evidence.publicLinks.dataRetentionUrl,
   accessibilityUrl: evidence.publicLinks.accessibilityUrl,
   finalChecklistUrl: evidence.publicLinks.finalChecklistUrl,
   publicEvidenceSampleUrl: evidence.publicLinks.publicEvidenceSampleUrl,

@@ -66,3 +66,6 @@ The UI or CLI must show:
 Do not add telemetry, background upload, remote sync, or live API summarization without updating
 this threat model, `docs/api-credit-workflow.md`, `SECURITY.md`, and the readiness gates in the
 same change.
+
+See `docs/data-retention.md` for where generated artifacts should live and when private local
+outputs should be deleted.

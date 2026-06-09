@@ -32,6 +32,7 @@ requireText("npm run adoption:readiness", "adoption readiness check");
 requireText("npm run maintenance:readiness", "maintenance readiness check");
 requireText("npm run privacy:threat-model", "privacy threat model check");
 requireText("npm run accessibility:readiness", "accessibility readiness check");
+requireText("npm run data:retention", "data retention check");
 requireText("npm run public:redaction", "public redaction check");
 requireText("npm run evidence:sample", "public evidence sample check");
 requireText("npm run evidence:links", "public evidence link check");
