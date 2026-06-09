@@ -59,6 +59,7 @@ jobs:
           npm run adoption:readiness
           npm run maintenance:readiness
           npm run privacy:threat-model
+          npm run accessibility:readiness
           npm run public:redaction
           npm run evidence:sample
 

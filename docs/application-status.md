@@ -33,6 +33,7 @@ open-source support form.
 | Adoption readiness | Ready | `npm run adoption:readiness` checks the adoption plan, reviewer quickstart, README, final checklist, status snapshot, and CI workflow. |
 | Maintenance readiness | Ready | `npm run maintenance:readiness` checks the maintenance policy, triage cadence, release gates, reviewer quickstart, README, checklist, publishing docs, and CI workflow. |
 | Privacy threat model | Ready | `npm run privacy:threat-model` checks protected inputs, shareable outputs, API opt-in boundaries, reviewer entry points, security policy, and CI workflow. |
+| Accessibility readiness | Ready | `npm run accessibility:readiness` checks keyboard navigation, dashboard landmarks, labelled reviewer evidence links, viewport support, reviewer docs, and CI workflow. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -51,6 +52,7 @@ open-source support form.
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
+- Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -178,6 +180,12 @@ Privacy threat-model guidance is checked by:
 
 ```bash
 npm run privacy:threat-model
+```
+
+Accessibility guidance is checked by:
+
+```bash
+npm run accessibility:readiness
 ```
 
 README submission guidance is checked by:

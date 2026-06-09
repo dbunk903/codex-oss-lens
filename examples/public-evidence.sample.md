@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-09T04:18:13.389Z
+Generated: 2026-06-09T05:16:19.156Z
 Status: ready
 
 ## Public Links
@@ -15,6 +15,7 @@ Status: ready
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - privacyThreatModelUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
+- accessibilityUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklistUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -42,6 +43,7 @@ Status: ready
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - privacyThreatModel: Privacy threat model records protected inputs, shareable outputs, and API opt-in boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
+- accessibility: Accessibility notes document keyboard, landmark, viewport, and reviewer screenshot expectations. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklist: Final checklist captures submit-time public links, verification, and account-owner gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md

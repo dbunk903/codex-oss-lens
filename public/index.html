@@ -42,6 +42,29 @@
         grid-template-rows: auto 1fr;
       }
 
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 10;
+        background: #ffffff;
+        border: 2px solid var(--green);
+        color: var(--ink);
+        padding: 8px 10px;
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      button:focus-visible,
+      .file-button:focus-within,
+      .link-button:focus-visible {
+        outline: 3px solid #167d68;
+        outline-offset: 2px;
+      }
+
       header {
         background: #132320;
         color: #f7fbf9;
@@ -375,6 +398,7 @@
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
     <div class="app">
       <header>
         <div class="header-inner">
@@ -396,7 +420,7 @@
           </div>
         </div>
       </header>
-      <main>
+      <main id="main" tabindex="-1">
         <section class="meta-row" id="metaRow"></section>
         <section class="kpis" id="kpis"></section>
         <section class="evidence-band">
@@ -407,12 +431,13 @@
               readiness gate, privacy threat model, timeline, and API-credit plan without uploading raw
               rollout logs or source code.
             </p>
-            <div class="evidence-actions">
+            <nav class="evidence-actions" aria-label="Reviewer evidence links">
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1">Latest release</a>
               <a class="link-button" href="https://www.npmjs.com/package/codex-oss-lens">npm package</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md">Status</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md">Quickstart</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md">Threat model</a>
+              <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md">Accessibility</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md">Use cases</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md">Checklist</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md">Evidence</a>
@@ -420,7 +445,7 @@
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-mobile-preview.png">Mobile preview</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md">Publish check</a>
               <a class="link-button" href="https://github.com/dbunk903/codex-oss-lens/blob/main/examples/install-smoke.sample.md">Install smoke</a>
-            </div>
+            </nav>
           </article>
           <article class="panel">
             <h2>Submission Gates</h2>
