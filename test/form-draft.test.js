@@ -26,6 +26,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
       maintenancePolicyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md",
       privacyThreatModelUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md",
       dataRetentionUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md",
+      demoWalkthroughUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md",
       accessibilityUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md",
     },
   });
@@ -38,6 +39,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
   assert.equal(draft.publicLinks.maintenancePolicy, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md");
   assert.equal(draft.publicLinks.privacyThreatModel, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md");
   assert.equal(draft.publicLinks.dataRetention, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md");
+  assert.equal(draft.publicLinks.demoWalkthrough, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md");
   assert.equal(draft.publicLinks.accessibility, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md");
   assert.ok(draft.requiredManualFields.includes("Terms review and final submit"));
   assert.ok(draft.fields.repositoryFit.chars <= 500);

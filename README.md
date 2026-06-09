@@ -254,6 +254,7 @@ node src/cli.js public-evidence \
   --maintenance-policy-url https://github.com/owner/project/blob/main/docs/maintenance-policy.md \
   --privacy-threat-model-url https://github.com/owner/project/blob/main/docs/privacy-threat-model.md \
   --data-retention-url https://github.com/owner/project/blob/main/docs/data-retention.md \
+  --demo-walkthrough-url https://github.com/owner/project/blob/main/docs/demo-walkthrough.md \
   --accessibility-url https://github.com/owner/project/blob/main/docs/accessibility.md \
   --api-workflow-url https://github.com/owner/project/blob/main/docs/api-credit-workflow.md \
   --use-cases-url https://github.com/owner/project/blob/main/docs/maintainer-use-cases.md \
@@ -298,6 +299,7 @@ npm run maintenance:readiness
 npm run privacy:threat-model
 npm run accessibility:readiness
 npm run data:retention
+npm run demo:walkthrough
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -315,6 +317,7 @@ Reviewer-facing entry points:
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
+- Demo walkthrough: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
 - Support policy: https://github.com/dbunk903/codex-oss-lens/blob/main/SUPPORT.md
 - Code of conduct: https://github.com/dbunk903/codex-oss-lens/blob/main/CODE_OF_CONDUCT.md
 - Final submission checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -366,11 +369,11 @@ codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markd
 codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
 codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--form-draft form-draft.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
 codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
-codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out form-draft.json] [--markdown form-draft.md]
+codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--demo-walkthrough-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out form-draft.json] [--markdown form-draft.md]
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
 codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
-codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
+codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--demo-walkthrough-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -411,6 +414,8 @@ See [privacy threat model](docs/privacy-threat-model.md) for protected inputs, s
 trust boundaries, and opt-in requirements for future API-backed features.
 See [accessibility notes](docs/accessibility.md) for keyboard, landmark, viewport, and screenshot
 review expectations.
+See [demo walkthrough](docs/demo-walkthrough.md) for npm latest CLI and dashboard checks that do
+not require private Codex logs.
 
 ## Roadmap
 
@@ -429,6 +434,8 @@ See [maintenance policy](docs/maintenance-policy.md) for triage, release, and pr
 expectations.
 See [privacy threat model](docs/privacy-threat-model.md) for protected inputs and API opt-in
 boundaries.
+See [demo walkthrough](docs/demo-walkthrough.md) for npm latest demo commands and expected
+reviewer signals.
 See [reviewer quickstart](docs/reviewer-quickstart.md) for the fastest public-only validation path.
 See [final submission checklist](docs/final-submission-checklist.md) and
 [final copy](application/final-copy.md) for form-ready application material.

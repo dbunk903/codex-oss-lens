@@ -16,9 +16,11 @@ submission pack.
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
-6. Inspect the privacy and API-credit plan:
+6. Follow the demo walkthrough:
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
+7. Inspect the privacy and API-credit plan:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
-7. Confirm the public roadmap and reviewer evidence:
+8. Confirm the public roadmap and reviewer evidence:
    https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -57,6 +59,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   generation, final-copy validation, version alignment, public evidence sample freshness, and
   public link checks.
 - The published smoke workflow verifies `codex-oss-lens@latest` directly from npm.
+- The demo walkthrough gives expected npm latest CLI and dashboard signals without requiring
+  private Codex logs.
 - Public links should open in a signed-out browser; the application status page records the
   source-only, published-package, and account-owner gates separately.
 
@@ -69,6 +73,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
+- Demo walkthrough: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md

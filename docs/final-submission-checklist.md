@@ -16,6 +16,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
+- Demo walkthrough: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -63,6 +64,7 @@ npm run maintenance:readiness
 npm run privacy:threat-model
 npm run accessibility:readiness
 npm run data:retention
+npm run demo:walkthrough
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -106,6 +108,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run privacy:threat-model` confirms protected inputs, shareable outputs, API opt-in boundaries, reviewer entry points, and CI wiring stay aligned.
 - `npm run accessibility:readiness` confirms keyboard navigation, dashboard landmarks, labelled reviewer evidence links, viewport support, reviewer docs, and CI wiring stay aligned.
 - `npm run data:retention` confirms generated artifact storage, deletion guidance, public sharing rules, reviewer links, and CI wiring stay aligned.
+- `npm run demo:walkthrough` confirms npm latest demo instructions, dashboard demo expectations, reviewer links, README guidance, and CI wiring stay aligned.
 - The dashboard preview PNGs remain `1440x1200` desktop and `500x1100` mobile artifacts.
 - `npm run public:redaction` confirms public docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.

@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-09T05:52:02.111Z
+Generated: 2026-06-09T06:20:18.482Z
 Status: ready
 
 ## Public Links
@@ -16,6 +16,7 @@ Status: ready
 - maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - privacyThreatModelUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - dataRetentionUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
+- demoWalkthroughUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
 - accessibilityUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
@@ -45,6 +46,7 @@ Status: ready
 - maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - privacyThreatModel: Privacy threat model records protected inputs, shareable outputs, and API opt-in boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - dataRetention: Data retention guidance documents local artifact storage, deletion, and public sharing boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
+- demoWalkthrough: Demo walkthrough gives reviewers npm latest commands and expected local-only signals. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
 - accessibility: Accessibility notes document keyboard, landmark, viewport, and reviewer screenshot expectations. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md

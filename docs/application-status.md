@@ -35,6 +35,7 @@ open-source support form.
 | Privacy threat model | Ready | `npm run privacy:threat-model` checks protected inputs, shareable outputs, API opt-in boundaries, reviewer entry points, security policy, and CI workflow. |
 | Accessibility readiness | Ready | `npm run accessibility:readiness` checks keyboard navigation, dashboard landmarks, labelled reviewer evidence links, viewport support, reviewer docs, and CI workflow. |
 | Data retention | Ready | `npm run data:retention` checks generated artifact storage, deletion guidance, package allowlist boundaries, reviewer links, dashboard evidence, and CI workflow. |
+| Demo walkthrough | Ready | `npm run demo:walkthrough` checks npm latest demo instructions, dashboard demo expectations, reviewer links, README guidance, and CI workflow. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -55,6 +56,7 @@ open-source support form.
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
+- Demo walkthrough: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -194,6 +196,12 @@ Data retention guidance is checked by:
 
 ```bash
 npm run data:retention
+```
+
+Demo walkthrough guidance is checked by:
+
+```bash
+npm run demo:walkthrough
 ```
 
 README submission guidance is checked by:

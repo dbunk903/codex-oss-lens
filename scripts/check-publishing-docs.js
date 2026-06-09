@@ -21,6 +21,7 @@ requirePublishingText("npm run maintenance:readiness", "maintenance readiness ga
 requirePublishingText("npm run privacy:threat-model", "privacy threat model gate");
 requirePublishingText("npm run accessibility:readiness", "accessibility readiness gate");
 requirePublishingText("npm run data:retention", "data retention gate");
+requirePublishingText("npm run demo:walkthrough", "demo walkthrough gate");
 requirePublishingText("npm run readme:readiness", "README readiness gate");
 requirePublishingText("node src/cli.js publish-check --markdown publish-check.md", "publish check command");
 requirePublishingText("npm publish --access public --otp <6-digit-code>", "OTP publish command");
@@ -54,6 +55,7 @@ requireChecklistText("maintenance:readiness", "maintenance readiness evidence");
 requireChecklistText("privacy:threat-model", "privacy threat model evidence");
 requireChecklistText("accessibility:readiness", "accessibility readiness evidence");
 requireChecklistText("data:retention", "data retention evidence");
+requireChecklistText("demo:walkthrough", "demo walkthrough evidence");
 requireChecklistText("readme:readiness", "README readiness evidence");
 
 if (failures) {

@@ -62,6 +62,7 @@ jobs:
           npm run privacy:threat-model
           npm run accessibility:readiness
           npm run data:retention
+          npm run demo:walkthrough
           npm run public:redaction
           npm run evidence:sample
 
