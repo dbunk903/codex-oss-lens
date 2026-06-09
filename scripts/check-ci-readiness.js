@@ -29,6 +29,7 @@ requireText("npm run license:readiness", "license readiness check");
 requireText("npm run issue-routing:readiness", "issue routing readiness check");
 requireText("npm run release:provenance", "release provenance check");
 requireText("npm run adoption:readiness", "adoption readiness check");
+requireText("npm run maintenance:readiness", "maintenance readiness check");
 requireText("npm run public:redaction", "public redaction check");
 requireText("npm run evidence:sample", "public evidence sample check");
 requireText("npm run evidence:links", "public evidence link check");
