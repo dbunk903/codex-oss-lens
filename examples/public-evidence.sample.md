@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-08T14:52:30.099Z
+Generated: 2026-06-09T03:45:54.172Z
 Status: ready
 
 ## Public Links
@@ -11,6 +11,9 @@ Status: ready
 - roadmapUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - applicationStatusUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - reviewerQuickstartUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- releaseProvenanceUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
+- adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklistUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -34,6 +37,9 @@ Status: ready
 - roadmap: Roadmap documents future maintainer workflow work. https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - applicationStatus: Application status captures ready, source-only, and manual submit gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - reviewerQuickstart: Reviewer quickstart gives public-only verification steps. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- releaseProvenance: Release provenance ties GitHub release, npm package, CI, and privacy gates together. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
+- adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklist: Final checklist captures submit-time public links, verification, and account-owner gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
