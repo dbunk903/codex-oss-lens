@@ -313,8 +313,8 @@ The output includes:
 - `manualFields`: account-owner fields that cannot be filled by the CLI
 - `publicLinks`: repository, release, npm, roadmap, status, reviewer quickstart, release
   provenance, adoption plan, maintenance policy, privacy threat model, data retention, demo
-  walkthrough, accessibility, API workflow, use cases, final checklist, final copy, public evidence
-  sample, reviewer samples, and CI links
+  walkthrough, accessibility, API workflow, use cases, final checklist, submission rehearsal, final
+  copy, public evidence sample, reviewer samples, and CI links
 - `proofPoints`: reviewer-facing evidence labels and URLs
 - `copyChecklist`: final paste-and-submit checklist
 - optional Markdown when `--markdown` is supplied

@@ -33,11 +33,13 @@
 - The accessibility notes document keyboard navigation, labelled reviewer links, viewport support, and screenshot review limits.
 - The data retention policy documents generated artifact locations, deletion guidance, package allowlist boundaries, and public sharing rules.
 - The demo walkthrough documents npm latest CLI and dashboard checks that use synthetic data instead of private Codex logs.
+- The submission rehearsal documents final machine checks, manual account-owner fields, and abort conditions before pressing Submit.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
 - `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`,
   `license:readiness`, `issue-routing:readiness`, `release:provenance`, `adoption:readiness`,
   `maintenance:readiness`, `privacy:threat-model`, `accessibility:readiness`, `data:retention`,
-  `demo:walkthrough`, and
+  `demo:walkthrough`, `submission:rehearsal`, and
   `readme:readiness` keep the public application, publish, support, conduct, license, issue
-  routing, release provenance, adoption, maintenance, accessibility, data retention, demo, and README guidance aligned before
+  routing, release provenance, adoption, maintenance, accessibility, data retention, demo,
+  submission rehearsal, and README guidance aligned before
   the account owner submits the form.

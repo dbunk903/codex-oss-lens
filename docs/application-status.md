@@ -36,6 +36,7 @@ open-source support form.
 | Accessibility readiness | Ready | `npm run accessibility:readiness` checks keyboard navigation, dashboard landmarks, labelled reviewer evidence links, viewport support, reviewer docs, and CI workflow. |
 | Data retention | Ready | `npm run data:retention` checks generated artifact storage, deletion guidance, package allowlist boundaries, reviewer links, dashboard evidence, and CI workflow. |
 | Demo walkthrough | Ready | `npm run demo:walkthrough` checks npm latest demo instructions, dashboard demo expectations, reviewer links, README guidance, and CI workflow. |
+| Submission rehearsal | Ready | `npm run submission:rehearsal` checks final dry-run commands, manual account-owner fields, abort conditions, reviewer links, dashboard evidence, and CI workflow. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -60,6 +61,7 @@ open-source support form.
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- Submission rehearsal: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
 - Final copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - Form draft sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - Public evidence sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
@@ -202,6 +204,12 @@ Demo walkthrough guidance is checked by:
 
 ```bash
 npm run demo:walkthrough
+```
+
+Submission rehearsal guidance is checked by:
+
+```bash
+npm run submission:rehearsal
 ```
 
 README submission guidance is checked by:

@@ -63,6 +63,7 @@ jobs:
           npm run accessibility:readiness
           npm run data:retention
           npm run demo:walkthrough
+          npm run submission:rehearsal
           npm run public:redaction
           npm run evidence:sample
 

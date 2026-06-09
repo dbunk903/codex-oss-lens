@@ -20,6 +20,9 @@ requireText("data:retention", "dashboard data retention gate");
 requireText("docs/demo-walkthrough.md", "dashboard demo walkthrough link");
 requireText("Demo walkthrough", "dashboard demo walkthrough label");
 requireText("demo:walkthrough", "dashboard demo walkthrough gate");
+requireText("docs/submission-rehearsal.md", "dashboard submission rehearsal link");
+requireText("Submission rehearsal", "dashboard submission rehearsal label");
+requireText("submission:rehearsal", "dashboard submission rehearsal gate");
 requireText("public-evidence + evidence:sample", "public evidence sample gate");
 requireText("reviewer:quickstart", "reviewer quickstart gate");
 requireText("publish:samples + publish:docs", "publish gate");
@@ -39,6 +42,7 @@ for (const [label, url] of Object.entries({
   demoWalkthroughUrl: evidence.publicLinks.demoWalkthroughUrl,
   accessibilityUrl: evidence.publicLinks.accessibilityUrl,
   finalChecklistUrl: evidence.publicLinks.finalChecklistUrl,
+  submissionRehearsalUrl: evidence.publicLinks.submissionRehearsalUrl,
   publicEvidenceSampleUrl: evidence.publicLinks.publicEvidenceSampleUrl,
   dashboardPreviewUrl: evidence.publicLinks.dashboardPreviewUrl,
   mobileDashboardPreviewUrl: evidence.publicLinks.mobileDashboardPreviewUrl,

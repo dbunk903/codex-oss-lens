@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-09T06:20:18.482Z
+Generated: 2026-06-09T06:51:13.816Z
 Status: ready
 
 ## Public Links
@@ -21,6 +21,7 @@ Status: ready
 - apiWorkflowUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - useCasesUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklistUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- submissionRehearsalUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
 - finalCopyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - formDraftSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - publicEvidenceSampleUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md
@@ -51,6 +52,7 @@ Status: ready
 - apiCreditWorkflow: API-credit workflow keeps raw logs local and sends aggregate opt-in payloads. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - maintainerUseCases: Maintainer use cases document weekly review, evidence, privacy, and package confidence. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - finalChecklist: Final checklist captures submit-time public links, verification, and account-owner gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
+- submissionRehearsal: Submission rehearsal separates machine checks from account-owner-only form steps. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
 - finalCopy: Final copy keeps Korean application answers within form limits. https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md
 - formDraftSample: Form draft sample shows paste-ready answers with complete reviewer links. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - publicEvidenceSample: Public evidence sample records the generated reviewer link set. https://github.com/dbunk903/codex-oss-lens/blob/main/examples/public-evidence.sample.md

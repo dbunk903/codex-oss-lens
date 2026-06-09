@@ -36,6 +36,7 @@ requireText("npm run privacy:threat-model", "privacy threat model gate command")
 requireText("npm run accessibility:readiness", "accessibility readiness gate command");
 requireText("npm run data:retention", "data retention gate command");
 requireText("npm run demo:walkthrough", "demo walkthrough gate command");
+requireText("npm run submission:rehearsal", "submission rehearsal gate command");
 requireText("npm run evidence:links", "public link health gate command");
 requireText("npm run readme:badges", "README badge gate command");
 requireText("npm run readme:readiness", "README readiness gate command");
@@ -62,6 +63,7 @@ requireText("Privacy threat model | Ready", "privacy threat model row");
 requireText("Accessibility readiness | Ready", "accessibility readiness row");
 requireText("Data retention | Ready", "data retention row");
 requireText("Demo walkthrough | Ready", "demo walkthrough row");
+requireText("Submission rehearsal | Ready", "submission rehearsal row");
 requireText("Visual previews | Ready", "visual previews row");
 requireText("Public link health | Ready", "public link health row");
 requireText("public preview PNG dimensions", "public preview PNG dimensions");

@@ -14,6 +14,7 @@ const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "useCasesUrl",
   "apiWorkflowUrl",
   "finalChecklistUrl",
+  "submissionRehearsalUrl",
   "formDraftSampleUrl",
   "publicEvidenceSampleUrl",
 ];

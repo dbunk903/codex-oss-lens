@@ -24,6 +24,7 @@ const expectedLinks = {
   apiCreditWorkflow: evidence.publicLinks.apiWorkflowUrl,
   maintainerUseCases: evidence.publicLinks.useCasesUrl,
   finalChecklist: evidence.publicLinks.finalChecklistUrl,
+  submissionRehearsal: evidence.publicLinks.submissionRehearsalUrl,
   finalCopy: evidence.publicLinks.finalCopyUrl,
   formDraftSample: evidence.publicLinks.formDraftSampleUrl,
   publicEvidenceSample: evidence.publicLinks.publicEvidenceSampleUrl,

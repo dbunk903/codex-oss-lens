@@ -28,6 +28,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
       dataRetentionUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md",
       demoWalkthroughUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md",
       accessibilityUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md",
+      submissionRehearsalUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md",
     },
   });
 
@@ -41,6 +42,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
   assert.equal(draft.publicLinks.dataRetention, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md");
   assert.equal(draft.publicLinks.demoWalkthrough, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md");
   assert.equal(draft.publicLinks.accessibility, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md");
+  assert.equal(draft.publicLinks.submissionRehearsal, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md");
   assert.ok(draft.requiredManualFields.includes("Terms review and final submit"));
   assert.ok(draft.fields.repositoryFit.chars <= 500);
   assert.ok(draft.fields.apiCreditsPlan.text.includes("implementation"));

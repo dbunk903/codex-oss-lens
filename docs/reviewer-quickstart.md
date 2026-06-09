@@ -28,6 +28,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
 8. Confirm the latest public CI signals:
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
@@ -61,6 +62,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The published smoke workflow verifies `codex-oss-lens@latest` directly from npm.
 - The demo walkthrough gives expected npm latest CLI and dashboard signals without requiring
   private Codex logs.
+- The submission rehearsal separates machine checks from account-owner-only fields and submit
+  abort conditions.
 - Public links should open in a signed-out browser; the application status page records the
   source-only, published-package, and account-owner gates separately.
 
@@ -81,6 +84,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Form draft sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/form-draft.sample.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
+- Submission rehearsal: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
 - Dashboard preview: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-preview.png
 - Mobile dashboard preview: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/dashboard-mobile-preview.png
 - Publish check sample: https://github.com/dbunk903/codex-oss-lens/blob/main/examples/publish-check.sample.md
