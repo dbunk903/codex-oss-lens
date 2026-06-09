@@ -27,8 +27,10 @@
 - LICENSE and `package.json` both declare MIT licensing.
 - The GitHub issue chooser disables blank issues and routes users to support, security, and conduct guidance.
 - The release provenance page links the current GitHub release, npm package, source CI, published smoke CI, and privacy gates.
+- The adoption plan documents the first 30 days of public validation without requesting private Codex content.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
 - `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`,
-  `license:readiness`, `issue-routing:readiness`, `release:provenance`, and `readme:readiness` keep the public
-  application, publish, support, conduct, license, issue routing, release provenance, and README guidance aligned before
+  `license:readiness`, `issue-routing:readiness`, `release:provenance`, `adoption:readiness`,
+  and `readme:readiness` keep the public application, publish, support, conduct, license, issue
+  routing, release provenance, adoption, and README guidance aligned before
   the account owner submits the form.

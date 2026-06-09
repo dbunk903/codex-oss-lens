@@ -11,6 +11,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
+- Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -53,6 +54,7 @@ npm run conduct:readiness
 npm run license:readiness
 npm run issue-routing:readiness
 npm run release:provenance
+npm run adoption:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -91,6 +93,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run license:readiness` confirms MIT license text, package metadata, README license link, and package contents are aligned.
 - `npm run issue-routing:readiness` confirms the GitHub issue chooser routes users to support, security, and conduct guidance before public posting.
 - `npm run release:provenance` confirms release, npm, CI, privacy, and source-vs-published package evidence stay aligned.
+- `npm run adoption:readiness` confirms the adoption plan and reviewer entry points explain the public validation loop for this young project.
 - The dashboard preview PNGs remain `1440x1200` desktop and `500x1100` mobile artifacts.
 - `npm run public:redaction` confirms public docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.

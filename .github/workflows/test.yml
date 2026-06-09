@@ -56,6 +56,7 @@ jobs:
           npm run license:readiness
           npm run issue-routing:readiness
           npm run release:provenance
+          npm run adoption:readiness
           npm run public:redaction
           npm run evidence:sample
 

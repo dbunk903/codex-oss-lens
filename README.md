@@ -287,6 +287,7 @@ npm run conduct:readiness
 npm run license:readiness
 npm run issue-routing:readiness
 npm run release:provenance
+npm run adoption:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -299,6 +300,7 @@ Reviewer-facing entry points:
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
+- Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Support policy: https://github.com/dbunk903/codex-oss-lens/blob/main/SUPPORT.md
 - Code of conduct: https://github.com/dbunk903/codex-oss-lens/blob/main/CODE_OF_CONDUCT.md
 - Final submission checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -403,6 +405,7 @@ See [API-credit workflow](docs/api-credit-workflow.md) for the privacy-first API
 See [npm publishing](docs/npm-publishing.md) for package verification steps.
 See [maintainer use cases](docs/maintainer-use-cases.md) for practical OSS workflows this tool
 supports.
+See [adoption plan](docs/adoption-plan.md) for the public validation loop for this young project.
 See [reviewer quickstart](docs/reviewer-quickstart.md) for the fastest public-only validation path.
 See [final submission checklist](docs/final-submission-checklist.md) and
 [final copy](application/final-copy.md) for form-ready application material.

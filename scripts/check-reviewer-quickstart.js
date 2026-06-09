@@ -14,6 +14,7 @@ requireText("raw Codex logs, prompts, source code, and full paths are not upload
 requireText("signed-out browser", "signed-out public review guidance");
 requireText("1440x1200", "desktop preview dimension");
 requireText("500x1100", "mobile preview dimension");
+requireText("docs/adoption-plan.md", "adoption plan link");
 
 for (const [label, url] of Object.entries(evidence.publicLinks)) {
   requireText(url, `public evidence link ${label}`);

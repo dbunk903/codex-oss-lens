@@ -11,7 +11,7 @@ node src/cli.js publish-check --markdown publish-check.md
 ```
 
 `submission:check` runs the form-copy, version-alignment, application-status, contribution,
-security, support, conduct, license, issue-routing, release provenance, public-redaction, public evidence sample,
+security, support, conduct, license, issue-routing, release provenance, adoption, public-redaction, public evidence sample,
 public-link, badge, README readiness, unit-test, tarball dry-run, and packaged CLI smoke gates. It
 also runs the reviewer quickstart and publish sample checks:
 
@@ -25,6 +25,7 @@ npm run conduct:readiness
 npm run license:readiness
 npm run issue-routing:readiness
 npm run release:provenance
+npm run adoption:readiness
 npm run readme:readiness
 ```
 
