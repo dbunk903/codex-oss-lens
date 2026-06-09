@@ -32,6 +32,7 @@ requireText("npm run issue-routing:readiness", "issue routing readiness gate com
 requireText("npm run release:provenance", "release provenance gate command");
 requireText("npm run adoption:readiness", "adoption readiness gate command");
 requireText("npm run maintenance:readiness", "maintenance readiness gate command");
+requireText("npm run privacy:threat-model", "privacy threat model gate command");
 requireText("npm run evidence:links", "public link health gate command");
 requireText("npm run readme:badges", "README badge gate command");
 requireText("npm run readme:readiness", "README readiness gate command");
@@ -54,6 +55,7 @@ requireText("Issue routing readiness | Ready", "issue routing readiness row");
 requireText("Release provenance | Ready", "release provenance row");
 requireText("Adoption readiness | Ready", "adoption readiness row");
 requireText("Maintenance readiness | Ready", "maintenance readiness row");
+requireText("Privacy threat model | Ready", "privacy threat model row");
 requireText("Visual previews | Ready", "visual previews row");
 requireText("Public link health | Ready", "public link health row");
 requireText("public preview PNG dimensions", "public preview PNG dimensions");

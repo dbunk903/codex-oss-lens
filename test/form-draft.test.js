@@ -24,6 +24,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
       applicationStatusUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md",
       adoptionPlanUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md",
       maintenancePolicyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md",
+      privacyThreatModelUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md",
     },
   });
 
@@ -33,6 +34,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
   assert.equal(draft.publicLinks.applicationStatus, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md");
   assert.equal(draft.publicLinks.adoptionPlan, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md");
   assert.equal(draft.publicLinks.maintenancePolicy, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md");
+  assert.equal(draft.publicLinks.privacyThreatModel, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md");
   assert.ok(draft.requiredManualFields.includes("Terms review and final submit"));
   assert.ok(draft.fields.repositoryFit.chars <= 500);
   assert.ok(draft.fields.apiCreditsPlan.text.includes("implementation"));

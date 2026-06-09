@@ -102,3 +102,6 @@ and downloads JSON locally from the currently loaded report.
 
 `codex-oss-lens brief` includes `api-payload.dry-run.json` in the generated evidence pack so the
 payload can be reviewed before any future live API integration is enabled.
+
+See `docs/privacy-threat-model.md` for the protected input list, shareable output boundary, and
+review gates that must be updated before any live API-backed feature is enabled.

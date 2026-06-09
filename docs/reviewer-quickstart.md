@@ -23,6 +23,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 8. Confirm the latest public CI signals:
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
@@ -42,6 +43,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   users to disclose raw Codex logs, prompts, full paths, secrets, or private source.
 - The maintenance policy explains weekly triage, release gates, post-publish smoke checks, and the
   boundary against telemetry or remote upload without explicit opt-in.
+- The privacy threat model names protected inputs, shareable outputs, trust boundaries, and the
+  dry-run/opt-in requirements for future API-backed features.
 - The dashboard preview images show the reviewer-facing UI at `1440x1200` desktop and `500x1100`
   mobile viewports; `npm run dashboard:readiness` checks those dimensions.
 - The Node CI workflow runs tests, package dry-run checks, packaged CLI smoke, public evidence
@@ -58,6 +61,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Final Korean form copy: https://github.com/dbunk903/codex-oss-lens/blob/main/application/final-copy.md

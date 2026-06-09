@@ -32,6 +32,7 @@ open-source support form.
 | Release provenance | Ready | `npm run release:provenance` checks the release provenance page, status snapshot, README, checklist, publishing docs, publish checklist, and CI workflow. |
 | Adoption readiness | Ready | `npm run adoption:readiness` checks the adoption plan, reviewer quickstart, README, final checklist, status snapshot, and CI workflow. |
 | Maintenance readiness | Ready | `npm run maintenance:readiness` checks the maintenance policy, triage cadence, release gates, reviewer quickstart, README, checklist, publishing docs, and CI workflow. |
+| Privacy threat model | Ready | `npm run privacy:threat-model` checks protected inputs, shareable outputs, API opt-in boundaries, reviewer entry points, security policy, and CI workflow. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -49,6 +50,7 @@ open-source support form.
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -170,6 +172,12 @@ Maintenance policy guidance is checked by:
 
 ```bash
 npm run maintenance:readiness
+```
+
+Privacy threat-model guidance is checked by:
+
+```bash
+npm run privacy:threat-model
 ```
 
 README submission guidance is checked by:

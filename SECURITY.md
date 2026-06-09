@@ -28,10 +28,13 @@ Before sharing generated artifacts publicly, run:
 node src/cli.js redact-check <artifact-dir>
 node src/cli.js public-evidence --markdown public-evidence.md
 npm run security:readiness
+npm run privacy:threat-model
 ```
 
 `redact-check` looks for accidental local-path, rollout filename, raw-log, and likely-secret
 leakage. `public-evidence` only emits public URLs and application proof points.
+`docs/privacy-threat-model.md` records the protected inputs, shareable outputs, and future API
+opt-in boundary that security reviewers should preserve.
 
 ## Project guarantees
 

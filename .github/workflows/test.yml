@@ -58,6 +58,7 @@ jobs:
           npm run release:provenance
           npm run adoption:readiness
           npm run maintenance:readiness
+          npm run privacy:threat-model
           npm run public:redaction
           npm run evidence:sample
 

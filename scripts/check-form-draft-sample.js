@@ -17,6 +17,7 @@ const expectedLinks = {
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,
   maintenancePolicy: evidence.publicLinks.maintenancePolicyUrl,
+  privacyThreatModel: evidence.publicLinks.privacyThreatModelUrl,
   apiCreditWorkflow: evidence.publicLinks.apiWorkflowUrl,
   maintainerUseCases: evidence.publicLinks.useCasesUrl,
   finalChecklist: evidence.publicLinks.finalChecklistUrl,

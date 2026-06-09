@@ -23,6 +23,7 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final submission checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
