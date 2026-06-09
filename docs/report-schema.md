@@ -311,10 +311,11 @@ The output includes:
 
 - `status`: current application evidence status
 - `manualFields`: account-owner fields that cannot be filled by the CLI
-- `publicLinks`: repository, release, npm, roadmap, status, reviewer quickstart, release
-  provenance, adoption plan, maintenance policy, maintainer handoff, scope and limitations, privacy
-  threat model, data retention, demo walkthrough, accessibility, API workflow, use cases, final
-  checklist, submission rehearsal, final copy, public evidence sample, reviewer samples, and CI links
+- `publicLinks`: repository, release, npm, roadmap, status, application evidence matrix, reviewer
+  quickstart, release provenance, adoption plan, maintenance policy, maintainer handoff, scope and
+  limitations, privacy threat model, data retention, demo walkthrough, accessibility, API workflow,
+  use cases, final checklist, submission rehearsal, final copy, public evidence sample, reviewer
+  samples, and CI links
 - `proofPoints`: reviewer-facing evidence labels and URLs
 - `copyChecklist`: final paste-and-submit checklist
 - optional Markdown when `--markdown` is supplied

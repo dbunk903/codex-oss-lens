@@ -7,6 +7,7 @@ const evidence = buildPublicEvidence();
 let failures = 0;
 
 requireText("npm run submission:check", "one-command submission gate");
+requireText("npm run application:evidence", "application evidence matrix gate");
 requireText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requireText("npm run form-draft:sample", "form draft sample gate");
 requireText("npm run publish:samples", "publish samples gate");
@@ -32,6 +33,7 @@ requireText("npm run evidence:sample", "public evidence sample gate");
 requireText("npm run evidence:links", "public link health gate");
 requireText("npm run readme:badges", "README badge gate");
 requireText("docs/application-status.md", "application status link");
+requireText("docs/application-evidence-matrix.md", "application evidence matrix link");
 requireText("docs/reviewer-quickstart.md", "reviewer quickstart link");
 requireText("docs/final-submission-checklist.md", "final checklist link");
 requireText("docs/release-provenance.md", "release provenance link");

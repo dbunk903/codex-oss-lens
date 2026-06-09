@@ -13,6 +13,7 @@ const expectedLinks = {
   npmPackage: evidence.publicLinks.npmPackage,
   roadmap: evidence.publicLinks.roadmapUrl,
   applicationStatus: evidence.publicLinks.applicationStatusUrl,
+  applicationEvidenceMatrix: evidence.publicLinks.applicationEvidenceMatrixUrl,
   reviewerQuickstart: evidence.publicLinks.reviewerQuickstartUrl,
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,

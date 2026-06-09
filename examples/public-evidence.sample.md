@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-09T08:14:31.956Z
+Generated: 2026-06-09T08:49:34.897Z
 Status: ready
 
 ## Public Links
@@ -10,6 +10,7 @@ Status: ready
 - npmPackage: https://www.npmjs.com/package/codex-oss-lens
 - roadmapUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - applicationStatusUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- applicationEvidenceMatrixUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - reviewerQuickstartUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - releaseProvenanceUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -43,6 +44,7 @@ Status: ready
 - publishedSmoke: npm latest install smoke runs in GitHub Actions. https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 - roadmap: Roadmap documents future maintainer workflow work. https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - applicationStatus: Application status captures ready, source-only, and manual submit gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- applicationEvidenceMatrix: Application evidence matrix maps reviewer questions to public proof and local gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - reviewerQuickstart: Reviewer quickstart gives public-only verification steps. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - releaseProvenance: Release provenance ties GitHub release, npm package, CI, and privacy gates together. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

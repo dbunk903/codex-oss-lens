@@ -10,7 +10,9 @@ submission pack.
 3. Confirm the npm package: https://www.npmjs.com/package/codex-oss-lens
 4. Check the application status snapshot:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
-5. Run the published CLI demo:
+5. Check the application evidence matrix:
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
+6. Run the published CLI demo:
 
 ```bash
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
@@ -22,6 +24,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 8. Confirm the public roadmap and reviewer evidence:
    https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -38,6 +41,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ## What To Look For
 
 - The project is local-first: raw Codex logs, prompts, source code, and full paths are not uploaded.
+- The application evidence matrix maps reviewer questions to public proof links, local gates, and
+  explicit readiness boundaries.
 - The public package is dependency-free, ships the static dashboard, and includes application
   evidence docs in the tarball.
 - The form draft sample shows the Korean application answers with repository, release, roadmap, and
@@ -76,6 +81,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ## Submit-Time Evidence
 
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

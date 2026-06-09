@@ -22,6 +22,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
       releaseUrl: "https://github.com/dbunk903/codex-oss-lens/releases/tag/v1.6.1",
       npmPackage: "https://www.npmjs.com/package/codex-oss-lens",
       applicationStatusUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md",
+      applicationEvidenceMatrixUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md",
       adoptionPlanUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md",
       maintenancePolicyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md",
       maintainerHandoffUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md",
@@ -38,6 +39,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
   assert.equal(draft.publicLinks.repository, "https://github.com/dbunk903/codex-oss-lens");
   assert.equal(draft.publicLinks.npmPackage, "https://www.npmjs.com/package/codex-oss-lens");
   assert.equal(draft.publicLinks.applicationStatus, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md");
+  assert.equal(draft.publicLinks.applicationEvidenceMatrix, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md");
   assert.equal(draft.publicLinks.adoptionPlan, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md");
   assert.equal(draft.publicLinks.maintenancePolicy, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md");
   assert.equal(draft.publicLinks.maintainerHandoff, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md");

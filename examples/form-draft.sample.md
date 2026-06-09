@@ -1,6 +1,6 @@
 # Codex OSS Support Form Draft
 
-Generated: 2026-06-09T08:14:32.046Z
+Generated: 2026-06-09T08:49:35.034Z
 Ready to paste: true
 
 ## Public Links
@@ -10,6 +10,7 @@ Ready to paste: true
 - npm package: https://www.npmjs.com/package/codex-oss-lens
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

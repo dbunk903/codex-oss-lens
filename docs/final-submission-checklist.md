@@ -9,6 +9,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - npm package: https://www.npmjs.com/package/codex-oss-lens
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -49,6 +50,7 @@ node src/cli.js public-evidence --markdown public-evidence.md
 npm run final-copy:check
 npm run submission:versions
 npm run application:status
+npm run application:evidence
 npm run reviewer:quickstart
 npm run form-draft:sample
 npm run publish:samples
@@ -96,6 +98,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits and the application drafts include reviewer evidence links.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run application:status` confirms the status page and this checklist include every public evidence link and manual field.
+- `npm run application:evidence` confirms reviewer questions map to public proof links, local gates, and known boundaries.
 - `npm run reviewer:quickstart` confirms the public quickstart includes every reviewer evidence link and signed-out review guidance.
 - `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.

@@ -16,6 +16,7 @@ requireText("evidence.status", "public evidence readiness assertion");
 requireText("npm run final-copy:check", "final copy check");
 requireText("npm run submission:versions", "submission version check");
 requireText("npm run application:status", "application status check");
+requireText("npm run application:evidence", "application evidence matrix check");
 requireText("npm run reviewer:quickstart", "reviewer quickstart check");
 requireText("npm run form-draft:sample", "form draft sample check");
 requireText("npm run publish:samples", "publish samples check");

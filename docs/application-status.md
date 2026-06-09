@@ -18,6 +18,7 @@ open-source support form.
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the full reviewer link map without placeholders. |
 | Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
+| Application evidence matrix | Ready | `npm run application:evidence` checks reviewer questions against public evidence, local gates, and known boundaries. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
@@ -52,6 +53,7 @@ open-source support form.
 - npm package: https://www.npmjs.com/package/codex-oss-lens
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
+- Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -92,6 +94,12 @@ The status page itself is checked by:
 
 ```bash
 npm run application:status
+```
+
+The application evidence matrix is checked by:
+
+```bash
+npm run application:evidence
 ```
 
 The reviewer quickstart is checked by:
