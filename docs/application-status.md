@@ -21,7 +21,7 @@ open-source support form.
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
-| Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links and submit gates. |
+| Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links, privacy threat-model evidence, and submit gates. |
 | CI readiness | Ready | `npm run ci:readiness` checks that GitHub Actions keeps the Node 20/22 matrix, package smoke, public evidence, and submission evidence gates wired. |
 | Contribution readiness | Ready | `npm run contrib:readiness` checks CONTRIBUTING, the bug report template, and the PR template for validation and privacy guidance. |
 | Security readiness | Ready | `npm run security:readiness` checks SECURITY.md and issue templates for vulnerability reporting and sensitive-data guidance. |

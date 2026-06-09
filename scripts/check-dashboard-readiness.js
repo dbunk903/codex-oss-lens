@@ -10,6 +10,8 @@ requireText("Application Evidence", "application evidence panel");
 requireText("Submission Gates", "submission gates panel");
 requireText("submission-pack", "submission pack gate");
 requireText("redact-check + readiness", "privacy readiness gate");
+requireText("privacy threat model", "privacy threat model positioning");
+requireText("privacy:threat-model", "privacy threat model gate");
 requireText("public-evidence + evidence:sample", "public evidence sample gate");
 requireText("reviewer:quickstart", "reviewer quickstart gate");
 requireText("publish:samples + publish:docs", "publish gate");
@@ -24,6 +26,7 @@ for (const [label, url] of Object.entries({
   npmPackage: evidence.publicLinks.npmPackage,
   applicationStatusUrl: evidence.publicLinks.applicationStatusUrl,
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
+  privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
   finalChecklistUrl: evidence.publicLinks.finalChecklistUrl,
   publicEvidenceSampleUrl: evidence.publicLinks.publicEvidenceSampleUrl,
   dashboardPreviewUrl: evidence.publicLinks.dashboardPreviewUrl,

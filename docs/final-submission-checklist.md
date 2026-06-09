@@ -88,7 +88,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
-- `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials and current submit gates.
+- `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials, privacy threat-model evidence, and current submit gates.
 - `npm run ci:readiness` confirms GitHub Actions still runs the Node matrix, packaged CLI smoke, public evidence, and submission evidence gates.
 - `npm run contrib:readiness` confirms CONTRIBUTING, the bug report template, and the PR template include validation and privacy guidance.
 - `npm run security:readiness` confirms SECURITY.md and issue templates include vulnerability reporting and sensitive-data guidance.
