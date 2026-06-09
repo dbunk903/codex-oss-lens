@@ -42,6 +42,7 @@
 - Added `CODE_OF_CONDUCT.md` and `conduct:readiness` to keep community guidance aligned with support and privacy gates.
 - Added GitHub token authentication to CI public-link checks to avoid unauthenticated API 403 failures.
 - Added `license:readiness` to keep MIT license text, README, package metadata, and package contents aligned.
+- Added issue chooser routing and `issue-routing:readiness` to direct public reports toward support, security, and conduct guidance.
 - Updated the dashboard submission gates to show public evidence sample and public link checks.
 - Added transient 5xx retries plus GitHub API/raw validation to public evidence link checks.
 - Added transient 5xx retries and raw workflow validation to README badge checks.

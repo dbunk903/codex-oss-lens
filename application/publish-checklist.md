@@ -25,7 +25,9 @@
 - SUPPORT.md documents public support routing and sensitive-data boundaries.
 - CODE_OF_CONDUCT.md documents respectful participation and conduct escalation boundaries.
 - LICENSE and `package.json` both declare MIT licensing.
+- The GitHub issue chooser disables blank issues and routes users to support, security, and conduct guidance.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
 - `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`,
-  `license:readiness`, and `readme:readiness` keep the public application, publish, support,
-  conduct, license, and README guidance aligned before the account owner submits the form.
+  `license:readiness`, `issue-routing:readiness`, and `readme:readiness` keep the public
+  application, publish, support, conduct, license, issue routing, and README guidance aligned before
+  the account owner submits the form.

@@ -26,6 +26,7 @@ requireText("npm run security:readiness", "security readiness check");
 requireText("npm run support:readiness", "support readiness check");
 requireText("npm run conduct:readiness", "conduct readiness check");
 requireText("npm run license:readiness", "license readiness check");
+requireText("npm run issue-routing:readiness", "issue routing readiness check");
 requireText("npm run public:redaction", "public redaction check");
 requireText("npm run evidence:sample", "public evidence sample check");
 requireText("npm run evidence:links", "public evidence link check");

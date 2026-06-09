@@ -20,6 +20,8 @@ requireText("support", "Integration requests", "integration request routing");
 requireText("support", "Security reports", "security report routing");
 requireText("support", "npm run public:redaction", "support public redaction gate");
 requireText("support", "npm run submission:check", "support submission gate");
+requireText("support", "issue chooser links to SUPPORT.md, SECURITY.md, and CODE_OF_CONDUCT.md", "support issue chooser guidance");
+requireText("support", "blank public issues are disabled", "support blank issue guidance");
 requireText("support", "Do not paste raw Codex logs", "support raw log warning");
 requireText("support", "private prompts", "support private prompt warning");
 requireText("support", "full local filesystem paths", "support path warning");

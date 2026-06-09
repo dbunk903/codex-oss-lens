@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support policy
+    url: https://github.com/dbunk903/codex-oss-lens/blob/main/SUPPORT.md
+    about: Start here for bug, feature, integration, and privacy-safe support routing.
+  - name: Security policy
+    url: https://github.com/dbunk903/codex-oss-lens/blob/main/SECURITY.md
+    about: Use this before sharing vulnerability details, private prompts, logs, paths, or secrets.
+  - name: Code of Conduct
+    url: https://github.com/dbunk903/codex-oss-lens/blob/main/CODE_OF_CONDUCT.md
+    about: Review participation expectations and conduct escalation boundaries.

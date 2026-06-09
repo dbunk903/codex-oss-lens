@@ -15,6 +15,9 @@ for support when the report can be written without sensitive Codex session detai
 - Code of Conduct concerns: follow `CODE_OF_CONDUCT.md`; use `SECURITY.md` first if the concern
   includes sensitive privacy or security details.
 
+The GitHub issue chooser links to SUPPORT.md, SECURITY.md, and CODE_OF_CONDUCT.md directly, and
+blank public issues are disabled so privacy-sensitive reports start from the right route.
+
 ## What to include
 
 - Codex OSS Lens version.

@@ -14,6 +14,7 @@ requirePublishingText("npm run security:readiness", "security readiness gate");
 requirePublishingText("npm run support:readiness", "support readiness gate");
 requirePublishingText("npm run conduct:readiness", "conduct readiness gate");
 requirePublishingText("npm run license:readiness", "license readiness gate");
+requirePublishingText("npm run issue-routing:readiness", "issue routing readiness gate");
 requirePublishingText("npm run readme:readiness", "README readiness gate");
 requirePublishingText("node src/cli.js publish-check --markdown publish-check.md", "publish check command");
 requirePublishingText("npm publish --access public --otp <6-digit-code>", "OTP publish command");
@@ -40,6 +41,7 @@ requireChecklistText("publish:samples", "publish samples evidence");
 requireChecklistText("support:readiness", "support readiness evidence");
 requireChecklistText("conduct:readiness", "conduct readiness evidence");
 requireChecklistText("license:readiness", "license readiness evidence");
+requireChecklistText("issue-routing:readiness", "issue routing readiness evidence");
 requireChecklistText("readme:readiness", "README readiness evidence");
 
 if (failures) {

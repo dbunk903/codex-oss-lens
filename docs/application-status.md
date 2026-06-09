@@ -28,6 +28,7 @@ open-source support form.
 | Support readiness | Ready | `npm run support:readiness` checks SUPPORT.md, issue templates, README, and package contents for public support guidance. |
 | Conduct readiness | Ready | `npm run conduct:readiness` checks CODE_OF_CONDUCT.md, SUPPORT.md, CONTRIBUTING.md, README, and package contents for community guidance. |
 | License readiness | Ready | `npm run license:readiness` checks MIT license text, package metadata, README license link, and package contents. |
+| Issue routing readiness | Ready | `npm run issue-routing:readiness` checks the GitHub issue chooser, support links, security links, conduct links, and template privacy warnings. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -139,6 +140,12 @@ License metadata and package readiness is checked by:
 
 ```bash
 npm run license:readiness
+```
+
+GitHub issue chooser routing is checked by:
+
+```bash
+npm run issue-routing:readiness
 ```
 
 README submission guidance is checked by:

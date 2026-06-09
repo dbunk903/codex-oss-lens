@@ -11,9 +11,9 @@ node src/cli.js publish-check --markdown publish-check.md
 ```
 
 `submission:check` runs the form-copy, version-alignment, application-status, contribution,
-security, support, conduct, license, public-redaction, public evidence sample, public-link, badge, README
-readiness, unit-test, tarball dry-run, and packaged CLI smoke gates. It also runs the reviewer
-quickstart and publish sample checks:
+security, support, conduct, license, issue-routing, public-redaction, public evidence sample,
+public-link, badge, README readiness, unit-test, tarball dry-run, and packaged CLI smoke gates. It
+also runs the reviewer quickstart and publish sample checks:
 
 ```bash
 npm run reviewer:quickstart
@@ -23,6 +23,7 @@ npm run security:readiness
 npm run support:readiness
 npm run conduct:readiness
 npm run license:readiness
+npm run issue-routing:readiness
 npm run readme:readiness
 ```
 

@@ -16,6 +16,7 @@ requireText("npm run security:readiness", "security readiness gate");
 requireText("npm run support:readiness", "support readiness gate");
 requireText("npm run conduct:readiness", "conduct readiness gate");
 requireText("npm run license:readiness", "license readiness gate");
+requireText("npm run issue-routing:readiness", "issue routing readiness gate");
 requireText("npm run public:redaction", "public redaction gate");
 requireText("npm run evidence:sample", "public evidence sample gate");
 requireText("npm run evidence:links", "public link health gate");
