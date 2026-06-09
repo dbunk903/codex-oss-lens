@@ -286,6 +286,7 @@ npm run support:readiness
 npm run conduct:readiness
 npm run license:readiness
 npm run issue-routing:readiness
+npm run release:provenance
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -297,6 +298,7 @@ Reviewer-facing entry points:
 
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Support policy: https://github.com/dbunk903/codex-oss-lens/blob/main/SUPPORT.md
 - Code of conduct: https://github.com/dbunk903/codex-oss-lens/blob/main/CODE_OF_CONDUCT.md
 - Final submission checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md

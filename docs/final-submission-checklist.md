@@ -10,6 +10,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -51,6 +52,7 @@ npm run support:readiness
 npm run conduct:readiness
 npm run license:readiness
 npm run issue-routing:readiness
+npm run release:provenance
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -88,6 +90,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run conduct:readiness` confirms CODE_OF_CONDUCT.md, SUPPORT.md, CONTRIBUTING.md, README, and package contents include community guidance.
 - `npm run license:readiness` confirms MIT license text, package metadata, README license link, and package contents are aligned.
 - `npm run issue-routing:readiness` confirms the GitHub issue chooser routes users to support, security, and conduct guidance before public posting.
+- `npm run release:provenance` confirms release, npm, CI, privacy, and source-vs-published package evidence stay aligned.
 - The dashboard preview PNGs remain `1440x1200` desktop and `500x1100` mobile artifacts.
 - `npm run public:redaction` confirms public docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.

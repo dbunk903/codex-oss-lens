@@ -29,6 +29,7 @@ open-source support form.
 | Conduct readiness | Ready | `npm run conduct:readiness` checks CODE_OF_CONDUCT.md, SUPPORT.md, CONTRIBUTING.md, README, and package contents for community guidance. |
 | License readiness | Ready | `npm run license:readiness` checks MIT license text, package metadata, README license link, and package contents. |
 | Issue routing readiness | Ready | `npm run issue-routing:readiness` checks the GitHub issue chooser, support links, security links, conduct links, and template privacy warnings. |
+| Release provenance | Ready | `npm run release:provenance` checks the release provenance page, status snapshot, README, checklist, publishing docs, publish checklist, and CI workflow. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -43,6 +44,7 @@ open-source support form.
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - API-credit workflow: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
 - Maintainer use cases: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-use-cases.md
 - Final checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
@@ -146,6 +148,12 @@ GitHub issue chooser routing is checked by:
 
 ```bash
 npm run issue-routing:readiness
+```
+
+Release provenance guidance is checked by:
+
+```bash
+npm run release:provenance
 ```
 
 README submission guidance is checked by:
