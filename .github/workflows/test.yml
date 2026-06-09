@@ -60,6 +60,7 @@ jobs:
           npm run adoption:readiness
           npm run maintenance:readiness
           npm run maintainer:handoff
+          npm run scope:limitations
           npm run privacy:threat-model
           npm run accessibility:readiness
           npm run data:retention

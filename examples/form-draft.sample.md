@@ -1,6 +1,6 @@
 # Codex OSS Support Form Draft
 
-Generated: 2026-06-09T07:25:05.375Z
+Generated: 2026-06-09T08:14:32.046Z
 Ready to paste: true
 
 ## Public Links
@@ -15,6 +15,7 @@ Ready to paste: true
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
+- Scope and limitations: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
 - Demo walkthrough: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md

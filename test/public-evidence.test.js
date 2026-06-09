@@ -18,6 +18,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.match(evidence.publicLinks.adoptionPlanUrl, /docs\/adoption-plan\.md$/);
   assert.match(evidence.publicLinks.maintenancePolicyUrl, /docs\/maintenance-policy\.md$/);
   assert.match(evidence.publicLinks.maintainerHandoffUrl, /docs\/maintainer-handoff\.md$/);
+  assert.match(evidence.publicLinks.scopeLimitationsUrl, /docs\/scope-and-limitations\.md$/);
   assert.match(evidence.publicLinks.privacyThreatModelUrl, /docs\/privacy-threat-model\.md$/);
   assert.match(evidence.publicLinks.dataRetentionUrl, /docs\/data-retention\.md$/);
   assert.match(evidence.publicLinks.demoWalkthroughUrl, /docs\/demo-walkthrough\.md$/);
@@ -30,6 +31,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "adoptionPlan"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "maintenancePolicy"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "maintainerHandoff"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "scopeLimitations"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "privacyThreatModel"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "dataRetention"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "demoWalkthrough"));
@@ -85,6 +87,8 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
     "https://github.com/example/project/blob/main/docs/maintenance-policy.md",
     "--maintainer-handoff-url",
     "https://github.com/example/project/blob/main/docs/maintainer-handoff.md",
+    "--scope-limitations-url",
+    "https://github.com/example/project/blob/main/docs/scope-and-limitations.md",
     "--privacy-threat-model-url",
     "https://github.com/example/project/blob/main/docs/privacy-threat-model.md",
     "--data-retention-url",
@@ -130,6 +134,7 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
   assert.equal(evidence.publicLinks.adoptionPlanUrl, "https://github.com/example/project/blob/main/docs/adoption-plan.md");
   assert.equal(evidence.publicLinks.maintenancePolicyUrl, "https://github.com/example/project/blob/main/docs/maintenance-policy.md");
   assert.equal(evidence.publicLinks.maintainerHandoffUrl, "https://github.com/example/project/blob/main/docs/maintainer-handoff.md");
+  assert.equal(evidence.publicLinks.scopeLimitationsUrl, "https://github.com/example/project/blob/main/docs/scope-and-limitations.md");
   assert.equal(evidence.publicLinks.privacyThreatModelUrl, "https://github.com/example/project/blob/main/docs/privacy-threat-model.md");
   assert.equal(evidence.publicLinks.dataRetentionUrl, "https://github.com/example/project/blob/main/docs/data-retention.md");
   assert.equal(evidence.publicLinks.demoWalkthroughUrl, "https://github.com/example/project/blob/main/docs/demo-walkthrough.md");

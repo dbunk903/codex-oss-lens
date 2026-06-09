@@ -31,6 +31,7 @@ requireText("npm run release:provenance", "release provenance check");
 requireText("npm run adoption:readiness", "adoption readiness check");
 requireText("npm run maintenance:readiness", "maintenance readiness check");
 requireText("npm run maintainer:handoff", "maintainer handoff check");
+requireText("npm run scope:limitations", "scope limitations check");
 requireText("npm run privacy:threat-model", "privacy threat model check");
 requireText("npm run accessibility:readiness", "accessibility readiness check");
 requireText("npm run data:retention", "data retention check");

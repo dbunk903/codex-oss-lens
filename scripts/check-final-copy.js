@@ -12,6 +12,7 @@ const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "roadmapUrl",
   "applicationStatusUrl",
   "maintainerHandoffUrl",
+  "scopeLimitationsUrl",
   "useCasesUrl",
   "apiWorkflowUrl",
   "finalChecklistUrl",

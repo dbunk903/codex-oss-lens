@@ -20,6 +20,9 @@ requireText("data:retention", "dashboard data retention gate");
 requireText("docs/maintainer-handoff.md", "dashboard maintainer handoff link");
 requireText("Maintainer handoff", "dashboard maintainer handoff label");
 requireText("maintainer:handoff", "dashboard maintainer handoff gate");
+requireText("docs/scope-and-limitations.md", "dashboard scope limitations link");
+requireText("Scope limits", "dashboard scope limitations label");
+requireText("scope:limitations", "dashboard scope limitations gate");
 requireText("docs/demo-walkthrough.md", "dashboard demo walkthrough link");
 requireText("Demo walkthrough", "dashboard demo walkthrough label");
 requireText("demo:walkthrough", "dashboard demo walkthrough gate");
@@ -42,6 +45,7 @@ for (const [label, url] of Object.entries({
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
   privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
   maintainerHandoffUrl: evidence.publicLinks.maintainerHandoffUrl,
+  scopeLimitationsUrl: evidence.publicLinks.scopeLimitationsUrl,
   dataRetentionUrl: evidence.publicLinks.dataRetentionUrl,
   demoWalkthroughUrl: evidence.publicLinks.demoWalkthroughUrl,
   accessibilityUrl: evidence.publicLinks.accessibilityUrl,

@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-09T07:25:05.284Z
+Generated: 2026-06-09T08:14:31.956Z
 Status: ready
 
 ## Public Links
@@ -15,6 +15,7 @@ Status: ready
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - maintainerHandoffUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
+- scopeLimitationsUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
 - privacyThreatModelUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - dataRetentionUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
 - demoWalkthroughUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
@@ -47,6 +48,7 @@ Status: ready
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - maintainerHandoff: Maintainer handoff records continuity, release, privacy, and manual-submit boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
+- scopeLimitations: Scope and limitations clarify non-goals, manual gates, and source-vs-published boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
 - privacyThreatModel: Privacy threat model records protected inputs, shareable outputs, and API opt-in boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - dataRetention: Data retention guidance documents local artifact storage, deletion, and public sharing boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
 - demoWalkthrough: Demo walkthrough gives reviewers npm latest commands and expected local-only signals. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
