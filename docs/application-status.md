@@ -32,6 +32,7 @@ open-source support form.
 | Release provenance | Ready | `npm run release:provenance` checks the release provenance page, status snapshot, README, checklist, publishing docs, publish checklist, and CI workflow. |
 | Adoption readiness | Ready | `npm run adoption:readiness` checks the adoption plan, reviewer quickstart, README, final checklist, status snapshot, and CI workflow. |
 | Maintenance readiness | Ready | `npm run maintenance:readiness` checks the maintenance policy, triage cadence, release gates, reviewer quickstart, README, checklist, publishing docs, and CI workflow. |
+| Maintainer handoff | Ready | `npm run maintainer:handoff` checks continuity notes, release handoff, privacy guards, reviewer links, dashboard evidence, publishing docs, and CI workflow. |
 | Privacy threat model | Ready | `npm run privacy:threat-model` checks protected inputs, shareable outputs, API opt-in boundaries, reviewer entry points, security policy, and CI workflow. |
 | Accessibility readiness | Ready | `npm run accessibility:readiness` checks keyboard navigation, dashboard landmarks, labelled reviewer evidence links, viewport support, reviewer docs, and CI workflow. |
 | Data retention | Ready | `npm run data:retention` checks generated artifact storage, deletion guidance, package allowlist boundaries, reviewer links, dashboard evidence, and CI workflow. |
@@ -54,6 +55,7 @@ open-source support form.
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
@@ -180,6 +182,12 @@ Maintenance policy guidance is checked by:
 
 ```bash
 npm run maintenance:readiness
+```
+
+Maintainer handoff guidance is checked by:
+
+```bash
+npm run maintainer:handoff
 ```
 
 Privacy threat-model guidance is checked by:

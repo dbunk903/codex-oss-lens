@@ -17,6 +17,9 @@ requireText("Accessibility", "dashboard accessibility label");
 requireText("docs/data-retention.md", "dashboard data retention link");
 requireText("Data retention", "dashboard data retention label");
 requireText("data:retention", "dashboard data retention gate");
+requireText("docs/maintainer-handoff.md", "dashboard maintainer handoff link");
+requireText("Maintainer handoff", "dashboard maintainer handoff label");
+requireText("maintainer:handoff", "dashboard maintainer handoff gate");
 requireText("docs/demo-walkthrough.md", "dashboard demo walkthrough link");
 requireText("Demo walkthrough", "dashboard demo walkthrough label");
 requireText("demo:walkthrough", "dashboard demo walkthrough gate");
@@ -38,6 +41,7 @@ for (const [label, url] of Object.entries({
   applicationStatusUrl: evidence.publicLinks.applicationStatusUrl,
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
   privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
+  maintainerHandoffUrl: evidence.publicLinks.maintainerHandoffUrl,
   dataRetentionUrl: evidence.publicLinks.dataRetentionUrl,
   demoWalkthroughUrl: evidence.publicLinks.demoWalkthroughUrl,
   accessibilityUrl: evidence.publicLinks.accessibilityUrl,

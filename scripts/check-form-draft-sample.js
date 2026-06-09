@@ -17,6 +17,7 @@ const expectedLinks = {
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,
   maintenancePolicy: evidence.publicLinks.maintenancePolicyUrl,
+  maintainerHandoff: evidence.publicLinks.maintainerHandoffUrl,
   privacyThreatModel: evidence.publicLinks.privacyThreatModelUrl,
   dataRetention: evidence.publicLinks.dataRetentionUrl,
   demoWalkthrough: evidence.publicLinks.demoWalkthroughUrl,

@@ -25,6 +25,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
@@ -48,6 +49,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   users to disclose raw Codex logs, prompts, full paths, secrets, or private source.
 - The maintenance policy explains weekly triage, release gates, post-publish smoke checks, and the
   boundary against telemetry or remote upload without explicit opt-in.
+- The maintainer handoff explains continuity, release handoff, privacy guards, and manual submit
+  boundaries for future maintainers.
 - The privacy threat model names protected inputs, shareable outputs, trust boundaries, and the
   dry-run/opt-in requirements for future API-backed features.
 - The data retention policy explains generated artifact locations, deletion expectations, and the
@@ -74,6 +77,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
 - Demo walkthrough: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md

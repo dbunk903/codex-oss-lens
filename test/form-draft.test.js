@@ -24,6 +24,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
       applicationStatusUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md",
       adoptionPlanUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md",
       maintenancePolicyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md",
+      maintainerHandoffUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md",
       privacyThreatModelUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md",
       dataRetentionUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md",
       demoWalkthroughUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md",
@@ -38,6 +39,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
   assert.equal(draft.publicLinks.applicationStatus, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md");
   assert.equal(draft.publicLinks.adoptionPlan, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md");
   assert.equal(draft.publicLinks.maintenancePolicy, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md");
+  assert.equal(draft.publicLinks.maintainerHandoff, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md");
   assert.equal(draft.publicLinks.privacyThreatModel, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md");
   assert.equal(draft.publicLinks.dataRetention, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md");
   assert.equal(draft.publicLinks.demoWalkthrough, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md");

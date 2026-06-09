@@ -11,6 +11,7 @@ const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "npmPackage",
   "roadmapUrl",
   "applicationStatusUrl",
+  "maintainerHandoffUrl",
   "useCasesUrl",
   "apiWorkflowUrl",
   "finalChecklistUrl",

@@ -18,6 +18,7 @@ requirePublishingText("npm run issue-routing:readiness", "issue routing readines
 requirePublishingText("npm run release:provenance", "release provenance gate");
 requirePublishingText("npm run adoption:readiness", "adoption readiness gate");
 requirePublishingText("npm run maintenance:readiness", "maintenance readiness gate");
+requirePublishingText("npm run maintainer:handoff", "maintainer handoff gate");
 requirePublishingText("npm run privacy:threat-model", "privacy threat model gate");
 requirePublishingText("npm run accessibility:readiness", "accessibility readiness gate");
 requirePublishingText("npm run data:retention", "data retention gate");
@@ -53,6 +54,7 @@ requireChecklistText("issue-routing:readiness", "issue routing readiness evidenc
 requireChecklistText("release:provenance", "release provenance evidence");
 requireChecklistText("adoption:readiness", "adoption readiness evidence");
 requireChecklistText("maintenance:readiness", "maintenance readiness evidence");
+requireChecklistText("maintainer:handoff", "maintainer handoff evidence");
 requireChecklistText("privacy:threat-model", "privacy threat model evidence");
 requireChecklistText("accessibility:readiness", "accessibility readiness evidence");
 requireChecklistText("data:retention", "data retention evidence");

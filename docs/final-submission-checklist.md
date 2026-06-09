@@ -13,6 +13,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Privacy threat model: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
 - Accessibility notes: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
 - Data retention: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
@@ -62,6 +63,7 @@ npm run issue-routing:readiness
 npm run release:provenance
 npm run adoption:readiness
 npm run maintenance:readiness
+npm run maintainer:handoff
 npm run privacy:threat-model
 npm run accessibility:readiness
 npm run data:retention
@@ -107,6 +109,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run release:provenance` confirms release, npm, CI, privacy, and source-vs-published package evidence stay aligned.
 - `npm run adoption:readiness` confirms the adoption plan and reviewer entry points explain the public validation loop for this young project.
 - `npm run maintenance:readiness` confirms the maintenance policy documents triage cadence, release gates, support routes, and privacy boundaries.
+- `npm run maintainer:handoff` confirms continuity notes, release handoff, privacy guards, publishing guidance, reviewer links, and CI wiring stay aligned.
 - `npm run privacy:threat-model` confirms protected inputs, shareable outputs, API opt-in boundaries, reviewer entry points, and CI wiring stay aligned.
 - `npm run accessibility:readiness` confirms keyboard navigation, dashboard landmarks, labelled reviewer evidence links, viewport support, reviewer docs, and CI wiring stay aligned.
 - `npm run data:retention` confirms generated artifact storage, deletion guidance, public sharing rules, reviewer links, and CI wiring stay aligned.

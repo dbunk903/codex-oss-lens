@@ -29,6 +29,7 @@
 - The release provenance page links the current GitHub release, npm package, source CI, published smoke CI, and privacy gates.
 - The adoption plan documents the first 30 days of public validation without requesting private Codex content.
 - The maintenance policy documents weekly triage, release gates, post-publish smoke checks, and privacy-maintenance boundaries.
+- The maintainer handoff documents continuity, release handoff, privacy guards, and manual-submit boundaries.
 - The privacy threat model documents protected inputs, shareable outputs, trust boundaries, and future API opt-in requirements.
 - The accessibility notes document keyboard navigation, labelled reviewer links, viewport support, and screenshot review limits.
 - The data retention policy documents generated artifact locations, deletion guidance, package allowlist boundaries, and public sharing rules.
@@ -37,9 +38,9 @@
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
 - `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`,
   `license:readiness`, `issue-routing:readiness`, `release:provenance`, `adoption:readiness`,
-  `maintenance:readiness`, `privacy:threat-model`, `accessibility:readiness`, `data:retention`,
+  `maintenance:readiness`, `maintainer:handoff`, `privacy:threat-model`, `accessibility:readiness`, `data:retention`,
   `demo:walkthrough`, `submission:rehearsal`, and
   `readme:readiness` keep the public application, publish, support, conduct, license, issue
-  routing, release provenance, adoption, maintenance, accessibility, data retention, demo,
+  routing, release provenance, adoption, maintenance, handoff, accessibility, data retention, demo,
   submission rehearsal, and README guidance aligned before
   the account owner submits the form.
