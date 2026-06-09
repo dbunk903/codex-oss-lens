@@ -24,7 +24,8 @@
 - Maintainer use cases document weekly review, application evidence, API-credit planning, privacy review, and published package confidence.
 - SUPPORT.md documents public support routing and sensitive-data boundaries.
 - CODE_OF_CONDUCT.md documents respectful participation and conduct escalation boundaries.
+- LICENSE and `package.json` both declare MIT licensing.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
-- `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`, and
-  `readme:readiness` keep the public application, publish, support, conduct, and README guidance
-  aligned before the account owner submits the form.
+- `submission:check`, `publish:samples`, `support:readiness`, `conduct:readiness`,
+  `license:readiness`, and `readme:readiness` keep the public application, publish, support,
+  conduct, license, and README guidance aligned before the account owner submits the form.

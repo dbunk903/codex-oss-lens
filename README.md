@@ -284,6 +284,7 @@ npm run contrib:readiness
 npm run security:readiness
 npm run support:readiness
 npm run conduct:readiness
+npm run license:readiness
 npm run public:redaction
 npm run evidence:sample
 npm run evidence:links
@@ -439,4 +440,4 @@ especially examples from maintainers using Codex across multiple repositories.
 
 ## License
 
-MIT
+[MIT](LICENSE)

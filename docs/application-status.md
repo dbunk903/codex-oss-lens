@@ -13,7 +13,7 @@ open-source support form.
 | Source CI | Ready | https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml |
 | Published-package smoke | Install-ready | https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml verifies npm latest installs and runs; source privacy smoke improvements need the next publish. |
 | Next publish gate | Blocked | `examples/publish-check.sample.md` shows npm login is required and `1.6.1` cannot be republished without a version bump. |
-| Privacy posture | Ready | `npm run public:redaction` scans public docs, samples, package metadata, support/conduct docs, and GitHub templates/workflows for local paths, raw-log markers, and likely secrets. |
+| Privacy posture | Ready | `npm run public:redaction` scans public docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows for local paths, raw-log markers, and likely secrets. |
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the full reviewer link map without placeholders. |
 | Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |
@@ -27,6 +27,7 @@ open-source support form.
 | Security readiness | Ready | `npm run security:readiness` checks SECURITY.md and issue templates for vulnerability reporting and sensitive-data guidance. |
 | Support readiness | Ready | `npm run support:readiness` checks SUPPORT.md, issue templates, README, and package contents for public support guidance. |
 | Conduct readiness | Ready | `npm run conduct:readiness` checks CODE_OF_CONDUCT.md, SUPPORT.md, CONTRIBUTING.md, README, and package contents for community guidance. |
+| License readiness | Ready | `npm run license:readiness` checks MIT license text, package metadata, README license link, and package contents. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints and validates public preview PNG dimensions. |
 | README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
@@ -132,6 +133,12 @@ Community conduct guidance readiness is checked by:
 
 ```bash
 npm run conduct:readiness
+```
+
+License metadata and package readiness is checked by:
+
+```bash
+npm run license:readiness
 ```
 
 README submission guidance is checked by:

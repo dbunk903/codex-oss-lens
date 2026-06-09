@@ -3,6 +3,7 @@ import { redactCheck } from "../src/redact-check.js";
 
 const targets = [
   "README.md",
+  "LICENSE",
   "SECURITY.md",
   "CONTRIBUTING.md",
   "CODE_OF_CONDUCT.md",
