@@ -16,6 +16,7 @@ const expectedLinks = {
   applicationEvidenceMatrix: evidence.publicLinks.applicationEvidenceMatrixUrl,
   applicationReviewFaq: evidence.publicLinks.applicationReviewFaqUrl,
   submissionRiskRegister: evidence.publicLinks.submissionRiskRegisterUrl,
+  submissionDecisionSummary: evidence.publicLinks.submissionDecisionSummaryUrl,
   reviewerQuickstart: evidence.publicLinks.reviewerQuickstartUrl,
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,

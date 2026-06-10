@@ -11,7 +11,7 @@ node src/cli.js publish-check --markdown publish-check.md
 ```
 
 `submission:check` runs the form-copy, version-alignment, application-status, application review
-FAQ, submission risk register, contribution, application evidence matrix, security, support, conduct, license, issue-routing, release provenance, adoption, maintenance,
+FAQ, submission risk register, submission decision summary, contribution, application evidence matrix, security, support, conduct, license, issue-routing, release provenance, adoption, maintenance,
 maintainer handoff, scope limitations, privacy threat-model, accessibility readiness, data retention, demo walkthrough, submission
 rehearsal, public-redaction, public evidence sample,
 public-link, badge, README readiness, unit-test, tarball dry-run, and packaged CLI smoke gates. It
@@ -22,6 +22,7 @@ npm run reviewer:quickstart
 npm run application:evidence
 npm run reviewer:faq
 npm run submission:risk
+npm run submission:decision
 npm run publish:samples
 npm run contrib:readiness
 npm run security:readiness

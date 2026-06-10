@@ -21,6 +21,7 @@ open-source support form.
 | Application evidence matrix | Ready | `npm run application:evidence` checks reviewer questions against public evidence, local gates, and known boundaries. |
 | Application review FAQ | Ready | `npm run reviewer:faq` checks likely reviewer questions against public proof, privacy boundaries, manual gates, and API-credit intent. |
 | Submission risk register | Ready | `npm run submission:risk` checks known submission risks, mitigations, and submit-time stop conditions. |
+| Submission decision summary | Ready | `npm run submission:decision` checks submit-time Go/Stop conditions and manual account-owner decision boundaries. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
@@ -58,6 +59,7 @@ open-source support form.
 - Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Submission risk register: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
+- Submission decision summary: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -116,6 +118,12 @@ The submission risk register is checked by:
 
 ```bash
 npm run submission:risk
+```
+
+The submission decision summary is checked by:
+
+```bash
+npm run submission:decision
 ```
 
 The reviewer quickstart is checked by:

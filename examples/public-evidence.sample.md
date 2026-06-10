@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-10T01:52:06.635Z
+Generated: 2026-06-10T02:28:04.216Z
 Status: ready
 
 ## Public Links
@@ -13,6 +13,7 @@ Status: ready
 - applicationEvidenceMatrixUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - applicationReviewFaqUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - submissionRiskRegisterUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
+- submissionDecisionSummaryUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
 - reviewerQuickstartUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - releaseProvenanceUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -49,6 +50,7 @@ Status: ready
 - applicationEvidenceMatrix: Application evidence matrix maps reviewer questions to public proof and local gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
 - applicationReviewFaq: Application review FAQ answers young-project, public-proof, manual-submit, privacy, package, and API-credit questions. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - submissionRiskRegister: Submission risk register lists application risks, mitigations, and local gates. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
+- submissionDecisionSummary: Submission decision summary condenses Go/Stop evidence for account-owner review. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
 - reviewerQuickstart: Reviewer quickstart gives public-only verification steps. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - releaseProvenance: Release provenance ties GitHub release, npm package, CI, and privacy gates together. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

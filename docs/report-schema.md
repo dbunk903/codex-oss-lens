@@ -175,6 +175,11 @@ The output includes:
 - `blockers`, `warnings`, and `evidence`
 - optional Markdown when `--markdown` is supplied
 
+Application-oriented public link maps include repository, release, npm, roadmap, application
+status, evidence matrix, review FAQ, submission risk register, submission decision summary,
+reviewer quickstart, final checklist, form-draft sample, public evidence sample, dashboard
+previews, and CI evidence when available.
+
 ## API credit plan
 
 `codex-oss-lens api-plan --report scan-report.json` turns aggregate Codex usage into a prioritized
