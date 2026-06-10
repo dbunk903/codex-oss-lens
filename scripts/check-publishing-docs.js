@@ -8,6 +8,7 @@ let failures = 0;
 
 requirePublishingText("npm run submission:check", "submission gate");
 requirePublishingText("npm run application:evidence", "application evidence matrix gate");
+requirePublishingText("npm run reviewer:faq", "application review FAQ gate");
 requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requirePublishingText("npm run publish:samples", "publish samples gate");
 requirePublishingText("npm run contrib:readiness", "contribution readiness gate");
@@ -49,6 +50,7 @@ requireChecklistText("Published npm usage", "README npm usage evidence");
 requireChecklistText("Scheduled/manual GitHub Actions", "published smoke CI evidence");
 requireChecklistText("submission:check", "submission gate evidence");
 requireChecklistText("application:evidence", "application evidence matrix evidence");
+requireChecklistText("reviewer:faq", "application review FAQ evidence");
 requireChecklistText("publish:samples", "publish samples evidence");
 requireChecklistText("support:readiness", "support readiness evidence");
 requireChecklistText("conduct:readiness", "conduct readiness evidence");

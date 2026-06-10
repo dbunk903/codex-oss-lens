@@ -15,6 +15,9 @@ requireText("privacy:threat-model", "privacy threat model gate");
 requireText("docs/application-evidence-matrix.md", "dashboard evidence matrix link");
 requireText("Evidence matrix", "dashboard evidence matrix label");
 requireText("application:evidence", "dashboard evidence matrix gate");
+requireText("docs/application-review-faq.md", "dashboard review FAQ link");
+requireText("Review FAQ", "dashboard review FAQ label");
+requireText("reviewer:faq", "dashboard review FAQ gate");
 requireText("docs/accessibility.md", "dashboard accessibility link");
 requireText("Accessibility", "dashboard accessibility label");
 requireText("docs/data-retention.md", "dashboard data retention link");
@@ -46,6 +49,7 @@ for (const [label, url] of Object.entries({
   npmPackage: evidence.publicLinks.npmPackage,
   applicationStatusUrl: evidence.publicLinks.applicationStatusUrl,
   applicationEvidenceMatrixUrl: evidence.publicLinks.applicationEvidenceMatrixUrl,
+  applicationReviewFaqUrl: evidence.publicLinks.applicationReviewFaqUrl,
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
   privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
   maintainerHandoffUrl: evidence.publicLinks.maintainerHandoffUrl,

@@ -19,6 +19,7 @@ open-source support form.
 | Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
 | Application evidence matrix | Ready | `npm run application:evidence` checks reviewer questions against public evidence, local gates, and known boundaries. |
+| Application review FAQ | Ready | `npm run reviewer:faq` checks likely reviewer questions against public proof, privacy boundaries, manual gates, and API-credit intent. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
@@ -54,6 +55,7 @@ open-source support form.
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 - Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
+- Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -100,6 +102,12 @@ The application evidence matrix is checked by:
 
 ```bash
 npm run application:evidence
+```
+
+The application review FAQ is checked by:
+
+```bash
+npm run reviewer:faq
 ```
 
 The reviewer quickstart is checked by:

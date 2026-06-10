@@ -17,6 +17,7 @@ let failures = 0;
 requireText("matrix", "# Application Evidence Matrix", "title");
 requireText("matrix", "Is the project public and installable?", "installable question");
 requireText("matrix", "Is the tool relevant to Codex users?", "Codex relevance question");
+requireText("matrix", "application review FAQ", "review FAQ proof");
 requireText("matrix", "Is private Codex data protected?", "privacy question");
 requireText("matrix", "Can reviewers reproduce the evidence?", "reproducibility question");
 requireText("matrix", "Is the project maintainable after submission?", "maintainability question");

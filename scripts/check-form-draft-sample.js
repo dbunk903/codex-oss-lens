@@ -14,6 +14,7 @@ const expectedLinks = {
   roadmap: evidence.publicLinks.roadmapUrl,
   applicationStatus: evidence.publicLinks.applicationStatusUrl,
   applicationEvidenceMatrix: evidence.publicLinks.applicationEvidenceMatrixUrl,
+  applicationReviewFaq: evidence.publicLinks.applicationReviewFaqUrl,
   reviewerQuickstart: evidence.publicLinks.reviewerQuickstartUrl,
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,

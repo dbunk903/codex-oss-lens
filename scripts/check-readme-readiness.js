@@ -8,6 +8,7 @@ let failures = 0;
 
 requireText("npm run submission:check", "one-command submission gate");
 requireText("npm run application:evidence", "application evidence matrix gate");
+requireText("npm run reviewer:faq", "application review FAQ gate");
 requireText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requireText("npm run form-draft:sample", "form draft sample gate");
 requireText("npm run publish:samples", "publish samples gate");
@@ -34,6 +35,7 @@ requireText("npm run evidence:links", "public link health gate");
 requireText("npm run readme:badges", "README badge gate");
 requireText("docs/application-status.md", "application status link");
 requireText("docs/application-evidence-matrix.md", "application evidence matrix link");
+requireText("docs/application-review-faq.md", "application review FAQ link");
 requireText("docs/reviewer-quickstart.md", "reviewer quickstart link");
 requireText("docs/final-submission-checklist.md", "final checklist link");
 requireText("docs/release-provenance.md", "release provenance link");
@@ -63,6 +65,7 @@ for (const url of [
   evidence.publicLinks.releaseUrl,
   evidence.publicLinks.npmPackage,
   evidence.publicLinks.applicationStatusUrl,
+  evidence.publicLinks.applicationReviewFaqUrl,
   evidence.publicLinks.reviewerQuickstartUrl,
   evidence.publicLinks.dashboardPreviewUrl,
   evidence.publicLinks.mobileDashboardPreviewUrl,

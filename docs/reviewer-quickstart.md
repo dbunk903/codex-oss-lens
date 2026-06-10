@@ -12,19 +12,22 @@ submission pack.
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
 5. Check the application evidence matrix:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
-6. Run the published CLI demo:
+6. Check the application review FAQ:
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
+7. Run the published CLI demo:
 
 ```bash
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
-6. Follow the demo walkthrough:
+8. Follow the demo walkthrough:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
-7. Inspect the privacy and API-credit plan:
+9. Inspect the privacy and API-credit plan:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
-8. Confirm the public roadmap and reviewer evidence:
+10. Confirm the public roadmap and reviewer evidence:
    https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -34,7 +37,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
-8. Confirm the latest public CI signals:
+11. Confirm the latest public CI signals:
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
@@ -43,6 +46,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The project is local-first: raw Codex logs, prompts, source code, and full paths are not uploaded.
 - The application evidence matrix maps reviewer questions to public proof links, local gates, and
   explicit readiness boundaries.
+- The application review FAQ answers the young-project, public-proof, manual-submit, privacy,
+  source-vs-published, and API-credit questions without overstating adoption.
 - The public package is dependency-free, ships the static dashboard, and includes application
   evidence docs in the tarball.
 - The form draft sample shows the Korean application answers with repository, release, roadmap, and
@@ -82,6 +87,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Application evidence matrix: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
+- Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

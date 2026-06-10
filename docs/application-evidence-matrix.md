@@ -6,7 +6,7 @@ questions to public evidence, local gates, and known boundaries.
 | Reviewer question | Public evidence | Local gate |
 | --- | --- | --- |
 | Is the project public and installable? | Repository, `v1.6.1` release, npm package, Node CI, published smoke CI | `npm run submission:versions`, `npm run publish:samples`, `npm run ci:readiness` |
-| Is the tool relevant to Codex users? | README, maintainer use cases, API-credit workflow, demo walkthrough | `npm run reviewer:quickstart`, `npm run demo:walkthrough` |
+| Is the tool relevant to Codex users? | README, application review FAQ, maintainer use cases, API-credit workflow, demo walkthrough | `npm run reviewer:faq`, `npm run reviewer:quickstart`, `npm run demo:walkthrough` |
 | Is private Codex data protected? | Privacy threat model, data retention, public redaction policy, security policy | `npm run privacy:threat-model`, `npm run data:retention`, `npm run public:redaction` |
 | Can reviewers reproduce the evidence? | Reviewer quickstart, dashboard previews, public evidence sample, form draft sample | `npm run dashboard:readiness`, `npm run evidence:sample`, `npm run form-draft:sample` |
 | Is the project maintainable after submission? | Maintenance policy, maintainer handoff, adoption plan, support policy, issue routing | `npm run maintenance:readiness`, `npm run maintainer:handoff`, `npm run adoption:readiness` |
