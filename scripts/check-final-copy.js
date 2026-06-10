@@ -13,6 +13,7 @@ const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "applicationStatusUrl",
   "applicationEvidenceMatrixUrl",
   "applicationReviewFaqUrl",
+  "submissionRiskRegisterUrl",
   "maintainerHandoffUrl",
   "scopeLimitationsUrl",
   "useCasesUrl",

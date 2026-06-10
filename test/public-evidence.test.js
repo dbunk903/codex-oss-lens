@@ -15,6 +15,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.match(evidence.publicLinks.applicationStatusUrl, /docs\/application-status\.md$/);
   assert.match(evidence.publicLinks.applicationEvidenceMatrixUrl, /docs\/application-evidence-matrix\.md$/);
   assert.match(evidence.publicLinks.applicationReviewFaqUrl, /docs\/application-review-faq\.md$/);
+  assert.match(evidence.publicLinks.submissionRiskRegisterUrl, /docs\/submission-risk-register\.md$/);
   assert.match(evidence.publicLinks.reviewerQuickstartUrl, /docs\/reviewer-quickstart\.md$/);
   assert.match(evidence.publicLinks.releaseProvenanceUrl, /docs\/release-provenance\.md$/);
   assert.match(evidence.publicLinks.adoptionPlanUrl, /docs\/adoption-plan\.md$/);
@@ -30,6 +31,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "applicationStatus"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "applicationEvidenceMatrix"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "applicationReviewFaq"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "submissionRiskRegister"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "reviewerQuickstart"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "releaseProvenance"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "adoptionPlan"));
@@ -85,6 +87,8 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
     "https://github.com/example/project/blob/main/docs/application-evidence-matrix.md",
     "--application-review-faq-url",
     "https://github.com/example/project/blob/main/docs/application-review-faq.md",
+    "--submission-risk-register-url",
+    "https://github.com/example/project/blob/main/docs/submission-risk-register.md",
     "--reviewer-quickstart-url",
     "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md",
     "--release-provenance-url",
@@ -139,6 +143,7 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
   assert.equal(evidence.publicLinks.applicationStatusUrl, "https://github.com/example/project/blob/main/docs/application-status.md");
   assert.equal(evidence.publicLinks.applicationEvidenceMatrixUrl, "https://github.com/example/project/blob/main/docs/application-evidence-matrix.md");
   assert.equal(evidence.publicLinks.applicationReviewFaqUrl, "https://github.com/example/project/blob/main/docs/application-review-faq.md");
+  assert.equal(evidence.publicLinks.submissionRiskRegisterUrl, "https://github.com/example/project/blob/main/docs/submission-risk-register.md");
   assert.equal(evidence.publicLinks.reviewerQuickstartUrl, "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md");
   assert.equal(evidence.publicLinks.releaseProvenanceUrl, "https://github.com/example/project/blob/main/docs/release-provenance.md");
   assert.equal(evidence.publicLinks.adoptionPlanUrl, "https://github.com/example/project/blob/main/docs/adoption-plan.md");

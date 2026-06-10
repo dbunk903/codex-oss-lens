@@ -312,7 +312,7 @@ The output includes:
 - `status`: current application evidence status
 - `manualFields`: account-owner fields that cannot be filled by the CLI
 - `publicLinks`: repository, release, npm, roadmap, status, application evidence matrix,
-  application review FAQ, reviewer quickstart, release provenance, adoption plan, maintenance policy, maintainer handoff, scope and
+  application review FAQ, submission risk register, reviewer quickstart, release provenance, adoption plan, maintenance policy, maintainer handoff, scope and
   limitations, privacy threat model, data retention, demo walkthrough, accessibility, API workflow,
   use cases, final checklist, submission rehearsal, final copy, public evidence sample, reviewer
   samples, and CI links

@@ -19,6 +19,7 @@ requireText("npm run submission:check", "submit-time gate command");
 requireText("npm run evidence:sample", "public evidence sample gate command");
 requireText("npm run application:evidence", "application evidence matrix gate command");
 requireText("npm run reviewer:faq", "application review FAQ gate command");
+requireText("npm run submission:risk", "submission risk register gate command");
 requireText("npm run reviewer:quickstart", "reviewer quickstart gate command");
 requireText("npm run form-draft:sample", "form draft sample gate command");
 requireText("npm run publish:samples", "publish samples gate command");
@@ -48,6 +49,7 @@ requireText("package metadata, license/support/conduct docs, and GitHub template
 requireText("Public evidence sample | Ready", "public evidence sample row");
 requireText("Application evidence matrix | Ready", "application evidence matrix row");
 requireText("Application review FAQ | Ready", "application review FAQ row");
+requireText("Submission risk register | Ready", "submission risk register row");
 requireText("Reviewer quickstart | Ready", "reviewer quickstart row");
 requireText("full reviewer link map", "form draft full link map");
 requireText("Form draft sample | Ready", "form draft sample row");

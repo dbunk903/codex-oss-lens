@@ -46,6 +46,7 @@ jobs:
           npm run application:status
           npm run application:evidence
           npm run reviewer:faq
+          npm run submission:risk
           npm run reviewer:quickstart
           npm run form-draft:sample
           npm run publish:samples

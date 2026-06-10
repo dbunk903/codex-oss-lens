@@ -22,6 +22,7 @@ requireText("matrix", "Is private Codex data protected?", "privacy question");
 requireText("matrix", "Can reviewers reproduce the evidence?", "reproducibility question");
 requireText("matrix", "Is the project maintainable after submission?", "maintainability question");
 requireText("matrix", "Are limits and manual gates clear?", "manual-gate question");
+requireText("matrix", "submission risk register", "risk register proof");
 requireText("matrix", "npm run application:evidence", "self gate command");
 requireText("matrix", "codex-oss-lens@latest", "source-vs-published boundary");
 requireText("status", "Application evidence matrix | Ready", "application status row");
