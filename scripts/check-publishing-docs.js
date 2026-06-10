@@ -11,6 +11,7 @@ requirePublishingText("npm run application:evidence", "application evidence matr
 requirePublishingText("npm run reviewer:faq", "application review FAQ gate");
 requirePublishingText("npm run submission:risk", "submission risk register gate");
 requirePublishingText("npm run submission:decision", "submission decision summary gate");
+requirePublishingText("npm run submission:activity", "submission activity log gate");
 requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requirePublishingText("npm run publish:samples", "publish samples gate");
 requirePublishingText("npm run contrib:readiness", "contribution readiness gate");
@@ -55,6 +56,7 @@ requireChecklistText("application:evidence", "application evidence matrix eviden
 requireChecklistText("reviewer:faq", "application review FAQ evidence");
 requireChecklistText("submission:risk", "submission risk register evidence");
 requireChecklistText("submission:decision", "submission decision summary evidence");
+requireChecklistText("submission:activity", "submission activity log evidence");
 requireChecklistText("publish:samples", "publish samples evidence");
 requireChecklistText("support:readiness", "support readiness evidence");
 requireChecklistText("conduct:readiness", "conduct readiness evidence");

@@ -1,6 +1,6 @@
 # Codex OSS Support Form Draft
 
-Generated: 2026-06-10T02:28:29.042Z
+Generated: 2026-06-10T02:54:04.107Z
 Ready to paste: true
 
 ## Public Links
@@ -14,6 +14,7 @@ Ready to paste: true
 - Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Submission risk register: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
 - Submission decision summary: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
+- Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

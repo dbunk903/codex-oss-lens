@@ -13,6 +13,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Submission risk register: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
 - Submission decision summary: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
+- Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -57,6 +58,7 @@ npm run application:evidence
 npm run reviewer:faq
 npm run submission:risk
 npm run submission:decision
+npm run submission:activity
 npm run reviewer:quickstart
 npm run form-draft:sample
 npm run publish:samples
@@ -108,6 +110,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run reviewer:faq` confirms likely reviewer questions have concise public answers for adoption maturity, proof, manual submit, privacy, source-vs-published boundaries, and API-credit use.
 - `npm run submission:risk` confirms known submission risks, mitigations, local gates, and stop conditions stay reviewable.
 - `npm run submission:decision` confirms Go/Stop criteria, stop conditions, and account-owner-only final submission boundaries stay reviewable.
+- `npm run submission:activity` confirms recent public readiness work and its local gates stay reviewable.
 - `npm run reviewer:quickstart` confirms the public quickstart includes every reviewer evidence link and signed-out review guidance.
 - `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.

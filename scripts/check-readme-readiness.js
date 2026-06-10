@@ -11,6 +11,7 @@ requireText("npm run application:evidence", "application evidence matrix gate");
 requireText("npm run reviewer:faq", "application review FAQ gate");
 requireText("npm run submission:risk", "submission risk register gate");
 requireText("npm run submission:decision", "submission decision summary gate");
+requireText("npm run submission:activity", "submission activity log gate");
 requireText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requireText("npm run form-draft:sample", "form draft sample gate");
 requireText("npm run publish:samples", "publish samples gate");
@@ -40,6 +41,7 @@ requireText("docs/application-evidence-matrix.md", "application evidence matrix 
 requireText("docs/application-review-faq.md", "application review FAQ link");
 requireText("docs/submission-risk-register.md", "submission risk register link");
 requireText("docs/submission-decision-summary.md", "submission decision summary link");
+requireText("docs/submission-activity-log.md", "submission activity log link");
 requireText("docs/reviewer-quickstart.md", "reviewer quickstart link");
 requireText("docs/final-submission-checklist.md", "final checklist link");
 requireText("docs/release-provenance.md", "release provenance link");
@@ -72,6 +74,7 @@ for (const url of [
   evidence.publicLinks.applicationReviewFaqUrl,
   evidence.publicLinks.submissionRiskRegisterUrl,
   evidence.publicLinks.submissionDecisionSummaryUrl,
+  evidence.publicLinks.submissionActivityLogUrl,
   evidence.publicLinks.reviewerQuickstartUrl,
   evidence.publicLinks.dashboardPreviewUrl,
   evidence.publicLinks.mobileDashboardPreviewUrl,

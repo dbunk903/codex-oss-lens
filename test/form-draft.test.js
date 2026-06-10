@@ -26,6 +26,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
       applicationReviewFaqUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md",
       submissionRiskRegisterUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md",
       submissionDecisionSummaryUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md",
+      submissionActivityLogUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md",
       adoptionPlanUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md",
       maintenancePolicyUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md",
       maintainerHandoffUrl: "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md",
@@ -46,6 +47,7 @@ test("builds copy-ready Korean OSS support form draft", () => {
   assert.equal(draft.publicLinks.applicationReviewFaq, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md");
   assert.equal(draft.publicLinks.submissionRiskRegister, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md");
   assert.equal(draft.publicLinks.submissionDecisionSummary, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md");
+  assert.equal(draft.publicLinks.submissionActivityLog, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md");
   assert.equal(draft.publicLinks.adoptionPlan, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md");
   assert.equal(draft.publicLinks.maintenancePolicy, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md");
   assert.equal(draft.publicLinks.maintainerHandoff, "https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md");

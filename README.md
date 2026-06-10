@@ -252,6 +252,7 @@ node src/cli.js public-evidence \
   --application-review-faq-url https://github.com/owner/project/blob/main/docs/application-review-faq.md \
   --submission-risk-register-url https://github.com/owner/project/blob/main/docs/submission-risk-register.md \
   --submission-decision-summary-url https://github.com/owner/project/blob/main/docs/submission-decision-summary.md \
+  --submission-activity-log-url https://github.com/owner/project/blob/main/docs/submission-activity-log.md \
   --reviewer-quickstart-url https://github.com/owner/project/blob/main/docs/reviewer-quickstart.md \
   --release-provenance-url https://github.com/owner/project/blob/main/docs/release-provenance.md \
   --adoption-plan-url https://github.com/owner/project/blob/main/docs/adoption-plan.md \
@@ -292,6 +293,7 @@ npm run application:evidence
 npm run reviewer:faq
 npm run submission:risk
 npm run submission:decision
+npm run submission:activity
 npm run reviewer:quickstart
 npm run form-draft:sample
 npm run publish:samples
@@ -328,6 +330,7 @@ Reviewer-facing entry points:
 - Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Submission risk register: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
 - Submission decision summary: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
+- Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
@@ -390,11 +393,11 @@ codex-oss-lens timeline --report scan-report.json [--out timeline.json] [--markd
 codex-oss-lens scorecard --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--out scorecard.json] [--markdown scorecard.md]
 codex-oss-lens evidence-index --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--timeline timeline.json] [--scorecard scorecard.json] [--form-draft form-draft.json] [--out evidence-index.json] [--markdown evidence-index.md] [--html evidence-index.html]
 codex-oss-lens submission-pack [--codex-home ~/.codex] [--repo owner/name] [--out-dir codex-submission-pack] [--demo]
-codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--application-evidence-matrix-url url] [--application-review-faq-url url] [--submission-risk-register-url url] [--submission-decision-summary-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--maintainer-handoff-url url] [--scope-limitations-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--demo-walkthrough-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--submission-rehearsal-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out form-draft.json] [--markdown form-draft.md]
+codex-oss-lens form-draft --manifest manifest.json [--readiness readiness.json] [--api-plan api-plan.json] [--scorecard scorecard.json] [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--application-evidence-matrix-url url] [--application-review-faq-url url] [--submission-risk-register-url url] [--submission-decision-summary-url url] [--submission-activity-log-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--maintainer-handoff-url url] [--scope-limitations-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--demo-walkthrough-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--submission-rehearsal-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out form-draft.json] [--markdown form-draft.md]
 codex-oss-lens pack-validate <submission-pack-dir> [--min-score 75] [--out pack-validation.json] [--markdown pack-validation.md]
 codex-oss-lens publish-check [--package-json package.json] [--out publish-check.json] [--markdown publish-check.md]
 codex-oss-lens install-smoke [--package codex-oss-lens] [--version latest] [--bin codex-oss-lens] [--out install-smoke.json] [--markdown install-smoke.md]
-codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--application-evidence-matrix-url url] [--application-review-faq-url url] [--submission-risk-register-url url] [--submission-decision-summary-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--maintainer-handoff-url url] [--scope-limitations-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--demo-walkthrough-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--submission-rehearsal-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
+codex-oss-lens public-evidence [--repo url] [--release-url url] [--npm-package url] [--roadmap-url url] [--application-status-url url] [--application-evidence-matrix-url url] [--application-review-faq-url url] [--submission-risk-register-url url] [--submission-decision-summary-url url] [--submission-activity-log-url url] [--reviewer-quickstart-url url] [--release-provenance-url url] [--adoption-plan-url url] [--maintenance-policy-url url] [--maintainer-handoff-url url] [--scope-limitations-url url] [--privacy-threat-model-url url] [--data-retention-url url] [--demo-walkthrough-url url] [--accessibility-url url] [--api-workflow-url url] [--use-cases-url url] [--final-checklist-url url] [--submission-rehearsal-url url] [--final-copy-url url] [--form-draft-sample-url url] [--public-evidence-sample-url url] [--dashboard-preview-url url] [--mobile-dashboard-preview-url url] [--publish-check-sample-url url] [--install-smoke-sample-url url] [--node-ci-url url] [--published-smoke-url url] [--out public-evidence.json] [--markdown public-evidence.md]
 codex-oss-lens serve [--codex-home ~/.codex] [--port 5057] [--demo]
 codex-oss-lens demo [--out report.json]
 ```
@@ -456,6 +459,8 @@ See [submission risk register](docs/submission-risk-register.md) for known appli
 mitigations, local gates, and submit-time stop conditions.
 See [submission decision summary](docs/submission-decision-summary.md) for Go/Stop conditions before
 manual account-owner submission.
+See [submission activity log](docs/submission-activity-log.md) for recent public readiness work and
+the local gates behind it.
 See [maintainer use cases](docs/maintainer-use-cases.md) for practical OSS workflows this tool
 supports.
 See [adoption plan](docs/adoption-plan.md) for the public validation loop for this young project.

@@ -18,22 +18,25 @@ submission pack.
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
 8. Check the submission decision summary:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
-9. Run the published CLI demo:
+9. Check the submission activity log:
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
+10. Run the published CLI demo:
 
 ```bash
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
-10. Follow the demo walkthrough:
+11. Follow the demo walkthrough:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
-11. Inspect the privacy and API-credit plan:
+12. Inspect the privacy and API-credit plan:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
-12. Confirm the public roadmap and reviewer evidence:
+13. Confirm the public roadmap and reviewer evidence:
    https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -43,7 +46,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
-13. Confirm the latest public CI signals:
+14. Confirm the latest public CI signals:
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
@@ -58,6 +61,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   submit-time stop conditions.
 - The submission decision summary condenses public evidence into Go/Stop conditions before manual
   account-owner submission.
+- The submission activity log shows recent public readiness work without overstating mature
+  adoption.
 - The public package is dependency-free, ships the static dashboard, and includes application
   evidence docs in the tarball.
 - The form draft sample shows the Korean application answers with repository, release, roadmap, and
@@ -100,6 +105,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Application review FAQ: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
 - Submission risk register: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-risk-register.md
 - Submission decision summary: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
+- Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md

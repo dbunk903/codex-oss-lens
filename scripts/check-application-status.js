@@ -21,6 +21,7 @@ requireText("npm run application:evidence", "application evidence matrix gate co
 requireText("npm run reviewer:faq", "application review FAQ gate command");
 requireText("npm run submission:risk", "submission risk register gate command");
 requireText("npm run submission:decision", "submission decision summary gate command");
+requireText("npm run submission:activity", "submission activity log gate command");
 requireText("npm run reviewer:quickstart", "reviewer quickstart gate command");
 requireText("npm run form-draft:sample", "form draft sample gate command");
 requireText("npm run publish:samples", "publish samples gate command");
@@ -52,6 +53,7 @@ requireText("Application evidence matrix | Ready", "application evidence matrix 
 requireText("Application review FAQ | Ready", "application review FAQ row");
 requireText("Submission risk register | Ready", "submission risk register row");
 requireText("Submission decision summary | Ready", "submission decision summary row");
+requireText("Submission activity log | Ready", "submission activity log row");
 requireText("Reviewer quickstart | Ready", "reviewer quickstart row");
 requireText("full reviewer link map", "form draft full link map");
 requireText("Form draft sample | Ready", "form draft sample row");
