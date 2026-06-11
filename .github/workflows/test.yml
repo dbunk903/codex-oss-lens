@@ -50,6 +50,7 @@ jobs:
           npm run submission:decision
           npm run submission:activity
           npm run reviewer:quickstart
+          npm run reviewer:signedout
           npm run form-draft:sample
           npm run publish:samples
           npm run publish:docs

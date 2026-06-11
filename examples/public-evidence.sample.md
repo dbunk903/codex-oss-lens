@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-10T02:54:03.301Z
+Generated: 2026-06-10T03:23:39.191Z
 Status: ready
 
 ## Public Links
@@ -16,6 +16,7 @@ Status: ready
 - submissionDecisionSummaryUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
 - submissionActivityLogUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - reviewerQuickstartUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- signedOutReviewUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
 - releaseProvenanceUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -54,6 +55,7 @@ Status: ready
 - submissionDecisionSummary: Submission decision summary condenses Go/Stop evidence for account-owner review. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
 - submissionActivityLog: Submission activity log shows recent public readiness work and the gates behind it. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - reviewerQuickstart: Reviewer quickstart gives public-only verification steps. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- signedOutReview: Signed-out review checklist verifies public evidence can be inspected without private access. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
 - releaseProvenance: Release provenance ties GitHub release, npm package, CI, and privacy gates together. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md

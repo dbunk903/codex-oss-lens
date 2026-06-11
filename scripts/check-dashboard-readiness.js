@@ -27,6 +27,9 @@ requireText("submission:decision", "dashboard decision summary gate");
 requireText("docs/submission-activity-log.md", "dashboard activity log link");
 requireText("Activity log", "dashboard activity log label");
 requireText("submission:activity", "dashboard activity log gate");
+requireText("docs/signed-out-review.md", "dashboard signed-out review link");
+requireText("Signed-out review", "dashboard signed-out review label");
+requireText("reviewer:signedout", "dashboard signed-out review gate");
 requireText("docs/accessibility.md", "dashboard accessibility link");
 requireText("Accessibility", "dashboard accessibility label");
 requireText("docs/data-retention.md", "dashboard data retention link");
@@ -63,6 +66,7 @@ for (const [label, url] of Object.entries({
   submissionDecisionSummaryUrl: evidence.publicLinks.submissionDecisionSummaryUrl,
   submissionActivityLogUrl: evidence.publicLinks.submissionActivityLogUrl,
   reviewerQuickstartUrl: evidence.publicLinks.reviewerQuickstartUrl,
+  signedOutReviewUrl: evidence.publicLinks.signedOutReviewUrl,
   privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
   maintainerHandoffUrl: evidence.publicLinks.maintainerHandoffUrl,
   scopeLimitationsUrl: evidence.publicLinks.scopeLimitationsUrl,

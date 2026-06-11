@@ -19,6 +19,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.match(evidence.publicLinks.submissionDecisionSummaryUrl, /docs\/submission-decision-summary\.md$/);
   assert.match(evidence.publicLinks.submissionActivityLogUrl, /docs\/submission-activity-log\.md$/);
   assert.match(evidence.publicLinks.reviewerQuickstartUrl, /docs\/reviewer-quickstart\.md$/);
+  assert.match(evidence.publicLinks.signedOutReviewUrl, /docs\/signed-out-review\.md$/);
   assert.match(evidence.publicLinks.releaseProvenanceUrl, /docs\/release-provenance\.md$/);
   assert.match(evidence.publicLinks.adoptionPlanUrl, /docs\/adoption-plan\.md$/);
   assert.match(evidence.publicLinks.maintenancePolicyUrl, /docs\/maintenance-policy\.md$/);
@@ -37,6 +38,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "submissionDecisionSummary"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "submissionActivityLog"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "reviewerQuickstart"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "signedOutReview"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "releaseProvenance"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "adoptionPlan"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "maintenancePolicy"));
@@ -99,6 +101,8 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
     "https://github.com/example/project/blob/main/docs/submission-activity-log.md",
     "--reviewer-quickstart-url",
     "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md",
+    "--signed-out-review-url",
+    "https://github.com/example/project/blob/main/docs/signed-out-review.md",
     "--release-provenance-url",
     "https://github.com/example/project/blob/main/docs/release-provenance.md",
     "--adoption-plan-url",
@@ -155,6 +159,7 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
   assert.equal(evidence.publicLinks.submissionDecisionSummaryUrl, "https://github.com/example/project/blob/main/docs/submission-decision-summary.md");
   assert.equal(evidence.publicLinks.submissionActivityLogUrl, "https://github.com/example/project/blob/main/docs/submission-activity-log.md");
   assert.equal(evidence.publicLinks.reviewerQuickstartUrl, "https://github.com/example/project/blob/main/docs/reviewer-quickstart.md");
+  assert.equal(evidence.publicLinks.signedOutReviewUrl, "https://github.com/example/project/blob/main/docs/signed-out-review.md");
   assert.equal(evidence.publicLinks.releaseProvenanceUrl, "https://github.com/example/project/blob/main/docs/release-provenance.md");
   assert.equal(evidence.publicLinks.adoptionPlanUrl, "https://github.com/example/project/blob/main/docs/adoption-plan.md");
   assert.equal(evidence.publicLinks.maintenancePolicyUrl, "https://github.com/example/project/blob/main/docs/maintenance-policy.md");

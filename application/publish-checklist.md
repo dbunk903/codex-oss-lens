@@ -37,11 +37,11 @@
 - The demo walkthrough documents npm latest CLI and dashboard checks that use synthetic data instead of private Codex logs.
 - The submission rehearsal documents final machine checks, manual account-owner fields, and abort conditions before pressing Submit.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
-- `submission:check`, `application:evidence`, `reviewer:faq`, `submission:risk`, `submission:decision`, `submission:activity`, `publish:samples`, `support:readiness`, `conduct:readiness`,
+- `submission:check`, `application:evidence`, `reviewer:faq`, `submission:risk`, `submission:decision`, `submission:activity`, `reviewer:signedout`, `publish:samples`, `support:readiness`, `conduct:readiness`,
   `license:readiness`, `issue-routing:readiness`, `release:provenance`, `adoption:readiness`,
   `maintenance:readiness`, `maintainer:handoff`, `scope:limitations`, `privacy:threat-model`, `accessibility:readiness`, `data:retention`,
   `demo:walkthrough`, `submission:rehearsal`, and
   `readme:readiness` keep the public application, evidence matrix, review FAQ, risk register, publish, support, conduct, license, issue
   routing, release provenance, adoption, maintenance, handoff, limitations, accessibility, data retention, demo,
-  submission rehearsal, decision summary, activity log, and README guidance aligned before
+  submission rehearsal, decision summary, activity log, signed-out review, and README guidance aligned before
   the account owner submits the form.

@@ -24,6 +24,7 @@ open-source support form.
 | Submission decision summary | Ready | `npm run submission:decision` checks submit-time Go/Stop conditions and manual account-owner decision boundaries. |
 | Submission activity log | Ready | `npm run submission:activity` checks recent public readiness work, reviewer value, and local gate links. |
 | Reviewer quickstart | Ready | `docs/reviewer-quickstart.md` is checked by `npm run reviewer:quickstart` against the canonical reviewer link map. |
+| Signed-out review | Ready | `npm run reviewer:signedout` checks public browser review steps, public link expectations, and manual-account boundaries. |
 | Publish samples | Ready | `npm run publish:samples` checks publish-check and install-smoke samples against the current package version. |
 | Publishing docs | Ready | `npm run publish:docs` checks npm publishing docs and the publish checklist against the current package and release gates. |
 | Dashboard readiness | Ready | `npm run dashboard:readiness` checks the public dashboard evidence panel against reviewer links, privacy threat-model evidence, and submit gates. |
@@ -63,6 +64,7 @@ open-source support form.
 - Submission decision summary: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-decision-summary.md
 - Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
+- Signed-out review: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -138,6 +140,12 @@ The reviewer quickstart is checked by:
 
 ```bash
 npm run reviewer:quickstart
+```
+
+The signed-out review checklist is checked by:
+
+```bash
+npm run reviewer:signedout
 ```
 
 The public form draft sample is checked by:

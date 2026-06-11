@@ -19,6 +19,7 @@ const expectedLinks = {
   submissionDecisionSummary: evidence.publicLinks.submissionDecisionSummaryUrl,
   submissionActivityLog: evidence.publicLinks.submissionActivityLogUrl,
   reviewerQuickstart: evidence.publicLinks.reviewerQuickstartUrl,
+  signedOutReview: evidence.publicLinks.signedOutReviewUrl,
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,
   maintenancePolicy: evidence.publicLinks.maintenancePolicyUrl,

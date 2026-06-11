@@ -177,7 +177,7 @@ The output includes:
 
 Application-oriented public link maps include repository, release, npm, roadmap, application
 status, evidence matrix, review FAQ, submission risk register, submission decision summary,
-submission activity log, reviewer quickstart, final checklist, form-draft sample, public evidence sample, dashboard
+submission activity log, reviewer quickstart, signed-out review, final checklist, form-draft sample, public evidence sample, dashboard
 previews, and CI evidence when available.
 
 ## API credit plan
