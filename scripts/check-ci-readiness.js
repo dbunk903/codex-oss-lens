@@ -23,6 +23,7 @@ requireText("npm run submission:decision", "submission decision summary check");
 requireText("npm run submission:activity", "submission activity log check");
 requireText("npm run reviewer:quickstart", "reviewer quickstart check");
 requireText("npm run reviewer:signedout", "signed-out review check");
+requireText("npm run submitter:handoff", "submitter handoff check");
 requireText("npm run form-draft:sample", "form draft sample check");
 requireText("npm run publish:samples", "publish samples check");
 requireText("npm run publish:docs", "publishing docs check");

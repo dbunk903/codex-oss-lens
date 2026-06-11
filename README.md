@@ -297,6 +297,7 @@ npm run submission:decision
 npm run submission:activity
 npm run reviewer:quickstart
 npm run reviewer:signedout
+npm run submitter:handoff
 npm run form-draft:sample
 npm run publish:samples
 npm run publish:docs
@@ -335,6 +336,7 @@ Reviewer-facing entry points:
 - Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Signed-out review: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
+- Submitter handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submitter-handoff.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -466,6 +468,8 @@ See [submission activity log](docs/submission-activity-log.md) for recent public
 the local gates behind it.
 See [signed-out review checklist](docs/signed-out-review.md) for public-browser verification of
 reviewer links and previews.
+See [submitter handoff](docs/submitter-handoff.md) for paste-ready inputs, account-owner-only
+fields, do-not-paste guards, and final browser order.
 See [maintainer use cases](docs/maintainer-use-cases.md) for practical OSS workflows this tool
 supports.
 See [adoption plan](docs/adoption-plan.md) for the public validation loop for this young project.
@@ -479,8 +483,9 @@ boundaries.
 See [demo walkthrough](docs/demo-walkthrough.md) for npm latest demo commands and expected
 reviewer signals.
 See [reviewer quickstart](docs/reviewer-quickstart.md) for the fastest public-only validation path.
-See [submission rehearsal](docs/submission-rehearsal.md), [final submission checklist](docs/final-submission-checklist.md), and
-[final copy](application/final-copy.md) for form-ready application material.
+See [submission rehearsal](docs/submission-rehearsal.md), [submitter handoff](docs/submitter-handoff.md),
+[final submission checklist](docs/final-submission-checklist.md), and [final copy](application/final-copy.md)
+for form-ready application material.
 
 ## Maintainer Brief
 

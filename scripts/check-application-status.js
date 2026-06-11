@@ -24,6 +24,7 @@ requireText("npm run submission:decision", "submission decision summary gate com
 requireText("npm run submission:activity", "submission activity log gate command");
 requireText("npm run reviewer:quickstart", "reviewer quickstart gate command");
 requireText("npm run reviewer:signedout", "signed-out review gate command");
+requireText("npm run submitter:handoff", "submitter handoff gate command");
 requireText("npm run form-draft:sample", "form draft sample gate command");
 requireText("npm run publish:samples", "publish samples gate command");
 requireText("npm run publish:docs", "publishing docs gate command");
@@ -57,6 +58,7 @@ requireText("Submission decision summary | Ready", "submission decision summary 
 requireText("Submission activity log | Ready", "submission activity log row");
 requireText("Reviewer quickstart | Ready", "reviewer quickstart row");
 requireText("Signed-out review | Ready", "signed-out review row");
+requireText("Submitter handoff | Ready", "submitter handoff row");
 requireText("full reviewer link map", "form draft full link map");
 requireText("Form draft sample | Ready", "form draft sample row");
 requireText("Form draft links | Ready", "form draft links row");

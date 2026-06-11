@@ -16,6 +16,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Submission activity log: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-activity-log.md
 - Reviewer quickstart: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/reviewer-quickstart.md
 - Signed-out review: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
+- Submitter handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submitter-handoff.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
@@ -62,6 +63,7 @@ npm run submission:decision
 npm run submission:activity
 npm run reviewer:quickstart
 npm run reviewer:signedout
+npm run submitter:handoff
 npm run form-draft:sample
 npm run publish:samples
 npm run publish:docs
@@ -115,6 +117,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run submission:activity` confirms recent public readiness work and its local gates stay reviewable.
 - `npm run reviewer:quickstart` confirms the public quickstart includes every reviewer evidence link and signed-out review guidance.
 - `npm run reviewer:signedout` confirms public browser review steps, public link expectations, and private-data boundaries stay reviewable.
+- `npm run submitter:handoff` confirms paste-ready inputs, account-owner-only fields, do-not-paste guards, dashboard links, and CI wiring stay aligned.
 - `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
