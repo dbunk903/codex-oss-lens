@@ -25,6 +25,10 @@ requireText("matrix", "Are limits and manual gates clear?", "manual-gate questio
 requireText("matrix", "submission risk register", "risk register proof");
 requireText("matrix", "submission decision summary", "decision summary proof");
 requireText("matrix", "npm run submission:decision", "decision summary gate");
+requireText("matrix", "npm run npm:latest", "npm latest gate");
+requireText("matrix", "npm run ci:latest", "latest CI gate");
+requireText("matrix", "live dist-tag", "live npm latest boundary");
+requireText("matrix", "latest public workflow evidence", "latest CI evidence boundary");
 requireText("matrix", "npm run application:evidence", "self gate command");
 requireText("matrix", "codex-oss-lens@latest", "source-vs-published boundary");
 requireText("status", "Application evidence matrix | Ready", "application status row");

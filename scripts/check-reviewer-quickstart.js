@@ -9,6 +9,10 @@ let failures = 0;
 
 requireText("# Reviewer Quickstart", "title");
 requireText("npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo", "published CLI smoke command");
+requireText("npm run npm:latest", "npm latest gate");
+requireText("npm run ci:latest", "latest CI gate");
+requireText("live registry dist-tag", "live npm latest explanation");
+requireText("live workflow check", "latest CI explanation");
 requireText("local-first", "local-first privacy claim");
 requireText("raw Codex logs, prompts, source code, and full paths are not uploaded", "privacy boundary");
 requireText("signed-out browser", "signed-out public review guidance");

@@ -28,11 +28,18 @@ submission pack.
 npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 ```
 
-12. Follow the demo walkthrough:
+12. Confirm the live npm and CI gates:
+
+```bash
+npm run npm:latest
+npm run ci:latest
+```
+
+13. Follow the demo walkthrough:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/demo-walkthrough.md
-13. Inspect the privacy and API-credit plan:
+14. Inspect the privacy and API-credit plan:
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/api-credit-workflow.md
-14. Confirm the public roadmap and reviewer evidence:
+15. Confirm the public roadmap and reviewer evidence:
    https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-evidence-matrix.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-review-faq.md
@@ -50,7 +57,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/data-retention.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/accessibility.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submission-rehearsal.md
-15. Confirm the latest public CI signals:
+16. Confirm the latest public CI signals:
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml
    https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml
 
@@ -96,9 +103,10 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The dashboard preview images show the reviewer-facing UI at `1440x1200` desktop and `500x1100`
   mobile viewports; `npm run dashboard:readiness` checks those dimensions.
 - The Node CI workflow runs tests, package dry-run checks, packaged CLI smoke, public evidence
-  generation, final-copy validation, version alignment, public evidence sample freshness, and
-  public link checks.
-- The published smoke workflow verifies `codex-oss-lens@latest` directly from npm.
+  generation, final-copy validation, version alignment, public evidence sample freshness, public
+  link checks, and the `npm run ci:latest` live workflow check.
+- The published smoke workflow verifies `codex-oss-lens@latest` directly from npm, and
+  `npm run npm:latest` confirms the live registry dist-tag still matches `package.json`.
 - The demo walkthrough gives expected npm latest CLI and dashboard signals without requiring
   private Codex logs.
 - The submission rehearsal separates machine checks from account-owner-only fields and submit
