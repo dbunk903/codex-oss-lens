@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-11T23:18:56.122Z
+Generated: 2026-06-12T07:57:51.834Z
 Status: ready
 
 ## Public Links
@@ -21,6 +21,7 @@ Status: ready
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - adoptionSnapshotUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- supportPolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/SUPPORT.md
 - maintainerHandoffUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - scopeLimitationsUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
 - privacyThreatModelUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md
@@ -61,6 +62,7 @@ Status: ready
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
 - adoptionSnapshot: Adoption snapshot separates current public signals from claims not made. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
+- supportPolicy: Support policy routes public questions through privacy-safe issue templates. https://github.com/dbunk903/codex-oss-lens/blob/main/SUPPORT.md
 - maintainerHandoff: Maintainer handoff records continuity, release, privacy, and manual-submit boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - scopeLimitations: Scope and limitations clarify non-goals, manual gates, and source-vs-published boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
 - privacyThreatModel: Privacy threat model records protected inputs, shareable outputs, and API opt-in boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/privacy-threat-model.md

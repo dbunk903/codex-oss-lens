@@ -24,6 +24,7 @@ const expectedLinks = {
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,
   adoptionSnapshot: evidence.publicLinks.adoptionSnapshotUrl,
   maintenancePolicy: evidence.publicLinks.maintenancePolicyUrl,
+  supportPolicy: evidence.publicLinks.supportPolicyUrl,
   maintainerHandoff: evidence.publicLinks.maintainerHandoffUrl,
   scopeLimitations: evidence.publicLinks.scopeLimitationsUrl,
   privacyThreatModel: evidence.publicLinks.privacyThreatModelUrl,
