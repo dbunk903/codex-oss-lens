@@ -7,6 +7,8 @@ for support when the report can be written without sensitive Codex session detai
 
 - Bug reports: open a bug issue for incorrect parsing, CLI behavior, dashboard rendering, or
   generated evidence.
+- Support questions: open a support question for install help, usage questions, public reviewer
+  evidence, or OSS support application preparation that can be described without private context.
 - Feature requests: open a feature issue for new maintainer workflows, metrics, or export formats.
 - Integration requests: open an integration issue for Git, GitHub, Codex, reporting, or dashboard
   workflow connections.
@@ -26,6 +28,8 @@ blank public issues are disabled so privacy-sensitive reports start from the rig
 - A minimal share-safe sample, or a generated artifact that passes `npm run public:redaction`.
 - Whether `npm run submission:check` passes locally when the issue affects public evidence,
   publishing guidance, or submission materials.
+- For reviewer-evidence questions, include the public doc link instead of private Codex session
+  material.
 
 ## What not to include
 

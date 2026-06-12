@@ -4,6 +4,7 @@ import { promises as fs } from "node:fs";
 const files = {
   config: await fs.readFile(".github/ISSUE_TEMPLATE/config.yml", "utf8"),
   bugTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/bug_report.md", "utf8"),
+  supportTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/support_question.md", "utf8"),
   featureTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/feature_request.md", "utf8"),
   integrationTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/integration_request.md", "utf8"),
   support: await fs.readFile("SUPPORT.md", "utf8"),
@@ -18,9 +19,14 @@ requireText("config", "SECURITY.md", "security contact link");
 requireText("config", "CODE_OF_CONDUCT.md", "conduct contact link");
 requireText("config", "private prompts, logs, paths, or secrets", "sensitive-data contact warning");
 requireText("bugTemplate", "Do not paste raw Codex rollout logs", "bug privacy warning");
+requireText("supportTemplate", "Ask a privacy-safe usage, install, or reviewer-evidence question", "support question template");
+requireText("supportTemplate", "npm run public:redaction", "support redaction gate");
+requireText("supportTemplate", "Do not paste raw Codex logs", "support question privacy warning");
 requireText("featureTemplate", "Do not include raw Codex logs", "feature privacy warning");
 requireText("integrationTemplate", "aggregate data leaves the local machine", "integration aggregate boundary");
 requireText("support", "public GitHub issues", "support public issue guidance");
+requireText("support", "Support questions", "support question routing");
+requireText("support", "public doc link instead of private Codex session", "support public evidence question guidance");
 requireText("support", "Code of Conduct concerns", "support conduct guidance");
 requireText("applicationStatus", "npm run issue-routing:readiness", "status issue routing gate");
 

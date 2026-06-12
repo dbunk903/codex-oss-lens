@@ -6,6 +6,7 @@ const files = {
   readme: await fs.readFile("README.md", "utf8"),
   packageJson: await fs.readFile("package.json", "utf8"),
   bugTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/bug_report.md", "utf8"),
+  supportTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/support_question.md", "utf8"),
   featureTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/feature_request.md", "utf8"),
   integrationTemplate: await fs.readFile(".github/ISSUE_TEMPLATE/integration_request.md", "utf8"),
 };
@@ -15,6 +16,7 @@ let failures = 0;
 requireText("support", "# Support", "support title");
 requireText("support", "public GitHub issues", "public support channel");
 requireText("support", "Bug reports", "bug report routing");
+requireText("support", "Support questions", "support question routing");
 requireText("support", "Feature requests", "feature request routing");
 requireText("support", "Integration requests", "integration request routing");
 requireText("support", "Security reports", "security report routing");
@@ -26,9 +28,14 @@ requireText("support", "Do not paste raw Codex logs", "support raw log warning")
 requireText("support", "private prompts", "support private prompt warning");
 requireText("support", "full local filesystem paths", "support path warning");
 requireText("support", "tokens, credentials, or other secrets", "support secret warning");
+requireText("support", "public doc link instead of private Codex session", "support public doc guidance");
 requireText("readme", "SUPPORT.md", "README support link");
 requireText("packageJson", "\"SUPPORT.md\"", "package support allowlist");
 requireText("bugTemplate", "Do not paste raw Codex rollout logs", "bug support privacy warning");
+requireText("supportTemplate", "Support question", "support question title");
+requireText("supportTemplate", "reviewer-evidence question", "support reviewer evidence routing");
+requireText("supportTemplate", "npm run public:redaction", "support question public redaction gate");
+requireText("supportTemplate", "Do not paste raw Codex logs", "support question raw log warning");
 requireText("featureTemplate", "Do not include raw Codex logs", "feature support privacy warning");
 requireText("integrationTemplate", "Do not include raw Codex logs", "integration support privacy warning");
 
