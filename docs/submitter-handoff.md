@@ -26,6 +26,25 @@ npm run form-draft:sample
 npm run submitter:handoff
 ```
 
+## Public Evidence Order
+
+Keep these public links open in this order while filling the form:
+
+1. `docs/application-status.md` for the current Ready/Manual/Blocked snapshot.
+2. `docs/final-submission-checklist.md` for the full submit-time gate list.
+3. `docs/application-evidence-matrix.md` for reviewer-question-to-proof mapping.
+4. `docs/reviewer-quickstart.md` and `docs/signed-out-review.md` for fast public review.
+5. The npm package, `v1.6.1` release, Node CI, and published smoke CI for installability proof.
+6. `application/final-copy.md`, `application/form-answers.md`, and
+   `examples/form-draft.sample.md` for paste-ready Korean copy.
+
+Confirm the live package and workflow state before opening the form:
+
+```bash
+npm run npm:latest
+npm run ci:latest
+```
+
 ## Account-Owner-Only Inputs
 
 The local tool and automation must not fill or guess these fields:
@@ -43,7 +62,8 @@ The local tool and automation must not fill or guess these fields:
 2. Fill the account-owner-only inputs above.
 3. Paste the checked public repository URL and three Korean answer blocks.
 4. Keep `docs/signed-out-review.md` open in a separate signed-out browser or private window.
-5. Run `npm run submission:check` one final time from the repository root.
+5. Run `npm run submission:check`, `npm run npm:latest`, and `npm run ci:latest` one final time
+   from the repository root.
 6. Stop before pressing Submit unless every local gate passes and the account owner has reviewed the terms.
 
 ## Do Not Paste
@@ -62,6 +82,8 @@ Do not submit if:
 
 - `npm run submission:check` fails.
 - `npm run evidence:links` fails.
+- `npm run npm:latest` no longer matches the claimed release.
+- `npm run ci:latest` reports red public CI.
 - Public CI is red for the current `main` branch.
 - npm latest no longer resolves to the claimed `codex-oss-lens@1.6.1` release or newer.
 - The signed-out review checklist cannot be completed without private access.
