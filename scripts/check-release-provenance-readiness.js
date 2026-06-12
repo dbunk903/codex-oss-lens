@@ -25,6 +25,7 @@ requireText("provenance", "npm run submission:check", "submission gate");
 requireText("provenance", "npm run release:provenance", "self gate");
 requireText("provenance", "npm run publish:samples", "publish samples gate");
 requireText("provenance", "npm run npm:latest", "npm latest gate");
+requireText("provenance", "npm run ci:latest", "latest CI gate");
 requireText("provenance", "npm run publish:docs", "publishing docs gate");
 requireText("provenance", "npm run public:redaction", "public redaction gate");
 requireText("provenance", "npm run evidence:links", "public links gate");

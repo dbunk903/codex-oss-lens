@@ -27,6 +27,7 @@ npm run submission:activity
 npm run reviewer:signedout
 npm run publish:samples
 npm run npm:latest
+npm run ci:latest
 npm run contrib:readiness
 npm run security:readiness
 npm run support:readiness

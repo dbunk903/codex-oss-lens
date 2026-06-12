@@ -19,6 +19,7 @@ open-source support form.
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the full reviewer link map without placeholders. |
 | Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |
 | npm latest registry | Ready | `npm run npm:latest` checks the live npm registry dist-tag and confirms `codex-oss-lens@latest` matches `package.json`. |
+| Latest CI runs | Ready | `npm run ci:latest` checks the latest completed Node tests and published smoke workflow runs are green. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
 | Application evidence matrix | Ready | `npm run application:evidence` checks reviewer questions against public evidence, local gates, and known boundaries. |
 | Application review FAQ | Ready | `npm run reviewer:faq` checks likely reviewer questions against public proof, privacy boundaries, manual gates, and API-credit intent. |
@@ -102,7 +103,7 @@ Run the one-command local gate before opening the form:
 npm run submission:check
 ```
 
-That gate validates final copy, form answers, release-version drift, npm latest registry state, public redaction, public evidence sample
+That gate validates final copy, form answers, release-version drift, npm latest registry state, latest CI runs, public redaction, public evidence sample
 freshness, public links, public preview PNG dimensions, README badges, unit tests, package dry-run,
 and packaged CLI smoke.
 
@@ -171,6 +172,7 @@ Publish and install smoke samples are checked by:
 ```bash
 npm run publish:samples
 npm run npm:latest
+npm run ci:latest
 ```
 
 Publishing docs are checked by:

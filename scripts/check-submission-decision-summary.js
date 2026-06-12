@@ -22,6 +22,8 @@ requireText("summary", "Reviewer evidence is reproducible", "reviewer evidence c
 requireText("summary", "Privacy boundaries are current", "privacy condition");
 requireText("summary", "Maintainer continuity is credible", "continuity condition");
 requireText("summary", "Form copy is ready", "form copy condition");
+requireText("summary", "npm run ci:latest", "latest CI gate");
+requireText("summary", "red or missing latest Node CI or published package smoke workflow", "latest CI stop condition");
 requireText("summary", "Any local gate in `npm run submission:check` fails", "local stop condition");
 requireText("summary", "npm run submission:decision", "self gate command");
 requireText("summary", "account owner still makes the final browser-session submission decision manually", "manual decision boundary");

@@ -20,6 +20,7 @@
 
 - Published npm usage is now visible at the top of the README.
 - `npm run npm:latest` verifies the live npm `latest` dist-tag matches `package.json`.
+- `npm run ci:latest` verifies the latest completed Node tests and published smoke workflow runs are green.
 - Scheduled/manual GitHub Actions smoke-check the npm `latest` package.
 - Dashboard shows application evidence and submission gates in the first viewport after the KPIs.
 - Maintainer use cases document weekly review, application evidence, API-credit planning, privacy review, and published package confidence.
@@ -38,7 +39,7 @@
 - The demo walkthrough documents npm latest CLI and dashboard checks that use synthetic data instead of private Codex logs.
 - The submission rehearsal documents final machine checks, manual account-owner fields, and abort conditions before pressing Submit.
 - Application draft links point at the current public release, npm package, roadmap, and API-credit workflow.
-- `submission:check`, `application:evidence`, `reviewer:faq`, `submission:risk`, `submission:decision`, `submission:activity`, `reviewer:signedout`, `publish:samples`, `npm:latest`, `support:readiness`, `conduct:readiness`,
+- `submission:check`, `application:evidence`, `reviewer:faq`, `submission:risk`, `submission:decision`, `submission:activity`, `reviewer:signedout`, `publish:samples`, `npm:latest`, `ci:latest`, `support:readiness`, `conduct:readiness`,
   `license:readiness`, `issue-routing:readiness`, `release:provenance`, `adoption:readiness`,
   `maintenance:readiness`, `maintainer:handoff`, `scope:limitations`, `privacy:threat-model`, `accessibility:readiness`, `data:retention`,
   `demo:walkthrough`, `submission:rehearsal`, and

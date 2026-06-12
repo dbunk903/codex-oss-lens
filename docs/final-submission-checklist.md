@@ -69,6 +69,7 @@ npm run submitter:handoff
 npm run form-draft:sample
 npm run publish:samples
 npm run npm:latest
+npm run ci:latest
 npm run publish:docs
 npm run dashboard:readiness
 npm run ci:readiness
@@ -126,6 +127,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
 - `npm run npm:latest` confirms the live npm registry `latest` dist-tag matches `package.json`.
+- `npm run ci:latest` confirms the latest completed Node tests and published smoke workflow runs are green.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
 - `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials, privacy threat-model evidence, and current submit gates.
 - `npm run ci:readiness` confirms GitHub Actions still runs the Node matrix, packaged CLI smoke, public evidence, and submission evidence gates.
@@ -160,5 +162,5 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The form-draft sample has no TODO reviewer links and matches the current release.
 - The publish check sample reflects that a later publish requires npm login plus a version bump.
 - The install smoke sample reflects the current npm latest package and any source-vs-published gap.
-- The latest Node CI and published smoke CI runs are green.
+- `npm run ci:latest` confirms the latest Node CI and published smoke CI runs are green.
 - The account owner has reviewed the form terms before pressing Submit.

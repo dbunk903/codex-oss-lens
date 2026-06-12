@@ -7,7 +7,7 @@ It compresses the public evidence set into a single Go/Stop decision.
 
 | Condition | Evidence | Gate |
 | --- | --- | --- |
-| Public package is installable | GitHub release, npm package, install smoke sample, published smoke workflow | `npm run submission:versions`, `npm run publish:samples` |
+| Public package is installable | GitHub release, npm package, install smoke sample, published smoke workflow | `npm run submission:versions`, `npm run publish:samples`, `npm run npm:latest`, `npm run ci:latest` |
 | Reviewer evidence is reproducible | Application status, evidence matrix, review FAQ, risk register, reviewer quickstart, public evidence sample | `npm run application:status`, `npm run application:evidence`, `npm run reviewer:faq`, `npm run submission:risk`, `npm run evidence:sample` |
 | Privacy boundaries are current | Privacy threat model, data retention policy, public redaction scan, scope limitations | `npm run privacy:threat-model`, `npm run data:retention`, `npm run public:redaction`, `npm run scope:limitations` |
 | Maintainer continuity is credible | Adoption plan, maintenance policy, maintainer handoff, support and issue routing docs | `npm run adoption:readiness`, `npm run maintenance:readiness`, `npm run maintainer:handoff`, `npm run issue-routing:readiness` |
@@ -17,7 +17,7 @@ It compresses the public evidence set into a single Go/Stop decision.
 
 - Any local gate in `npm run submission:check` fails.
 - Any public evidence link fails in `npm run evidence:links`.
-- The latest Node CI or published package smoke workflow is red.
+- `npm run ci:latest` reports a red or missing latest Node CI or published package smoke workflow.
 - The npm latest package no longer matches the claimed public release.
 - The account owner has not confirmed personal fields, OpenAI organization ID, terms review, and
   the final Submit action in the same browser session.

@@ -23,6 +23,8 @@ requireText("signedOut", "Reviewer docs open", "reviewer docs check");
 requireText("signedOut", "Preview images open", "preview image check");
 requireText("signedOut", "CI workflows open", "CI check");
 requireText("signedOut", "npm run reviewer:signedout", "self gate command");
+requireText("signedOut", "npm run ci:latest", "latest CI command");
+requireText("signedOut", "latest completed Node tests and published smoke workflow runs are green", "latest CI behavior");
 requireText("signedOut", "npm run evidence:links", "public link command");
 requireText("signedOut", "retries transient", "public link retry behavior");
 requireText("signedOut", "rate-limit", "public link rate-limit retry behavior");

@@ -16,6 +16,7 @@ requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate")
 requirePublishingText("npm run reviewer:signedout", "signed-out review gate");
 requirePublishingText("npm run publish:samples", "publish samples gate");
 requirePublishingText("npm run npm:latest", "npm latest gate");
+requirePublishingText("npm run ci:latest", "latest CI gate");
 requirePublishingText("npm run contrib:readiness", "contribution readiness gate");
 requirePublishingText("npm run security:readiness", "security readiness gate");
 requirePublishingText("npm run support:readiness", "support readiness gate");
@@ -63,6 +64,7 @@ requireChecklistText("submission:activity", "submission activity log evidence");
 requireChecklistText("reviewer:signedout", "signed-out review evidence");
 requireChecklistText("publish:samples", "publish samples evidence");
 requireChecklistText("npm:latest", "npm latest evidence");
+requireChecklistText("ci:latest", "latest CI evidence");
 requireChecklistText("support:readiness", "support readiness evidence");
 requireChecklistText("conduct:readiness", "conduct readiness evidence");
 requireChecklistText("license:readiness", "license readiness evidence");

@@ -23,6 +23,7 @@ npm run submission:check
 npm run release:provenance
 npm run publish:samples
 npm run npm:latest
+npm run ci:latest
 npm run publish:docs
 npm run public:redaction
 npm run evidence:links

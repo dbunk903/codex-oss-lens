@@ -84,6 +84,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           npm run npm:latest
+          npm run ci:latest
           npm run evidence:links
           npm run readme:badges
           npm run readme:readiness

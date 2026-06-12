@@ -303,6 +303,7 @@ npm run submitter:handoff
 npm run form-draft:sample
 npm run publish:samples
 npm run npm:latest
+npm run ci:latest
 npm run publish:docs
 npm run dashboard:readiness
 npm run ci:readiness

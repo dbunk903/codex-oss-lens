@@ -20,10 +20,12 @@ Run these commands from a clean checkout before final submission:
 
 ```bash
 npm run reviewer:signedout
+npm run ci:latest
 npm run evidence:links
 npm run submission:check
 ```
 
+`ci:latest` confirms the latest completed Node tests and published smoke workflow runs are green.
 `evidence:links` checks stable public endpoints and public preview PNG dimensions. It retries transient
 network, timeout, rate-limit, and server failures before reporting a link as broken. `submission:check`
 then confirms the same public evidence is still wired into docs, samples, CI, tests, and package
@@ -42,6 +44,7 @@ Run:
 
 ```bash
 npm run reviewer:signedout
+npm run ci:latest
 npm run submission:check
 ```
 
