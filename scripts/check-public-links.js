@@ -14,7 +14,7 @@ for (const [label, url] of links) {
   const result = await checkUrl(checkTarget);
   results.push({ label, url, ...result });
   const targetNote = checkTarget === url ? "" : ` via ${checkTarget}`;
-  console.log(`${result.ok ? "pass" : "fail"} ${label} ${result.status || "n/a"} ${url}${targetNote}`);
+  console.log(formatResult(result, `${result.ok ? "pass" : "fail"} ${label}`, url, targetNote));
   if (result.ok && pngExpectations[label]) {
     const expected = pngExpectations[label];
     const pngResult = await checkPngSize(checkTarget, expected);
@@ -130,8 +130,13 @@ async function requestWithRetry(url, method) {
   const maxAttempts = 3;
   let latest;
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    latest = await request(url, method);
-    if (!isTransientStatus(latest.status) || attempt === maxAttempts) return latest;
+    try {
+      latest = await request(url, method);
+    } catch (error) {
+      latest = { ok: false, status: null, error: error.message };
+    }
+    latest.attempts = attempt;
+    if (!isTransientResult(latest) || attempt === maxAttempts) return latest;
     await delay(attempt * 500);
   }
   return latest;
@@ -141,8 +146,13 @@ async function requestBytesWithRetry(url) {
   const maxAttempts = 3;
   let latest;
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    latest = await requestBytes(url);
-    if (!isTransientStatus(latest.status) || attempt === maxAttempts) return latest;
+    try {
+      latest = await requestBytes(url);
+    } catch (error) {
+      latest = { ok: false, status: null, error: error.message };
+    }
+    latest.attempts = attempt;
+    if (!isTransientResult(latest) || attempt === maxAttempts) return latest;
     await delay(attempt * 500);
   }
   return latest;
@@ -180,8 +190,10 @@ function isPng(bytes) {
   );
 }
 
-function isTransientStatus(status) {
-  return [500, 502, 503, 504].includes(status);
+function isTransientResult(result) {
+  if (result.ok) return false;
+  if (result.status == null) return true;
+  return [408, 429, 500, 502, 503, 504].includes(result.status);
 }
 
 function requestHeaders(url) {
@@ -198,4 +210,10 @@ function requestHeaders(url) {
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function formatResult(result, prefix, url, targetNote = "") {
+  const attempts = result.attempts && result.attempts > 1 ? ` attempts=${result.attempts}` : "";
+  const error = result.error ? ` error=${result.error}` : "";
+  return `${prefix} ${result.status || "n/a"} ${url}${targetNote}${attempts}${error}`;
 }

@@ -361,7 +361,7 @@ Reviewer-facing entry points:
 
 The dashboard preview images are kept as `1440x1200` desktop and `500x1100` mobile artifacts by
 `npm run dashboard:readiness`; `npm run evidence:links` also checks those dimensions through the
-public GitHub raw URLs.
+public GitHub raw URLs and retries transient network failures before marking a public link broken.
 
 To check npm publish readiness, including login, package metadata, registry status, and OTP command
 guidance:

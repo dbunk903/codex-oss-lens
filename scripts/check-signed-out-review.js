@@ -24,6 +24,8 @@ requireText("signedOut", "Preview images open", "preview image check");
 requireText("signedOut", "CI workflows open", "CI check");
 requireText("signedOut", "npm run reviewer:signedout", "self gate command");
 requireText("signedOut", "npm run evidence:links", "public link command");
+requireText("signedOut", "retries transient", "public link retry behavior");
+requireText("signedOut", "rate-limit", "public link rate-limit retry behavior");
 requireText("signedOut", "npm run submission:check", "submission check command");
 requireText("signedOut", "account-owner-only", "manual account-owner boundary");
 requireText("signedOut", "Private Codex logs", "private data boundary");

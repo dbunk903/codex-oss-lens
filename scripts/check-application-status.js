@@ -86,6 +86,7 @@ requireText("Demo walkthrough | Ready", "demo walkthrough row");
 requireText("Submission rehearsal | Ready", "submission rehearsal row");
 requireText("Visual previews | Ready", "visual previews row");
 requireText("Public link health | Ready", "public link health row");
+requireText("retries transient network failures", "public link retry behavior");
 requireText("public preview PNG dimensions", "public preview PNG dimensions");
 requireText("README badges | Ready", "README badges row");
 requireText("README readiness | Ready", "README readiness row");

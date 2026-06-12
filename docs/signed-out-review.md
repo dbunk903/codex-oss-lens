@@ -24,7 +24,8 @@ npm run evidence:links
 npm run submission:check
 ```
 
-`evidence:links` checks stable public endpoints and public preview PNG dimensions. `submission:check`
+`evidence:links` checks stable public endpoints and public preview PNG dimensions. It retries transient
+network, timeout, rate-limit, and server failures before reporting a link as broken. `submission:check`
 then confirms the same public evidence is still wired into docs, samples, CI, tests, and package
 smoke.
 

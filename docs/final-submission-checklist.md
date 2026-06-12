@@ -145,8 +145,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - The dashboard preview PNGs remain `1440x1200` desktop and `500x1100` mobile artifacts.
 - `npm run public:redaction` confirms public docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows do not expose local paths, raw-log markers, or likely secrets.
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.
-- `npm run evidence:links` passes without broken public evidence URLs and confirms the public
-  preview PNG dimensions.
+- `npm run evidence:links` passes without broken public evidence URLs, retries transient network
+  failures, and confirms the public preview PNG dimensions.
 - `npm run readme:badges` confirms README status badges render.
 - `npm run readme:readiness` confirms README submission guidance includes the current public reviewer entry points and local gates.
 - `npm run submission:check` runs the submit-time local gates as one command.
