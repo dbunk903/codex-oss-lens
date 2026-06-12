@@ -8,11 +8,11 @@ public links, and GitHub Actions.
 
 | Commit | Public improvement | Reviewer value | Local gate |
 | --- | --- | --- | --- |
-| `1fd7286` | Submission decision summary | Shows Go/Stop criteria and account-owner-only submit boundaries in one place. | `npm run submission:decision` |
-| `3e4a87f` | Submission risk register | Makes known application risks, mitigations, and stop conditions reviewable. | `npm run submission:risk` |
-| `a0f9fc9` | Application review FAQ | Answers expected reviewer questions about adoption, proof, privacy, package boundaries, and API-credit intent. | `npm run reviewer:faq` |
-| `0abb620` | Application evidence matrix | Maps reviewer questions to public proof links and local verification commands. | `npm run application:evidence` |
-| `3a6fefe` | Scope and limitations | Keeps current capabilities, non-goals, manual gates, and source-vs-published boundaries explicit. | `npm run scope:limitations` |
+| `1d2a6d0` | Privacy-safe support evidence | Maps support routing into reviewer questions, public proof, and redaction gates. | `npm run application:evidence`, `npm run reviewer:faq` |
+| `cda9c50` | Support policy public evidence | Adds SUPPORT.md to canonical public evidence, form draft samples, and final application copy. | `npm run evidence:sample`, `npm run form-draft:sample` |
+| `0cd2773` | Support route on dashboard | Shows support readiness and issue-routing gates in the reviewer-facing dashboard. | `npm run dashboard:readiness` |
+| `b1c70a3` | Support route in adoption evidence | Records privacy-safe feedback routing in adoption evidence without claiming mature adoption. | `npm run adoption:readiness`, `npm run adoption:snapshot` |
+| `87bc98e` | Privacy-safe support question route | Adds a structured support question template and issue chooser guidance. | `npm run support:readiness`, `npm run issue-routing:readiness` |
 
 ## Review Signal
 
