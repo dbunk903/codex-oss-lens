@@ -47,6 +47,9 @@ requireText("scope:limitations", "dashboard scope limitations gate");
 requireText("docs/demo-walkthrough.md", "dashboard demo walkthrough link");
 requireText("Demo walkthrough", "dashboard demo walkthrough label");
 requireText("demo:walkthrough", "dashboard demo walkthrough gate");
+requireText("docs/adoption-snapshot.md", "dashboard adoption snapshot link");
+requireText("Adoption snapshot", "dashboard adoption snapshot label");
+requireText("adoption:snapshot", "dashboard adoption snapshot gate");
 requireText("docs/submission-rehearsal.md", "dashboard submission rehearsal link");
 requireText("Submission rehearsal", "dashboard submission rehearsal label");
 requireText("submission:rehearsal", "dashboard submission rehearsal gate");
@@ -72,6 +75,7 @@ for (const [label, url] of Object.entries({
   signedOutReviewUrl: evidence.publicLinks.signedOutReviewUrl,
   privacyThreatModelUrl: evidence.publicLinks.privacyThreatModelUrl,
   maintainerHandoffUrl: evidence.publicLinks.maintainerHandoffUrl,
+  adoptionSnapshotUrl: evidence.publicLinks.adoptionSnapshotUrl,
   scopeLimitationsUrl: evidence.publicLinks.scopeLimitationsUrl,
   dataRetentionUrl: evidence.publicLinks.dataRetentionUrl,
   demoWalkthroughUrl: evidence.publicLinks.demoWalkthroughUrl,

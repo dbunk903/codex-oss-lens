@@ -1,6 +1,6 @@
 # Codex OSS Support Form Draft
 
-Generated: 2026-06-10T03:23:40.005Z
+Generated: 2026-06-11T23:18:56.275Z
 Ready to paste: true
 
 ## Public Links
@@ -19,6 +19,7 @@ Ready to paste: true
 - Signed-out review checklist: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- Adoption snapshot: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Scope and limitations: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
@@ -54,9 +55,9 @@ Characters: 198/500
 
 ## Additional Information
 
-현재 공개 릴리스는 신청용 evidence workflow를 포함합니다. submission-pack이 brief, readiness, api-plan, timeline, scorecard, evidence-index를 한 번에 만들며 readiness=review, scorecard=96(strong)로 공유 전 상태를 검증합니다. 의존성 없는 Node CLI와 정적 UI로 npm smoke test까지 통과했습니다.
+현재 공개 릴리스는 신청용 evidence workflow를 포함합니다. submission-pack이 brief, readiness, api-plan, timeline, scorecard, evidence-index를 한 번에 만들며 readiness=pass, scorecard=98(strong)로 공유 전 상태를 검증합니다. 의존성 없는 Node CLI와 정적 UI로 npm smoke test까지 통과했습니다.
 
-Characters: 236/500
+Characters: 234/500
 
 ## Manual Fields
 

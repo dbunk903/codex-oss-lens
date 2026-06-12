@@ -42,6 +42,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/final-submission-checklist.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+   https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
    https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
@@ -78,6 +79,8 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
   or version availability.
 - The adoption plan explains how a young public OSS project will collect validation without asking
   users to disclose raw Codex logs, prompts, full paths, secrets, or private source.
+- The adoption snapshot separates current public signals from download, star, production-user, or
+  mature-adoption claims that are not being made.
 - The maintenance policy explains weekly triage, release gates, post-publish smoke checks, and the
   boundary against telemetry or remote upload without explicit opt-in.
 - The maintainer handoff explains continuity, release handoff, privacy guards, and manual submit
@@ -115,6 +118,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - Roadmap: https://github.com/dbunk903/codex-oss-lens/blob/main/ROADMAP.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- Adoption snapshot: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Scope and limitations: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md

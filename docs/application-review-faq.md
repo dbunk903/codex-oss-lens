@@ -15,7 +15,8 @@ session review, quota awareness, workflow evidence, and shareable application ma
 
 Reviewers can inspect the public repository, `v1.6.1` release, npm package, Node CI, published
 install smoke workflow, public evidence sample, form draft sample, dashboard previews, and
-application evidence matrix without signing in or receiving private logs.
+application evidence matrix without signing in or receiving private logs. The adoption snapshot
+separates current public signals from mature adoption claims that are not being made.
 
 ### What is not automated?
 

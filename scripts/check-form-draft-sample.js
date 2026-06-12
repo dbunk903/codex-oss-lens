@@ -22,6 +22,7 @@ const expectedLinks = {
   signedOutReview: evidence.publicLinks.signedOutReviewUrl,
   releaseProvenance: evidence.publicLinks.releaseProvenanceUrl,
   adoptionPlan: evidence.publicLinks.adoptionPlanUrl,
+  adoptionSnapshot: evidence.publicLinks.adoptionSnapshotUrl,
   maintenancePolicy: evidence.publicLinks.maintenancePolicyUrl,
   maintainerHandoff: evidence.publicLinks.maintainerHandoffUrl,
   scopeLimitations: evidence.publicLinks.scopeLimitationsUrl,

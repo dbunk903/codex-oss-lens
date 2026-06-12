@@ -65,6 +65,7 @@ jobs:
           npm run issue-routing:readiness
           npm run release:provenance
           npm run adoption:readiness
+          npm run adoption:snapshot
           npm run maintenance:readiness
           npm run maintainer:handoff
           npm run scope:limitations

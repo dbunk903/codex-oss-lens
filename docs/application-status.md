@@ -38,6 +38,7 @@ open-source support form.
 | Issue routing readiness | Ready | `npm run issue-routing:readiness` checks the GitHub issue chooser, support links, security links, conduct links, and template privacy warnings. |
 | Release provenance | Ready | `npm run release:provenance` checks the release provenance page, status snapshot, README, checklist, publishing docs, publish checklist, and CI workflow. |
 | Adoption readiness | Ready | `npm run adoption:readiness` checks the adoption plan, reviewer quickstart, README, final checklist, status snapshot, and CI workflow. |
+| Adoption snapshot | Ready | `npm run adoption:snapshot` checks current public signals, claims-not-made boundaries, privacy-safe validation loops, public evidence, dashboard evidence, form drafts, and CI workflow. |
 | Maintenance readiness | Ready | `npm run maintenance:readiness` checks the maintenance policy, triage cadence, release gates, reviewer quickstart, README, checklist, publishing docs, and CI workflow. |
 | Maintainer handoff | Ready | `npm run maintainer:handoff` checks continuity notes, release handoff, privacy guards, reviewer links, dashboard evidence, publishing docs, and CI workflow. |
 | Scope and limitations | Ready | `npm run scope:limitations` checks public scope, non-goals, manual gates, source-vs-published boundaries, reviewer links, dashboard evidence, publishing docs, and CI workflow. |
@@ -69,6 +70,7 @@ open-source support form.
 - Submitter handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submitter-handoff.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- Adoption snapshot: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Scope and limitations: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
@@ -234,6 +236,12 @@ Adoption planning guidance is checked by:
 
 ```bash
 npm run adoption:readiness
+```
+
+Adoption signal boundaries are checked by:
+
+```bash
+npm run adoption:snapshot
 ```
 
 Maintenance policy guidance is checked by:

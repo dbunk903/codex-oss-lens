@@ -1,6 +1,6 @@
 # Codex OSS Lens Public Evidence
 
-Generated: 2026-06-10T03:23:39.191Z
+Generated: 2026-06-11T23:18:56.122Z
 Status: ready
 
 ## Public Links
@@ -19,6 +19,7 @@ Status: ready
 - signedOutReviewUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
 - releaseProvenanceUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlanUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- adoptionSnapshotUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - maintenancePolicyUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - maintainerHandoffUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - scopeLimitationsUrl: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
@@ -58,6 +59,7 @@ Status: ready
 - signedOutReview: Signed-out review checklist verifies public evidence can be inspected without private access. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/signed-out-review.md
 - releaseProvenance: Release provenance ties GitHub release, npm package, CI, and privacy gates together. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - adoptionPlan: Adoption plan documents public validation without asking for private Codex content. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- adoptionSnapshot: Adoption snapshot separates current public signals from claims not made. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - maintenancePolicy: Maintenance policy documents triage cadence, release gates, and privacy boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - maintainerHandoff: Maintainer handoff records continuity, release, privacy, and manual-submit boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - scopeLimitations: Scope and limitations clarify non-goals, manual gates, and source-vs-published boundaries. https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md

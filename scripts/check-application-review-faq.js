@@ -17,6 +17,7 @@ let failures = 0;
 requireText("faq", "# Application Review FAQ", "title");
 requireText("faq", "Why is this worth supporting if the project is young?", "young-project question");
 requireText("faq", "What public proof exists today?", "public-proof question");
+requireText("faq", "adoption snapshot", "adoption snapshot boundary");
 requireText("faq", "What is not automated?", "manual-submit question");
 requireText("faq", "What private Codex data is protected?", "privacy question");
 requireText("faq", "What is the source-vs-published boundary?", "published-boundary question");

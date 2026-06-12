@@ -253,12 +253,12 @@ The command returns a compact pack manifest with:
 
 `codex-oss-lens form-draft --manifest manifest.json` creates copy-ready Korean OpenAI OSS support
 form answers from generated evidence. Supplying readiness, API plan, scorecard, repository,
-release, roadmap, and API-credit workflow links enriches the draft and keeps public samples free of
-placeholder reviewer links.
+release, roadmap, adoption snapshot, and API-credit workflow links enriches the draft and keeps
+public samples free of placeholder reviewer links.
 
 The output includes:
 
-- `publicLinks`: repository, release, roadmap, and API-credit workflow URLs when supplied
+- `publicLinks`: repository, release, roadmap, adoption snapshot, and API-credit workflow URLs when supplied
 - `requiredManualFields`: personal fields that must still be filled by the account owner
 - `fields`: repository fit, API credit plan, and additional information answers
 - character counts and 500-character limit checks for each answer
@@ -317,7 +317,8 @@ The output includes:
 - `status`: current application evidence status
 - `manualFields`: account-owner fields that cannot be filled by the CLI
 - `publicLinks`: repository, release, npm, roadmap, status, application evidence matrix,
-  application review FAQ, submission risk register, reviewer quickstart, release provenance, adoption plan, maintenance policy, maintainer handoff, scope and
+  application review FAQ, submission risk register, reviewer quickstart, release provenance,
+  adoption plan, adoption snapshot, maintenance policy, maintainer handoff, scope and
   limitations, privacy threat model, data retention, demo walkthrough, accessibility, API workflow,
   use cases, final checklist, submission rehearsal, final copy, public evidence sample, reviewer
   samples, and CI links

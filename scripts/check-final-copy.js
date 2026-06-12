@@ -10,6 +10,7 @@ const REQUIRED_FINAL_COPY_LINK_KEYS = [
   "releaseUrl",
   "npmPackage",
   "roadmapUrl",
+  "adoptionSnapshotUrl",
   "applicationStatusUrl",
   "applicationEvidenceMatrixUrl",
   "applicationReviewFaqUrl",

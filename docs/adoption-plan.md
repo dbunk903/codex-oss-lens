@@ -13,13 +13,14 @@ use will be developed after the first stable package and evidence set.
 | CI | Public | https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml |
 | Published smoke | Public | https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml |
 | Support routes | Public | SUPPORT.md, SECURITY.md, CODE_OF_CONDUCT.md, and the GitHub issue chooser |
+| Adoption snapshot | Public | `docs/adoption-snapshot.md` separates current public signals from claims not made. |
 
 ## 30-day adoption loop
 
 1. Keep `npm latest` install smoke green so a new reviewer or maintainer can try the tool without
    cloning the repository.
-2. Use `docs/reviewer-quickstart.md` as the first public review path and keep it linked from README,
-   the final checklist, and the application status page.
+2. Use `docs/reviewer-quickstart.md` and `docs/adoption-snapshot.md` as the first public review
+   path and keep them linked from README, the final checklist, and the application status page.
 3. Seed use through privacy-first maintainer workflows: weekly review, submission-pack generation,
    API-credit planning, and release provenance review.
 4. Route feedback through typed GitHub issue templates instead of blank issues, so users do not post
@@ -40,3 +41,11 @@ Adoption evidence should measure public use and workflow fit, not collect privat
 No local Codex logs, raw prompts, full paths, secrets, private source, or private terminal output
 should be requested in public issues, release notes, or application evidence.
 
+## Drift Checks
+
+Run:
+
+```bash
+npm run adoption:readiness
+npm run adoption:snapshot
+```

@@ -19,6 +19,7 @@ Use this checklist immediately before submitting the OpenAI Codex open-source su
 - Submitter handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/submitter-handoff.md
 - Release provenance: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/release-provenance.md
 - Adoption plan: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-plan.md
+- Adoption snapshot: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/adoption-snapshot.md
 - Maintenance policy: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintenance-policy.md
 - Maintainer handoff: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/maintainer-handoff.md
 - Scope and limitations: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/scope-and-limitations.md
@@ -77,6 +78,7 @@ npm run license:readiness
 npm run issue-routing:readiness
 npm run release:provenance
 npm run adoption:readiness
+npm run adoption:snapshot
 npm run maintenance:readiness
 npm run maintainer:handoff
 npm run scope:limitations
@@ -131,6 +133,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run issue-routing:readiness` confirms the GitHub issue chooser routes users to support, security, and conduct guidance before public posting.
 - `npm run release:provenance` confirms release, npm, CI, privacy, and source-vs-published package evidence stay aligned.
 - `npm run adoption:readiness` confirms the adoption plan and reviewer entry points explain the public validation loop for this young project.
+- `npm run adoption:snapshot` confirms current adoption signals, claims-not-made boundaries, privacy-safe validation loops, public evidence, and CI wiring stay aligned.
 - `npm run maintenance:readiness` confirms the maintenance policy documents triage cadence, release gates, support routes, and privacy boundaries.
 - `npm run maintainer:handoff` confirms continuity notes, release handoff, privacy guards, publishing guidance, reviewer links, and CI wiring stay aligned.
 - `npm run scope:limitations` confirms current scope, non-goals, manual gates, source-vs-published boundaries, reviewer links, and CI wiring stay aligned.

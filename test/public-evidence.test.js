@@ -22,6 +22,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.match(evidence.publicLinks.signedOutReviewUrl, /docs\/signed-out-review\.md$/);
   assert.match(evidence.publicLinks.releaseProvenanceUrl, /docs\/release-provenance\.md$/);
   assert.match(evidence.publicLinks.adoptionPlanUrl, /docs\/adoption-plan\.md$/);
+  assert.match(evidence.publicLinks.adoptionSnapshotUrl, /docs\/adoption-snapshot\.md$/);
   assert.match(evidence.publicLinks.maintenancePolicyUrl, /docs\/maintenance-policy\.md$/);
   assert.match(evidence.publicLinks.maintainerHandoffUrl, /docs\/maintainer-handoff\.md$/);
   assert.match(evidence.publicLinks.scopeLimitationsUrl, /docs\/scope-and-limitations\.md$/);
@@ -41,6 +42,7 @@ test("builds public evidence with required links and manual fields", () => {
   assert.ok(evidence.proofPoints.some((item) => item.id === "signedOutReview"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "releaseProvenance"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "adoptionPlan"));
+  assert.ok(evidence.proofPoints.some((item) => item.id === "adoptionSnapshot"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "maintenancePolicy"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "maintainerHandoff"));
   assert.ok(evidence.proofPoints.some((item) => item.id === "scopeLimitations"));
@@ -107,6 +109,8 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
     "https://github.com/example/project/blob/main/docs/release-provenance.md",
     "--adoption-plan-url",
     "https://github.com/example/project/blob/main/docs/adoption-plan.md",
+    "--adoption-snapshot-url",
+    "https://github.com/example/project/blob/main/docs/adoption-snapshot.md",
     "--maintenance-policy-url",
     "https://github.com/example/project/blob/main/docs/maintenance-policy.md",
     "--maintainer-handoff-url",
@@ -162,6 +166,7 @@ test("CLI accepts reviewer link overrides for public evidence", async () => {
   assert.equal(evidence.publicLinks.signedOutReviewUrl, "https://github.com/example/project/blob/main/docs/signed-out-review.md");
   assert.equal(evidence.publicLinks.releaseProvenanceUrl, "https://github.com/example/project/blob/main/docs/release-provenance.md");
   assert.equal(evidence.publicLinks.adoptionPlanUrl, "https://github.com/example/project/blob/main/docs/adoption-plan.md");
+  assert.equal(evidence.publicLinks.adoptionSnapshotUrl, "https://github.com/example/project/blob/main/docs/adoption-snapshot.md");
   assert.equal(evidence.publicLinks.maintenancePolicyUrl, "https://github.com/example/project/blob/main/docs/maintenance-policy.md");
   assert.equal(evidence.publicLinks.maintainerHandoffUrl, "https://github.com/example/project/blob/main/docs/maintainer-handoff.md");
   assert.equal(evidence.publicLinks.scopeLimitationsUrl, "https://github.com/example/project/blob/main/docs/scope-and-limitations.md");
