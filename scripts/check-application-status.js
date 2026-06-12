@@ -89,6 +89,7 @@ requireText("Public link health | Ready", "public link health row");
 requireText("retries transient network failures", "public link retry behavior");
 requireText("public preview PNG dimensions", "public preview PNG dimensions");
 requireText("README badges | Ready", "README badges row");
+requireText("retries transient badge fetch failures", "README badge retry behavior");
 requireText("README readiness | Ready", "README readiness row");
 requireText("Account-owner fields", "manual account-owner row");
 requireValue(formDraftSample.publicLinks?.latestRelease, `https://github.com/dbunk903/codex-oss-lens/releases/tag/v${packageJson.version}`, "form draft release link");

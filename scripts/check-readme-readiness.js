@@ -39,6 +39,7 @@ requireText("npm run public:redaction", "public redaction gate");
 requireText("npm run evidence:sample", "public evidence sample gate");
 requireText("npm run evidence:links", "public link health gate");
 requireText("npm run readme:badges", "README badge gate");
+requireText("retries transient badge fetch failures", "README badge retry behavior");
 requireText("docs/application-status.md", "application status link");
 requireText("docs/application-evidence-matrix.md", "application evidence matrix link");
 requireText("docs/application-review-faq.md", "application review FAQ link");

@@ -147,7 +147,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run evidence:sample` confirms the generated public evidence sample matches the current canonical link map.
 - `npm run evidence:links` passes without broken public evidence URLs, retries transient network
   failures, and confirms the public preview PNG dimensions.
-- `npm run readme:badges` confirms README status badges render.
+- `npm run readme:badges` confirms README status badges render and retries transient badge fetch failures.
 - `npm run readme:readiness` confirms README submission guidance includes the current public reviewer entry points and local gates.
 - `npm run submission:check` runs the submit-time local gates as one command.
 - The application status page still reflects the latest public release and manual account-owner gates.

@@ -49,7 +49,7 @@ open-source support form.
 | Submission rehearsal | Ready | `npm run submission:rehearsal` checks final dry-run commands, manual account-owner fields, abort conditions, reviewer links, dashboard evidence, and CI workflow. |
 | Visual previews | Ready | Desktop `1440x1200` and mobile `500x1100` dashboard PNGs are checked by `npm run dashboard:readiness`. |
 | Public link health | Ready | `npm run evidence:links` checks reviewer links through stable public endpoints, retries transient network failures, and validates public preview PNG dimensions. |
-| README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges. |
+| README badges | Ready | `npm run readme:badges` checks release, npm, CI, license, node, and privacy badges, and retries transient badge fetch failures. |
 | README readiness | Ready | `npm run readme:readiness` checks that README submission guidance stays aligned with public reviewer evidence. |
 | Account-owner fields | Manual | Last name, First name, Email registered to the ChatGPT account, GitHub username, OpenAI organization ID, and Terms review and final submit stay with the account owner. |
 

@@ -14,7 +14,7 @@ for (const url of badgeUrls) {
   const checkTarget = checkUrlFor(url);
   const result = await checkUrl(checkTarget);
   const targetNote = checkTarget === url ? "" : ` via ${checkTarget}`;
-  console.log(`${result.ok ? "pass" : "fail"} badge ${result.status || "n/a"} ${url}${targetNote}`);
+  console.log(`${result.ok ? "pass" : "fail"} badge ${formatResult(result)} ${url}${targetNote}`);
   if (!result.ok) failures += 1;
 }
 
@@ -28,7 +28,8 @@ async function checkUrl(url) {
   let latest;
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     latest = await request(url);
-    if (!isTransientStatus(latest.status) || attempt === maxAttempts) return latest;
+    latest.attempts = attempt;
+    if (!isTransientFailure(latest) || attempt === maxAttempts) return latest;
     await delay(attempt * 500);
   }
   return latest;
@@ -64,8 +65,15 @@ async function request(url) {
   }
 }
 
-function isTransientStatus(status) {
-  return [500, 502, 503, 504].includes(status);
+function isTransientFailure(result) {
+  if (!result.status) return true;
+  return [408, 429, 500, 502, 503, 504].includes(result.status);
+}
+
+function formatResult(result) {
+  const parts = [`status=${result.status || "n/a"}`, `attempts=${result.attempts || 1}`];
+  if (result.error) parts.push(`error=${result.error}`);
+  return parts.join(" ");
 }
 
 function delay(ms) {

@@ -328,6 +328,9 @@ npm run readme:badges
 npm run readme:readiness
 ```
 
+The badge gate retries transient badge fetch failures so a temporary Shields, GitHub raw, or
+rate-limit response does not mask the real readiness signal.
+
 Reviewer-facing entry points:
 
 - Application status: https://github.com/dbunk903/codex-oss-lens/blob/main/docs/application-status.md
