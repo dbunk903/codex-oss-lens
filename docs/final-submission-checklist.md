@@ -55,6 +55,7 @@ npm run pack:check
 npm run pack:smoke
 node src/cli.js public-evidence --markdown public-evidence.md
 npm run final-copy:check
+npm run form-answers:check
 npm run submission:versions
 npm run application:status
 npm run application:evidence
@@ -110,6 +111,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 
 - All public links open in a signed-out browser.
 - `npm run final-copy:check` confirms the paste-ready Korean answers are within the 500-character limits and the application drafts include reviewer evidence links.
+- `npm run form-answers:check` confirms the account-owner draft mirrors final copy, stays within the 500-character limits, and includes every public reviewer link plus manual fields.
 - `npm run submission:versions` confirms release links and version mentions match `package.json`.
 - `npm run application:status` confirms the status page and this checklist include every public evidence link and manual field.
 - `npm run application:evidence` confirms reviewer questions map to public proof links, local gates, and known boundaries.

@@ -21,6 +21,7 @@ Run this before copying:
 
 ```bash
 npm run final-copy:check
+npm run form-answers:check
 npm run form-draft:sample
 npm run submitter:handoff
 ```

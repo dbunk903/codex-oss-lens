@@ -7,6 +7,7 @@ const evidence = buildPublicEvidence();
 let failures = 0;
 
 requireText("npm run submission:check", "one-command submission gate");
+requireText("npm run form-answers:check", "form answers gate");
 requireText("npm run application:evidence", "application evidence matrix gate");
 requireText("npm run reviewer:faq", "application review FAQ gate");
 requireText("npm run submission:risk", "submission risk register gate");

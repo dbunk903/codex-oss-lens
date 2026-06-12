@@ -289,6 +289,7 @@ For narrower copy or link checks while editing:
 
 ```bash
 npm run final-copy:check
+npm run form-answers:check
 npm run submission:versions
 npm run application:status
 npm run application:evidence

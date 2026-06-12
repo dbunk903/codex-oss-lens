@@ -14,6 +14,7 @@ requireText("npm run pack:smoke", "packaged CLI smoke");
 requireText("node src/cli.js public-evidence", "public evidence generation");
 requireText("evidence.status", "public evidence readiness assertion");
 requireText("npm run final-copy:check", "final copy check");
+requireText("npm run form-answers:check", "form answers check");
 requireText("npm run submission:versions", "submission version check");
 requireText("npm run application:status", "application status check");
 requireText("npm run application:evidence", "application evidence matrix check");

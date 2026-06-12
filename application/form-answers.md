@@ -11,6 +11,7 @@ Source form: https://openai.com/ko-KR/form/codex-for-oss/
 - GitHub repository URL: https://github.com/dbunk903/codex-oss-lens
 - Role: Primary maintainer
 - OpenAI organization ID: TODO - from https://platform.openai.com/settings/organization/general
+- Terms review and final submit: account owner completes manually in the submitting browser session
 
 ## Public evidence links
 

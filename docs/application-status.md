@@ -15,6 +15,7 @@ open-source support form.
 | Next publish gate | Blocked | `examples/publish-check.sample.md` shows npm login is required and `1.6.1` cannot be republished without a version bump. |
 | Privacy posture | Ready | `npm run public:redaction` scans public docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows for local paths, raw-log markers, and likely secrets. |
 | Form copy | Ready | `application/final-copy.md` contains the paste-ready Korean answers and is checked by `npm run final-copy:check`. |
+| Form answers | Ready | `npm run form-answers:check` checks `application/form-answers.md` against final copy, 500-character limits, manual fields, and the canonical reviewer link map. |
 | Form draft sample | Ready | `examples/form-draft.sample.md` includes the full reviewer link map without placeholders. |
 | Form draft links | Ready | `npm run form-draft:sample` checks that the public form draft sample includes every reviewer evidence link and manual submit field. |
 | Public evidence sample | Ready | `examples/public-evidence.sample.md` is checked by `npm run evidence:sample` against the canonical reviewer link map. |
@@ -100,7 +101,7 @@ Run the one-command local gate before opening the form:
 npm run submission:check
 ```
 
-That gate validates final copy, release-version drift, public redaction, public evidence sample
+That gate validates final copy, form answers, release-version drift, public redaction, public evidence sample
 freshness, public links, public preview PNG dimensions, README badges, unit tests, package dry-run,
 and packaged CLI smoke.
 

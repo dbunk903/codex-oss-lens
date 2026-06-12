@@ -24,6 +24,7 @@ requireText("handoff", "application/form-answers.md", "form answers source");
 requireText("handoff", "examples/form-draft.sample.md", "form draft sample source");
 requireText("handoff", "examples/public-evidence.sample.md", "public evidence sample source");
 requireText("handoff", "npm run final-copy:check", "final copy check command");
+requireText("handoff", "npm run form-answers:check", "form answers check command");
 requireText("handoff", "npm run form-draft:sample", "form draft sample command");
 requireText("handoff", "npm run submitter:handoff", "self gate command");
 requireText("handoff", "npm run submission:check", "submission check command");
@@ -46,7 +47,10 @@ requireText("dashboard", "docs/submitter-handoff.md", "dashboard link");
 requireText("dashboard", "Submitter handoff", "dashboard label");
 requireText("dashboard", "submitter:handoff", "dashboard gate");
 requireText("workflow", "npm run submitter:handoff", "CI gate");
+requireText("workflow", "npm run form-answers:check", "CI form answers gate");
 requireText("packageJson", "\"submitter:handoff\"", "package script");
+requireText("packageJson", "\"form-answers:check\"", "form answers package script");
+requireText("packageJson", "npm run form-answers:check", "form answers submission check wiring");
 requireText("packageJson", "npm run submitter:handoff", "submission check wiring");
 
 if (failures) {
