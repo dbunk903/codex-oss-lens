@@ -18,6 +18,7 @@ requireText("npm run reviewer:signedout", "signed-out review gate");
 requireText("npm run submitter:handoff", "submitter handoff gate");
 requireText("npm run form-draft:sample", "form draft sample gate");
 requireText("npm run publish:samples", "publish samples gate");
+requireText("npm run npm:latest", "npm latest gate");
 requireText("npm run ci:readiness", "CI readiness gate");
 requireText("npm run contrib:readiness", "contribution readiness gate");
 requireText("npm run security:readiness", "security readiness gate");

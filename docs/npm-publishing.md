@@ -15,7 +15,7 @@ FAQ, submission risk register, submission decision summary, submission activity 
 maintainer handoff, scope limitations, privacy threat-model, accessibility readiness, data retention, demo walkthrough, submission
 rehearsal, public-redaction, public evidence sample,
 public-link, badge, README readiness, unit-test, tarball dry-run, and packaged CLI smoke gates. It
-also runs the reviewer quickstart and publish sample checks:
+also checks the live npm `latest` dist-tag and runs the reviewer quickstart and publish sample checks:
 
 ```bash
 npm run reviewer:quickstart
@@ -26,6 +26,7 @@ npm run submission:decision
 npm run submission:activity
 npm run reviewer:signedout
 npm run publish:samples
+npm run npm:latest
 npm run contrib:readiness
 npm run security:readiness
 npm run support:readiness

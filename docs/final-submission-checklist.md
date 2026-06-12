@@ -68,6 +68,7 @@ npm run reviewer:signedout
 npm run submitter:handoff
 npm run form-draft:sample
 npm run publish:samples
+npm run npm:latest
 npm run publish:docs
 npm run dashboard:readiness
 npm run ci:readiness
@@ -124,6 +125,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run submitter:handoff` confirms paste-ready inputs, account-owner-only fields, do-not-paste guards, dashboard links, and CI wiring stay aligned.
 - `npm run form-draft:sample` confirms the public form-draft sample includes every reviewer evidence link and manual submit field.
 - `npm run publish:samples` confirms publish-check and install-smoke samples match the current package version and publish gates.
+- `npm run npm:latest` confirms the live npm registry `latest` dist-tag matches `package.json`.
 - `npm run publish:docs` confirms npm publishing docs and the publish checklist match the current package and release gates.
 - `npm run dashboard:readiness` confirms the public dashboard evidence panel links to reviewer materials, privacy threat-model evidence, and current submit gates.
 - `npm run ci:readiness` confirms GitHub Actions still runs the Node matrix, packaged CLI smoke, public evidence, and submission evidence gates.
@@ -154,7 +156,7 @@ npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo
 - `npm run submission:check` runs the submit-time local gates as one command.
 - The application status page still reflects the latest public release and manual account-owner gates.
 - The reviewer quickstart opens and matches the current public release.
-- The npm package is still `codex-oss-lens@1.6.1` or newer.
+- The npm package `latest` dist-tag is still `codex-oss-lens@1.6.1`.
 - The form-draft sample has no TODO reviewer links and matches the current release.
 - The publish check sample reflects that a later publish requires npm login plus a version bump.
 - The install smoke sample reflects the current npm latest package and any source-vs-published gap.

@@ -15,6 +15,7 @@ requirePublishingText("npm run submission:activity", "submission activity log ga
 requirePublishingText("npm run reviewer:quickstart", "reviewer quickstart gate");
 requirePublishingText("npm run reviewer:signedout", "signed-out review gate");
 requirePublishingText("npm run publish:samples", "publish samples gate");
+requirePublishingText("npm run npm:latest", "npm latest gate");
 requirePublishingText("npm run contrib:readiness", "contribution readiness gate");
 requirePublishingText("npm run security:readiness", "security readiness gate");
 requirePublishingText("npm run support:readiness", "support readiness gate");
@@ -39,6 +40,7 @@ requirePublishingText(
   "latest install smoke command",
 );
 requirePublishingText("package owner", "package owner authority");
+requirePublishingText("live npm `latest` dist-tag", "live npm latest registry check");
 requirePublishingText("versionAvailable: fail", "republish blocker guidance");
 requirePublishingText("examples/dashboard-preview.png", "dashboard preview package content");
 requirePublishingText("ROADMAP.md", "roadmap package content");
@@ -60,6 +62,7 @@ requireChecklistText("submission:decision", "submission decision summary evidenc
 requireChecklistText("submission:activity", "submission activity log evidence");
 requireChecklistText("reviewer:signedout", "signed-out review evidence");
 requireChecklistText("publish:samples", "publish samples evidence");
+requireChecklistText("npm:latest", "npm latest evidence");
 requireChecklistText("support:readiness", "support readiness evidence");
 requireChecklistText("conduct:readiness", "conduct readiness evidence");
 requireChecklistText("license:readiness", "license readiness evidence");

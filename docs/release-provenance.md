@@ -22,6 +22,7 @@ Run these gates before relying on the public release evidence:
 npm run submission:check
 npm run release:provenance
 npm run publish:samples
+npm run npm:latest
 npm run publish:docs
 npm run public:redaction
 npm run evidence:links
@@ -48,4 +49,3 @@ Release evidence must stay public-safe. No local Codex logs, raw prompts, full f
 secrets, private source, or private terminal output should be included in release notes, public
 issues, npm package contents, or application evidence. Run `npm run public:redaction` before sharing
 new evidence.
-
