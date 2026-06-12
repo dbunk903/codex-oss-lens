@@ -12,7 +12,7 @@ use will be developed after the first stable package and evidence set.
 | npm package | Published | https://www.npmjs.com/package/codex-oss-lens |
 | CI | Public | https://github.com/dbunk903/codex-oss-lens/actions/workflows/test.yml |
 | Published smoke | Public | https://github.com/dbunk903/codex-oss-lens/actions/workflows/published-smoke.yml |
-| Support routes | Public | SUPPORT.md, SECURITY.md, CODE_OF_CONDUCT.md, and the GitHub issue chooser |
+| Support routes | Public | SUPPORT.md, the support question template, SECURITY.md, CODE_OF_CONDUCT.md, and the GitHub issue chooser |
 | Adoption snapshot | Public | `docs/adoption-snapshot.md` separates current public signals from claims not made. |
 
 ## 30-day adoption loop
@@ -23,8 +23,9 @@ use will be developed after the first stable package and evidence set.
    path and keep them linked from README, the final checklist, and the application status page.
 3. Seed use through privacy-first maintainer workflows: weekly review, submission-pack generation,
    API-credit planning, and release provenance review.
-4. Route feedback through typed GitHub issue templates instead of blank issues, so users do not post
-   raw Codex logs, prompts, full filesystem paths, secrets, or private source.
+4. Route feedback through the support question, bug, feature, and integration templates instead of
+   blank issues, so users do not post raw Codex logs, prompts, full filesystem paths, secrets, or
+   private source.
 5. Convert recurring feedback into small roadmap issues under `ROADMAP.md`, then verify new public
    evidence through `npm run submission:check`.
 
@@ -32,7 +33,8 @@ use will be developed after the first stable package and evidence set.
 
 - One external maintainer can run `npm exec --yes --package codex-oss-lens@latest -- codex-oss-lens demo`.
 - One external maintainer can generate a local `submission-pack` without sharing private logs.
-- One issue or discussion can validate whether the API-credit plan matches a real maintainer workflow.
+- One support question or issue can validate whether the API-credit plan matches a real maintainer
+  workflow without sharing private Codex context.
 - One release can publish a user-facing improvement after passing public redaction and package smoke gates.
 
 ## Privacy boundary

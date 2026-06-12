@@ -35,10 +35,10 @@ open-source support form.
 | CI readiness | Ready | `npm run ci:readiness` checks that GitHub Actions keeps the Node 20/22 matrix, package smoke, public evidence, and submission evidence gates wired. |
 | Contribution readiness | Ready | `npm run contrib:readiness` checks CONTRIBUTING, the bug report template, and the PR template for validation and privacy guidance. |
 | Security readiness | Ready | `npm run security:readiness` checks SECURITY.md and issue templates for vulnerability reporting and sensitive-data guidance. |
-| Support readiness | Ready | `npm run support:readiness` checks SUPPORT.md, issue templates, README, and package contents for public support guidance. |
+| Support readiness | Ready | `npm run support:readiness` checks SUPPORT.md, the support question template, issue templates, README, and package contents for public support guidance. |
 | Conduct readiness | Ready | `npm run conduct:readiness` checks CODE_OF_CONDUCT.md, SUPPORT.md, CONTRIBUTING.md, README, and package contents for community guidance. |
 | License readiness | Ready | `npm run license:readiness` checks MIT license text, package metadata, README license link, and package contents. |
-| Issue routing readiness | Ready | `npm run issue-routing:readiness` checks the GitHub issue chooser, support links, security links, conduct links, and template privacy warnings. |
+| Issue routing readiness | Ready | `npm run issue-routing:readiness` checks the GitHub issue chooser, support question route, support links, security links, conduct links, and template privacy warnings. |
 | Release provenance | Ready | `npm run release:provenance` checks the release provenance page, status snapshot, README, checklist, publishing docs, publish checklist, and CI workflow. |
 | Adoption readiness | Ready | `npm run adoption:readiness` checks the adoption plan, reviewer quickstart, README, final checklist, status snapshot, and CI workflow. |
 | Adoption snapshot | Ready | `npm run adoption:snapshot` checks current public signals, claims-not-made boundaries, privacy-safe validation loops, public evidence, dashboard evidence, form drafts, and CI workflow. |
