@@ -56,6 +56,8 @@ requireText("submission:rehearsal", "dashboard submission rehearsal gate");
 requireText("public-evidence + evidence:sample", "public evidence sample gate");
 requireText("reviewer:quickstart", "reviewer quickstart gate");
 requireText("publish:samples + publish:docs", "publish gate");
+requireText("npm:latest", "npm latest gate");
+requireText("ci:latest", "latest CI gate");
 requireText("evidence:links + readme:badges", "link and badge gate");
 requireText("readme:readiness", "README readiness gate");
 requireText("published install smoke", "published install smoke gate");
