@@ -10,6 +10,7 @@ questions to public evidence, local gates, and known boundaries.
 | Is private Codex data protected? | Privacy threat model, data retention, public redaction policy, security policy | `npm run privacy:threat-model`, `npm run data:retention`, `npm run public:redaction` |
 | Can reviewers reproduce the evidence? | Reviewer quickstart, dashboard previews, public evidence sample, form draft sample | `npm run dashboard:readiness`, `npm run evidence:sample`, `npm run form-draft:sample` |
 | Is the project maintainable after submission? | Maintenance policy, maintainer handoff, adoption plan, support policy, issue routing | `npm run maintenance:readiness`, `npm run maintainer:handoff`, `npm run adoption:readiness` |
+| Can users ask for help without exposing private Codex data? | Support policy, support question template, issue chooser, security policy, code of conduct | `npm run support:readiness`, `npm run issue-routing:readiness`, `npm run public:redaction` |
 | Are limits and manual gates clear? | Scope and limitations, submission risk register, submission decision summary, submission rehearsal, final checklist, application status | `npm run scope:limitations`, `npm run submission:risk`, `npm run submission:decision`, `npm run submission:rehearsal`, `npm run application:status` |
 
 ## Readiness Boundaries

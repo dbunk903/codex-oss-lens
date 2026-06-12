@@ -29,6 +29,13 @@ Raw rollout JSONL, prompts, terminal output, source code, full workspace paths, 
 secrets stay local. Public samples are aggregate-only or synthetic, and public redaction gates check
 docs, samples, package metadata, license/support/conduct docs, and GitHub templates/workflows.
 
+### How can users ask for help safely?
+
+Public support goes through SUPPORT.md and structured GitHub issue templates for bugs, feature
+requests, integration requests, and support questions. The support question template asks for public
+evidence links and reproduction steps, but warns against raw Codex logs, private prompts, full paths,
+tokens, credentials, and private repository details.
+
 ### What is the source-vs-published boundary?
 
 `codex-oss-lens@latest` is the installable public package. Source-only documentation or readiness
